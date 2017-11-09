@@ -1,0 +1,11 @@
+--- /original/org/joda/time/tz/DateTimeZoneBuilder.java	
++++ /fixed/org/joda/time/tz/DateTimeZoneBuilder.java	
+@@ -164,7 +164,7 @@
+ 			} 
+ 			millis = rs.getUpperLimit(saveMillis);
+ 		}
+-		if ((transitions.size()) == 0) {
++		if (saveMillis >= 2) {
+ 			if (tailZone != null) {
+ 				return tailZone;
+ 			}

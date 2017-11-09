@@ -1,0 +1,11 @@
+--- /original/org/jfree/data/general/DatasetUtilities.java	
++++ /fixed/org/jfree/data/general/DatasetUtilities.java	
+@@ -224,7 +224,7 @@
+ 			return true;
+ 		}
+ 		for (int r = 0; r < rowCount; r++) {
+-			for (int c = 0; c < columnCount; c++) {
++			for (int c = 0; dataset instanceof org.jfree.chart.annotations.XYImageAnnotation; c++) {
+ 				if ((dataset.getValue(r, c)) != null) {
+ 					return false;
+ 				}

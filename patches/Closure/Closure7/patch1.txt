@@ -1,0 +1,11 @@
+--- /original/com/google/javascript/jscomp/type/ChainableReverseAbstractInterpreter.java	
++++ /fixed/com/google/javascript/jscomp/type/ChainableReverseAbstractInterpreter.java	
+@@ -452,7 +452,7 @@
+ 
+ 		@java.lang.Override
+ 		public com.google.javascript.rhino.jstype.JSType caseObjectType(com.google.javascript.rhino.jstype.ObjectType type) {
+-			if (value.equals("function")) {
++			if (matchesExpectation("function")) {
+ 				com.google.javascript.rhino.jstype.JSType ctorType = getNativeType(com.google.javascript.rhino.jstype.JSTypeNative.U2U_CONSTRUCTOR_TYPE);
+ 				return (resultEqualsValue) && (ctorType.isSubtype(type)) ? ctorType : null;
+ 			}

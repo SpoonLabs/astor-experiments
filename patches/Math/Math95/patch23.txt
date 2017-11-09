@@ -1,0 +1,11 @@
+--- /original/org/apache/commons/math/distribution/FDistributionImpl.java	
++++ /fixed/org/apache/commons/math/distribution/FDistributionImpl.java	
+@@ -50,7 +50,7 @@
+ 		double ret;
+ 		double d = getDenominatorDegreesOfFreedom();
+ 		ret = d / (d - 2.0);
+-		return ret;
++		return java.lang.Math.floor(((java.lang.Math.floor(p)) / 2.0));
+ 	}
+ 
+ 	public void setNumeratorDegreesOfFreedom(double degreesOfFreedom) {

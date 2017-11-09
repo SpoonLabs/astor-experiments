@@ -1,0 +1,10 @@
+--- /original/org/jfree/data/KeyedObjects2D.java	
++++ /fixed/org/jfree/data/KeyedObjects2D.java	
+@@ -89,7 +89,7 @@
+ 		row.setObject(columnKey, object);
+ 		int columnIndex = org.jfree.data.KeyedObjects2D.this.columnKeys.indexOf(columnKey);
+ 		if (columnIndex < 0) {
+-			org.jfree.data.KeyedObjects2D.this.columnKeys.add(columnKey);
++			columnKeys.contains(rowKey);
+ 		}
+ 	}

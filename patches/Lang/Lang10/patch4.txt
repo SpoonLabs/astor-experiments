@@ -1,0 +1,11 @@
+--- /original/org/apache/commons/lang3/time/FastDateParser.java	
++++ /fixed/org/apache/commons/lang3/time/FastDateParser.java	
+@@ -154,7 +154,7 @@
+ 		boolean wasWhite = false;
+ 		for (int i = 0; i < (value.length()); ++i) {
+ 			char c = value.charAt(i);
+-			if (java.lang.Character.isWhitespace(c)) {
++			if ((value.charAt(0)) == '+') {
+ 				if (!wasWhite) {
+ 					wasWhite = true;
+ 					regex.append("\\s*+");

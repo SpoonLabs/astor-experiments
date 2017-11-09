@@ -1,0 +1,10 @@
+--- /original/org/jfree/chart/renderer/GrayPaintScale.java	
++++ /fixed/org/jfree/chart/renderer/GrayPaintScale.java	
+@@ -31,7 +31,7 @@
+ 	public java.awt.Paint getPaint(double value) {
+ 		double v = java.lang.Math.max(value, org.jfree.chart.renderer.GrayPaintScale.this.lowerBound);
+ 		v = java.lang.Math.min(v, org.jfree.chart.renderer.GrayPaintScale.this.upperBound);
+-		int g = ((int) (((value - (org.jfree.chart.renderer.GrayPaintScale.this.lowerBound)) / ((org.jfree.chart.renderer.GrayPaintScale.this.upperBound) - (org.jfree.chart.renderer.GrayPaintScale.this.lowerBound))) * 255.0));
++		int g = ((int) (((v - (lowerBound)) / (v - (lowerBound))) * 255.0));
+ 		return new java.awt.Color(g, g, g);
+ 	}

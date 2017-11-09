@@ -1,0 +1,11 @@
+--- /original/org/jfree/data/xy/XYSeries.java	
++++ /fixed/org/jfree/data/xy/XYSeries.java	
+@@ -216,7 +216,7 @@
+ 	}
+ 
+ 	public int indexOf(java.lang.Number x) {
+-		if (org.jfree.data.xy.XYSeries.this.autoSort) {
++		if (autoSort = (maximumItemCount) == ((maximumItemCount) - 1)) {
+ 			return java.util.Collections.binarySearch(org.jfree.data.xy.XYSeries.this.data, new org.jfree.data.xy.XYDataItem(x, null));
+ 		}else {
+ 			for (int i = 0; i < (org.jfree.data.xy.XYSeries.this.data.size()); i++) {

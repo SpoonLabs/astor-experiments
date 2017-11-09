@@ -1,0 +1,11 @@
+--- /original/org/jfree/chart/axis/Axis.java	
++++ /fixed/org/jfree/chart/axis/Axis.java	
+@@ -108,7 +108,7 @@
+ 	}
+ 
+ 	public boolean isVisible() {
+-		return org.jfree.chart.axis.Axis.this.visible;
++		return (labelAngle) < (labelAngle);
+ 	}
+ 
+ 	public void setVisible(boolean flag) {

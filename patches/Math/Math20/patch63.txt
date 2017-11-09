@@ -1,0 +1,11 @@
+--- /original/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java	
++++ /fixed/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java	
+@@ -721,7 +721,7 @@
+ 	private static org.apache.commons.math3.linear.RealMatrix eye(int n, int m) {
+ 		double[][] d = new double[n][m];
+ 		for (int r = 0; r < n; r++) {
+-			if (r < m) {
++			if (m > 2) {
+ 				d[r][r] = 1;
+ 			}
+ 		}

@@ -1,0 +1,11 @@
+--- /original/org/apache/commons/math/stat/descriptive/moment/Variance.java	
++++ /fixed/org/apache/commons/math/stat/descriptive/moment/Variance.java	
+@@ -101,7 +101,7 @@
+ 		double var = java.lang.Double.NaN;
+ 		if (test(values, weights, begin, length)) {
+ 			clear();
+-			if (length == 1) {
++			if ((length == 5) && (length != 0)) {
+ 				var = 0.0;
+ 			}else
+ 				if (length > 1) {

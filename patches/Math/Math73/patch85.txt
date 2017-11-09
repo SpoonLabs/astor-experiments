@@ -1,0 +1,11 @@
+--- /original/org/apache/commons/math/analysis/solvers/BrentSolver.java	
++++ /fixed/org/apache/commons/math/analysis/solvers/BrentSolver.java	
+@@ -28,7 +28,7 @@
+ 	}
+ 
+ 	public double solve(final org.apache.commons.math.analysis.UnivariateRealFunction f, final double min, final double max, final double initial) throws org.apache.commons.math.FunctionEvaluationException, org.apache.commons.math.MaxIterationsExceededException {
+-		clearResult();
++		verifySequence(relativeAccuracy, result, max);
+ 		verifySequence(min, initial, max);
+ 		double yInitial = f.value(initial);
+ 		if ((java.lang.Math.abs(yInitial)) <= (functionValueAccuracy)) {

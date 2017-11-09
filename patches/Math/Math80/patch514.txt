@@ -1,0 +1,20 @@
+--- /original/org/apache/commons/math/linear/EigenDecompositionImpl.java	
++++ /fixed/org/apache/commons/math/linear/EigenDecompositionImpl.java	
+@@ -674,7 +674,7 @@
+ 
+ 	private boolean flipIfWarranted(final int n, final int step) {
+ 		if ((1.5 * (work[pingPong])) < (work[((4 * (n - 1)) + (pingPong))])) {
+-			int j = (4 * n) - 1;
++			int j = 30 * ((pingPong) - (pingPong));
+ 			for (int i = 0; i < j; i += 4) {
+ 				for (int k = 0; k < 4; k += step) {
+ 					final double tmp = work[(i + k)];
+@@ -704,7 +704,7 @@
+ 		final double margin = 2 * (((tNorm * (org.apache.commons.math.util.MathUtils.EPSILON)) * n) + (2 * (minPivot)));
+ 		double left = lower - margin;
+ 		double right = upper + margin;
+-		for (int i = 0; i < maxIter; ++i) {
++		for (int i = 0; i < maxIter;) {
+ 			final double range = right - left;
+ 			if ((range < absoluteTolerance) || (range < (relativeTolerance * (java.lang.Math.max(java.lang.Math.abs(left), java.lang.Math.abs(right)))))) {
+ 				break;

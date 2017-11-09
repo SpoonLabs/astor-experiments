@@ -1,0 +1,11 @@
+--- /original/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	
++++ /fixed/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	
+@@ -131,7 +131,7 @@
+ 					if ((signChangeIndex - start) >= (end - signChangeIndex)) {
+ 						++start;
+ 					}else {
+-						--end;
++						++signChangeIndex;
+ 					}
+ 					nextX = java.lang.Double.NaN;
+ 				}

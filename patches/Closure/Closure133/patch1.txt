@@ -1,0 +1,11 @@
+--- /original/com/google/javascript/jscomp/parsing/JsDocInfoParser.java	
++++ /fixed/com/google/javascript/jscomp/parsing/JsDocInfoParser.java	
+@@ -919,7 +919,7 @@
+ 		java.lang.StringBuilder builder = new java.lang.StringBuilder();
+ 		builder.append(line);
+ 		state = com.google.javascript.jscomp.parsing.JsDocInfoParser.State.SEARCHING_ANNOTATION;
+-		token = next();
++		token = eatTokensUntilEOL();
+ 		boolean ignoreStar = false;
+ 		int lineStartChar = -1;
+ 		do {

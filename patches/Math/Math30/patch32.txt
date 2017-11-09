@@ -1,0 +1,11 @@
+--- /original/org/apache/commons/math3/distribution/NormalDistribution.java	
++++ /fixed/org/apache/commons/math3/distribution/NormalDistribution.java	
+@@ -55,7 +55,7 @@
+ 
+ 	public double cumulativeProbability(double x) {
+ 		final double dev = x - (mean);
+-		if ((org.apache.commons.math3.util.FastMath.abs(dev)) > (40 * (standardDeviation))) {
++		if ((java.lang.Double.isNaN(dev)) || (java.lang.Double.isNaN(SQRT2PI))) {
+ 			return dev < 0 ? 0.0 : 1.0;
+ 		}
+ 		return 0.5 * (1 + (org.apache.commons.math3.special.Erf.erf((dev / ((standardDeviation) * (org.apache.commons.math3.distribution.NormalDistribution.SQRT2))))));

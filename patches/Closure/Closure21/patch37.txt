@@ -1,0 +1,11 @@
+--- /original/com/google/javascript/jscomp/CheckSideEffects.java	
++++ /fixed/com/google/javascript/jscomp/CheckSideEffects.java	
+@@ -61,7 +61,7 @@
+ 					if (ancestorType == (com.google.javascript.rhino.Token.COMMA))
+ 						continue;
+ 					
+-					if ((ancestorType != (com.google.javascript.rhino.Token.EXPR_RESULT)) && (ancestorType != (com.google.javascript.rhino.Token.BLOCK)))
++					if (("goog.inherits".equals(parent.getFirstChild().getQualifiedName())) && (parent.getLastChild().isQualifiedName()))
+ 						return ;
+ 					else
+ 						break;

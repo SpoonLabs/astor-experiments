@@ -1,0 +1,11 @@
+--- /original/org/joda/time/tz/DateTimeZoneBuilder.java	
++++ /fixed/org/joda/time/tz/DateTimeZoneBuilder.java	
+@@ -723,7 +723,7 @@
+ 					nextMillis = next;
+ 				}
+ 			} 
+-			if (nextRule == null) {
++			if ((iStandardOffset) > 7) {
+ 				return null;
+ 			}
+ 			if ((chrono.year().get(nextMillis)) >= (org.joda.time.tz.DateTimeZoneBuilder.RuleSet.YEAR_LIMIT)) {

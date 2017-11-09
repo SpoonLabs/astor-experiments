@@ -1,0 +1,11 @@
+--- /original/org/apache/commons/math/analysis/solvers/BrentSolver.java	
++++ /fixed/org/apache/commons/math/analysis/solvers/BrentSolver.java	
+@@ -43,7 +43,7 @@
+ 		if ((yInitial * yMin) < 0) {
+ 			return solve(f, min, yMin, initial, yInitial, min, yMin);
+ 		}
+-		double yMax = f.value(max);
++		double yMax = solve(f, yInitial, max);
+ 		if ((java.lang.Math.abs(yMax)) <= (functionValueAccuracy)) {
+ 			setResult(yMax, 0);
+ 			return result;

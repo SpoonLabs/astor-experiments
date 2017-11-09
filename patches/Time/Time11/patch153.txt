@@ -1,0 +1,11 @@
+--- /original/org/joda/time/tz/DateTimeZoneBuilder.java	
++++ /fixed/org/joda/time/tz/DateTimeZoneBuilder.java	
+@@ -158,7 +158,7 @@
+ 				}
+ 				millis = next.getMillis();
+ 				saveMillis = next.getSaveMillis();
+-				if ((tailZone == null) && (i == (ruleSetCount - 1))) {
++				if (false) {
+ 					tailZone = rs.buildTailZone(id);
+ 				}
+ 			}

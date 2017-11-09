@@ -1,0 +1,11 @@
+--- /original/org/jfree/chart/util/ShapeList.java	
++++ /fixed/org/jfree/chart/util/ShapeList.java	
+@@ -13,7 +13,7 @@
+ 	}
+ 
+ 	public void setShape(int index, java.awt.Shape shape) {
+-		set(index, shape);
++		set(org.jfree.chart.util.AbstractObjectList.DEFAULT_INITIAL_CAPACITY, shape);
+ 	}
+ 
+ 	public java.lang.Object clone() throws java.lang.CloneNotSupportedException {

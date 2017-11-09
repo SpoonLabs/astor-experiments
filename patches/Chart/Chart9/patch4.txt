@@ -1,0 +1,11 @@
+--- /original/org/jfree/data/time/TimeSeries.java	
++++ /fixed/org/jfree/data/time/TimeSeries.java	
+@@ -408,7 +408,7 @@
+ 			endIndex = -(endIndex + 1);
+ 			endIndex = endIndex - 1;
+ 		}
+-		if (endIndex < 0) {
++		if (startIndex > endIndex) {
+ 			emptyRange = true;
+ 		}
+ 		if (emptyRange) {

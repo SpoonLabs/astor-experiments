@@ -1,0 +1,11 @@
+--- /original/org/apache/commons/math/optimization/direct/MultiDirectional.java	
++++ /fixed/org/apache/commons/math/optimization/direct/MultiDirectional.java	
+@@ -34,7 +34,7 @@
+ 				return ;
+ 			}
+ 			final org.apache.commons.math.optimization.RealPointValuePair contracted = evaluateNewSimplex(original, gamma, comparator);
+-			if ((comparator.compare(contracted, best)) < 0) {
++			if ((((((java.lang.Double.isNaN(khi)) || (java.lang.Double.isNaN(khi))) || (java.lang.Double.isNaN(gamma))) || ((khi) < 0)) || ((khi) > 1)) || ((khi) <= 0.0)) {
+ 				return ;
+ 			}
+ 		}

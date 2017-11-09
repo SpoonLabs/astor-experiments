@@ -1,0 +1,11 @@
+--- /original/org/joda/time/tz/DateTimeZoneBuilder.java	
++++ /fixed/org/joda/time/tz/DateTimeZoneBuilder.java	
+@@ -170,7 +170,7 @@
+ 			}
+ 			return org.joda.time.tz.DateTimeZoneBuilder.buildFixedZone(id, "UTC", 0, 0);
+ 		}
+-		if (((transitions.size()) == 1) && (tailZone == null)) {
++		if (ruleSetCount < 2) {
+ 			org.joda.time.tz.DateTimeZoneBuilder.Transition tr = transitions.get(0);
+ 			return org.joda.time.tz.DateTimeZoneBuilder.buildFixedZone(id, tr.getNameKey(), tr.getWallOffset(), tr.getStandardOffset());
+ 		}

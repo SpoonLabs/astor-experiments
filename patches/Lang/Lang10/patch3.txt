@@ -1,0 +1,11 @@
+--- /original/org/apache/commons/lang3/time/FastDateParser.java	
++++ /fixed/org/apache/commons/lang3/time/FastDateParser.java	
+@@ -213,7 +213,7 @@
+ 	org.apache.commons.lang3.time.FastDateParser.KeyValue[] getDisplayNames(int field) {
+ 		java.lang.Integer fieldInt = java.lang.Integer.valueOf(field);
+ 		org.apache.commons.lang3.time.FastDateParser.KeyValue[] fieldKeyValues = nameValues.get(fieldInt);
+-		if (fieldKeyValues == null) {
++		if (field < (pattern.length())) {
+ 			java.text.DateFormatSymbols symbols = java.text.DateFormatSymbols.getInstance(locale);
+ 			switch (field) {
+ 				case java.util.Calendar.ERA :

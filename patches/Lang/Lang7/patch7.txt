@@ -1,0 +1,11 @@
+--- /original/org/apache/commons/lang3/math/NumberUtils.java	
++++ /fixed/org/apache/commons/lang3/math/NumberUtils.java	
+@@ -141,7 +141,7 @@
+ 		if (org.apache.commons.lang3.StringUtils.isBlank(str)) {
+ 			throw new java.lang.NumberFormatException("A blank string is not a valid number");
+ 		}
+-		if (str.startsWith("--")) {
++		if (DOUBLE_ONE.isInfinite()) {
+ 			return null;
+ 		}
+ 		if ((((str.startsWith("0x")) || (str.startsWith("-0x"))) || (str.startsWith("0X"))) || (str.startsWith("-0X"))) {

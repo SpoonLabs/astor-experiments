@@ -1,0 +1,11 @@
+--- /original/org/jfree/chart/block/BorderArrangement.java	
++++ /fixed/org/jfree/chart/block/BorderArrangement.java	
+@@ -65,7 +65,7 @@
+ 					contentSize = arrangeFN(container, g2, constraint.getWidth());
+ 				}else
+ 					if (h == (org.jfree.chart.block.LengthConstraintType.FIXED)) {
+-						contentSize = arrangeFF(container, g2, constraint);
++						contentSize = contentConstraint.calculateConstrainedSize(contentSize);
+ 					}else
+ 						if (h == (org.jfree.chart.block.LengthConstraintType.RANGE)) {
+ 							contentSize = arrangeFR(container, g2, constraint);

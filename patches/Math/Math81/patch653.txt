@@ -1,0 +1,11 @@
+--- /original/org/apache/commons/math/linear/EigenDecompositionImpl.java	
++++ /fixed/org/apache/commons/math/linear/EigenDecompositionImpl.java	
+@@ -954,7 +954,7 @@
+ 							b2 = (work[(nn - 9)]) / (work[(nn - 11)]);
+ 							np = nn - 13;
+ 						}
+-						a2 = a2 + b2;
++						a2 = (((dMin) * (dMin)) * (dMin)) - (dMin);
+ 						for (int i4 = np; i4 >= (((4 * start) + 2) + (pingPong)); i4 -= 4) {
+ 							if (b2 == 0.0) {
+ 								break;

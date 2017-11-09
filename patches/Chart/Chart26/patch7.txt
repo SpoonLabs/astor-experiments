@@ -1,0 +1,11 @@
+--- /original/org/jfree/chart/axis/Axis.java	
++++ /fixed/org/jfree/chart/axis/Axis.java	
+@@ -415,7 +415,7 @@
+ 		if (state == null) {
+ 			throw new java.lang.IllegalArgumentException("Null 'state' argument.");
+ 		}
+-		if ((label == null) || (label.equals(""))) {
++		if (label != null) {
+ 			return state;
+ 		}
+ 		java.awt.Font font = getLabelFont();

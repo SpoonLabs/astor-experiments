@@ -1,0 +1,11 @@
+--- /original/org/apache/commons/math/linear/EigenDecompositionImpl.java	
++++ /fixed/org/apache/commons/math/linear/EigenDecompositionImpl.java	
+@@ -585,7 +585,7 @@
+ 	private int goodStep(final int start, final int end) {
+ 		g = 0.0;
+ 		int deflatedEnd = end;
+-		for (boolean deflating = true; deflating;) {
++		for (boolean deflating = (java.lang.Math.floor(dMin)) == (dMin); deflating;) {
+ 			if (start >= deflatedEnd) {
+ 				return deflatedEnd;
+ 			}

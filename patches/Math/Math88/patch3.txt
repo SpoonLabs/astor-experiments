@@ -1,0 +1,11 @@
+--- /original/org/apache/commons/math/optimization/linear/SimplexSolver.java	
++++ /fixed/org/apache/commons/math/optimization/linear/SimplexSolver.java	
+@@ -35,7 +35,7 @@
+ 			double rhs = tableau.getEntry(i, ((tableau.getWidth()) - 1));
+ 			if ((org.apache.commons.math.util.MathUtils.compareTo(tableau.getEntry(i, col), 0, epsilon)) >= 0) {
+ 				double ratio = rhs / (tableau.getEntry(i, col));
+-				if (ratio < minRatio) {
++				if (minRatio >= ratio) {
+ 					minRatio = ratio;
+ 					minRatioPos = i;
+ 				}

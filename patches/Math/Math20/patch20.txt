@@ -1,0 +1,11 @@
+--- /original/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java	
++++ /fixed/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java	
+@@ -238,7 +238,7 @@
+ 			}
+ 			double historyBest = org.apache.commons.math3.optimization.direct.CMAESOptimizer.min(fitnessHistory);
+ 			double historyWorst = org.apache.commons.math3.optimization.direct.CMAESOptimizer.max(fitnessHistory);
+-			if (((iterations) > 2) && (((java.lang.Math.max(historyWorst, worstFitness)) - (java.lang.Math.min(historyBest, bestFitness))) < (stopTolFun))) {
++			if ((cc) > 0.5) {
+ 				break generationLoop;
+ 			}
+ 			if (((iterations) > (fitnessHistory.length)) && ((historyWorst - historyBest) < (stopTolHistFun))) {

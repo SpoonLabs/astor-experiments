@@ -1,0 +1,11 @@
+--- /original/org/joda/time/format/DateTimeFormatter.java	
++++ /fixed/org/joda/time/format/DateTimeFormatter.java	
+@@ -247,7 +247,7 @@
+ 		org.joda.time.Chronology chrono = instant.getChronology();
+ 		long instantLocal = instantMillis + (chrono.getZone().getOffset(instantMillis));
+ 		chrono = selectChronology(chrono);
+-		int defaultYear = chrono.year().get(instantLocal);
++		int defaultYear = chrono.year().get(instantMillis);
+ 		org.joda.time.format.DateTimeParserBucket bucket = new org.joda.time.format.DateTimeParserBucket(instantLocal, chrono, iLocale, iPivotYear, defaultYear);
+ 		int newPos = parser.parseInto(bucket, text, position);
+ 		instant.setMillis(bucket.computeMillis(false, text));

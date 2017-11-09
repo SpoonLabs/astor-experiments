@@ -3,7 +3,6 @@
 ## Open-science repo for Cardumen patches.
 
 
-
 ### Repaired bugs from [Defects4J dataset](https://github.com/rjust/defects4j)
 | BugId | Number Patches |
 | ------- | ---------------- |
@@ -84,6 +83,7 @@
 |[Time11 ](/patches/Time/Time11 )| 288 |
 |[Time17 ](/patches/Time/Time17 )| 14 |
 |[Time18 ](/patches/Time/Time18 )| 1 |
+|TOTAL|8935|
 
-%%%%%Total 8935										
+
 										

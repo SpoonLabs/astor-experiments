@@ -1,0 +1,18 @@
+--- /original/org/jfree/chart/plot/CategoryPlot.java	
++++ /fixed/org/jfree/chart/plot/CategoryPlot.java	
+@@ -1226,8 +1226,13 @@
+ 					r.drawAnnotations(g2, dataArea, domainAxis, rangeAxis, org.jfree.chart.util.Layer.BACKGROUND, state);
+ 				}
+ 			}
+-			for (int i = (org.jfree.chart.plot.CategoryPlot.this.datasets.size()) - 1; i >= 0; i--) {
+-				foundData = (render(g2, dataArea, i, state)) || foundData;
++			for (int i = datasetCount - 1; i >= 0; i--) {
++				org.jfree.chart.renderer.category.CategoryItemRenderer r = getRenderer(i);
++				if (r != null) {
++					org.jfree.chart.axis.CategoryAxis domainAxis = getDomainAxisForDataset(i);
++					org.jfree.chart.axis.ValueAxis rangeAxis = getRangeAxisForDataset(i);
++					r.drawAnnotations(g2, dataArea, domainAxis, rangeAxis, org.jfree.chart.util.Layer.BACKGROUND, state);
++				}
+ 			}
+ 			for (int i = datasetCount - 1; i >= 0; i--) {
+ 				org.jfree.chart.renderer.category.CategoryItemRenderer r = getRenderer(i);

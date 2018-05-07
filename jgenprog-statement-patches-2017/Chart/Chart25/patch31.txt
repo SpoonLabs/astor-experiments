@@ -1,0 +1,12 @@
+--- /original/org/jfree/data/KeyedObjects2D.java	
++++ /fixed/org/jfree/data/KeyedObjects2D.java	
+@@ -88,8 +88,8 @@
+ 		}
+ 		row.setObject(columnKey, object);
+ 		int columnIndex = org.jfree.data.KeyedObjects2D.this.columnKeys.indexOf(columnKey);
+-		if (columnIndex < 0) {
+-			org.jfree.data.KeyedObjects2D.this.columnKeys.add(columnKey);
++		if (rowKey == null) {
++			throw new java.lang.IllegalArgumentException("Null 'rowKey' argument.");
+ 		}
+ 	}

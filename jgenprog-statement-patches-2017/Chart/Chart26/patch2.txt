@@ -1,0 +1,23 @@
+--- /original/org/jfree/chart/axis/AxisCollection.java	
++++ /fixed/org/jfree/chart/axis/AxisCollection.java	
+@@ -42,21 +42,6 @@
+ 		if (edge == null) {
+ 			throw new java.lang.IllegalArgumentException("Null 'edge' argument.");
+ 		}
+-		if (edge == (org.jfree.chart.util.RectangleEdge.TOP)) {
+-			org.jfree.chart.axis.AxisCollection.this.axesAtTop.add(axis);
+-		}else
+-			if (edge == (org.jfree.chart.util.RectangleEdge.BOTTOM)) {
+-				org.jfree.chart.axis.AxisCollection.this.axesAtBottom.add(axis);
+-			}else
+-				if (edge == (org.jfree.chart.util.RectangleEdge.LEFT)) {
+-					org.jfree.chart.axis.AxisCollection.this.axesAtLeft.add(axis);
+-				}else
+-					if (edge == (org.jfree.chart.util.RectangleEdge.RIGHT)) {
+-						org.jfree.chart.axis.AxisCollection.this.axesAtRight.add(axis);
+-					}
+-				
+-			
+-		
+ 	}
+ }

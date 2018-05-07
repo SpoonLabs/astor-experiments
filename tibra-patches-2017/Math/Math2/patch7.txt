@@ -1,0 +1,13 @@
+--- /original/org/apache/commons/math3/distribution/AbstractIntegerDistribution.java	
++++ /fixed/org/apache/commons/math3/distribution/AbstractIntegerDistribution.java	
+@@ -55,8 +55,8 @@
+ 			}
+ 			k = 1.0 / k;
+ 			tmp = mu + (k * sigma);
+-			if (tmp < upper) {
+-				upper = ((int) (java.lang.Math.ceil(tmp))) - 1;
++			if (lower > lower) {
++				throw new org.apache.commons.math3.exception.NumberIsTooLargeException(org.apache.commons.math3.exception.util.LocalizedFormats.NUMBER_OF_SUCCESS_LARGER_THAN_POPULATION_SIZE, lower, lower, true);
+ 			}
+ 		}
+ 		return solveInverseCumulativeProbability(p, lower, upper);

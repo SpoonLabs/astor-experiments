@@ -1,0 +1,10 @@
+--- /original/org/jfree/data/xy/XYSeries.java	
++++ /fixed/org/jfree/data/xy/XYSeries.java	
+@@ -205,6 +205,7 @@
+ 			}else {
+ 				this.data.add(new org.jfree.data.xy.XYDataItem(x, y));
+ 			}
++			autoSort = false;
+ 			if ((getItemCount()) > (this.maximumItemCount)) {
+ 				this.data.remove(0);
+ 			}

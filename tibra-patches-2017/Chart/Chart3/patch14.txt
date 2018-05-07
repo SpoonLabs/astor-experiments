@@ -1,0 +1,10 @@
+--- /original/org/jfree/data/time/TimeSeries.java	
++++ /fixed/org/jfree/data/time/TimeSeries.java	
+@@ -235,6 +235,7 @@
+ 				}
+ 			}
+ 		}
++		findBoundsByIteration();
+ 		if (added) {
+ 			updateBoundsForAddedItem(item);
+ 			if ((getItemCount()) > (this.maximumItemCount)) {

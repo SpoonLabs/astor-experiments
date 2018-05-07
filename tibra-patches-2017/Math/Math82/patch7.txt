@@ -1,0 +1,24 @@
+--- /original/org/apache/commons/math/optimization/linear/SimplexSolver.java	
++++ /fixed/org/apache/commons/math/optimization/linear/SimplexSolver.java	
+@@ -18,10 +18,9 @@
+ 		double minValue = 0;
+ 		java.lang.Integer minPos = null;
+ 		for (int i = tableau.getNumObjectiveFunctions(); i < ((tableau.getWidth()) - 1); i++) {
+-			if ((org.apache.commons.math.util.MathUtils.compareTo(tableau.getEntry(0, i), minValue, epsilon)) < 0) {
+-				minValue = tableau.getEntry(0, i);
++			if ((org.apache.commons.math.util.MathUtils.compareTo(tableau.getEntry(0, i), minValue, epsilon)) < 0)
+ 				minPos = i;
+-			}
++
+ 		}
+ 		return minPos;
+ 	}
+@@ -98,7 +97,7 @@
+ 
+ 	@java.lang.Override
+ 	public org.apache.commons.math.optimization.RealPointValuePair doOptimize() throws org.apache.commons.math.optimization.OptimizationException {
+-		final org.apache.commons.math.optimization.linear.SimplexTableau tableau = new org.apache.commons.math.optimization.linear.SimplexTableau(f, constraints, goalType, restrictToNonNegative, epsilon);
++		final org.apache.commons.math.optimization.linear.SimplexTableau tableau = new org.apache.commons.math.optimization.linear.SimplexTableau(f, this.constraints, goalType, restrictToNonNegative, epsilon);
+ 		solvePhase1(tableau);
+ 		tableau.discardArtificialVariables();
+ 		while (!(isOptimal(tableau))) {

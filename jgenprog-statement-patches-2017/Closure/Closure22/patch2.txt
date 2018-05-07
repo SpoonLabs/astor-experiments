@@ -1,0 +1,14 @@
+--- /original/com/google/javascript/jscomp/CheckSideEffects.java	
++++ /fixed/com/google/javascript/jscomp/CheckSideEffects.java	
+@@ -56,9 +56,8 @@
+ 					if (ancestorType == (com.google.javascript.rhino.Token.COMMA))
+ 						continue;
+ 					
+-					if ((ancestorType != (com.google.javascript.rhino.Token.EXPR_RESULT)) && (ancestorType != (com.google.javascript.rhino.Token.BLOCK)))
+-						return ;
+-					else
++					if ((ancestorType != (com.google.javascript.rhino.Token.EXPR_RESULT)) && (ancestorType != (com.google.javascript.rhino.Token.BLOCK))) {
++					}else
+ 						break;
+ 					
+ 				}

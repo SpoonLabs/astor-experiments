@@ -1,0 +1,10 @@
+--- /original/org/jfree/chart/plot/CategoryPlot.java	
++++ /fixed/org/jfree/chart/plot/CategoryPlot.java	
+@@ -1341,7 +1341,6 @@
+ 					for (int column = 0; column < columnCount; column++) {
+ 						if ((org.jfree.chart.plot.CategoryPlot.this.rowRenderingOrder) == (org.jfree.chart.util.SortOrder.ASCENDING)) {
+ 							for (int row = 0; row < rowCount; row++) {
+-								renderer.drawItem(g2, state, dataArea, org.jfree.chart.plot.CategoryPlot.this, domainAxis, rangeAxis, currentDataset, row, column, pass);
+ 							}
+ 						}else {
+ 							for (int row = rowCount - 1; row >= 0; row--) {

@@ -1,0 +1,10 @@
+--- /original/org/jfree/chart/block/BorderArrangement.java	
++++ /fixed/org/jfree/chart/block/BorderArrangement.java	
+@@ -173,6 +173,7 @@
+ 			w[2] = size.width;
+ 			h[2] = size.height;
+ 		}
++		org.jfree.chart.block.BorderArrangement.this.leftBlock = null;
+ 		if ((org.jfree.chart.block.BorderArrangement.this.rightBlock) != null) {
+ 			double maxW = java.lang.Math.max((width - (w[2])), 0.0);
+ 			org.jfree.chart.block.RectangleConstraint c3 = new org.jfree.chart.block.RectangleConstraint(0.0, new org.jfree.data.Range(java.lang.Math.min(w[2], maxW), maxW), org.jfree.chart.block.LengthConstraintType.RANGE, 0.0, null, org.jfree.chart.block.LengthConstraintType.NONE);

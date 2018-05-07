@@ -1,0 +1,9 @@
+--- /original/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java	
++++ /fixed/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java	
+@@ -552,6 +552,7 @@
+ 				C = C.scalarMultiply(oldFac).add(roneu).add(arpos.scalarMultiply(ccovmu).multiply(org.apache.commons.math3.optimization.direct.CMAESOptimizer.times(org.apache.commons.math3.optimization.direct.CMAESOptimizer.repmat(weights, 1, dimension), arpos.transpose())));
+ 			}
+ 		}
++		++(checkFeasableCount);
+ 		updateBD(negccov);
+ 	}

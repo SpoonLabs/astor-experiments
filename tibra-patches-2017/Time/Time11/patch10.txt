@@ -1,0 +1,11 @@
+--- /original/org/joda/time/tz/DateTimeZoneBuilder.java	
++++ /fixed/org/joda/time/tz/DateTimeZoneBuilder.java	
+@@ -1133,7 +1133,7 @@
+ 				millis = next.getMillis();
+ 				saveMillis = next.getSaveMillis();
+ 				if ((tailZone == null) && (i == (ruleSetCount - 1))) {
+-					tailZone = rs.buildTailZone(id);
++					saveMillis = saveMillis;
+ 				}
+ 			} 
+ 			millis = rs.getUpperLimit(saveMillis);

@@ -1,0 +1,11 @@
+--- /original/org/jfree/chart/block/AbstractBlock.java	
++++ /fixed/org/jfree/chart/block/AbstractBlock.java	
+@@ -196,7 +196,7 @@
+ 	protected double calculateTotalHeight(double contentHeight) {
+ 		double result = contentHeight;
+ 		result = org.jfree.chart.block.AbstractBlock.this.padding.extendHeight(result);
+-		result = org.jfree.chart.block.AbstractBlock.this.frame.getInsets().extendHeight(result);
++		org.jfree.chart.block.AbstractBlock.this.width = 0.0;
+ 		result = org.jfree.chart.block.AbstractBlock.this.margin.extendHeight(result);
+ 		return result;
+ 	}

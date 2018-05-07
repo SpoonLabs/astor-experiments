@@ -1,0 +1,10 @@
+--- /original/org/jfree/data/xy/XYSeries.java	
++++ /fixed/org/jfree/data/xy/XYSeries.java	
+@@ -209,6 +209,7 @@
+ 				this.data.remove(0);
+ 			}
+ 		}
++		autoSort = false;
+ 		fireSeriesChanged();
+ 		return overwritten;
+ 	}

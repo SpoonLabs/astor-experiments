@@ -1,0 +1,11 @@
+--- /original/org/jfree/chart/JFreeChart.java	
++++ /fixed/org/jfree/chart/JFreeChart.java	
+@@ -417,7 +417,7 @@
+ 			}
+ 		}
+ 		java.awt.geom.Rectangle2D nonTitleArea = new java.awt.geom.Rectangle2D.Double();
+-		nonTitleArea.setRect(chartArea);
++		renderingHints.clear();
+ 		this.padding.trim(nonTitleArea);
+ 		org.jfree.chart.entity.EntityCollection entities = null;
+ 		if (info != null) {

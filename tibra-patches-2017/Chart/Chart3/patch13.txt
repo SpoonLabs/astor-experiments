@@ -1,0 +1,22 @@
+--- /original/org/jfree/data/time/TimeSeries.java	
++++ /fixed/org/jfree/data/time/TimeSeries.java	
+@@ -197,15 +197,10 @@
+ 		if ((this.timePeriodClass) == null) {
+ 			this.timePeriodClass = c;
+ 		}else
+-			if (!(this.timePeriodClass.equals(c))) {
+-				java.lang.StringBuffer b = new java.lang.StringBuffer();
+-				b.append("You are trying to add data where the time period class ");
+-				b.append("is ");
+-				b.append(item.getPeriod().getClass().getName());
+-				b.append(", but the TimeSeries is expecting an instance of ");
+-				b.append(this.timePeriodClass.getName());
+-				b.append(".");
+-				throw new org.jfree.data.general.SeriesException(b.toString());
++			if (!(java.lang.Double.isNaN(maxY))) {
++				if (((maxY) <= (this.minY)) || ((maxY) >= (this.maxY))) {
++					findBoundsByIteration();
++				}
+ 			}
+ 
+ 		boolean added = false;

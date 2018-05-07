@@ -1,0 +1,10 @@
+--- /original/org/jfree/data/time/TimeSeries.java	
++++ /fixed/org/jfree/data/time/TimeSeries.java	
+@@ -243,6 +243,7 @@
+ 				org.jfree.data.time.TimeSeriesDataItem d = ((org.jfree.data.time.TimeSeriesDataItem) (org.jfree.data.time.TimeSeries.this.data.remove(0)));
+ 				updateBoundsForRemovedItem(d);
+ 			}
++			org.jfree.data.time.TimeSeriesDataItem oldItem = addOrUpdate(item.getPeriod(), item.getValue());
+ 			removeAgedItems(false);
+ 			if (notify) {
+ 				fireSeriesChanged();

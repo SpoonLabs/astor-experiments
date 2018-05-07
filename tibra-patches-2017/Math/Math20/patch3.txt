@@ -1,0 +1,39 @@
+--- /original/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java	
++++ /fixed/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java	
+@@ -49,10 +49,6 @@
+ 				return x;
+ 			}
+ 			double[] res = new double[x.length];
+-			for (int i = 0; i < (x.length); i++) {
+-				double diff = (boundaries[1][i]) - (boundaries[0][i]);
+-				res[i] = ((x[i]) - (boundaries[0][i])) / diff;
+-			}
+ 			return res;
+ 		}
+ 
+@@ -526,7 +522,7 @@
+ 			double oldFac = (hsig) ? 0 : ((ccov1) * (cc)) * (2.0 - (cc));
+ 			oldFac += (1.0 - (ccov1)) - (ccovmu);
+ 			if (isActiveCMA) {
+-				negccov = (((1.0 - (ccovmu)) * 0.25) * (mueff)) / ((java.lang.Math.pow(((dimension) + 2.0), 1.5)) + (2.0 * (mueff)));
++				negccov = (((1.0 - (ccovmu)) * 0.25) * (mueff)) / ((java.lang.Math.pow(((this.dimension) + 2.0), 1.5)) + (2.0 * (mueff)));
+ 				double negminresidualvariance = 0.66;
+ 				double negalphaold = 0.5;
+ 				int[] arReverseIndex = org.apache.commons.math3.optimization.direct.CMAESOptimizer.reverse(arindex);
+@@ -543,13 +539,13 @@
+ 				if (negccov > negcovMax) {
+ 					negccov = negcovMax;
+ 				}
+-				arzneg = org.apache.commons.math3.optimization.direct.CMAESOptimizer.times(arzneg, org.apache.commons.math3.optimization.direct.CMAESOptimizer.repmat(arnormsInv, dimension, 1));
++				arzneg = org.apache.commons.math3.optimization.direct.CMAESOptimizer.times(arzneg, org.apache.commons.math3.optimization.direct.CMAESOptimizer.repmat(arnormsInv, this.dimension, 1));
+ 				org.apache.commons.math3.linear.RealMatrix artmp = BD.multiply(arzneg);
+ 				org.apache.commons.math3.linear.RealMatrix Cneg = artmp.multiply(org.apache.commons.math3.optimization.direct.CMAESOptimizer.diag(weights)).multiply(artmp.transpose());
+ 				oldFac += negalphaold * negccov;
+-				C = C.scalarMultiply(oldFac).add(roneu).add(arpos.scalarMultiply(((ccovmu) + ((1.0 - negalphaold) * negccov))).multiply(org.apache.commons.math3.optimization.direct.CMAESOptimizer.times(org.apache.commons.math3.optimization.direct.CMAESOptimizer.repmat(weights, 1, dimension), arpos.transpose()))).subtract(Cneg.scalarMultiply(negccov));
++				C = C.scalarMultiply(oldFac).add(roneu).add(arpos.scalarMultiply(((ccovmu) + ((1.0 - negalphaold) * negccov))).multiply(org.apache.commons.math3.optimization.direct.CMAESOptimizer.times(org.apache.commons.math3.optimization.direct.CMAESOptimizer.repmat(weights, 1, this.dimension), arpos.transpose()))).subtract(Cneg.scalarMultiply(negccov));
+ 			}else {
+-				C = C.scalarMultiply(oldFac).add(roneu).add(arpos.scalarMultiply(ccovmu).multiply(org.apache.commons.math3.optimization.direct.CMAESOptimizer.times(org.apache.commons.math3.optimization.direct.CMAESOptimizer.repmat(weights, 1, dimension), arpos.transpose())));
++				C = C.scalarMultiply(oldFac).add(roneu).add(arpos.scalarMultiply(ccovmu).multiply(org.apache.commons.math3.optimization.direct.CMAESOptimizer.times(org.apache.commons.math3.optimization.direct.CMAESOptimizer.repmat(weights, 1, this.dimension), arpos.transpose())));
+ 			}
+ 		}
+ 		updateBD(negccov);

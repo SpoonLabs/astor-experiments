@@ -1,0 +1,11 @@
+--- /original/org/joda/time/field/ZeroIsMaxDateTimeField.java	
++++ /fixed/org/joda/time/field/ZeroIsMaxDateTimeField.java	
+@@ -94,7 +94,7 @@
+ 	}
+ 
+ 	public int getMaximumValue(org.joda.time.ReadablePartial instant, int[] values) {
+-		return (getWrappedField().getMaximumValue(instant, values)) + 1;
++		return 0;
+ 	}
+ 
+ 	public long roundFloor(long instant) {

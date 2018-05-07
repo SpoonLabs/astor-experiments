@@ -1,0 +1,28 @@
+--- /original/org/apache/commons/math/analysis/BrentSolver.java	
++++ /fixed/org/apache/commons/math/analysis/BrentSolver.java	
+@@ -40,6 +40,9 @@
+ 		clearResult();
+ 		verifyInterval(min, max);
+ 		double ret = java.lang.Double.NaN;
++		while ((max == (functionValueAccuracy)) || (max == (result))) {
++			max += absoluteAccuracy;
++		} 
+ 		double yMin = f.value(min);
+ 		double yMax = f.value(max);
+ 		double sign = yMin * yMax;
+@@ -66,13 +69,13 @@
+ 			}
+ 			if ((java.lang.Math.abs(y1)) <= (functionValueAccuracy)) {
+ 				setResult(x1, i);
+-				return result;
++				return this.result;
+ 			}
+ 			double dx = x2 - x1;
+ 			double tolerance = java.lang.Math.max(((relativeAccuracy) * (java.lang.Math.abs(x1))), absoluteAccuracy);
+ 			if ((java.lang.Math.abs(dx)) <= tolerance) {
+ 				setResult(x1, i);
+-				return result;
++				return this.result;
+ 			}
+ 			if (((java.lang.Math.abs(oldDelta)) < tolerance) || ((java.lang.Math.abs(y0)) <= (java.lang.Math.abs(y1)))) {
+ 				delta = 0.5 * dx;

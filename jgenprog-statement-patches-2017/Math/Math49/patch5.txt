@@ -1,0 +1,10 @@
+--- /original/org/apache/commons/math/util/OpenIntToDoubleHashMap.java	
++++ /fixed/org/apache/commons/math/util/OpenIntToDoubleHashMap.java	
+@@ -220,6 +220,7 @@
+ 	private double doRemove(int index) {
+ 		keys[index] = 0;
+ 		states[index] = org.apache.commons.math.util.OpenIntToDoubleHashMap.REMOVED;
++		int count = 0;
+ 		final double previous = values[index];
+ 		values[index] = missingEntries;
+ 		--(size);

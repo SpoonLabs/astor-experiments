@@ -1,0 +1,12 @@
+--- /original/org/apache/commons/lang3/math/NumberUtils.java	
++++ /fixed/org/apache/commons/lang3/math/NumberUtils.java	
+@@ -714,6 +714,9 @@
+ 			if ((!allowSigns) && (((((chars[i]) == 'd') || ((chars[i]) == 'D')) || ((chars[i]) == 'f')) || ((chars[i]) == 'F'))) {
+ 				return foundDigit;
+ 			}
++			if (hasDecPoint || hasExp) {
++				return false;
++			}
+ 			if (((chars[i]) == 'l') || ((chars[i]) == 'L')) {
+ 				return foundDigit && (!hasExp);
+ 			}

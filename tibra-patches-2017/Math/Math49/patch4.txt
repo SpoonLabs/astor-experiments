@@ -1,0 +1,10 @@
+--- /original/org/apache/commons/math/util/OpenIntToDoubleHashMap.java	
++++ /fixed/org/apache/commons/math/util/OpenIntToDoubleHashMap.java	
+@@ -278,7 +278,7 @@
+ 		final double previous = values[index];
+ 		values[index] = missingEntries;
+ 		--(size);
+-		++(count);
++		index++;
+ 		return previous;
+ 	}

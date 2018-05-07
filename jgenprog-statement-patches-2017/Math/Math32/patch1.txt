@@ -1,0 +1,10 @@
+--- /original/org/apache/commons/math3/geometry/partitioning/AbstractRegion.java	
++++ /fixed/org/apache/commons/math3/geometry/partitioning/AbstractRegion.java	
+@@ -151,6 +151,7 @@
+ 			if (plusChar.hasOut()) {
+ 				final org.apache.commons.math3.geometry.partitioning.Characterization<S> minusChar = new org.apache.commons.math3.geometry.partitioning.Characterization<S>();
+ 				characterize(node.getMinus(), plusChar.getOut(), minusChar);
++				characterize(node.getMinus(), plusChar.getOut(), minusChar);
+ 				if (minusChar.hasIn()) {
+ 					plusOutside = minusChar.getIn();
+ 				}

@@ -1,0 +1,13 @@
+--- /original/org/apache/commons/math/analysis/BrentSolver.java	
++++ /fixed/org/apache/commons/math/analysis/BrentSolver.java	
+@@ -38,6 +38,10 @@
+ 
+ 	public double solve(double min, double max) throws org.apache.commons.math.FunctionEvaluationException, org.apache.commons.math.MaxIterationsExceededException {
+ 		clearResult();
++		if ((java.lang.Math.abs((max - (result)))) <= (absoluteAccuracy)) {
++			setResult(max, defaultMaximalIterationCount);
++			return max;
++		}
+ 		verifyInterval(min, max);
+ 		double ret = java.lang.Double.NaN;
+ 		double yMin = f.value(min);

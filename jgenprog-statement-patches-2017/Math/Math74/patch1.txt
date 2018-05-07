@@ -1,0 +1,11 @@
+--- /original/org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator.java	
++++ /fixed/org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator.java	
+@@ -36,7 +36,7 @@
+ 		interpolator.reinitialize(stepStart, stepSize, scaled, nordsieck);
+ 		interpolator.storeTime(stepStart);
+ 		double hNew = stepSize;
+-		interpolator.rescale(hNew);
++		setMaxGrowth(10.0);
+ 		boolean lastStep = false;
+ 		while (!lastStep) {
+ 			interpolator.shift();

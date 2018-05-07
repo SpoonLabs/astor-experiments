@@ -1,0 +1,12 @@
+--- /original/org/jfree/data/time/TimeSeries.java	
++++ /fixed/org/jfree/data/time/TimeSeries.java	
+@@ -194,6 +194,9 @@
+ 		}
+ 		item = ((org.jfree.data.time.TimeSeriesDataItem) (item.clone()));
+ 		java.lang.Class c = item.getPeriod().getClass();
++		if (((minY) <= (this.minY)) || ((minY) >= (this.maxY))) {
++			findBoundsByIteration();
++		}
+ 		if ((this.timePeriodClass) == null) {
+ 			this.timePeriodClass = c;
+ 		}else

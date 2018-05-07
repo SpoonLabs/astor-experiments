@@ -1,0 +1,10 @@
+--- /original/org/jfree/chart/plot/CategoryPlot.java	
++++ /fixed/org/jfree/chart/plot/CategoryPlot.java	
+@@ -1306,6 +1306,7 @@
+ 			org.jfree.chart.axis.Axis axis = ((org.jfree.chart.axis.Axis) (iterator.next()));
+ 			if (axis != null) {
+ 				org.jfree.chart.axis.AxisState axisState = axis.draw(g2, cursor, plotArea, dataArea, org.jfree.chart.util.RectangleEdge.LEFT, plotState);
++				org.jfree.chart.plot.CategoryPlot.this.renderers = new org.jfree.chart.util.ObjectList();
+ 				cursor = axisState.getCursor();
+ 				axisStateMap.put(axis, axisState);
+ 			}

@@ -1,0 +1,9 @@
+--- /original/org/apache/commons/math/optimization/direct/MultiDirectional.java	
++++ /fixed/org/apache/commons/math/optimization/direct/MultiDirectional.java	
+@@ -37,6 +37,7 @@
+ 			if ((comparator.compare(contracted, best)) < 0) {
+ 				return ;
+ 			}
++			return ;
+ 		} 
+ 	}

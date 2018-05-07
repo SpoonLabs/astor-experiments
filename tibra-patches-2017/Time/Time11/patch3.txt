@@ -1,0 +1,11 @@
+--- /original/org/joda/time/tz/DateTimeZoneBuilder.java	
++++ /fixed/org/joda/time/tz/DateTimeZoneBuilder.java	
+@@ -284,7 +284,7 @@
+ 		}
+ 
+ 		public int getToYear() {
+-			return iToYear;
++			return iFromYear;
+ 		}
+ 
+ 		public org.joda.time.tz.DateTimeZoneBuilder.OfYear getOfYear() {

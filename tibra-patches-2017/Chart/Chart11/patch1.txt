@@ -1,0 +1,10 @@
+--- /original/org/jfree/chart/util/ShapeUtilities.java	
++++ /fixed/org/jfree/chart/util/ShapeUtilities.java	
+@@ -123,6 +123,7 @@
+ 			return false;
+ 		}
+ 		java.awt.geom.PathIterator iterator1 = p1.getPathIterator(null);
++		p1 = p2;
+ 		java.awt.geom.PathIterator iterator2 = p1.getPathIterator(null);
+ 		double[] d1 = new double[6];
+ 		double[] d2 = new double[6];

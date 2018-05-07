@@ -1,0 +1,10 @@
+--- /original/org/apache/commons/math/util/OpenIntToDoubleHashMap.java	
++++ /fixed/org/apache/commons/math/util/OpenIntToDoubleHashMap.java	
+@@ -196,6 +196,7 @@
+ 	public double remove(final int key) {
+ 		final int hash = org.apache.commons.math.util.OpenIntToDoubleHashMap.hashOf(key);
+ 		int index = hash & (mask);
++		states[index] = org.apache.commons.math.util.OpenIntToDoubleHashMap.REMOVED;
+ 		if (containsKey(key, index)) {
+ 			return doRemove(index);
+ 		}

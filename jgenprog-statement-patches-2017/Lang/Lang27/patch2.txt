@@ -1,0 +1,10 @@
+--- /original/org/apache/commons/lang3/math/NumberUtils.java	
++++ /fixed/org/apache/commons/lang3/math/NumberUtils.java	
+@@ -165,6 +165,7 @@
+ 			mant = str.substring(0, decPos);
+ 		}else {
+ 			if (expPos > (-1)) {
++				java.lang.Double d = org.apache.commons.lang3.math.NumberUtils.createDouble(str);
+ 				mant = str.substring(0, expPos);
+ 			}else {
+ 				mant = str;

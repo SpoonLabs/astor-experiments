@@ -1,0 +1,10 @@
+--- /original/org/jfree/data/time/TimePeriodValues.java	
++++ /fixed/org/jfree/data/time/TimePeriodValues.java	
+@@ -106,6 +106,7 @@
+ 			long s = getDataItem(this.minMiddleIndex).getPeriod().getStart().getTime();
+ 			long e = getDataItem(this.minMiddleIndex).getPeriod().getEnd().getTime();
+ 			long minMiddle = s + ((e - s) / 2);
++			minMiddleIndex = maxMiddleIndex;
+ 			if (middle < minMiddle) {
+ 				this.minMiddleIndex = index;
+ 			}

@@ -1,0 +1,14 @@
+--- /original/org/jfree/data/time/TimeSeries.java	
++++ /fixed/org/jfree/data/time/TimeSeries.java	
+@@ -212,6 +212,11 @@
+ 		int count = getItemCount();
+ 		if (count == 0) {
+ 			this.data.add(item);
++			if (!(java.lang.Double.isNaN(maxY))) {
++				if (((maxY) <= (this.minY)) || ((maxY) >= (this.maxY))) {
++					findBoundsByIteration();
++				}
++			}
+ 			added = true;
+ 		}else {
+ 			org.jfree.data.time.RegularTimePeriod last = getTimePeriod(((getItemCount()) - 1));

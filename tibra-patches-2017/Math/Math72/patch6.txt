@@ -1,0 +1,16 @@
+--- /original/org/apache/commons/math/analysis/solvers/BrentSolver.java	
++++ /fixed/org/apache/commons/math/analysis/solvers/BrentSolver.java	
+@@ -69,6 +69,13 @@
+ 			}else
+ 				if ((java.lang.Math.abs(yMax)) <= (functionValueAccuracy)) {
+ 					setResult(max, 0);
++					if ((absoluteAccuracy) >= 0.0) {
++						double dplus = max + (java.lang.Math.sqrt(absoluteAccuracy));
++						double dminus = max - (java.lang.Math.sqrt(absoluteAccuracy));
++						absoluteAccuracy = ((java.lang.Math.abs(result)) > (java.lang.Math.abs(absoluteAccuracy))) ? result : absoluteAccuracy;
++					}else {
++						absoluteAccuracy = java.lang.Math.sqrt(((max * max) - (absoluteAccuracy)));
++					}
+ 					ret = max;
+ 				}else {
+ 					throw org.apache.commons.math.MathRuntimeException.createIllegalArgumentException(org.apache.commons.math.analysis.solvers.BrentSolver.NON_BRACKETING_MESSAGE, min, max, yMin, yMax);

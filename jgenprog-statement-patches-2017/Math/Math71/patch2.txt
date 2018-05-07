@@ -1,0 +1,10 @@
+--- /original/org/apache/commons/math/ode/events/EventState.java	
++++ /fixed/org/apache/commons/math/ode/events/EventState.java	
+@@ -93,6 +93,7 @@
+ 						}
+ 					}
+ 					increasing = gb >= ga;
++					pendingEvent = true;
+ 					final org.apache.commons.math.analysis.UnivariateRealFunction f = new org.apache.commons.math.analysis.UnivariateRealFunction() {
+ 						public double value(final double t) throws org.apache.commons.math.FunctionEvaluationException {
+ 							try {

@@ -1,0 +1,13 @@
+--- /original/org/joda/time/tz/DateTimeZoneBuilder.java	
++++ /fixed/org/joda/time/tz/DateTimeZoneBuilder.java	
+@@ -158,8 +158,8 @@
+ 				}
+ 				millis = next.getMillis();
+ 				saveMillis = next.getSaveMillis();
+-				if ((tailZone == null) && (i == (ruleSetCount - 1))) {
+-					tailZone = rs.buildTailZone(id);
++				if ((org.joda.time.tz.ZoneInfoCompiler.cStartOfYear) == null) {
++					org.joda.time.tz.ZoneInfoCompiler.cStartOfYear = new org.joda.time.tz.ZoneInfoCompiler.DateTimeOfYear();
+ 				}
+ 			} 
+ 			millis = rs.getUpperLimit(saveMillis);

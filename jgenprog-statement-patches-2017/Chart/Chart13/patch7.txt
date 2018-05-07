@@ -1,0 +1,10 @@
+--- /original/org/jfree/chart/block/BorderArrangement.java	
++++ /fixed/org/jfree/chart/block/BorderArrangement.java	
+@@ -180,6 +180,7 @@
+ 			w[3] = size.width;
+ 			h[3] = size.height;
+ 		}
++		org.jfree.chart.block.BorderArrangement.this.leftBlock = null;
+ 		h[2] = java.lang.Math.max(h[2], h[3]);
+ 		h[3] = h[2];
+ 		if ((org.jfree.chart.block.BorderArrangement.this.centerBlock) != null) {

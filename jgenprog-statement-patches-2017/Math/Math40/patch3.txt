@@ -1,0 +1,9 @@
+--- /original/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	
++++ /fixed/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	
+@@ -118,6 +118,7 @@
+ 				if (agingB >= (org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver.MAXIMAL_AGING)) {
+ 					targetY = (-(org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver.REDUCTION_FACTOR)) * yA;
+ 				}else {
++					signChangeIndex = 2;
+ 					targetY = 0;
+ 				}

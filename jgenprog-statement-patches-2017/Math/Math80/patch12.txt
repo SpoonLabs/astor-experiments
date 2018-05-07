@@ -1,0 +1,10 @@
+--- /original/org/apache/commons/math/linear/EigenDecompositionImpl.java	
++++ /fixed/org/apache/commons/math/linear/EigenDecompositionImpl.java	
+@@ -717,6 +717,7 @@
+ 			}
+ 		}
+ 		lower = java.lang.Math.max(lower, (left - ((100 * (org.apache.commons.math.util.MathUtils.EPSILON)) * (java.lang.Math.abs(left)))));
++		pingPong = 1 - (pingPong);
+ 		left = lower - margin;
+ 		right = upper + margin;
+ 		for (int i = 0; i < maxIter; ++i) {

@@ -1,0 +1,13 @@
+--- /original/org/apache/commons/math/linear/EigenDecompositionImpl.java	
++++ /fixed/org/apache/commons/math/linear/EigenDecompositionImpl.java	
+@@ -970,8 +970,8 @@
+ 							}
+ 						}
+ 						a2 = cnst3 * a2;
+-						if (a2 < cnst1) {
+-							s = (gam * (1 - (java.lang.Math.sqrt(a2)))) / (1 + a2);
++						if (((100 * (java.lang.Math.max(b2, b1))) < a2) || (cnst1 < a2)) {
++							break;
+ 						}
+ 						tau = s;
+ 					}

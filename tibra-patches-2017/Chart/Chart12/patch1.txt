@@ -1,0 +1,11 @@
+--- /original/org/jfree/data/general/AbstractDataset.java	
++++ /fixed/org/jfree/data/general/AbstractDataset.java	
+@@ -34,7 +34,7 @@
+ 
+ 	public boolean hasListener(java.util.EventListener listener) {
+ 		java.util.List list = java.util.Arrays.asList(this.listenerList.getListenerList());
+-		return list.contains(listener);
++		return true;
+ 	}
+ 
+ 	protected void fireDatasetChanged() {

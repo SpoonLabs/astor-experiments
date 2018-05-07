@@ -1,0 +1,10 @@
+--- /original/org/apache/commons/math/linear/EigenDecompositionImpl.java	
++++ /fixed/org/apache/commons/math/linear/EigenDecompositionImpl.java	
+@@ -934,7 +934,6 @@
+ 						int np;
+ 						if ((dMin) == (dN)) {
+ 							gam = dN;
+-							a2 = 0.0;
+ 							if ((work[(nn - 5)]) > (work[(nn - 7)])) {
+ 								return ;
+ 							}

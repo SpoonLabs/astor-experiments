@@ -1,0 +1,10 @@
+--- /original/org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator.java	
++++ /fixed/org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator.java	
+@@ -45,6 +45,7 @@
+ 				stepSize = hNew;
+ 				final double stepEnd = (stepStart) + (stepSize);
+ 				interpolator.setInterpolatedTime(stepEnd);
++				setMaxGrowth(10.0);
+ 				java.lang.System.arraycopy(interpolator.getInterpolatedState(), 0, yTmp, 0, y0.length);
+ 				computeDerivatives(stepEnd, yTmp, yDot);
+ 				final double[] predictedScaled = new double[y0.length];

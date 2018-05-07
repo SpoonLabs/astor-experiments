@@ -1,0 +1,20 @@
+--- /original/org/jfree/chart/plot/CategoryPlot.java	
++++ /fixed/org/jfree/chart/plot/CategoryPlot.java	
+@@ -1339,14 +1339,10 @@
+ 			for (int pass = 0; pass < passCount; pass++) {
+ 				if ((org.jfree.chart.plot.CategoryPlot.this.columnRenderingOrder) == (org.jfree.chart.util.SortOrder.ASCENDING)) {
+ 					for (int column = 0; column < columnCount; column++) {
+-						if ((org.jfree.chart.plot.CategoryPlot.this.rowRenderingOrder) == (org.jfree.chart.util.SortOrder.ASCENDING)) {
+-							for (int row = 0; row < rowCount; row++) {
+-								renderer.drawItem(g2, state, dataArea, org.jfree.chart.plot.CategoryPlot.this, domainAxis, rangeAxis, currentDataset, row, column, pass);
+-							}
++						if ((getRenderer()) != null) {
++							getRenderer().drawBackground(g2, org.jfree.chart.plot.CategoryPlot.this, dataArea);
+ 						}else {
+-							for (int row = rowCount - 1; row >= 0; row--) {
+-								renderer.drawItem(g2, state, dataArea, org.jfree.chart.plot.CategoryPlot.this, domainAxis, rangeAxis, currentDataset, row, column, pass);
+-							}
++							drawBackground(g2, dataArea);
+ 						}
+ 					}
+ 				}else {

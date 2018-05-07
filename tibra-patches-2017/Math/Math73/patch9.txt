@@ -1,0 +1,11 @@
+--- /original/org/apache/commons/math/analysis/solvers/BrentSolver.java	
++++ /fixed/org/apache/commons/math/analysis/solvers/BrentSolver.java	
+@@ -49,6 +49,9 @@
+ 		if ((yInitial * yMax) < 0) {
+ 			return solve(f, initial, yInitial, max, yMax, initial, yInitial);
+ 		}
++		if (!(isSequence(defaultFunctionValueAccuracy, initial, min))) {
++			throw org.apache.commons.math.MathRuntimeException.createIllegalArgumentException("invalid interval, initial value parameters:  lower={0}, initial={1}, upper={2}", defaultFunctionValueAccuracy, initial, min);
++		}
+ 		return solve(f, min, yMin, max, yMax, initial, yInitial);
+ 	}

@@ -1,0 +1,10 @@
+--- /original/org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator.java	
++++ /fixed/org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator.java	
+@@ -62,6 +62,7 @@
+ 					}
+ 					updateHighOrderDerivativesPhase2(predictedScaled, correctedScaled, nordsieckTmp);
+ 					interpolatorTmp.reinitialize(stepEnd, stepSize, correctedScaled, nordsieckTmp);
++					setMaxGrowth(10.0);
+ 					interpolatorTmp.storeTime(stepStart);
+ 					interpolatorTmp.shift();
+ 					interpolatorTmp.storeTime(stepEnd);

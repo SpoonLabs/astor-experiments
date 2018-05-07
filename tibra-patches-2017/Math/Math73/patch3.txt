@@ -1,0 +1,12 @@
+--- /original/org/apache/commons/math/analysis/solvers/BrentSolver.java	
++++ /fixed/org/apache/commons/math/analysis/solvers/BrentSolver.java	
+@@ -38,6 +38,9 @@
+ 			setResult(yMin, 0);
+ 			return result;
+ 		}
++		if ((yInitial * (defaultFunctionValueAccuracy)) >= 0) {
++			throw org.apache.commons.math.MathRuntimeException.createIllegalArgumentException(("function values at endpoints do not have different signs, " + "endpoints: [{0}, {1}], values: [{2}, {3}]"), min, max, yInitial, defaultFunctionValueAccuracy);
++		}
+ 		if ((yInitial * yMin) < 0) {
+ 			return solve(f, min, yMin, initial, yInitial, min, yMin);
+ 		}

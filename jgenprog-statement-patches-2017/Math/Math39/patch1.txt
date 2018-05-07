@@ -1,0 +1,12 @@
+--- /original/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java	
++++ /fixed/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.java	
+@@ -108,6 +108,9 @@
+ 						yTmp[j] = (y[j]) + ((stepSize) * sum);
+ 					}
+ 					computeDerivatives(((stepStart) + ((c[(k - 1)]) * (stepSize))), yTmp, yDotK[k]);
++					if ((forward && (((stepStart) + (stepSize)) > t)) || ((!forward) && (((stepStart) + (stepSize)) < t))) {
++						stepSize = t - (stepStart);
++					}
+ 				}
+ 				for (int j = 0; j < (y0.length); ++j) {
+ 					double sum = (b[0]) * (yDotK[0][j]);

@@ -1,0 +1,15 @@
+--- /original/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java	
++++ /fixed/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java	
+@@ -767,7 +767,11 @@
+ 		int index = org.jfree.chart.renderer.category.AbstractCategoryItemRenderer.this.plot.getIndexOf(org.jfree.chart.renderer.category.AbstractCategoryItemRenderer.this);
+ 		org.jfree.data.category.CategoryDataset dataset = org.jfree.chart.renderer.category.AbstractCategoryItemRenderer.this.plot.getDataset(index);
+ 		if (dataset != null) {
+-			return result;
++			org.jfree.chart.renderer.category.AbstractCategoryItemRenderer.this.rowCount = dataset.getRowCount();
++			org.jfree.chart.renderer.category.AbstractCategoryItemRenderer.this.columnCount = dataset.getColumnCount();
++		}else {
++			org.jfree.chart.renderer.category.AbstractCategoryItemRenderer.this.rowCount = 0;
++			org.jfree.chart.renderer.category.AbstractCategoryItemRenderer.this.columnCount = 0;
+ 		}
+ 		int seriesCount = dataset.getRowCount();
+ 		if (plot.getRowRenderingOrder().equals(org.jfree.chart.util.SortOrder.ASCENDING)) {

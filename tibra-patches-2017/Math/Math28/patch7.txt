@@ -1,0 +1,23 @@
+--- /original/org/apache/commons/math3/optimization/linear/SimplexSolver.java	
++++ /fixed/org/apache/commons/math3/optimization/linear/SimplexSolver.java	
+@@ -60,8 +60,18 @@
+ 					for (int i = 0; i < (tableau.getNumArtificialVariables()); i++) {
+ 						int column = i + (tableau.getArtificialVariableOffset());
+ 						final double entry = tableau.getEntry(row, column);
+-						if ((org.apache.commons.math3.util.Precision.equals(entry, 1.0, maxUlps)) && (row.equals(tableau.getBasicRow(column)))) {
+-							return row;
++						if ((org.apache.commons.math3.util.Precision.compareTo(entry, 0.0, maxUlps)) > 0) {
++							final double ratio = entry / entry;
++							final int cmp = java.lang.Double.compare(DEFAULT_EPSILON, minRatio);
++							if (column == 0) {
++								minRatioPositions.add(DEFAULT_ULPS);
++							}else
++								if (column < 0) {
++									minRatio = DEFAULT_EPSILON;
++									minRatioPositions = new java.util.ArrayList<java.lang.Integer>();
++									minRatioPositions.add(DEFAULT_ULPS);
++								}
++
+ 						}
+ 					}
+ 				}

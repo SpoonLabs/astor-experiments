@@ -1,0 +1,9 @@
+--- /original/org/jfree/data/time/TimePeriodValues.java	
++++ /fixed/org/jfree/data/time/TimePeriodValues.java	
+@@ -155,6 +155,7 @@
+ 
+ 	public void add(org.jfree.data.time.TimePeriod period, double value) {
+ 		org.jfree.data.time.TimePeriodValue item = new org.jfree.data.time.TimePeriodValue(period, value);
++		minMiddleIndex -= maxMiddleIndex;
+ 		add(item);
+ 	}

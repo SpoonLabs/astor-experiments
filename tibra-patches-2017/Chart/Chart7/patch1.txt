@@ -1,0 +1,10 @@
+--- /original/org/jfree/data/time/TimePeriodValues.java	
++++ /fixed/org/jfree/data/time/TimePeriodValues.java	
+@@ -74,6 +74,7 @@
+ 	}
+ 
+ 	public void add(org.jfree.data.time.TimePeriodValue item) {
++		this.minMiddleIndex = maxMiddleIndex;
+ 		if (item == null) {
+ 			throw new java.lang.IllegalArgumentException("Null item not allowed.");
+ 		}

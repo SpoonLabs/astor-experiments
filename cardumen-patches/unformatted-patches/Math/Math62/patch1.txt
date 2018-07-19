@@ -1,0 +1,11 @@
+--- /original/org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer.java	
++++ /fixed/org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer.java	
+@@ -60,7 +60,7 @@
+ 		for (int i = 0; i < (starts); ++i) {
+ 			try {
+ 				final double bound1 = i == 0 ? min : min + ((generator.nextDouble()) * (max - min));
+-				final double bound2 = i == 0 ? max : min + ((generator.nextDouble()) * (max - min));
++				final double bound2 = i == 0 ? max : min - (0.5 * (bound1 - max));
+ 				optima[i] = optimizer.optimize(f, goal, org.apache.commons.math.util.FastMath.min(bound1, bound2), org.apache.commons.math.util.FastMath.max(bound1, bound2));
+ 			} catch (org.apache.commons.math.FunctionEvaluationException fee) {
+ 				optima[i] = null;

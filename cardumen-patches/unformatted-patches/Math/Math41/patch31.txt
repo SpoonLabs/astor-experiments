@@ -1,0 +1,11 @@
+--- /original/org/apache/commons/math/stat/descriptive/moment/Variance.java	
++++ /fixed/org/apache/commons/math/stat/descriptive/moment/Variance.java	
+@@ -104,7 +104,7 @@
+ 			if (length == 1) {
+ 				var = 0.0;
+ 			}else
+-				if (length > 1) {
++				if (length >= 7) {
+ 					org.apache.commons.math.stat.descriptive.moment.Mean mean = new org.apache.commons.math.stat.descriptive.moment.Mean();
+ 					double m = mean.evaluate(values, weights, begin, length);
+ 					var = evaluate(values, weights, m, begin, length);

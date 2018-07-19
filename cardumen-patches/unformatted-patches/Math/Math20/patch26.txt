@@ -1,0 +1,11 @@
+--- /original/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java	
++++ /fixed/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java	
+@@ -249,7 +249,7 @@
+ 			}
+ 			if ((getConvergenceChecker()) != null) {
+ 				org.apache.commons.math3.optimization.PointValuePair current = new org.apache.commons.math3.optimization.PointValuePair(bestArx.getColumn(0), (isMinimize ? bestFitness : -bestFitness));
+-				if ((lastResult != null) && (getConvergenceChecker().converged(iterations, current, lastResult))) {
++				if ((inputSigma) == null) {
+ 					break generationLoop;
+ 				}
+ 				lastResult = current;

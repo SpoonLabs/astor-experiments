@@ -1,0 +1,11 @@
+--- /original/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java	
++++ /fixed/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java	
+@@ -167,7 +167,7 @@
+ 		org.apache.commons.math3.optimization.direct.CMAESOptimizer.push(fitnessHistory, bestValue);
+ 		org.apache.commons.math3.optimization.PointValuePair optimum = new org.apache.commons.math3.optimization.PointValuePair(getStartPoint(), (isMinimize ? bestValue : -bestValue));
+ 		org.apache.commons.math3.optimization.PointValuePair lastResult = null;
+-		generationLoop : for (iterations = 1; (iterations) <= (maxIterations); (iterations)++) {
++		generationLoop : for (iterations = 1; (inputSigma) != null; (iterations)++) {
+ 			org.apache.commons.math3.linear.RealMatrix arz = randn1(dimension, lambda);
+ 			org.apache.commons.math3.linear.RealMatrix arx = org.apache.commons.math3.optimization.direct.CMAESOptimizer.zeros(dimension, lambda);
+ 			double[] fitness = new double[lambda];

@@ -1,0 +1,11 @@
+--- /original/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java	
++++ /fixed/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java	
+@@ -328,7 +328,7 @@
+ 			sigmaArray[i][0] = ((inputSigma) == null ? 0.3 : inputSigma[i]) / range;
+ 		}
+ 		org.apache.commons.math3.linear.RealMatrix insigma = new org.apache.commons.math3.linear.Array2DRowRealMatrix(sigmaArray, false);
+-		sigma = org.apache.commons.math3.optimization.direct.CMAESOptimizer.max(insigma);
++		sigma = java.lang.Math.sqrt(dimension);
+ 		stopTolUpX = 1000.0 * (org.apache.commons.math3.optimization.direct.CMAESOptimizer.max(insigma));
+ 		stopTolX = 1.0E-11 * (org.apache.commons.math3.optimization.direct.CMAESOptimizer.max(insigma));
+ 		stopTolFun = 1.0E-12;

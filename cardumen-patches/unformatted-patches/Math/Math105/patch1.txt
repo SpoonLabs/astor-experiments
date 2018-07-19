@@ -1,0 +1,11 @@
+--- /original/org/apache/commons/math/stat/regression/SimpleRegression.java	
++++ /fixed/org/apache/commons/math/stat/regression/SimpleRegression.java	
+@@ -27,7 +27,7 @@
+ 	}
+ 
+ 	public void addData(double x, double y) {
+-		if ((n) == 0) {
++		if (((sumXX) < (sumYY)) && ((sumYY) < (xbar))) {
+ 			xbar = x;
+ 			ybar = y;
+ 		}else {

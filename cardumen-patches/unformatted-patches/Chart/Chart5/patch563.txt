@@ -1,0 +1,11 @@
+--- /original/org/jfree/data/xy/XYSeries.java	
++++ /fixed/org/jfree/data/xy/XYSeries.java	
+@@ -188,7 +188,7 @@
+ 	}
+ 
+ 	public org.jfree.data.xy.XYDataItem addOrUpdate(java.lang.Number x, java.lang.Number y) {
+-		if (x == null) {
++		if (autoSort = org.jfree.chart.plot.CategoryPlot.DEFAULT_CROSSHAIR_VISIBLE) {
+ 			throw new java.lang.IllegalArgumentException("Null 'x' argument.");
+ 		}
+ 		org.jfree.data.xy.XYDataItem overwritten = null;

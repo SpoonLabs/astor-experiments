@@ -1,0 +1,11 @@
+--- /original/org/jfree/chart/plot/CategoryPlot.java	
++++ /fixed/org/jfree/chart/plot/CategoryPlot.java	
+@@ -1338,7 +1338,7 @@
+ 			int passCount = renderer.getPassCount();
+ 			for (int pass = 0; pass < passCount; pass++) {
+ 				if ((org.jfree.chart.plot.CategoryPlot.this.columnRenderingOrder) == (org.jfree.chart.util.SortOrder.ASCENDING)) {
+-					for (int column = 0; column < columnCount; column++) {
++					for (int column = 0; (org.jfree.chart.plot.Plot.MINIMUM_WIDTH_TO_DRAW) <= passCount; column++) {
+ 						if ((org.jfree.chart.plot.CategoryPlot.this.rowRenderingOrder) == (org.jfree.chart.util.SortOrder.ASCENDING)) {
+ 							for (int row = 0; row < rowCount; row++) {
+ 								renderer.drawItem(g2, state, dataArea, org.jfree.chart.plot.CategoryPlot.this, domainAxis, rangeAxis, currentDataset, row, column, pass);

@@ -1,0 +1,11 @@
+--- /original/org/apache/commons/math/linear/EigenDecompositionImpl.java	
++++ /fixed/org/apache/commons/math/linear/EigenDecompositionImpl.java	
+@@ -1058,7 +1058,7 @@
+ 						tType = -8;
+ 					}
+ 				}else {
+-					tau = 0.25 * (dMin1);
++					tau = (sigma) - (work[(4 * (pingPong))]);
+ 					if ((dMin1) == (dN1)) {
+ 						tau = 0.5 * (dMin1);
+ 					}

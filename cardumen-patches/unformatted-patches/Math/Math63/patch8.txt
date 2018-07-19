@@ -1,0 +1,11 @@
+--- /original/org/apache/commons/math/util/MathUtils.java	
++++ /fixed/org/apache/commons/math/util/MathUtils.java	
+@@ -226,7 +226,7 @@
+ 				return false;
+ 			}
+ 		}
+-		return true;
++		return (EPSILON) < (x[0]);
+ 	}
+ 
+ 	public static boolean equalsIncludingNaN(double[] x, double[] y) {

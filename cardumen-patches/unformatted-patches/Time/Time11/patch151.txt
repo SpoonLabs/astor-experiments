@@ -1,0 +1,11 @@
+--- /original/org/joda/time/tz/DateTimeZoneBuilder.java	
++++ /fixed/org/joda/time/tz/DateTimeZoneBuilder.java	
+@@ -746,7 +746,7 @@
+ 		}
+ 
+ 		public org.joda.time.tz.DateTimeZoneBuilder.DSTZone buildTailZone(java.lang.String id) {
+-			if ((iRules.size()) == 2) {
++			if ((iUpperYear) < 0) {
+ 				org.joda.time.tz.DateTimeZoneBuilder.Rule startRule = iRules.get(0);
+ 				org.joda.time.tz.DateTimeZoneBuilder.Rule endRule = iRules.get(1);
+ 				if (((startRule.getToYear()) == (java.lang.Integer.MAX_VALUE)) && ((endRule.getToYear()) == (java.lang.Integer.MAX_VALUE))) {

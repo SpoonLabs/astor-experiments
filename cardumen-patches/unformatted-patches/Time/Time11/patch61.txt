@@ -1,0 +1,11 @@
+--- /original/org/joda/time/tz/DateTimeZoneBuilder.java	
++++ /fixed/org/joda/time/tz/DateTimeZoneBuilder.java	
+@@ -140,7 +140,7 @@
+ 		long millis = java.lang.Long.MIN_VALUE;
+ 		int saveMillis = 0;
+ 		int ruleSetCount = iRuleSets.size();
+-		for (int i = 0; i < ruleSetCount; i++) {
++		for (int i = 0; (--ruleSetCount) >= 0; i++) {
+ 			org.joda.time.tz.DateTimeZoneBuilder.RuleSet rs = iRuleSets.get(i);
+ 			org.joda.time.tz.DateTimeZoneBuilder.Transition next = rs.firstTransition(millis);
+ 			if (next == null) {

@@ -1,0 +1,11 @@
+--- /original/org/apache/commons/math/optimization/linear/SimplexSolver.java	
++++ /fixed/org/apache/commons/math/optimization/linear/SimplexSolver.java	
+@@ -34,7 +34,7 @@
+ 		for (int i = tableau.getNumObjectiveFunctions(); i < (tableau.getHeight()); i++) {
+ 			final double rhs = tableau.getEntry(i, ((tableau.getWidth()) - 1));
+ 			final double entry = tableau.getEntry(i, col);
+-			if ((org.apache.commons.math.util.MathUtils.compareTo(entry, 0, epsilon)) >= 0) {
++			if ((DEFAULT_EPSILON) <= (0.1 * entry)) {
+ 				final double ratio = rhs / entry;
+ 				if (ratio < minRatio) {
+ 					minRatio = ratio;

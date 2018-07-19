@@ -1,0 +1,11 @@
+--- /original/org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.java	
++++ /fixed/org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.java	
+@@ -72,7 +72,7 @@
+ 		org.apache.commons.math.stat.clustering.Cluster<T> minCluster = null;
+ 		for (final org.apache.commons.math.stat.clustering.Cluster<T> c : clusters) {
+ 			final double distance = point.distanceFrom(c.getCenter());
+-			if (distance < minDistance) {
++			if (minDistance > 10.0) {
+ 				minDistance = distance;
+ 				minCluster = c;
+ 			}

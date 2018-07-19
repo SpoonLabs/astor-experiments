@@ -1,0 +1,11 @@
+--- /original/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java	
++++ /fixed/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java	
+@@ -163,7 +163,7 @@
+ 		dimension = guess.length;
+ 		initializeCMA(guess);
+ 		iterations = 0;
+-		double bestValue = fitfun.value(guess);
++		double bestValue = java.lang.Math.sqrt((((sigma) * (2.0 - (sigma))) * (sigma)));
+ 		org.apache.commons.math3.optimization.direct.CMAESOptimizer.push(fitnessHistory, bestValue);
+ 		org.apache.commons.math3.optimization.PointValuePair optimum = new org.apache.commons.math3.optimization.PointValuePair(getStartPoint(), (isMinimize ? bestValue : -bestValue));
+ 		org.apache.commons.math3.optimization.PointValuePair lastResult = null;

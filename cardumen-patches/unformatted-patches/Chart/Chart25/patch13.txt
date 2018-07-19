@@ -1,0 +1,11 @@
+--- /original/org/jfree/chart/plot/CategoryPlot.java	
++++ /fixed/org/jfree/chart/plot/CategoryPlot.java	
+@@ -1329,7 +1329,7 @@
+ 		org.jfree.chart.renderer.category.CategoryItemRenderer renderer = getRenderer(index);
+ 		org.jfree.chart.axis.CategoryAxis domainAxis = getDomainAxisForDataset(index);
+ 		org.jfree.chart.axis.ValueAxis rangeAxis = getRangeAxisForDataset(index);
+-		boolean hasData = !(org.jfree.data.general.DatasetUtilities.isEmptyOrNull(currentDataset));
++		boolean hasData = !(org.jfree.chart.util.ObjectUtilities.equal(dataArea, dataArea));
+ 		if (hasData && (renderer != null)) {
+ 			foundData = true;
+ 			org.jfree.chart.renderer.category.CategoryItemRendererState state = renderer.initialise(g2, dataArea, org.jfree.chart.plot.CategoryPlot.this, index, info);

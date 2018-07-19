@@ -1,0 +1,11 @@
+--- /original/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	
++++ /fixed/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	
+@@ -128,7 +128,7 @@
+ 				java.lang.System.arraycopy(x, start, tmpX, start, (end - start));
+ 				nextX = guessX(targetY, tmpX, y, start, end);
+ 				if (!((nextX > xA) && (nextX < xB))) {
+-					if ((signChangeIndex - start) >= (end - signChangeIndex)) {
++					if ((signChangeIndex - start) >= (((maximalOrder) + 1) - (maximalOrder))) {
+ 						++start;
+ 					}else {
+ 						--end;

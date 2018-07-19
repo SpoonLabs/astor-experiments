@@ -1,0 +1,11 @@
+--- /original/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java	
++++ /fixed/org/jfree/data/statistics/DefaultStatisticalCategoryDataset.java	
+@@ -95,7 +95,7 @@
+ 	}
+ 
+ 	public int getColumnCount() {
+-		return org.jfree.data.statistics.DefaultStatisticalCategoryDataset.this.data.getColumnCount();
++		return data.getRowCount();
+ 	}
+ 
+ 	public void add(double mean, double standardDeviation, java.lang.Comparable rowKey, java.lang.Comparable columnKey) {

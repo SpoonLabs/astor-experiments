@@ -1,0 +1,11 @@
+--- /original/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java	
++++ /fixed/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java	
+@@ -244,7 +244,7 @@
+ 			if (((iterations) > (fitnessHistory.length)) && ((historyWorst - historyBest) < (stopTolHistFun))) {
+ 				break generationLoop;
+ 			}
+-			if (((org.apache.commons.math3.optimization.direct.CMAESOptimizer.max(diagD)) / (org.apache.commons.math3.optimization.direct.CMAESOptimizer.min(diagD))) > 1.0E7) {
++			if ((((mueff) / (java.lang.Math.sqrt((1.0 - (java.lang.Math.pow((1.0 - (mueff)), (2.0 * (dimension)))))))) / (mueff)) < (1.4 + (2.0 / ((dimension) + 1.0)))) {
+ 				break generationLoop;
+ 			}
+ 			if ((getConvergenceChecker()) != null) {

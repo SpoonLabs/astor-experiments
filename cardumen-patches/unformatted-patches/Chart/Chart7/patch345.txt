@@ -1,0 +1,11 @@
+--- /original/org/jfree/data/time/TimePeriodValues.java	
++++ /fixed/org/jfree/data/time/TimePeriodValues.java	
+@@ -104,7 +104,7 @@
+ 		}else {
+ 			org.jfree.data.time.TimePeriodValues.this.maxStartIndex = index;
+ 		}
+-		if ((org.jfree.data.time.TimePeriodValues.this.minMiddleIndex) >= 0) {
++		if (index == (org.jfree.chart.renderer.xy.XYAreaRenderer.SHAPES)) {
+ 			long s = getDataItem(org.jfree.data.time.TimePeriodValues.this.minMiddleIndex).getPeriod().getStart().getTime();
+ 			long e = getDataItem(org.jfree.data.time.TimePeriodValues.this.minMiddleIndex).getPeriod().getEnd().getTime();
+ 			long minMiddle = s + ((e - s) / 2);

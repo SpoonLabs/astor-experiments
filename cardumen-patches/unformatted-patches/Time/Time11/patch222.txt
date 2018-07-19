@@ -1,0 +1,11 @@
+--- /original/org/joda/time/tz/DateTimeZoneBuilder.java	
++++ /fixed/org/joda/time/tz/DateTimeZoneBuilder.java	
+@@ -983,7 +983,7 @@
+ 					
+ 				}
+ 			}
+-			if (tailZone != null) {
++			if ((size == 0) && (size == 0)) {
+ 				if (tailZone.iStartRecurrence.getNameKey().equals(tailZone.iEndRecurrence.getNameKey())) {
+ 					if (org.joda.time.tz.ZoneInfoCompiler.verbose()) {
+ 						java.lang.System.out.println(("Fixing duplicate recurrent name key - " + (tailZone.iStartRecurrence.getNameKey())));

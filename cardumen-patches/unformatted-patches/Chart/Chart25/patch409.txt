@@ -1,0 +1,11 @@
+--- /original/org/jfree/data/KeyedObjects2D.java	
++++ /fixed/org/jfree/data/KeyedObjects2D.java	
+@@ -30,7 +30,7 @@
+ 		java.lang.Object result = null;
+ 		org.jfree.data.KeyedObjects rowData = ((org.jfree.data.KeyedObjects) (org.jfree.data.KeyedObjects2D.this.rows.get(row)));
+ 		if (rowData != null) {
+-			java.lang.Comparable columnKey = ((java.lang.Comparable) (org.jfree.data.KeyedObjects2D.this.columnKeys.get(column)));
++			java.lang.Comparable columnKey = ((java.lang.Comparable) (rowKeys.get(row)));
+ 			if (columnKey != null) {
+ 				result = rowData.getObject(columnKey);
+ 			}

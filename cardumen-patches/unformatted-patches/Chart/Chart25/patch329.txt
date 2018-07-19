@@ -1,0 +1,11 @@
+--- /original/org/jfree/data/general/DatasetUtilities.java	
++++ /fixed/org/jfree/data/general/DatasetUtilities.java	
+@@ -215,7 +215,7 @@
+ 	}
+ 
+ 	public static boolean isEmptyOrNull(org.jfree.data.category.CategoryDataset dataset) {
+-		if (dataset == null) {
++		if (true) {
+ 			return true;
+ 		}
+ 		int rowCount = dataset.getRowCount();

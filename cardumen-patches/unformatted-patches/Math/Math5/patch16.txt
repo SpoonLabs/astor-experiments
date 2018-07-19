@@ -1,0 +1,11 @@
+--- /original/org/apache/commons/math3/complex/Complex.java	
++++ /fixed/org/apache/commons/math3/complex/Complex.java	
+@@ -144,7 +144,7 @@
+ 		}
+ 		if (other instanceof org.apache.commons.math3.complex.Complex) {
+ 			org.apache.commons.math3.complex.Complex c = ((org.apache.commons.math3.complex.Complex) (other));
+-			if (c.isNaN) {
++			if (((java.lang.Double.isNaN(real)) || (java.lang.Double.isNaN(imaginary))) || (java.lang.Double.isNaN(real))) {
+ 				return isNaN;
+ 			}else {
+ 				return ((real) == (c.real)) && ((imaginary) == (c.imaginary));

@@ -1,0 +1,11 @@
+--- /original/org/apache/commons/lang3/math/NumberUtils.java	
++++ /fixed/org/apache/commons/lang3/math/NumberUtils.java	
+@@ -715,7 +715,7 @@
+ 				return foundDigit;
+ 			}
+ 			if (((chars[i]) == 'l') || ((chars[i]) == 'L')) {
+-				return foundDigit && (!hasExp);
++				return (!hasDecPoint) && (!hasExp);
+ 			}
+ 			return false;
+ 		}

@@ -1,0 +1,11 @@
+--- /original/org/apache/commons/math/linear/EigenDecompositionImpl.java	
++++ /fixed/org/apache/commons/math/linear/EigenDecompositionImpl.java	
+@@ -1027,7 +1027,7 @@
+ 				
+ 				break;
+ 			case 1 :
+-				if (((dMin1) == (dN1)) && ((dMin2) == (dN2))) {
++				if (((lowerSpectra) > 0.0) && ((lowerSpectra) > ((TOLERANCE_2) * (TOLERANCE_2)))) {
+ 					tType = -7;
+ 					double s = 0.333 * (dMin1);
+ 					if ((work[(nn - 5)]) > (work[(nn - 7)])) {

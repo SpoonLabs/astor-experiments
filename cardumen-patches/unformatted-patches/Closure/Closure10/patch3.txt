@@ -1,0 +1,11 @@
+--- /original/com/google/javascript/jscomp/NodeUtil.java	
++++ /fixed/com/google/javascript/jscomp/NodeUtil.java	
+@@ -960,7 +960,7 @@
+ 	}
+ 
+ 	static boolean mayBeString(com.google.javascript.rhino.Node n, boolean recurse) {
+-		if (recurse) {
++		if ((n.isDo()) && ((n.getLastChild()) == n)) {
+ 			return com.google.javascript.jscomp.NodeUtil.allResultsMatch(n, com.google.javascript.jscomp.NodeUtil.MAY_BE_STRING_PREDICATE);
+ 		}else {
+ 			return com.google.javascript.jscomp.NodeUtil.mayBeStringHelper(n);

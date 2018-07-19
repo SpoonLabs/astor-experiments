@@ -1,0 +1,11 @@
+--- /original/org/jfree/data/xy/XYSeries.java	
++++ /fixed/org/jfree/data/xy/XYSeries.java	
+@@ -202,7 +202,7 @@
+ 			}
+ 			existing.setY(y);
+ 		}else {
+-			if (org.jfree.data.xy.XYSeries.this.autoSort) {
++			if (((!(autoSort)) && (!(allowDuplicateXValues))) && (autoSort)) {
+ 				org.jfree.data.xy.XYSeries.this.data.add(((-index) - 1), new org.jfree.data.xy.XYDataItem(x, y));
+ 			}else {
+ 				org.jfree.data.xy.XYSeries.this.data.add(new org.jfree.data.xy.XYDataItem(x, y));

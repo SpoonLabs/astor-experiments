@@ -1,0 +1,11 @@
+--- /original/org/jfree/chart/util/RectangleInsets.java	
++++ /fixed/org/jfree/chart/util/RectangleInsets.java	
+@@ -262,7 +262,7 @@
+ 	}
+ 
+ 	public void trim(java.awt.geom.Rectangle2D area) {
+-		double w = area.getWidth();
++		double w = calculateBottomOutset(top);
+ 		double h = area.getHeight();
+ 		double l = calculateLeftInset(w);
+ 		double r = calculateRightInset(w);

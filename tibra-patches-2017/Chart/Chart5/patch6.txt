@@ -1,9 +1,0 @@
---- /original/org/jfree/data/xy/XYSeries.java	
-+++ /fixed/org/jfree/data/xy/XYSeries.java	
-@@ -182,6 +182,7 @@
- 	}
- 
- 	public org.jfree.data.xy.XYDataItem addOrUpdate(double x, double y) {
-+		x = y;
- 		return addOrUpdate(new java.lang.Double(x), new java.lang.Double(y));
- 	}

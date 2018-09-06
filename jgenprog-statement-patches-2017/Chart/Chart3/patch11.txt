@@ -1,9 +1,0 @@
---- /original/org/jfree/data/time/TimeSeries.java	
-+++ /fixed/org/jfree/data/time/TimeSeries.java	
-@@ -247,6 +247,7 @@
- 			if (notify) {
- 				fireSeriesChanged();
- 			}
-+			updateBoundsForRemovedItem(item);
- 		}
- 	}

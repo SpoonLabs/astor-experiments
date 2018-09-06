@@ -1,9 +1,0 @@
---- /original/org/jfree/data/time/TimeSeries.java	
-+++ /fixed/org/jfree/data/time/TimeSeries.java	
-@@ -96,6 +96,7 @@
- 	}
- 
- 	public double getMinY() {
-+		findBoundsByIteration();
- 		return this.minY;
- 	}

@@ -1,0 +1,16 @@
+# astor-cardumen-experiments
+
+## Open-science repo for Cardumen patches.
+
+Explanation about  the folders:
+
+1. `all_unformated_patches` contains all the DeepRepair patches. 
+Due to a bug in our tool, the diffs have wrong line numbers, which correspond to the line number of the files *after* removing the comments and JavaDoc. 
+In addition to the patches, for each bug, we add a json file that has the correct information about the patch (including the correct line number)
+
+2. `formatted_patches` folder contains a subset of patches with the correct line numbers.
+Those patches correspond to programs from D4J that were only repair by DeepRepair and not by JgenProg.
+
+
+
+

@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "if (org.jfree.data.general.Series.this.notify) {\n\tnotifyListeners(new org.jfree.data.event.SeriesChangeEvent(org.jfree.data.general.Series.this));\n}\nfixed statement= notifyListeners(new org.jfree.data.event.SeriesChangeEvent(org.jfree.data.general.Series.this))\ngeneration= 8\ningredientScope= LOCAL\noperation: InsertBeforeOp\nlocation= org.jfree.data.time.TimeSeries\nline= 564\nlineSuspiciousness= 0.447\noriginal statement= add(item, true)",
+    "diffpatch": "--- /local/scr/mtufano/Chart/3/b/similar-local-executables-default/2/AstorMain-b/src/default/org/jfree/data/general/Series.java\t\n+++ /local/scr/mtufano/Chart/3/b/similar-local-executables-default/2/AstorMain-b/src/variant-167/org/jfree/data/general/Series.java\t\n@@ -114,6 +114,7 @@\n \t\tif (org.jfree.data.general.Series.this.notify) {\n \t\t\tnotifyListeners(new org.jfree.data.event.SeriesChangeEvent(org.jfree.data.general.Series.this));\n \t\t}\n+\t\tnotifyListeners(new org.jfree.data.event.SeriesChangeEvent(org.jfree.data.general.Series.this));\n \t}\n \n \tprotected void notifyListeners(org.jfree.data.event.SeriesChangeEvent event) {\n\n--- /local/scr/mtufano/Chart/3/b/similar-local-executables-default/2/AstorMain-b/src/default/org/jfree/data/time/TimeSeries.java\t\n+++ /local/scr/mtufano/Chart/3/b/similar-local-executables-default/2/AstorMain-b/src/variant-167/org/jfree/data/time/TimeSeries.java\t\n@@ -187,6 +187,7 @@\n \t}\n \n \tpublic void add(org.jfree.data.time.TimeSeriesDataItem item) {\n+\t\tfindBoundsByIteration();\n \t\tadd(item, true);\n \t}",
+    "generation": 8,
+    "ingredients": null,
+    "patch": "notifyListeners(new org.jfree.data.event.SeriesChangeEvent(org.jfree.data.general.Series.this))\ngeneration= 8\ningredientScope= LOCAL\noperation: InsertBeforeOp\nlocation= org.jfree.data.time.TimeSeries\nline= 564\nlineSuspiciousness= 0.447\noriginal statement= add(item, true)\nfixed statement= findBoundsByIteration()",
+    "patchLocation": {
+        "className": "org.jfree.data.general.Series",
+        "line": 315,
+        "lineSuspiciousness": 0.151
+    },
+    "scope": "LOCAL",
+    "time": "50",
+    "type": "InsertAfterOp",
+    "variant": 167
+}

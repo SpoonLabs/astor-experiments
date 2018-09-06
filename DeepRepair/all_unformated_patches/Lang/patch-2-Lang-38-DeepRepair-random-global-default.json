@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "calendar = ((java.util.Calendar) (calendar.clone()))",
+    "diffpatch": "--- /local/scr/mtufano/Lang/38/b/random-global-default/3/AstorMain-b/src/default/org/apache/commons/lang3/time/FastDateFormat.java\t\n+++ /local/scr/mtufano/Lang/38/b/random-global-default/3/AstorMain-b/src/variant-124/org/apache/commons/lang3/time/FastDateFormat.java\t\n@@ -435,6 +435,7 @@\n \tpublic java.lang.StringBuffer format(java.util.Calendar calendar, java.lang.StringBuffer buf) {\n \t\tif (mTimeZoneForced) {\n \t\t\tcalendar = ((java.util.Calendar) (calendar.clone()));\n+\t\t\tint offset = (calendar.get(java.util.Calendar.ZONE_OFFSET)) + (calendar.get(java.util.Calendar.DST_OFFSET));\n \t\t\tcalendar.setTimeZone(mTimeZone);\n \t\t}\n \t\treturn applyRules(calendar, buf);",
+    "generation": 123,
+    "ingredients": null,
+    "patch": "int offset = (calendar.get(java.util.Calendar.ZONE_OFFSET)) + (calendar.get(java.util.Calendar.DST_OFFSET))",
+    "patchLocation": {
+        "className": "org.apache.commons.lang3.time.FastDateFormat",
+        "line": 872,
+        "lineSuspiciousness": 1.0
+    },
+    "scope": "LOCAL",
+    "time": "604",
+    "type": "InsertAfterOp",
+    "variant": 124
+}

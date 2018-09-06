@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "tb += h",
+    "diffpatch": "--- /local/scr/mtufano/Math/78/b/random-package-default/1/AstorMain-b/src/default/org/apache/commons/math/ode/events/EventState.java\t\n+++ /local/scr/mtufano/Math/78/b/random-package-default/1/AstorMain-b/src/variant-1749/org/apache/commons/math/ode/events/EventState.java\t\n@@ -77,6 +77,7 @@\n \t\t\tdouble ga = g0;\n \t\t\tdouble tb = (t0) + (interpolator.isForward() ? convergence : -(convergence));\n \t\t\tfor (int i = 0; i < n; ++i) {\n+\t\t\t\tta = tb;\n \t\t\t\ttb += h;\n \t\t\t\tinterpolator.setInterpolatedTime(tb);\n \t\t\t\tfinal double gb = handler.g(tb, interpolator.getInterpolatedState());",
+    "generation": 1748,
+    "ingredients": null,
+    "patch": "ta = tb",
+    "patchLocation": {
+        "className": "org.apache.commons.math.ode.events.EventState",
+        "line": 183,
+        "lineSuspiciousness": 0.107
+    },
+    "scope": "LOCAL",
+    "time": "822",
+    "type": "InsertBeforeOp",
+    "variant": 1749
+}

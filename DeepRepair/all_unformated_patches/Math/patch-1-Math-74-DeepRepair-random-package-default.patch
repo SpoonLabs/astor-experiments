@@ -1,0 +1,10 @@
+--- /local/scr/mtufano/Math/74/b/random-package-default/1/AstorMain-b/src/default/org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator.java	
++++ /local/scr/mtufano/Math/74/b/random-package-default/1/AstorMain-b/src/variant-110/org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator.java	
+@@ -42,6 +42,7 @@
+ 			interpolator.shift();
+ 			double error = 0;
+ 			for (boolean loop = true; loop;) {
++				setMaxGrowth(10.0);
+ 				stepSize = hNew;
+ 				final double stepEnd = (stepStart) + (stepSize);
+ 				interpolator.setInterpolatedTime(stepEnd);

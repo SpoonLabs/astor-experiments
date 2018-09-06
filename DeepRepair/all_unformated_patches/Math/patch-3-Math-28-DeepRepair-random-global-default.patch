@@ -1,0 +1,10 @@
+--- /local/scr/mtufano/Math/28/b/random-global-default/2/AstorMain-b/src/default/org/apache/commons/math3/optimization/linear/SimplexSolver.java	
++++ /local/scr/mtufano/Math/28/b/random-global-default/2/AstorMain-b/src/variant-297/org/apache/commons/math3/optimization/linear/SimplexSolver.java	
+@@ -66,6 +66,7 @@
+ 							return row;
+ 						}
+ 					}
++					break;
+ 				}
+ 				java.lang.Integer minRow = null;
+ 				int minIndex = tableau.getWidth();

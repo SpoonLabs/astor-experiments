@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "++idx",
+    "diffpatch": "--- /local/scr/mtufano/Math/56/b/random-local-default/1/AstorMain-b/src/default/org/apache/commons/math/util/MultidimensionalCounter.java\t\n+++ /local/scr/mtufano/Math/56/b/random-local-default/1/AstorMain-b/src/variant-1457/org/apache/commons/math/util/MultidimensionalCounter.java\t\n@@ -110,6 +110,10 @@\n \t\tint idx = 1;\n \t\twhile (count < index) {\n \t\t\tcount += idx;\n+\t\t\twhile (count < index) {\n+\t\t\t\tcount += idx;\n+\t\t\t\t++idx;\n+\t\t\t} \n \t\t\t++idx;\n \t\t} \n \t\t--idx;",
+    "generation": 1456,
+    "ingredients": null,
+    "patch": "while (count < index) {\n\tcount += idx;\n\t++idx;\n} ",
+    "patchLocation": {
+        "className": "org.apache.commons.math.util.MultidimensionalCounter",
+        "line": 240,
+        "lineSuspiciousness": 1.0
+    },
+    "scope": "LOCAL",
+    "time": "957",
+    "type": "InsertBeforeOp",
+    "variant": 1457
+}

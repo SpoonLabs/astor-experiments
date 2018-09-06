@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "if (str.startsWith(\"--\")) {\n\treturn null;\n}",
+    "diffpatch": "--- /local/scr/mtufano/Lang/7/b/random-global-default/2/AstorMain-b/src/default/org/apache/commons/lang3/math/NumberUtils.java\t\n+++ /local/scr/mtufano/Lang/7/b/random-global-default/2/AstorMain-b/src/variant-9/org/apache/commons/lang3/math/NumberUtils.java\t\n@@ -141,8 +141,15 @@\n \t\tif (org.apache.commons.lang3.StringUtils.isBlank(str)) {\n \t\t\tthrow new java.lang.NumberFormatException(\"A blank string is not a valid number\");\n \t\t}\n-\t\tif (str.startsWith(\"--\")) {\n-\t\t\treturn null;\n+\t\tif ((((str.startsWith(\"0x\")) || (str.startsWith(\"-0x\"))) || (str.startsWith(\"0X\"))) || (str.startsWith(\"-0X\"))) {\n+\t\t\tint hexDigits = (str.length()) - 2;\n+\t\t\tif (str.startsWith(\"-\")) {\n+\t\t\t\thexDigits--;\n+\t\t\t}\n+\t\t\tif (hexDigits > 8) {\n+\t\t\t\treturn org.apache.commons.lang3.math.NumberUtils.createLong(str);\n+\t\t\t}\n+\t\t\treturn org.apache.commons.lang3.math.NumberUtils.createInteger(str);\n \t\t}\n \t\tif ((((str.startsWith(\"0x\")) || (str.startsWith(\"-0x\"))) || (str.startsWith(\"0X\"))) || (str.startsWith(\"-0X\"))) {\n \t\t\tint hexDigits = (str.length()) - 2;",
+    "generation": 8,
+    "ingredients": null,
+    "patch": "if ((((str.startsWith(\"0x\")) || (str.startsWith(\"-0x\"))) || (str.startsWith(\"0X\"))) || (str.startsWith(\"-0X\"))) {\n\tint hexDigits = (str.length()) - 2;\n\tif (str.startsWith(\"-\")) {\n\t\thexDigits--;\n\t}\n\tif (hexDigits > 8) {\n\t\treturn org.apache.commons.lang3.math.NumberUtils.createLong(str);\n\t}\n\treturn org.apache.commons.lang3.math.NumberUtils.createInteger(str);\n}",
+    "patchLocation": {
+        "className": "org.apache.commons.lang3.math.NumberUtils",
+        "line": 452,
+        "lineSuspiciousness": 0.577
+    },
+    "scope": "LOCAL",
+    "time": "26",
+    "type": "ReplaceOp",
+    "variant": 9
+}

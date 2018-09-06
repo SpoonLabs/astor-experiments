@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "renderer.setPlot(org.jfree.chart.plot.CategoryPlot.this)\nfixed statement= fireChangeEvent()\ngeneration= 2\ningredientScope= LOCAL\noperation: ReplaceOp\nlocation= org.jfree.chart.renderer.category.AbstractCategoryItemRenderer\nline= 1797\nlineSuspiciousness= 0.162\noriginal statement= if (dataset != null) {\n\treturn result;\n}",
+    "diffpatch": "--- /local/scr/mtufano/Chart/1/b/random-local-default/3/AstorMain-b/src/default/org/jfree/chart/plot/CategoryPlot.java\t\n+++ /local/scr/mtufano/Chart/1/b/random-local-default/3/AstorMain-b/src/variant-255/org/jfree/chart/plot/CategoryPlot.java\t\n@@ -663,6 +663,7 @@\n \t\torg.jfree.chart.plot.CategoryPlot.this.renderers.set(index, renderer);\n \t\tif (renderer != null) {\n \t\t\trenderer.setPlot(org.jfree.chart.plot.CategoryPlot.this);\n+\t\t\tfireChangeEvent();\n \t\t\trenderer.addChangeListener(org.jfree.chart.plot.CategoryPlot.this);\n \t\t}\n \t\tconfigureDomainAxes();\n\n--- /local/scr/mtufano/Chart/1/b/random-local-default/3/AstorMain-b/src/default/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java\t\n+++ /local/scr/mtufano/Chart/1/b/random-local-default/3/AstorMain-b/src/variant-255/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java\t\n@@ -766,7 +766,7 @@\n \t\t}\n \t\tint index = org.jfree.chart.renderer.category.AbstractCategoryItemRenderer.this.plot.getIndexOf(org.jfree.chart.renderer.category.AbstractCategoryItemRenderer.this);\n \t\torg.jfree.data.category.CategoryDataset dataset = org.jfree.chart.renderer.category.AbstractCategoryItemRenderer.this.plot.getDataset(index);\n-\t\tif (dataset != null) {\n+\t\tif ((org.jfree.chart.renderer.category.AbstractCategoryItemRenderer.this.plot) == null) {\n \t\t\treturn result;\n \t\t}\n \t\tint seriesCount = dataset.getRowCount();",
+    "generation": 2,
+    "ingredients": null,
+    "patch": "fireChangeEvent()\ngeneration= 2\ningredientScope= LOCAL\noperation: ReplaceOp\nlocation= org.jfree.chart.renderer.category.AbstractCategoryItemRenderer\nline= 1797\nlineSuspiciousness= 0.162\noriginal statement= if (dataset != null) {\n\treturn result;\n}\nfixed statement= if ((org.jfree.chart.renderer.category.AbstractCategoryItemRenderer.this.plot) == null) {\n\treturn result;\n}",
+    "patchLocation": {
+        "className": "org.jfree.chart.plot.CategoryPlot",
+        "line": 1674,
+        "lineSuspiciousness": 0.354
+    },
+    "scope": "LOCAL",
+    "time": "124",
+    "type": "InsertAfterOp",
+    "variant": 255
+}

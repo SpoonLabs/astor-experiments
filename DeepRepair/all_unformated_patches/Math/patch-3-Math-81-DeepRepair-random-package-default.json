@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "final double gam = dN2",
+    "diffpatch": "--- /local/scr/mtufano/Math/81/b/random-package-default/2/AstorMain-b/src/default/org/apache/commons/math/linear/EigenDecompositionImpl.java\t\n+++ /local/scr/mtufano/Math/81/b/random-package-default/2/AstorMain-b/src/variant-167/org/apache/commons/math/linear/EigenDecompositionImpl.java\t\n@@ -982,6 +982,16 @@\n \t\t\t\t\t\tfinal int np = nn - (2 * (pingPong));\n \t\t\t\t\t\tdouble b1 = work[(np - 2)];\n \t\t\t\t\t\tdouble b2 = work[(np - 6)];\n+\t\t\t\t\t\tfor (int i4 = ((4 * end) - 9) + (pingPong); i4 >= (((4 * start) + 2) + (pingPong)); i4 -= 4) {\n+\t\t\t\t\t\t\tif ((work[i4]) > (work[(i4 - 2)])) {\n+\t\t\t\t\t\t\t\treturn ;\n+\t\t\t\t\t\t\t}\n+\t\t\t\t\t\t\tb1 *= (work[i4]) / (work[(i4 - 2)]);\n+\t\t\t\t\t\t\tb2 += b1;\n+\t\t\t\t\t\t\tif ((100 * b1) < b2) {\n+\t\t\t\t\t\t\t\tbreak;\n+\t\t\t\t\t\t\t}\n+\t\t\t\t\t\t}\n \t\t\t\t\t\tfinal double gam = dN2;\n \t\t\t\t\t\tif (((work[(np - 8)]) > b2) || ((work[(np - 4)]) > b1)) {\n \t\t\t\t\t\t\treturn ;",
+    "generation": 166,
+    "ingredients": null,
+    "patch": "for (int i4 = ((4 * end) - 9) + (pingPong); i4 >= (((4 * start) + 2) + (pingPong)); i4 -= 4) {\n\tif ((work[i4]) > (work[(i4 - 2)])) {\n\t\treturn ;\n\t}\n\tb1 *= (work[i4]) / (work[(i4 - 2)]);\n\tb2 += b1;\n\tif ((100 * b1) < b2) {\n\t\tbreak;\n\t}\n}",
+    "patchLocation": {
+        "className": "org.apache.commons.math.linear.EigenDecompositionImpl",
+        "line": 1536,
+        "lineSuspiciousness": 0.577
+    },
+    "scope": "LOCAL",
+    "time": "1097",
+    "type": "InsertBeforeOp",
+    "variant": 167
+}

@@ -1,0 +1,32 @@
+--- /local/scr/mtufano/Chart/15/b/random-global-default/3/AstorMain-b/src/default/org/jfree/chart/plot/PiePlot3D.java	
++++ /local/scr/mtufano/Chart/15/b/random-global-default/3/AstorMain-b/src/variant-125/org/jfree/chart/plot/PiePlot3D.java	
+@@ -69,12 +69,11 @@
+ 		double linkY = (plotArea.getY()) + (gapVertical / 2);
+ 		double linkW = (plotArea.getWidth()) - gapHorizontal;
+ 		double linkH = (plotArea.getHeight()) - gapVertical;
+-		if (isCircular()) {
+-			double min = (java.lang.Math.min(linkW, linkH)) / 2;
+-			linkX = (((linkX + linkX) + linkW) / 2) - min;
+-			linkY = (((linkY + linkY) + linkH) / 2) - min;
+-			linkW = 2 * min;
+-			linkH = 2 * min;
++		if (org.jfree.data.general.DatasetUtilities.isEmptyOrNull(getDataset())) {
++			drawNoDataMessage(g2, plotArea);
++			g2.setClip(savedClip);
++			drawOutline(g2, plotArea);
++			return ;
+ 		}
+ 		org.jfree.chart.plot.PiePlotState state = initialise(g2, plotArea, org.jfree.chart.plot.PiePlot3D.this, null, info);
+ 		java.awt.geom.Rectangle2D linkAreaXX = new java.awt.geom.Rectangle2D.Double(linkX, linkY, linkW, (linkH * (1 - (org.jfree.chart.plot.PiePlot3D.this.depthFactor))));
+
+--- /local/scr/mtufano/Chart/15/b/random-global-default/3/AstorMain-b/src/default/org/jfree/chart/text/TextLine.java	
++++ /local/scr/mtufano/Chart/15/b/random-global-default/3/AstorMain-b/src/variant-125/org/jfree/chart/text/TextLine.java	
+@@ -52,7 +52,7 @@
+ 		while (iterator.hasNext()) {
+ 			org.jfree.chart.text.TextFragment fragment = ((org.jfree.chart.text.TextFragment) (iterator.next()));
+ 			org.jfree.chart.util.Size2D d = fragment.calculateDimensions(g2);
+-			fragment.draw(g2, x, (anchorY + yOffset), org.jfree.chart.text.TextAnchor.BASELINE_LEFT, rotateX, rotateY, angle);
++			g2.setPaint(java.awt.Color.blue);
+ 			x = x + ((float) (d.getWidth()));
+ 		} 
+ 	}

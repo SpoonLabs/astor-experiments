@@ -1,0 +1,22 @@
+--- /local/scr/mtufano/Math/6/b/random-package-embeddings/1/AstorMain-b/src/default/org/apache/commons/math3/optim/BaseOptimizer.java	
++++ /local/scr/mtufano/Math/6/b/random-package-embeddings/1/AstorMain-b/src/variant-1805/org/apache/commons/math3/optim/BaseOptimizer.java	
+@@ -29,7 +29,7 @@
+ 	}
+ 
+ 	public int getIterations() {
+-		return iterations.getCount();
++		return evaluations.getMaximalCount();
+ 	}
+ 
+ 	public org.apache.commons.math3.optim.ConvergenceChecker<PAIR> getConvergenceChecker() {
+
+--- /local/scr/mtufano/Math/6/b/random-package-embeddings/1/AstorMain-b/src/default/org/apache/commons/math3/util/FastMath.java	
++++ /local/scr/mtufano/Math/6/b/random-package-embeddings/1/AstorMain-b/src/variant-1805/org/apache/commons/math3/util/FastMath.java	
+@@ -690,6 +690,7 @@
+ 		double c = a + (lnm[0]);
+ 		double d = -((c - a) - (lnm[0]));
+ 		a = c;
++		int k = ((int) ((LN_2_A) * 0.6366197723675814));
+ 		b = b + d;
+ 		c = a + lnza;
+ 		d = -((c - a) - lnza);

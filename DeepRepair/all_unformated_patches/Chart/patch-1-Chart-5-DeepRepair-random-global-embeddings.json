@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "return overwritten\nfixed statement= fireSeriesChanged()\ngeneration= 9\ningredientScope= LOCAL\noperation: ReplaceOp\nlocation= org.jfree.data.xy.XYSeries\nline= 564\nlineSuspiciousness= 0.707\noriginal statement= org.jfree.data.xy.XYSeries.this.data.add(((-index) - 1), new org.jfree.data.xy.XYDataItem(x, y))",
+    "diffpatch": "--- /local/scr/mtufano/Chart/5/b/random-global-embeddings/1/AstorMain-b/src/default/org/jfree/data/xy/XYSeries.java\t\n+++ /local/scr/mtufano/Chart/5/b/random-global-embeddings/1/AstorMain-b/src/variant-170/org/jfree/data/xy/XYSeries.java\t\n@@ -203,7 +203,7 @@\n \t\t\texisting.setY(y);\n \t\t}else {\n \t\t\tif (org.jfree.data.xy.XYSeries.this.autoSort) {\n-\t\t\t\torg.jfree.data.xy.XYSeries.this.data.add(((-index) - 1), new org.jfree.data.xy.XYDataItem(x, y));\n+\t\t\t\tadd(x, y, true);\n \t\t\t}else {\n \t\t\t\torg.jfree.data.xy.XYSeries.this.data.add(new org.jfree.data.xy.XYDataItem(x, y));\n \t\t\t}\n@@ -212,6 +212,7 @@\n \t\t\t}\n \t\t}\n \t\tfireSeriesChanged();\n+\t\tfireSeriesChanged();\n \t\treturn overwritten;\n \t}\n \n\n--- /local/scr/mtufano/Chart/5/b/random-global-embeddings/1/AstorMain-b/src/default/org/jfree/data/xy/XYSeries.java\t\n+++ /local/scr/mtufano/Chart/5/b/random-global-embeddings/1/AstorMain-b/src/variant-170/org/jfree/data/xy/XYSeries.java\t\n@@ -203,7 +203,7 @@\n \t\t\texisting.setY(y);\n \t\t}else {\n \t\t\tif (org.jfree.data.xy.XYSeries.this.autoSort) {\n-\t\t\t\torg.jfree.data.xy.XYSeries.this.data.add(((-index) - 1), new org.jfree.data.xy.XYDataItem(x, y));\n+\t\t\t\tadd(x, y, true);\n \t\t\t}else {\n \t\t\t\torg.jfree.data.xy.XYSeries.this.data.add(new org.jfree.data.xy.XYDataItem(x, y));\n \t\t\t}\n@@ -212,6 +212,7 @@\n \t\t\t}\n \t\t}\n \t\tfireSeriesChanged();\n+\t\tfireSeriesChanged();\n \t\treturn overwritten;\n \t}",
+    "generation": 9,
+    "ingredients": null,
+    "patch": "fireSeriesChanged()\ngeneration= 9\ningredientScope= LOCAL\noperation: ReplaceOp\nlocation= org.jfree.data.xy.XYSeries\nline= 564\nlineSuspiciousness= 0.707\noriginal statement= org.jfree.data.xy.XYSeries.this.data.add(((-index) - 1), new org.jfree.data.xy.XYDataItem(x, y))\nfixed statement= add(x, y, true)",
+    "patchLocation": {
+        "className": "org.jfree.data.xy.XYSeries",
+        "line": 575,
+        "lineSuspiciousness": 0.5
+    },
+    "scope": "LOCAL",
+    "time": "46",
+    "type": "InsertBeforeOp",
+    "variant": 170
+}

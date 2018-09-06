@@ -1,0 +1,10 @@
+--- /local/scr/mtufano/Math/80/b/random-package-embeddings/2/AstorMain-b/src/default/org/apache/commons/math/linear/EigenDecompositionImpl.java	
++++ /local/scr/mtufano/Math/80/b/random-package-embeddings/2/AstorMain-b/src/variant-213/org/apache/commons/math/linear/EigenDecompositionImpl.java	
+@@ -695,6 +695,7 @@
+ 		double upper = java.lang.Double.NEGATIVE_INFINITY;
+ 		for (int i = 0; i < n; ++i) {
+ 			lower = java.lang.Math.min(lower, work[((lowerStart + index) + i)]);
++			pingPong = 1 - (pingPong);
+ 			upper = java.lang.Math.max(upper, work[((upperStart + index) + i)]);
+ 		}
+ 		final double tNorm = java.lang.Math.max(java.lang.Math.abs(lower), java.lang.Math.abs(upper));

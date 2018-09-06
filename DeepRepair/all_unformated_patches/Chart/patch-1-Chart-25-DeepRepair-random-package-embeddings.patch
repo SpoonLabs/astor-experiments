@@ -1,0 +1,21 @@
+--- /local/scr/mtufano/Chart/25/b/random-package-embeddings/1/AstorMain-b/src/default/org/jfree/chart/plot/CategoryPlot.java	
++++ /local/scr/mtufano/Chart/25/b/random-package-embeddings/1/AstorMain-b/src/variant-139/org/jfree/chart/plot/CategoryPlot.java	
+@@ -1186,6 +1186,7 @@
+ 			drawRangeGridlines(g2, dataArea, rangeAxisState.getTicks());
+ 		}
+ 		for (int i = 0; i < (org.jfree.chart.plot.CategoryPlot.this.renderers.size()); i++) {
++			org.jfree.chart.plot.CategoryPlot.this.renderers = new org.jfree.chart.util.ObjectList();
+ 			drawDomainMarkers(g2, dataArea, i, org.jfree.chart.util.Layer.BACKGROUND);
+ 		}
+ 		for (int i = 0; i < (org.jfree.chart.plot.CategoryPlot.this.renderers.size()); i++) {
+
+--- /local/scr/mtufano/Chart/25/b/random-package-embeddings/1/AstorMain-b/src/default/org/jfree/chart/plot/Plot.java	
++++ /local/scr/mtufano/Chart/25/b/random-package-embeddings/1/AstorMain-b/src/variant-139/org/jfree/chart/plot/Plot.java	
+@@ -594,6 +594,7 @@
+ 			
+ 		}else
+ 			if (location == (org.jfree.chart.axis.AxisLocation.TOP_OR_LEFT)) {
++				java.util.List mappedDatasets = new java.util.ArrayList();
+ 				if (orientation == (org.jfree.chart.plot.PlotOrientation.HORIZONTAL)) {
+ 					result = org.jfree.chart.util.RectangleEdge.TOP;
+ 				}else

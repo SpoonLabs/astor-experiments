@@ -1,0 +1,21 @@
+--- /local/scr/mtufano/Chart/25/b/random-global-default/2/AstorMain-b/src/default/org/jfree/chart/axis/CategoryAxis.java	
++++ /local/scr/mtufano/Chart/25/b/random-global-default/2/AstorMain-b/src/variant-49/org/jfree/chart/axis/CategoryAxis.java	
+@@ -331,6 +331,7 @@
+ 			java.util.List ticks = refreshTicks(g2, state, plotArea, edge);
+ 			state.setTicks(ticks);
+ 			int categoryIndex = 0;
++			java.lang.String axisLabel = getLabel();
+ 			java.util.Iterator iterator = ticks.iterator();
+ 			while (iterator.hasNext()) {
+ 				org.jfree.chart.axis.CategoryTick tick = ((org.jfree.chart.axis.CategoryTick) (iterator.next()));
+
+--- /local/scr/mtufano/Chart/25/b/random-global-default/2/AstorMain-b/src/default/org/jfree/chart/plot/CategoryPlot.java	
++++ /local/scr/mtufano/Chart/25/b/random-global-default/2/AstorMain-b/src/variant-49/org/jfree/chart/plot/CategoryPlot.java	
+@@ -1348,6 +1348,7 @@
+ 								renderer.drawItem(g2, state, dataArea, org.jfree.chart.plot.CategoryPlot.this, domainAxis, rangeAxis, currentDataset, row, column, pass);
+ 							}
+ 						}
++						return true;
+ 					}
+ 				}else {
+ 					for (int column = columnCount - 1; column >= 0; column--) {

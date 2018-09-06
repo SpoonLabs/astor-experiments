@@ -1,0 +1,95 @@
+--- /local/scr/mtufano/Chart/18/b/random-local-default/2/AstorMain-b/src/default/org/jfree/data/DefaultKeyedValues2D.java	
++++ /local/scr/mtufano/Chart/18/b/random-local-default/2/AstorMain-b/src/variant-698/org/jfree/data/DefaultKeyedValues2D.java	
+@@ -179,9 +179,13 @@
+ 
+ 	public void removeColumn(java.lang.Comparable columnKey) {
+ 		java.util.Iterator iterator = org.jfree.data.DefaultKeyedValues2D.this.rows.iterator();
++		if (!(org.jfree.data.DefaultKeyedValues2D.this.columnKeys.contains(columnKey))) {
++			throw new org.jfree.data.UnknownKeyException(("Unrecognised columnKey: " + columnKey));
++		}
+ 		while (iterator.hasNext()) {
+ 			org.jfree.data.DefaultKeyedValues rowData = ((org.jfree.data.DefaultKeyedValues) (iterator.next()));
+-			rowData.removeValue(columnKey);
++			java.lang.Number result = null;
++			org.jfree.data.DefaultKeyedValues2D.this.columnKeys.remove(columnKey);
+ 		} 
+ 		org.jfree.data.DefaultKeyedValues2D.this.columnKeys.remove(columnKey);
+ 	}
+
+--- /local/scr/mtufano/Chart/18/b/random-local-default/2/AstorMain-b/src/default/org/jfree/data/DefaultKeyedValues2D.java	
++++ /local/scr/mtufano/Chart/18/b/random-local-default/2/AstorMain-b/src/variant-698/org/jfree/data/DefaultKeyedValues2D.java	
+@@ -179,9 +179,13 @@
+ 
+ 	public void removeColumn(java.lang.Comparable columnKey) {
+ 		java.util.Iterator iterator = org.jfree.data.DefaultKeyedValues2D.this.rows.iterator();
++		if (!(org.jfree.data.DefaultKeyedValues2D.this.columnKeys.contains(columnKey))) {
++			throw new org.jfree.data.UnknownKeyException(("Unrecognised columnKey: " + columnKey));
++		}
+ 		while (iterator.hasNext()) {
+ 			org.jfree.data.DefaultKeyedValues rowData = ((org.jfree.data.DefaultKeyedValues) (iterator.next()));
+-			rowData.removeValue(columnKey);
++			java.lang.Number result = null;
++			org.jfree.data.DefaultKeyedValues2D.this.columnKeys.remove(columnKey);
+ 		} 
+ 		org.jfree.data.DefaultKeyedValues2D.this.columnKeys.remove(columnKey);
+ 	}
+
+--- /local/scr/mtufano/Chart/18/b/random-local-default/2/AstorMain-b/src/default/org/jfree/data/DefaultKeyedValues.java	
++++ /local/scr/mtufano/Chart/18/b/random-local-default/2/AstorMain-b/src/variant-698/org/jfree/data/DefaultKeyedValues.java	
+@@ -116,6 +116,7 @@
+ 
+ 	public void removeValue(int index) {
+ 		org.jfree.data.DefaultKeyedValues.this.keys.remove(index);
++		org.jfree.data.DefaultKeyedValues.this.indexMap.clear();
+ 		org.jfree.data.DefaultKeyedValues.this.values.remove(index);
+ 		if (index < (org.jfree.data.DefaultKeyedValues.this.keys.size())) {
+ 			rebuildIndex();
+@@ -125,6 +126,9 @@
+ 	public void removeValue(java.lang.Comparable key) {
+ 		int index = getIndex(key);
+ 		if (index < 0) {
++			if (index < 0) {
++				throw new org.jfree.data.UnknownKeyException(("Key not found: " + key));
++			}
+ 			return ;
+ 		}
+ 		removeValue(index);
+
+--- /local/scr/mtufano/Chart/18/b/random-local-default/2/AstorMain-b/src/default/org/jfree/data/DefaultKeyedValues.java	
++++ /local/scr/mtufano/Chart/18/b/random-local-default/2/AstorMain-b/src/variant-698/org/jfree/data/DefaultKeyedValues.java	
+@@ -116,6 +116,7 @@
+ 
+ 	public void removeValue(int index) {
+ 		org.jfree.data.DefaultKeyedValues.this.keys.remove(index);
++		org.jfree.data.DefaultKeyedValues.this.indexMap.clear();
+ 		org.jfree.data.DefaultKeyedValues.this.values.remove(index);
+ 		if (index < (org.jfree.data.DefaultKeyedValues.this.keys.size())) {
+ 			rebuildIndex();
+@@ -125,6 +126,9 @@
+ 	public void removeValue(java.lang.Comparable key) {
+ 		int index = getIndex(key);
+ 		if (index < 0) {
++			if (index < 0) {
++				throw new org.jfree.data.UnknownKeyException(("Key not found: " + key));
++			}
+ 			return ;
+ 		}
+ 		removeValue(index);
+
+--- /local/scr/mtufano/Chart/18/b/random-local-default/2/AstorMain-b/src/default/org/jfree/data/DefaultKeyedValues2D.java	
++++ /local/scr/mtufano/Chart/18/b/random-local-default/2/AstorMain-b/src/variant-698/org/jfree/data/DefaultKeyedValues2D.java	
+@@ -179,9 +179,13 @@
+ 
+ 	public void removeColumn(java.lang.Comparable columnKey) {
+ 		java.util.Iterator iterator = org.jfree.data.DefaultKeyedValues2D.this.rows.iterator();
++		if (!(org.jfree.data.DefaultKeyedValues2D.this.columnKeys.contains(columnKey))) {
++			throw new org.jfree.data.UnknownKeyException(("Unrecognised columnKey: " + columnKey));
++		}
+ 		while (iterator.hasNext()) {
+ 			org.jfree.data.DefaultKeyedValues rowData = ((org.jfree.data.DefaultKeyedValues) (iterator.next()));
+-			rowData.removeValue(columnKey);
++			java.lang.Number result = null;
++			org.jfree.data.DefaultKeyedValues2D.this.columnKeys.remove(columnKey);
+ 		} 
+ 		org.jfree.data.DefaultKeyedValues2D.this.columnKeys.remove(columnKey);
+ 	}

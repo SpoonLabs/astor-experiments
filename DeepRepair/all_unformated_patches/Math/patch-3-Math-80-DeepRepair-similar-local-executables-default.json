@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "upperSpectra = java.lang.Double.NEGATIVE_INFINITY",
+    "diffpatch": "--- /local/scr/mtufano/Math/80/b/similar-local-executables-default/2/AstorMain-b/src/default/org/apache/commons/math/linear/EigenDecompositionImpl.java\t\n+++ /local/scr/mtufano/Math/80/b/similar-local-executables-default/2/AstorMain-b/src/variant-1171/org/apache/commons/math/linear/EigenDecompositionImpl.java\t\n@@ -314,7 +314,7 @@\n \t\tfinal int lowerStart = 4 * m;\n \t\tfinal int upperStart = 5 * m;\n \t\tlowerSpectra = java.lang.Double.POSITIVE_INFINITY;\n-\t\tupperSpectra = java.lang.Double.NEGATIVE_INFINITY;\n+\t\tpingPong = 1 - (pingPong);\n \t\tdouble eMax = 0;\n \t\tdouble eCurrent = 0;\n \t\tfor (int i = 0; i < (m - 1); ++i) {",
+    "generation": 1170,
+    "ingredients": null,
+    "patch": "pingPong = 1 - (pingPong)",
+    "patchLocation": {
+        "className": "org.apache.commons.math.linear.EigenDecompositionImpl",
+        "line": 575,
+        "lineSuspiciousness": 0.167
+    },
+    "scope": "LOCAL",
+    "time": "3864",
+    "type": "ReplaceOp",
+    "variant": 1171
+}

@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "if (greater > 0) {\n\tincrease += 3 * greater;\n}",
+    "diffpatch": "--- /local/scr/mtufano/Lang/39/b/random-local-embeddings/2/AstorMain-b/src/default/org/apache/commons/lang3/StringUtils.java\t\n+++ /local/scr/mtufano/Lang/39/b/random-local-embeddings/2/AstorMain-b/src/variant-1130/org/apache/commons/lang3/StringUtils.java\t\n@@ -1167,6 +1167,7 @@\n \t\t\tif (greater > 0) {\n \t\t\t\tincrease += 3 * greater;\n \t\t\t}\n+\t\t\tbreak;\n \t\t}\n \t\tincrease = java.lang.Math.min(increase, ((text.length()) / 5));\n \t\tjava.lang.StringBuilder buf = new java.lang.StringBuilder(((text.length()) + increase));",
+    "generation": 1129,
+    "ingredients": null,
+    "patch": "break",
+    "patchLocation": {
+        "className": "org.apache.commons.lang3.StringUtils",
+        "line": 3677,
+        "lineSuspiciousness": 0.707
+    },
+    "scope": "LOCAL",
+    "time": "2289",
+    "type": "InsertAfterOp",
+    "variant": 1130
+}

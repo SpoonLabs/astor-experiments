@@ -1,0 +1,11 @@
+--- /local/scr/mtufano/Math/81/b/random-global-default/3/AstorMain-b/src/default/org/apache/commons/math/linear/EigenDecompositionImpl.java	
++++ /local/scr/mtufano/Math/81/b/random-global-default/3/AstorMain-b/src/variant-45/org/apache/commons/math/linear/EigenDecompositionImpl.java	
+@@ -971,7 +971,7 @@
+ 						}
+ 						a2 = cnst3 * a2;
+ 						if (a2 < cnst1) {
+-							s = (gam * (1 - (java.lang.Math.sqrt(a2)))) / (1 + a2);
++							lowerSpectra = java.lang.Double.POSITIVE_INFINITY;
+ 						}
+ 						tau = s;
+ 					}

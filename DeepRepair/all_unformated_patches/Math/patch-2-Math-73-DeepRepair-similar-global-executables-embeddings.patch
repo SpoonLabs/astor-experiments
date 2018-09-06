@@ -1,0 +1,10 @@
+--- /local/scr/mtufano/Math/73/b/similar-global-executables-embeddings/3/AstorMain-b/src/default/org/apache/commons/math/analysis/solvers/BrentSolver.java	
++++ /local/scr/mtufano/Math/73/b/similar-global-executables-embeddings/3/AstorMain-b/src/variant-1196/org/apache/commons/math/analysis/solvers/BrentSolver.java	
+@@ -40,6 +40,7 @@
+ 			setResult(yMin, 0);
+ 			return result;
+ 		}
++		verifyBracketing(min, max, f);
+ 		if ((yInitial * yMin) < 0) {
+ 			return solve(f, min, yMin, initial, yInitial, min, yMin);
+ 		}

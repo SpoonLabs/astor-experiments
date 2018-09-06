@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "item = ((org.jfree.data.time.TimeSeriesDataItem) (item.clone()))",
+    "diffpatch": "--- /local/scr/mtufano/Chart/3/b/random-global-default/3/AstorMain-b/src/default/org/jfree/data/time/TimeSeries.java\t\n+++ /local/scr/mtufano/Chart/3/b/random-global-default/3/AstorMain-b/src/variant-2/org/jfree/data/time/TimeSeries.java\t\n@@ -195,6 +195,7 @@\n \t\t\tthrow new java.lang.IllegalArgumentException(\"Null 'item' argument.\");\n \t\t}\n \t\titem = ((org.jfree.data.time.TimeSeriesDataItem) (item.clone()));\n+\t\tupdateBoundsForRemovedItem(item);\n \t\tjava.lang.Class c = item.getPeriod().getClass();\n \t\tif ((org.jfree.data.time.TimeSeries.this.timePeriodClass) == null) {\n \t\t\torg.jfree.data.time.TimeSeries.this.timePeriodClass = c;",
+    "generation": 1,
+    "ingredients": null,
+    "patch": "updateBoundsForRemovedItem(item)",
+    "patchLocation": {
+        "className": "org.jfree.data.time.TimeSeries",
+        "line": 579,
+        "lineSuspiciousness": 0.151
+    },
+    "scope": "LOCAL",
+    "time": "12",
+    "type": "InsertAfterOp",
+    "variant": 2
+}

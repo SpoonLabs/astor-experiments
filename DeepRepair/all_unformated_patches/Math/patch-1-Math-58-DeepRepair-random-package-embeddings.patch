@@ -1,0 +1,16 @@
+--- /local/scr/mtufano/Math/58/b/random-package-embeddings/3/AstorMain-b/src/default/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java	
++++ /local/scr/mtufano/Math/58/b/random-package-embeddings/3/AstorMain-b/src/variant-329/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java	
+@@ -153,6 +153,13 @@
+ 				for (int j = 0; j < (solvedCols); ++j) {
+ 					int pj = permutation[j];
+ 					double dirJ = lmDir[pj];
++					if (lmNorm > 0) {
++						previousCost = org.apache.commons.math.util.FastMath.max(previousCost, lmPar);
++					}else
++						if (lmNorm < 0) {
++							previousCost = org.apache.commons.math.util.FastMath.min(previousCost, lmPar);
++						}
++					
+ 					work1[j] = 0;
+ 					for (int i = 0; i <= j; ++i) {
+ 						work1[i] += (weightedResidualJacobian[i][pj]) * dirJ;

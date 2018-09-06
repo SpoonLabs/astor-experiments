@@ -1,0 +1,88 @@
+--- /local/scr/mtufano/Chart/18/b/random-local-embeddings/1/AstorMain-b/src/default/org/jfree/data/DefaultKeyedValues.java	
++++ /local/scr/mtufano/Chart/18/b/random-local-embeddings/1/AstorMain-b/src/variant-1030/org/jfree/data/DefaultKeyedValues.java	
+@@ -117,15 +117,17 @@
+ 	public void removeValue(int index) {
+ 		org.jfree.data.DefaultKeyedValues.this.keys.remove(index);
+ 		org.jfree.data.DefaultKeyedValues.this.values.remove(index);
++		clear();
+ 		if (index < (org.jfree.data.DefaultKeyedValues.this.keys.size())) {
+ 			rebuildIndex();
+ 		}
+ 	}
+ 
+ 	public void removeValue(java.lang.Comparable key) {
++		org.jfree.data.DefaultKeyedValues.this.indexMap.put(key, new java.lang.Integer(((org.jfree.data.DefaultKeyedValues.this.keys.size()) - 1)));
+ 		int index = getIndex(key);
+ 		if (index < 0) {
+-			return ;
++			throw new org.jfree.data.UnknownKeyException(("Key not found: " + key));
+ 		}
+ 		removeValue(index);
+ 	}
+
+--- /local/scr/mtufano/Chart/18/b/random-local-embeddings/1/AstorMain-b/src/default/org/jfree/data/DefaultKeyedValues.java	
++++ /local/scr/mtufano/Chart/18/b/random-local-embeddings/1/AstorMain-b/src/variant-1030/org/jfree/data/DefaultKeyedValues.java	
+@@ -117,15 +117,17 @@
+ 	public void removeValue(int index) {
+ 		org.jfree.data.DefaultKeyedValues.this.keys.remove(index);
+ 		org.jfree.data.DefaultKeyedValues.this.values.remove(index);
++		clear();
+ 		if (index < (org.jfree.data.DefaultKeyedValues.this.keys.size())) {
+ 			rebuildIndex();
+ 		}
+ 	}
+ 
+ 	public void removeValue(java.lang.Comparable key) {
++		org.jfree.data.DefaultKeyedValues.this.indexMap.put(key, new java.lang.Integer(((org.jfree.data.DefaultKeyedValues.this.keys.size()) - 1)));
+ 		int index = getIndex(key);
+ 		if (index < 0) {
+-			return ;
++			throw new org.jfree.data.UnknownKeyException(("Key not found: " + key));
+ 		}
+ 		removeValue(index);
+ 	}
+
+--- /local/scr/mtufano/Chart/18/b/random-local-embeddings/1/AstorMain-b/src/default/org/jfree/data/category/DefaultCategoryDataset.java	
++++ /local/scr/mtufano/Chart/18/b/random-local-embeddings/1/AstorMain-b/src/variant-1030/org/jfree/data/category/DefaultCategoryDataset.java	
+@@ -101,7 +101,7 @@
+ 
+ 	public void removeColumn(java.lang.Comparable columnKey) {
+ 		org.jfree.data.category.DefaultCategoryDataset.this.data.removeColumn(columnKey);
+-		fireDatasetChanged();
++		org.jfree.data.category.DefaultCategoryDataset.this.data.removeRow(columnKey);
+ 	}
+ 
+ 	public void clear() {
+
+--- /local/scr/mtufano/Chart/18/b/random-local-embeddings/1/AstorMain-b/src/default/org/jfree/data/DefaultKeyedValues.java	
++++ /local/scr/mtufano/Chart/18/b/random-local-embeddings/1/AstorMain-b/src/variant-1030/org/jfree/data/DefaultKeyedValues.java	
+@@ -117,15 +117,17 @@
+ 	public void removeValue(int index) {
+ 		org.jfree.data.DefaultKeyedValues.this.keys.remove(index);
+ 		org.jfree.data.DefaultKeyedValues.this.values.remove(index);
++		clear();
+ 		if (index < (org.jfree.data.DefaultKeyedValues.this.keys.size())) {
+ 			rebuildIndex();
+ 		}
+ 	}
+ 
+ 	public void removeValue(java.lang.Comparable key) {
++		org.jfree.data.DefaultKeyedValues.this.indexMap.put(key, new java.lang.Integer(((org.jfree.data.DefaultKeyedValues.this.keys.size()) - 1)));
+ 		int index = getIndex(key);
+ 		if (index < 0) {
+-			return ;
++			throw new org.jfree.data.UnknownKeyException(("Key not found: " + key));
+ 		}
+ 		removeValue(index);
+ 	}
+
+--- /local/scr/mtufano/Chart/18/b/random-local-embeddings/1/AstorMain-b/src/default/org/jfree/data/DefaultKeyedValues2D.java	
++++ /local/scr/mtufano/Chart/18/b/random-local-embeddings/1/AstorMain-b/src/variant-1030/org/jfree/data/DefaultKeyedValues2D.java	
+@@ -184,6 +184,7 @@
+ 			rowData.removeValue(columnKey);
+ 		} 
+ 		org.jfree.data.DefaultKeyedValues2D.this.columnKeys.remove(columnKey);
++		setValue(null, columnKey, columnKey);
+ 	}
+ 
+ 	public void clear() {

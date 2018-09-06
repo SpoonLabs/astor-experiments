@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "if (tmp < upper) {\n\tupper = ((int) (java.lang.Math.ceil(tmp))) - 1;\n}",
+    "diffpatch": "--- /local/scr/mtufano/Math/2/b/random-global-default/3/AstorMain-b/src/default/org/apache/commons/math3/distribution/AbstractIntegerDistribution.java\t\n+++ /local/scr/mtufano/Math/2/b/random-global-default/3/AstorMain-b/src/variant-103/org/apache/commons/math3/distribution/AbstractIntegerDistribution.java\t\n@@ -57,8 +57,8 @@\n \t\t\t}\n \t\t\tk = 1.0 / k;\n \t\t\ttmp = mu + (k * sigma);\n-\t\t\tif (tmp < upper) {\n-\t\t\t\tupper = ((int) (java.lang.Math.ceil(tmp))) - 1;\n+\t\t\tif ((checkedCumulativeProbability(lower)) >= p) {\n+\t\t\t\treturn lower;\n \t\t\t}\n \t\t}\n \t\treturn solveInverseCumulativeProbability(p, lower, upper);",
+    "generation": 102,
+    "ingredients": null,
+    "patch": "if ((checkedCumulativeProbability(lower)) >= p) {\n\treturn lower;\n}",
+    "patchLocation": {
+        "className": "org.apache.commons.math3.distribution.AbstractIntegerDistribution",
+        "line": 137,
+        "lineSuspiciousness": 0.577
+    },
+    "scope": "LOCAL",
+    "time": "1020",
+    "type": "ReplaceOp",
+    "variant": 103
+}

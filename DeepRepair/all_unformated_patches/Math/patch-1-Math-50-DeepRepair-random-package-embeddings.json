@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "x0 = 0.5 * ((x0 + x1) - (org.apache.commons.math.util.FastMath.max((rtol * (org.apache.commons.math.util.FastMath.abs(x1))), atol)))",
+    "diffpatch": "--- /local/scr/mtufano/Math/50/b/random-package-embeddings/1/AstorMain-b/src/default/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java\t\n+++ /local/scr/mtufano/Math/50/b/random-package-embeddings/1/AstorMain-b/src/variant-759/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java\t\n@@ -78,7 +78,7 @@\n \t\t\t\t\t\tbreak;\n \t\t\t\t\tcase REGULA_FALSI :\n \t\t\t\t\t\tif (x == x1) {\n-\t\t\t\t\t\t\tx0 = 0.5 * ((x0 + x1) - (org.apache.commons.math.util.FastMath.max((rtol * (org.apache.commons.math.util.FastMath.abs(x1))), atol)));\n+\t\t\t\t\t\t\torg.apache.commons.math.analysis.solvers.BaseSecantSolver.this.allowed = allowed;\n \t\t\t\t\t\t\tf0 = computeObjectiveValue(x0);\n \t\t\t\t\t\t}\n \t\t\t\t\t\tbreak;",
+    "generation": 758,
+    "ingredients": null,
+    "patch": "org.apache.commons.math.analysis.solvers.BaseSecantSolver.this.allowed = allowed",
+    "patchLocation": {
+        "className": "org.apache.commons.math.analysis.solvers.BaseSecantSolver",
+        "line": 188,
+        "lineSuspiciousness": 1.0
+    },
+    "scope": "LOCAL",
+    "time": "535",
+    "type": "ReplaceOp",
+    "variant": 759
+}

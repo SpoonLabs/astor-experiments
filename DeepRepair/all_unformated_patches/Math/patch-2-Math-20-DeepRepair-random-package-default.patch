@@ -1,0 +1,11 @@
+--- /local/scr/mtufano/Math/20/b/random-package-default/3/AstorMain-b/src/default/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java	
++++ /local/scr/mtufano/Math/20/b/random-package-default/3/AstorMain-b/src/variant-990/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java	
+@@ -530,7 +530,7 @@
+ 				double diff = (boundaries[1][i]) - (boundaries[0][i]);
+ 				res[i] = ((x[i]) - (boundaries[0][i])) / diff;
+ 			}
+-			return res;
++			return x;
+ 		}
+ 
+ 		public double[] repairAndDecode(final double[] x) {

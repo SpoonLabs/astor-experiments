@@ -1,0 +1,39 @@
+--- /local/scr/mtufano/Chart/5/b/similar-package-types-default/1/AstorMain-b/src/default/org/jfree/data/xy/XYSeries.java	
++++ /local/scr/mtufano/Chart/5/b/similar-package-types-default/1/AstorMain-b/src/variant-94/org/jfree/data/xy/XYSeries.java	
+@@ -203,7 +203,7 @@
+ 			existing.setY(y);
+ 		}else {
+ 			if (org.jfree.data.xy.XYSeries.this.autoSort) {
+-				org.jfree.data.xy.XYSeries.this.data.add(((-index) - 1), new org.jfree.data.xy.XYDataItem(x, y));
++				add(x, y, true);
+ 			}else {
+ 				org.jfree.data.xy.XYSeries.this.data.add(new org.jfree.data.xy.XYDataItem(x, y));
+ 			}
+@@ -211,6 +211,7 @@
+ 				org.jfree.data.xy.XYSeries.this.data.remove(0);
+ 			}
+ 		}
++		org.jfree.data.xy.XYSeries.this.autoSort = autoSort;
+ 		fireSeriesChanged();
+ 		return overwritten;
+ 	}
+
+--- /local/scr/mtufano/Chart/5/b/similar-package-types-default/1/AstorMain-b/src/default/org/jfree/data/xy/XYSeries.java	
++++ /local/scr/mtufano/Chart/5/b/similar-package-types-default/1/AstorMain-b/src/variant-94/org/jfree/data/xy/XYSeries.java	
+@@ -203,7 +203,7 @@
+ 			existing.setY(y);
+ 		}else {
+ 			if (org.jfree.data.xy.XYSeries.this.autoSort) {
+-				org.jfree.data.xy.XYSeries.this.data.add(((-index) - 1), new org.jfree.data.xy.XYDataItem(x, y));
++				add(x, y, true);
+ 			}else {
+ 				org.jfree.data.xy.XYSeries.this.data.add(new org.jfree.data.xy.XYDataItem(x, y));
+ 			}
+@@ -211,6 +211,7 @@
+ 				org.jfree.data.xy.XYSeries.this.data.remove(0);
+ 			}
+ 		}
++		org.jfree.data.xy.XYSeries.this.autoSort = autoSort;
+ 		fireSeriesChanged();
+ 		return overwritten;
+ 	}

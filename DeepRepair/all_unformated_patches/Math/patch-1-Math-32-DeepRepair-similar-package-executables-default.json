@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "return new org.apache.commons.math3.geometry.euclidean.threed.Vector3D(((-inverse) * (z)), 0, (inverse * (x)))",
+    "diffpatch": "--- /local/scr/mtufano/Math/32/b/similar-package-executables-default/3/AstorMain-b/src/default/org/apache/commons/math3/geometry/euclidean/threed/Vector3D.java\t\n+++ /local/scr/mtufano/Math/32/b/similar-package-executables-default/3/AstorMain-b/src/variant-938/org/apache/commons/math3/geometry/euclidean/threed/Vector3D.java\t\n@@ -163,7 +163,7 @@\n \t\t}else\n \t\t\tif (((y) >= (-threshold)) && ((y) <= threshold)) {\n \t\t\t\tdouble inverse = 1 / (org.apache.commons.math3.util.FastMath.sqrt((((x) * (x)) + ((z) * (z)))));\n-\t\t\t\treturn new org.apache.commons.math3.geometry.euclidean.threed.Vector3D(((-inverse) * (z)), 0, (inverse * (x)));\n+\t\t\t\treturn new org.apache.commons.math3.geometry.euclidean.threed.Vector3D((inverse * (y)), ((-inverse) * (x)), 0);\n \t\t\t}\n \t\t\n \t\tdouble inverse = 1 / (org.apache.commons.math3.util.FastMath.sqrt((((x) * (x)) + ((y) * (y)))));",
+    "generation": 937,
+    "ingredients": null,
+    "patch": "return new org.apache.commons.math3.geometry.euclidean.threed.Vector3D((inverse * (y)), ((-inverse) * (x)), 0)",
+    "patchLocation": {
+        "className": "org.apache.commons.math3.geometry.euclidean.threed.Vector3D",
+        "line": 331,
+        "lineSuspiciousness": 0.408
+    },
+    "scope": "LOCAL",
+    "time": "7012",
+    "type": "ReplaceOp",
+    "variant": 938
+}

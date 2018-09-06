@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "point[pj] = oldX[pj]",
+    "diffpatch": "--- /local/scr/mtufano/Math/64/b/random-local-default/1/AstorMain-b/src/default/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java\t\n+++ /local/scr/mtufano/Math/64/b/random-local-default/1/AstorMain-b/src/variant-2100/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java\t\n@@ -197,6 +197,7 @@\n \t\t\t\t\tfor (int j = 0; j < (solvedCols); ++j) {\n \t\t\t\t\t\tint pj = permutation[j];\n \t\t\t\t\t\tpoint[pj] = oldX[pj];\n+\t\t\t\t\t\tcurrent = new org.apache.commons.math.optimization.VectorialPointValuePair(point, objective);\n \t\t\t\t\t}\n \t\t\t\t\ttmpVec = residuals;\n \t\t\t\t\tresiduals = oldRes;",
+    "generation": 2099,
+    "ingredients": null,
+    "patch": "current = new org.apache.commons.math.optimization.VectorialPointValuePair(point, objective)",
+    "patchLocation": {
+        "className": "org.apache.commons.math.optimization.general.LevenbergMarquardtOptimizer",
+        "line": 429,
+        "lineSuspiciousness": 0.289
+    },
+    "scope": "LOCAL",
+    "time": "5583",
+    "type": "InsertAfterOp",
+    "variant": 2100
+}

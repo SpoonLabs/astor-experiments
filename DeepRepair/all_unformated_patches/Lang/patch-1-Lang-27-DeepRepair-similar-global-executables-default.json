@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "mant = str.substring(0, expPos)",
+    "diffpatch": "--- /local/scr/mtufano/Lang/27/b/similar-global-executables-default/1/AstorMain-b/src/default/org/apache/commons/lang3/math/NumberUtils.java\t\n+++ /local/scr/mtufano/Lang/27/b/similar-global-executables-default/1/AstorMain-b/src/variant-1990/org/apache/commons/lang3/math/NumberUtils.java\t\n@@ -165,7 +165,7 @@\n \t\t\tmant = str.substring(0, decPos);\n \t\t}else {\n \t\t\tif (expPos > (-1)) {\n-\t\t\t\tmant = str.substring(0, expPos);\n+\t\t\t\tmant = str;\n \t\t\t}else {\n \t\t\t\tmant = str;\n \t\t\t}",
+    "generation": 1989,
+    "ingredients": null,
+    "patch": "mant = str",
+    "patchLocation": {
+        "className": "org.apache.commons.lang3.math.NumberUtils",
+        "line": 489,
+        "lineSuspiciousness": 0.707
+    },
+    "scope": "LOCAL",
+    "time": "2888",
+    "type": "ReplaceOp",
+    "variant": 1990
+}

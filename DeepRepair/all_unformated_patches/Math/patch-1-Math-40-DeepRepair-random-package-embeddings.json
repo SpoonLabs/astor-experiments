@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "absYB = org.apache.commons.math.util.FastMath.abs(yB)",
+    "diffpatch": "--- /local/scr/mtufano/Math/40/b/random-package-embeddings/1/AstorMain-b/src/default/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java\t\n+++ /local/scr/mtufano/Math/40/b/random-package-embeddings/1/AstorMain-b/src/variant-101/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java\t\n@@ -168,6 +168,7 @@\n \t\t\tif ((nextY * yA) <= 0) {\n \t\t\t\txB = nextX;\n \t\t\t\tyB = nextY;\n+\t\t\t\tsignChangeIndex++;\n \t\t\t\tabsYB = org.apache.commons.math.util.FastMath.abs(yB);\n \t\t\t\t++agingA;\n \t\t\t\tagingB = 0;",
+    "generation": 100,
+    "ingredients": null,
+    "patch": "signChangeIndex++",
+    "patchLocation": {
+        "className": "org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver",
+        "line": 327,
+        "lineSuspiciousness": 0.229
+    },
+    "scope": "LOCAL",
+    "time": "608",
+    "type": "InsertBeforeOp",
+    "variant": 101
+}

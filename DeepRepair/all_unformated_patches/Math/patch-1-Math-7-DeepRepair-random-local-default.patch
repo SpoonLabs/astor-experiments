@@ -1,0 +1,10 @@
+--- /local/scr/mtufano/Math/7/b/random-local-default/2/AstorMain-b/src/default/org/apache/commons/math3/ode/events/EventState.java	
++++ /local/scr/mtufano/Math/7/b/random-local-default/2/AstorMain-b/src/variant-50/org/apache/commons/math3/ode/events/EventState.java	
+@@ -79,6 +79,7 @@
+ 
+ 	public boolean evaluateStep(final org.apache.commons.math3.ode.sampling.StepInterpolator interpolator) throws org.apache.commons.math3.exception.MaxCountExceededException, org.apache.commons.math3.exception.NoBracketingException {
+ 		try {
++			t0 = interpolator.getPreviousTime();
+ 			forward = interpolator.isForward();
+ 			final double t1 = interpolator.getCurrentTime();
+ 			final double dt = t1 - (t0);

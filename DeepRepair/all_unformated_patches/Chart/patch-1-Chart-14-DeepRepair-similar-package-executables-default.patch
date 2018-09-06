@@ -1,0 +1,83 @@
+--- /local/scr/mtufano/Chart/14/b/similar-package-executables-default/1/AstorMain-b/src/default/org/jfree/chart/plot/CategoryPlot.java	
++++ /local/scr/mtufano/Chart/14/b/similar-package-executables-default/1/AstorMain-b/src/variant-486/org/jfree/chart/plot/CategoryPlot.java	
+@@ -926,7 +926,7 @@
+ 	public boolean removeDomainMarker(int index, org.jfree.chart.plot.Marker marker, org.jfree.chart.util.Layer layer, boolean notify) {
+ 		java.util.ArrayList markers;
+ 		if (layer == (org.jfree.chart.util.Layer.FOREGROUND)) {
+-			markers = ((java.util.ArrayList) (org.jfree.chart.plot.CategoryPlot.this.foregroundDomainMarkers.get(new java.lang.Integer(index))));
++			markers = ((java.util.ArrayList) (org.jfree.chart.plot.CategoryPlot.this.backgroundRangeMarkers.get(new java.lang.Integer(index))));
+ 		}else {
+ 			markers = ((java.util.ArrayList) (org.jfree.chart.plot.CategoryPlot.this.backgroundDomainMarkers.get(new java.lang.Integer(index))));
+ 		}
+@@ -1044,7 +1044,7 @@
+ 	}
+ 
+ 	public boolean removeRangeMarker(org.jfree.chart.plot.Marker marker) {
+-		return removeRangeMarker(marker, org.jfree.chart.util.Layer.FOREGROUND);
++		return removeDomainMarker(marker, org.jfree.chart.util.Layer.FOREGROUND);
+ 	}
+ 
+ 	public boolean removeRangeMarker(org.jfree.chart.plot.Marker marker, org.jfree.chart.util.Layer layer) {
+
+--- /local/scr/mtufano/Chart/14/b/similar-package-executables-default/1/AstorMain-b/src/default/org/jfree/chart/plot/CategoryPlot.java	
++++ /local/scr/mtufano/Chart/14/b/similar-package-executables-default/1/AstorMain-b/src/variant-486/org/jfree/chart/plot/CategoryPlot.java	
+@@ -926,7 +926,7 @@
+ 	public boolean removeDomainMarker(int index, org.jfree.chart.plot.Marker marker, org.jfree.chart.util.Layer layer, boolean notify) {
+ 		java.util.ArrayList markers;
+ 		if (layer == (org.jfree.chart.util.Layer.FOREGROUND)) {
+-			markers = ((java.util.ArrayList) (org.jfree.chart.plot.CategoryPlot.this.foregroundDomainMarkers.get(new java.lang.Integer(index))));
++			markers = ((java.util.ArrayList) (org.jfree.chart.plot.CategoryPlot.this.backgroundRangeMarkers.get(new java.lang.Integer(index))));
+ 		}else {
+ 			markers = ((java.util.ArrayList) (org.jfree.chart.plot.CategoryPlot.this.backgroundDomainMarkers.get(new java.lang.Integer(index))));
+ 		}
+@@ -1044,7 +1044,7 @@
+ 	}
+ 
+ 	public boolean removeRangeMarker(org.jfree.chart.plot.Marker marker) {
+-		return removeRangeMarker(marker, org.jfree.chart.util.Layer.FOREGROUND);
++		return removeDomainMarker(marker, org.jfree.chart.util.Layer.FOREGROUND);
+ 	}
+ 
+ 	public boolean removeRangeMarker(org.jfree.chart.plot.Marker marker, org.jfree.chart.util.Layer layer) {
+
+--- /local/scr/mtufano/Chart/14/b/similar-package-executables-default/1/AstorMain-b/src/default/org/jfree/chart/plot/XYPlot.java	
++++ /local/scr/mtufano/Chart/14/b/similar-package-executables-default/1/AstorMain-b/src/variant-486/org/jfree/chart/plot/XYPlot.java	
+@@ -898,7 +898,7 @@
+ 	}
+ 
+ 	public boolean removeDomainMarker(org.jfree.chart.plot.Marker marker) {
+-		return removeDomainMarker(marker, org.jfree.chart.util.Layer.FOREGROUND);
++		return org.jfree.chart.plot.XYPlot.this.rangeZeroBaselineVisible;
+ 	}
+ 
+ 	public boolean removeDomainMarker(org.jfree.chart.plot.Marker marker, org.jfree.chart.util.Layer layer) {
+@@ -1018,7 +1018,7 @@
+ 	}
+ 
+ 	public boolean removeRangeMarker(int index, org.jfree.chart.plot.Marker marker, org.jfree.chart.util.Layer layer) {
+-		return removeRangeMarker(index, marker, layer, true);
++		return false;
+ 	}
+ 
+ 	public boolean removeRangeMarker(int index, org.jfree.chart.plot.Marker marker, org.jfree.chart.util.Layer layer, boolean notify) {
+
+--- /local/scr/mtufano/Chart/14/b/similar-package-executables-default/1/AstorMain-b/src/default/org/jfree/chart/plot/XYPlot.java	
++++ /local/scr/mtufano/Chart/14/b/similar-package-executables-default/1/AstorMain-b/src/variant-486/org/jfree/chart/plot/XYPlot.java	
+@@ -898,7 +898,7 @@
+ 	}
+ 
+ 	public boolean removeDomainMarker(org.jfree.chart.plot.Marker marker) {
+-		return removeDomainMarker(marker, org.jfree.chart.util.Layer.FOREGROUND);
++		return org.jfree.chart.plot.XYPlot.this.rangeZeroBaselineVisible;
+ 	}
+ 
+ 	public boolean removeDomainMarker(org.jfree.chart.plot.Marker marker, org.jfree.chart.util.Layer layer) {
+@@ -1018,7 +1018,7 @@
+ 	}
+ 
+ 	public boolean removeRangeMarker(int index, org.jfree.chart.plot.Marker marker, org.jfree.chart.util.Layer layer) {
+-		return removeRangeMarker(index, marker, layer, true);
++		return false;
+ 	}
+ 
+ 	public boolean removeRangeMarker(int index, org.jfree.chart.plot.Marker marker, org.jfree.chart.util.Layer layer, boolean notify) {

@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "if (((java.lang.Math.abs(u)) <= 1) || ((java.lang.Math.abs(v)) <= 1)) {\n\treturn 1;\n}",
+    "diffpatch": "--- /local/scr/mtufano/Lang/22/b/random-global-default/3/AstorMain-b/src/default/org/apache/commons/lang3/math/Fraction.java\t\n+++ /local/scr/mtufano/Lang/22/b/random-global-default/3/AstorMain-b/src/variant-1663/org/apache/commons/lang3/math/Fraction.java\t\n@@ -285,8 +285,8 @@\n \t}\n \n \tprivate static int greatestCommonDivisor(int u, int v) {\n-\t\tif (((java.lang.Math.abs(u)) <= 1) || ((java.lang.Math.abs(v)) <= 1)) {\n-\t\t\treturn 1;\n+\t\tif (v > 0) {\n+\t\t\tv = -v;\n \t\t}\n \t\tif (u > 0) {\n \t\t\tu = -u;",
+    "generation": 1662,
+    "ingredients": null,
+    "patch": "if (v > 0) {\n\tv = -v;\n}",
+    "patchLocation": {
+        "className": "org.apache.commons.lang3.math.Fraction",
+        "line": 584,
+        "lineSuspiciousness": 0.447
+    },
+    "scope": "LOCAL",
+    "time": "4171",
+    "type": "ReplaceOp",
+    "variant": 1663
+}

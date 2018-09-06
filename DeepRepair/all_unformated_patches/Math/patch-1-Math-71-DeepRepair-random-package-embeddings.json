@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "return forward ? initialStep : -(initialStep)\nfixed statement= initialStep += (initialStep) * (initialStep)\ngeneration= 42\ningredientScope= PACKAGE\noperation: InsertBeforeOp\nlocation= org.apache.commons.math.ode.events.EventState\nline= 248\nlineSuspiciousness= 0.15\noriginal statement= return true",
+    "diffpatch": "--- /local/scr/mtufano/Math/71/b/random-package-embeddings/3/AstorMain-b/src/default/org/apache/commons/math/ode/nonstiff/AdaptiveStepsizeIntegrator.java\t\n+++ /local/scr/mtufano/Math/71/b/random-package-embeddings/3/AstorMain-b/src/variant-160/org/apache/commons/math/ode/nonstiff/AdaptiveStepsizeIntegrator.java\t\n@@ -63,6 +63,7 @@\n \n \tpublic double initializeStep(final org.apache.commons.math.ode.FirstOrderDifferentialEquations equations, final boolean forward, final int order, final double[] scale, final double t0, final double[] y0, final double[] yDot0, final double[] y1, final double[] yDot1) throws org.apache.commons.math.ode.DerivativeException {\n \t\tif ((initialStep) > 0) {\n+\t\t\tinitialStep += (initialStep) * (initialStep);\n \t\t\treturn forward ? initialStep : -(initialStep);\n \t\t}\n \t\tdouble ratio;\n\n--- /local/scr/mtufano/Math/71/b/random-package-embeddings/3/AstorMain-b/src/default/org/apache/commons/math/ode/events/EventState.java\t\n+++ /local/scr/mtufano/Math/71/b/random-package-embeddings/3/AstorMain-b/src/variant-160/org/apache/commons/math/ode/events/EventState.java\t\n@@ -119,6 +119,9 @@\n \t\t\t\t\t\t\t\treturn false;\n \t\t\t\t\t\t\t}\n \t\t\t\t\t\t\tpendingEvent = true;\n+\t\t\t\t\t\t\tif ((pendingEvent) && ((java.lang.Math.abs((t1 - (pendingEventTime)))) <= (convergence))) {\n+\t\t\t\t\t\t\t\treturn false;\n+\t\t\t\t\t\t\t}\n \t\t\t\t\t\t\treturn true;\n \t\t\t\t\t\t}",
+    "generation": 42,
+    "ingredients": null,
+    "patch": "initialStep += (initialStep) * (initialStep)\ngeneration= 42\ningredientScope= PACKAGE\noperation: InsertBeforeOp\nlocation= org.apache.commons.math.ode.events.EventState\nline= 248\nlineSuspiciousness= 0.15\noriginal statement= return true\nfixed statement= if ((pendingEvent) && ((java.lang.Math.abs((t1 - (pendingEventTime)))) <= (convergence))) {\n\treturn false;\n}",
+    "patchLocation": {
+        "className": "org.apache.commons.math.ode.nonstiff.AdaptiveStepsizeIntegrator",
+        "line": 211,
+        "lineSuspiciousness": 0.5
+    },
+    "scope": "PACKAGE",
+    "time": "1557",
+    "type": "InsertBeforeOp",
+    "variant": 160
+}

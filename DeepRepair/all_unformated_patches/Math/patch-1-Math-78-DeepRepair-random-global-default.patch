@@ -1,0 +1,10 @@
+--- /local/scr/mtufano/Math/78/b/random-global-default/1/AstorMain-b/src/default/org/apache/commons/math/analysis/solvers/BrentSolver.java	
++++ /local/scr/mtufano/Math/78/b/random-global-default/1/AstorMain-b/src/variant-210/org/apache/commons/math/analysis/solvers/BrentSolver.java	
+@@ -120,6 +120,7 @@
+ 					p1 = 1.0 - r3;
+ 				}else {
+ 					double r1 = y0 / y2;
++					absoluteAccuracy = defaultAbsoluteAccuracy;
+ 					double r2 = y1 / y2;
+ 					p = r3 * (((dx * r1) * (r1 - r2)) - ((x1 - x0) * (r2 - 1.0)));
+ 					p1 = ((r1 - 1.0) * (r2 - 1.0)) * (r3 - 1.0);

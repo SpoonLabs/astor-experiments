@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "int categoryIndex = 0\nfixed statement= java.lang.String axisLabel = getLabel()\ngeneration= 12\ningredientScope= PACKAGE\noperation: InsertAfterOp\nlocation= org.jfree.chart.plot.CategoryPlot\nline= 2866\nlineSuspiciousness= 0.894\noriginal statement= if ((org.jfree.chart.plot.CategoryPlot.this.rowRenderingOrder) == (org.jfree.chart.util.SortOrder.ASCENDING)) {\n\tfor (int row = 0; row < rowCount; row++) {\n\t\trenderer.drawItem(g2, state, dataArea, org.jfree.chart.plot.CategoryPlot.this, domainAxis, rangeAxis, currentDataset, row, column, pass);\n\t}\n}else {\n\tfor (int row = rowCount - 1; row >= 0; row--) {\n\t\trenderer.drawItem(g2, state, dataArea, org.jfree.chart.plot.CategoryPlot.this, domainAxis, rangeAxis, currentDataset, row, column, pass);\n\t}\n}",
+    "diffpatch": "--- /local/scr/mtufano/Chart/25/b/random-global-default/2/AstorMain-b/src/default/org/jfree/chart/axis/CategoryAxis.java\t\n+++ /local/scr/mtufano/Chart/25/b/random-global-default/2/AstorMain-b/src/variant-49/org/jfree/chart/axis/CategoryAxis.java\t\n@@ -331,6 +331,7 @@\n \t\t\tjava.util.List ticks = refreshTicks(g2, state, plotArea, edge);\n \t\t\tstate.setTicks(ticks);\n \t\t\tint categoryIndex = 0;\n+\t\t\tjava.lang.String axisLabel = getLabel();\n \t\t\tjava.util.Iterator iterator = ticks.iterator();\n \t\t\twhile (iterator.hasNext()) {\n \t\t\t\torg.jfree.chart.axis.CategoryTick tick = ((org.jfree.chart.axis.CategoryTick) (iterator.next()));\n\n--- /local/scr/mtufano/Chart/25/b/random-global-default/2/AstorMain-b/src/default/org/jfree/chart/plot/CategoryPlot.java\t\n+++ /local/scr/mtufano/Chart/25/b/random-global-default/2/AstorMain-b/src/variant-49/org/jfree/chart/plot/CategoryPlot.java\t\n@@ -1348,6 +1348,7 @@\n \t\t\t\t\t\t\t\trenderer.drawItem(g2, state, dataArea, org.jfree.chart.plot.CategoryPlot.this, domainAxis, rangeAxis, currentDataset, row, column, pass);\n \t\t\t\t\t\t\t}\n \t\t\t\t\t\t}\n+\t\t\t\t\t\treturn true;\n \t\t\t\t\t}\n \t\t\t\t}else {\n \t\t\t\t\tfor (int column = columnCount - 1; column >= 0; column--) {",
+    "generation": 12,
+    "ingredients": null,
+    "patch": "java.lang.String axisLabel = getLabel()\ngeneration= 12\ningredientScope= PACKAGE\noperation: InsertAfterOp\nlocation= org.jfree.chart.plot.CategoryPlot\nline= 2866\nlineSuspiciousness= 0.894\noriginal statement= if ((org.jfree.chart.plot.CategoryPlot.this.rowRenderingOrder) == (org.jfree.chart.util.SortOrder.ASCENDING)) {\n\tfor (int row = 0; row < rowCount; row++) {\n\t\trenderer.drawItem(g2, state, dataArea, org.jfree.chart.plot.CategoryPlot.this, domainAxis, rangeAxis, currentDataset, row, column, pass);\n\t}\n}else {\n\tfor (int row = rowCount - 1; row >= 0; row--) {\n\t\trenderer.drawItem(g2, state, dataArea, org.jfree.chart.plot.CategoryPlot.this, domainAxis, rangeAxis, currentDataset, row, column, pass);\n\t}\n}\nfixed statement= return true",
+    "patchLocation": {
+        "className": "org.jfree.chart.axis.CategoryAxis",
+        "line": 866,
+        "lineSuspiciousness": 0.894
+    },
+    "scope": "PACKAGE",
+    "time": "48",
+    "type": "InsertAfterOp",
+    "variant": 49
+}

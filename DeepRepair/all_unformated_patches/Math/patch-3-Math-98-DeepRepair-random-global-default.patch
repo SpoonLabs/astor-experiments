@@ -1,0 +1,23 @@
+--- /local/scr/mtufano/Math/98/b/random-global-default/2/AstorMain-b/src/default/org/apache/commons/math/linear/RealMatrixImpl.java	
++++ /local/scr/mtufano/Math/98/b/random-global-default/2/AstorMain-b/src/variant-599/org/apache/commons/math/linear/RealMatrixImpl.java	
+@@ -436,7 +436,7 @@
+ 		if ((v.length) != nCols) {
+ 			throw new java.lang.IllegalArgumentException("vector has wrong length");
+ 		}
+-		final double[] out = new double[v.length];
++		final double[] out = new double[nRows];
+ 		for (int row = 0; row < nRows; row++) {
+ 			final double[] dataRow = data[row];
+ 			double sum = 0;
+
+--- /local/scr/mtufano/Math/98/b/random-global-default/2/AstorMain-b/src/default/org/apache/commons/math/linear/BigMatrixImpl.java	
++++ /local/scr/mtufano/Math/98/b/random-global-default/2/AstorMain-b/src/variant-599/org/apache/commons/math/linear/BigMatrixImpl.java	
+@@ -536,7 +536,7 @@
+ 		}
+ 		final int nRows = org.apache.commons.math.linear.BigMatrixImpl.this.getRowDimension();
+ 		final int nCols = org.apache.commons.math.linear.BigMatrixImpl.this.getColumnDimension();
+-		final java.math.BigDecimal[] out = new java.math.BigDecimal[v.length];
++		final java.math.BigDecimal[] out = new java.math.BigDecimal[nRows];
+ 		for (int row = 0; row < nRows; row++) {
+ 			java.math.BigDecimal sum = org.apache.commons.math.linear.BigMatrixImpl.ZERO;
+ 			for (int i = 0; i < nCols; i++) {

@@ -1,0 +1,12 @@
+--- /local/scr/mtufano/Lang/24/b/random-local-default/3/AstorMain-b/src/default/org/apache/commons/lang3/math/NumberUtils.java	
++++ /local/scr/mtufano/Lang/24/b/random-local-default/3/AstorMain-b/src/variant-9592/org/apache/commons/lang3/math/NumberUtils.java	
+@@ -715,6 +715,9 @@
+ 				return foundDigit;
+ 			}
+ 			if (((chars[i]) == 'l') || ((chars[i]) == 'L')) {
++				if (hasDecPoint || hasExp) {
++					return false;
++				}
+ 				return foundDigit && (!hasExp);
+ 			}
+ 			return false;

@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "org.jfree.chart.plot.Plot parent = getParent()\nfixed statement= org.jfree.chart.plot.DatasetRenderingOrder order = getDatasetRenderingOrder()\ngeneration= 1\ningredientScope= LOCAL\noperation: ReplaceOp\nlocation= org.jfree.chart.renderer.category.AbstractCategoryItemRenderer\nline= 1797\nlineSuspiciousness= 0.162\noriginal statement= if (dataset != null) {\n\treturn result;\n}",
+    "diffpatch": "--- /local/scr/mtufano/Chart/1/b/random-global-embeddings/1/AstorMain-b/src/default/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java\t\n+++ /local/scr/mtufano/Chart/1/b/random-global-embeddings/1/AstorMain-b/src/variant-709/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java\t\n@@ -766,7 +766,7 @@\n \t\t}\n \t\tint index = org.jfree.chart.renderer.category.AbstractCategoryItemRenderer.this.plot.getIndexOf(org.jfree.chart.renderer.category.AbstractCategoryItemRenderer.this);\n \t\torg.jfree.data.category.CategoryDataset dataset = org.jfree.chart.renderer.category.AbstractCategoryItemRenderer.this.plot.getDataset(index);\n-\t\tif (dataset != null) {\n+\t\tif ((org.jfree.chart.renderer.category.AbstractCategoryItemRenderer.this.plot) == null) {\n \t\t\treturn result;\n \t\t}\n \t\tint seriesCount = dataset.getRowCount();\n\n--- /local/scr/mtufano/Chart/1/b/random-global-embeddings/1/AstorMain-b/src/default/org/jfree/chart/plot/CategoryPlot.java\t\n+++ /local/scr/mtufano/Chart/1/b/random-global-embeddings/1/AstorMain-b/src/variant-709/org/jfree/chart/plot/CategoryPlot.java\t\n@@ -370,6 +370,7 @@\n \t\t}\n \t\tif (result == null) {\n \t\t\torg.jfree.chart.plot.Plot parent = getParent();\n+\t\t\torg.jfree.chart.plot.DatasetRenderingOrder order = getDatasetRenderingOrder();\n \t\t\tif (parent instanceof org.jfree.chart.plot.CategoryPlot) {\n \t\t\t\torg.jfree.chart.plot.CategoryPlot cp = ((org.jfree.chart.plot.CategoryPlot) (parent));\n \t\t\t\tresult = cp.getRangeAxis(index);",
+    "generation": 1,
+    "ingredients": null,
+    "patch": "org.jfree.chart.plot.DatasetRenderingOrder order = getDatasetRenderingOrder()\ngeneration= 1\ningredientScope= LOCAL\noperation: ReplaceOp\nlocation= org.jfree.chart.renderer.category.AbstractCategoryItemRenderer\nline= 1797\nlineSuspiciousness= 0.162\noriginal statement= if (dataset != null) {\n\treturn result;\n}\nfixed statement= if ((org.jfree.chart.renderer.category.AbstractCategoryItemRenderer.this.plot) == null) {\n\treturn result;\n}",
+    "patchLocation": {
+        "className": "org.jfree.chart.plot.CategoryPlot",
+        "line": 1045,
+        "lineSuspiciousness": 0.209
+    },
+    "scope": "LOCAL",
+    "time": "372",
+    "type": "InsertAfterOp",
+    "variant": 709
+}

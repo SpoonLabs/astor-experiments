@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "double r1 = y0 / y2",
+    "diffpatch": "--- /local/scr/mtufano/Math/78/b/random-global-default/1/AstorMain-b/src/default/org/apache/commons/math/analysis/solvers/BrentSolver.java\t\n+++ /local/scr/mtufano/Math/78/b/random-global-default/1/AstorMain-b/src/variant-210/org/apache/commons/math/analysis/solvers/BrentSolver.java\t\n@@ -120,6 +120,7 @@\n \t\t\t\t\tp1 = 1.0 - r3;\n \t\t\t\t}else {\n \t\t\t\t\tdouble r1 = y0 / y2;\n+\t\t\t\t\tabsoluteAccuracy = defaultAbsoluteAccuracy;\n \t\t\t\t\tdouble r2 = y1 / y2;\n \t\t\t\t\tp = r3 * (((dx * r1) * (r1 - r2)) - ((x1 - x0) * (r2 - 1.0)));\n \t\t\t\t\tp1 = ((r1 - 1.0) * (r2 - 1.0)) * (r3 - 1.0);",
+    "generation": 209,
+    "ingredients": null,
+    "patch": "absoluteAccuracy = defaultAbsoluteAccuracy",
+    "patchLocation": {
+        "className": "org.apache.commons.math.analysis.solvers.BrentSolver",
+        "line": 267,
+        "lineSuspiciousness": 0.316
+    },
+    "scope": "GLOBAL",
+    "time": "146",
+    "type": "InsertAfterOp",
+    "variant": 210
+}

@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "long s = getDataItem(org.jfree.data.time.TimePeriodValues.this.minMiddleIndex).getPeriod().getStart().getTime()\nfixed statement= int result\ngeneration= 1\ningredientScope= PACKAGE\noperation: InsertAfterOp\nlocation= org.jfree.data.time.TimePeriodValues\nline= 277\nlineSuspiciousness= 0.277\noriginal statement= if (start > maxStart) {\n\torg.jfree.data.time.TimePeriodValues.this.maxStartIndex = index;\n}",
+    "diffpatch": "--- /local/scr/mtufano/Chart/7/b/random-package-embeddings/3/AstorMain-b/src/default/org/jfree/data/time/TimePeriodValues.java\t\n+++ /local/scr/mtufano/Chart/7/b/random-package-embeddings/3/AstorMain-b/src/variant-155/org/jfree/data/time/TimePeriodValues.java\t\n@@ -101,6 +101,9 @@\n \t\t\tif (start > maxStart) {\n \t\t\t\torg.jfree.data.time.TimePeriodValues.this.maxStartIndex = index;\n \t\t\t}\n+\t\t\tif (middle < maxStart) {\n+\t\t\t\torg.jfree.data.time.TimePeriodValues.this.minMiddleIndex = index;\n+\t\t\t}\n \t\t}else {\n \t\t\torg.jfree.data.time.TimePeriodValues.this.maxStartIndex = index;\n \t\t}\n@@ -115,6 +118,7 @@\n \t\t\torg.jfree.data.time.TimePeriodValues.this.minMiddleIndex = index;\n \t\t}\n \t\tif ((org.jfree.data.time.TimePeriodValues.this.maxMiddleIndex) >= 0) {\n+\t\t\tint result;\n \t\t\tlong s = getDataItem(org.jfree.data.time.TimePeriodValues.this.minMiddleIndex).getPeriod().getStart().getTime();\n \t\t\tlong e = getDataItem(org.jfree.data.time.TimePeriodValues.this.minMiddleIndex).getPeriod().getEnd().getTime();\n \t\t\tlong maxMiddle = s + ((e - s) / 2);\n\n--- /local/scr/mtufano/Chart/7/b/random-package-embeddings/3/AstorMain-b/src/default/org/jfree/data/time/TimePeriodValues.java\t\n+++ /local/scr/mtufano/Chart/7/b/random-package-embeddings/3/AstorMain-b/src/variant-155/org/jfree/data/time/TimePeriodValues.java\t\n@@ -101,6 +101,9 @@\n \t\t\tif (start > maxStart) {\n \t\t\t\torg.jfree.data.time.TimePeriodValues.this.maxStartIndex = index;\n \t\t\t}\n+\t\t\tif (middle < maxStart) {\n+\t\t\t\torg.jfree.data.time.TimePeriodValues.this.minMiddleIndex = index;\n+\t\t\t}\n \t\t}else {\n \t\t\torg.jfree.data.time.TimePeriodValues.this.maxStartIndex = index;\n \t\t}\n@@ -115,6 +118,7 @@\n \t\t\torg.jfree.data.time.TimePeriodValues.this.minMiddleIndex = index;\n \t\t}\n \t\tif ((org.jfree.data.time.TimePeriodValues.this.maxMiddleIndex) >= 0) {\n+\t\t\tint result;\n \t\t\tlong s = getDataItem(org.jfree.data.time.TimePeriodValues.this.minMiddleIndex).getPeriod().getStart().getTime();\n \t\t\tlong e = getDataItem(org.jfree.data.time.TimePeriodValues.this.minMiddleIndex).getPeriod().getEnd().getTime();\n \t\t\tlong maxMiddle = s + ((e - s) / 2);",
+    "generation": 1,
+    "ingredients": null,
+    "patch": "int result\ngeneration= 1\ningredientScope= PACKAGE\noperation: InsertAfterOp\nlocation= org.jfree.data.time.TimePeriodValues\nline= 277\nlineSuspiciousness= 0.277\noriginal statement= if (start > maxStart) {\n\torg.jfree.data.time.TimePeriodValues.this.maxStartIndex = index;\n}\nfixed statement= if (middle < maxStart) {\n\torg.jfree.data.time.TimePeriodValues.this.minMiddleIndex = index;\n}",
+    "patchLocation": {
+        "className": "org.jfree.data.time.TimePeriodValues",
+        "line": 300,
+        "lineSuspiciousness": 0.277
+    },
+    "scope": "PACKAGE",
+    "time": "44",
+    "type": "InsertBeforeOp",
+    "variant": 155
+}

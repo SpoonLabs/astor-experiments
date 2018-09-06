@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "res[i] = ((x[i]) - (boundaries[0][i])) / diff",
+    "diffpatch": "--- /local/scr/mtufano/Math/20/b/similar-package-executables-default/1/AstorMain-b/src/default/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java\t\n+++ /local/scr/mtufano/Math/20/b/similar-package-executables-default/1/AstorMain-b/src/variant-148/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java\t\n@@ -528,7 +528,7 @@\n \t\t\tdouble[] res = new double[x.length];\n \t\t\tfor (int i = 0; i < (x.length); i++) {\n \t\t\t\tdouble diff = (boundaries[1][i]) - (boundaries[0][i]);\n-\t\t\t\tres[i] = ((x[i]) - (boundaries[0][i])) / diff;\n+\t\t\t\tvalueRange = 1.0;\n \t\t\t}\n \t\t\treturn res;\n \t\t}",
+    "generation": 147,
+    "ingredients": null,
+    "patch": "valueRange = 1.0",
+    "patchLocation": {
+        "className": "org.apache.commons.math3.optimization.direct.CMAESOptimizer",
+        "line": 911,
+        "lineSuspiciousness": 0.577
+    },
+    "scope": "LOCAL",
+    "time": "1452",
+    "type": "ReplaceOp",
+    "variant": 148
+}

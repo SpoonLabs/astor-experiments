@@ -1,0 +1,30 @@
+--- /local/scr/mtufano/Chart/5/b/random-local-embeddings/2/AstorMain-b/src/default/org/jfree/data/xy/XYSeries.java	
++++ /local/scr/mtufano/Chart/5/b/random-local-embeddings/2/AstorMain-b/src/variant-89/org/jfree/data/xy/XYSeries.java	
+@@ -203,7 +203,7 @@
+ 			existing.setY(y);
+ 		}else {
+ 			if (org.jfree.data.xy.XYSeries.this.autoSort) {
+-				org.jfree.data.xy.XYSeries.this.data.add(((-index) - 1), new org.jfree.data.xy.XYDataItem(x, y));
++				org.jfree.data.xy.XYSeries.this.data.add(new org.jfree.data.xy.XYDataItem(x, y));
+ 			}else {
+ 				org.jfree.data.xy.XYSeries.this.data.add(new org.jfree.data.xy.XYDataItem(x, y));
+ 			}
+
+--- /local/scr/mtufano/Chart/5/b/random-local-embeddings/2/AstorMain-b/src/default/org/jfree/data/xy/XYDataItem.java	
++++ /local/scr/mtufano/Chart/5/b/random-local-embeddings/2/AstorMain-b/src/variant-89/org/jfree/data/xy/XYDataItem.java	
+@@ -62,6 +62,15 @@
+ 					result = -1;
+ 				}else {
+ 					result = 0;
++					if (compare > 0.0) {
++						result = 1;
++					}else {
++						if (compare < 0.0) {
++							result = -1;
++						}else {
++							result = 0;
++						}
++					}
+ 				}
+ 			}
+ 		}else {

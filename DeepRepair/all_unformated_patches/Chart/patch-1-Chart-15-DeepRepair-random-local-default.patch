@@ -1,0 +1,55 @@
+--- /local/scr/mtufano/Chart/15/b/random-local-default/1/AstorMain-b/src/default/org/jfree/chart/plot/PiePlot3D.java	
++++ /local/scr/mtufano/Chart/15/b/random-local-default/1/AstorMain-b/src/variant-181/org/jfree/chart/plot/PiePlot3D.java	
+@@ -50,8 +50,11 @@
+ 		g2.clip(plotArea);
+ 		double gapPercent = getInteriorGap();
+ 		double labelPercent = 0.0;
+-		if ((getLabelGenerator()) != null) {
+-			labelPercent = (getLabelGap()) + (getMaximumLabelWidth());
++		if (org.jfree.data.general.DatasetUtilities.isEmptyOrNull(getDataset())) {
++			drawNoDataMessage(g2, plotArea);
++			g2.setClip(savedClip);
++			drawOutline(g2, plotArea);
++			return ;
+ 		}
+ 		double gapHorizontal = ((plotArea.getWidth()) * (gapPercent + labelPercent)) * 2.0;
+ 		double gapVertical = ((plotArea.getHeight()) * gapPercent) * 2.0;
+@@ -76,6 +79,10 @@
+ 			linkW = 2 * min;
+ 			linkH = 2 * min;
+ 		}
++		if (info != null) {
++			info.setPlotArea(plotArea);
++			info.setDataArea(plotArea);
++		}
+ 		org.jfree.chart.plot.PiePlotState state = initialise(g2, plotArea, org.jfree.chart.plot.PiePlot3D.this, null, info);
+ 		java.awt.geom.Rectangle2D linkAreaXX = new java.awt.geom.Rectangle2D.Double(linkX, linkY, linkW, (linkH * (1 - (org.jfree.chart.plot.PiePlot3D.this.depthFactor))));
+ 		state.setLinkArea(linkAreaXX);
+
+--- /local/scr/mtufano/Chart/15/b/random-local-default/1/AstorMain-b/src/default/org/jfree/chart/plot/PiePlot3D.java	
++++ /local/scr/mtufano/Chart/15/b/random-local-default/1/AstorMain-b/src/variant-181/org/jfree/chart/plot/PiePlot3D.java	
+@@ -50,8 +50,11 @@
+ 		g2.clip(plotArea);
+ 		double gapPercent = getInteriorGap();
+ 		double labelPercent = 0.0;
+-		if ((getLabelGenerator()) != null) {
+-			labelPercent = (getLabelGap()) + (getMaximumLabelWidth());
++		if (org.jfree.data.general.DatasetUtilities.isEmptyOrNull(getDataset())) {
++			drawNoDataMessage(g2, plotArea);
++			g2.setClip(savedClip);
++			drawOutline(g2, plotArea);
++			return ;
+ 		}
+ 		double gapHorizontal = ((plotArea.getWidth()) * (gapPercent + labelPercent)) * 2.0;
+ 		double gapVertical = ((plotArea.getHeight()) * gapPercent) * 2.0;
+@@ -76,6 +79,10 @@
+ 			linkW = 2 * min;
+ 			linkH = 2 * min;
+ 		}
++		if (info != null) {
++			info.setPlotArea(plotArea);
++			info.setDataArea(plotArea);
++		}
+ 		org.jfree.chart.plot.PiePlotState state = initialise(g2, plotArea, org.jfree.chart.plot.PiePlot3D.this, null, info);
+ 		java.awt.geom.Rectangle2D linkAreaXX = new java.awt.geom.Rectangle2D.Double(linkX, linkY, linkW, (linkH * (1 - (org.jfree.chart.plot.PiePlot3D.this.depthFactor))));
+ 		state.setLinkArea(linkAreaXX);

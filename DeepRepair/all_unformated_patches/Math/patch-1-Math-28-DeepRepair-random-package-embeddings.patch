@@ -1,0 +1,11 @@
+--- /local/scr/mtufano/Math/28/b/random-package-embeddings/1/AstorMain-b/src/default/org/apache/commons/math3/optimization/linear/SimplexSolver.java	
++++ /local/scr/mtufano/Math/28/b/random-package-embeddings/1/AstorMain-b/src/variant-559/org/apache/commons/math3/optimization/linear/SimplexSolver.java	
+@@ -63,7 +63,7 @@
+ 						int column = i + (tableau.getArtificialVariableOffset());
+ 						final double entry = tableau.getEntry(row, column);
+ 						if ((org.apache.commons.math3.util.Precision.equals(entry, 1.0, maxUlps)) && (row.equals(tableau.getBasicRow(column)))) {
+-							return row;
++							return minRatioPositions.get(0);
+ 						}
+ 					}
+ 				}

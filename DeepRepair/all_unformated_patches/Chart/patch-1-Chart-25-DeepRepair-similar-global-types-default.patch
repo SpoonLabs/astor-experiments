@@ -1,0 +1,42 @@
+--- /local/scr/mtufano/Chart/25/b/similar-global-types-default/3/AstorMain-b/src/default/org/jfree/chart/renderer/category/StatisticalBarRenderer.java	
++++ /local/scr/mtufano/Chart/25/b/similar-global-types-default/3/AstorMain-b/src/variant-106/org/jfree/chart/renderer/category/StatisticalBarRenderer.java	
+@@ -40,13 +40,9 @@
+ 		}
+ 		org.jfree.data.statistics.StatisticalCategoryDataset statData = ((org.jfree.data.statistics.StatisticalCategoryDataset) (data));
+ 		org.jfree.chart.plot.PlotOrientation orientation = plot.getOrientation();
+-		if (orientation == (org.jfree.chart.plot.PlotOrientation.HORIZONTAL)) {
+-			drawHorizontalItem(g2, state, dataArea, plot, domainAxis, rangeAxis, statData, row, column);
+-		}else
+-			if (orientation == (org.jfree.chart.plot.PlotOrientation.VERTICAL)) {
+-				drawVerticalItem(g2, state, dataArea, plot, domainAxis, rangeAxis, statData, row, column);
++		if (!(data instanceof org.jfree.data.statistics.StatisticalCategoryDataset)) {
++			throw new java.lang.IllegalArgumentException("Requires StatisticalCategoryDataset.");
+ 			}
+-		
+ 	}
+ 
+ 	protected void drawHorizontalItem(java.awt.Graphics2D g2, org.jfree.chart.renderer.category.CategoryItemRendererState state, java.awt.geom.Rectangle2D dataArea, org.jfree.chart.plot.CategoryPlot plot, org.jfree.chart.axis.CategoryAxis domainAxis, org.jfree.chart.axis.ValueAxis rangeAxis, org.jfree.data.statistics.StatisticalCategoryDataset dataset, int row, int column) {
+
+--- /local/scr/mtufano/Chart/25/b/similar-global-types-default/3/AstorMain-b/src/default/org/jfree/chart/renderer/AbstractRenderer.java	
++++ /local/scr/mtufano/Chart/25/b/similar-global-types-default/3/AstorMain-b/src/variant-106/org/jfree/chart/renderer/AbstractRenderer.java	
+@@ -469,7 +469,7 @@
+ 			}
+ 		}
+ 		if (result == null) {
+-			result = org.jfree.chart.renderer.AbstractRenderer.this.baseOutlineStroke;
++			result = org.jfree.chart.renderer.AbstractRenderer.this.baseStroke;
+ 		}
+ 		return result;
+ 	}
+
+--- /local/scr/mtufano/Chart/25/b/similar-global-types-default/3/AstorMain-b/src/default/org/jfree/chart/renderer/AbstractRenderer.java	
++++ /local/scr/mtufano/Chart/25/b/similar-global-types-default/3/AstorMain-b/src/variant-106/org/jfree/chart/renderer/AbstractRenderer.java	
+@@ -469,7 +469,7 @@
+ 			}
+ 		}
+ 		if (result == null) {
+-			result = org.jfree.chart.renderer.AbstractRenderer.this.baseOutlineStroke;
++			result = org.jfree.chart.renderer.AbstractRenderer.this.baseStroke;
+ 		}
+ 		return result;
+ 	}

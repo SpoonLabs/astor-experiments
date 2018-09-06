@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "org.apache.commons.math.util.MathUtils.checkNotNull(rhs)\nfixed statement= double x1max = 0\ngeneration= 4\ningredientScope= GLOBAL\noperation: InsertAfterOp\nlocation= org.apache.commons.math.complex.Complex\nline= 152\nlineSuspiciousness= 0.224\noriginal statement= double x1max = 0",
+    "diffpatch": "--- /local/scr/mtufano/Math/53/b/random-global-embeddings/1/AstorMain-b/src/default/org/apache/commons/math/complex/Complex.java\t\n+++ /local/scr/mtufano/Math/53/b/random-global-embeddings/1/AstorMain-b/src/variant-475/org/apache/commons/math/complex/Complex.java\t\n@@ -55,6 +55,10 @@\n \t}\n \n \tpublic org.apache.commons.math.complex.Complex add(org.apache.commons.math.complex.Complex rhs) throws org.apache.commons.math.exception.NullArgumentException {\n+\t\tdouble x1max = 0;\n+\t\tif ((isNaN) || (rhs.isNaN)) {\n+\t\t\treturn org.apache.commons.math.complex.Complex.NaN;\n+\t\t}\n \t\torg.apache.commons.math.util.MathUtils.checkNotNull(rhs);\n \t\treturn createComplex(((real) + (rhs.getReal())), ((imaginary) + (rhs.getImaginary())));\n \t}\n\n--- /local/scr/mtufano/Math/53/b/random-global-embeddings/1/AstorMain-b/src/default/org/apache/commons/math/complex/Complex.java\t\n+++ /local/scr/mtufano/Math/53/b/random-global-embeddings/1/AstorMain-b/src/variant-475/org/apache/commons/math/complex/Complex.java\t\n@@ -55,6 +55,10 @@\n \t}\n \n \tpublic org.apache.commons.math.complex.Complex add(org.apache.commons.math.complex.Complex rhs) throws org.apache.commons.math.exception.NullArgumentException {\n+\t\tdouble x1max = 0;\n+\t\tif ((isNaN) || (rhs.isNaN)) {\n+\t\t\treturn org.apache.commons.math.complex.Complex.NaN;\n+\t\t}\n \t\torg.apache.commons.math.util.MathUtils.checkNotNull(rhs);\n \t\treturn createComplex(((real) + (rhs.getReal())), ((imaginary) + (rhs.getImaginary())));\n \t}",
+    "generation": 4,
+    "ingredients": null,
+    "patch": "double x1max = 0\ngeneration= 4\ningredientScope= GLOBAL\noperation: InsertAfterOp\nlocation= org.apache.commons.math.complex.Complex\nline= 152\nlineSuspiciousness= 0.224\noriginal statement= double x1max = 0\nfixed statement= if ((isNaN) || (rhs.isNaN)) {\n\treturn org.apache.commons.math.complex.Complex.NaN;\n}",
+    "patchLocation": {
+        "className": "org.apache.commons.math.complex.Complex",
+        "line": 152,
+        "lineSuspiciousness": 0.224
+    },
+    "scope": "GLOBAL",
+    "time": "302",
+    "type": "InsertBeforeOp",
+    "variant": 475
+}

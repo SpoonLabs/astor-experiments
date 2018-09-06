@@ -1,0 +1,10 @@
+--- /local/scr/mtufano/Math/74/b/random-global-embeddings/3/AstorMain-b/src/default/org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator.java	
++++ /local/scr/mtufano/Math/74/b/random-global-embeddings/3/AstorMain-b/src/variant-258/org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator.java	
+@@ -37,6 +37,7 @@
+ 		interpolator.storeTime(stepStart);
+ 		double hNew = stepSize;
+ 		interpolator.rescale(hNew);
++		hNew = t;
+ 		boolean lastStep = false;
+ 		while (!lastStep) {
+ 			interpolator.shift();

@@ -1,0 +1,28 @@
+--- /local/scr/mtufano/Chart/15/b/random-global-embeddings/3/AstorMain-b/src/default/org/jfree/chart/text/TextLine.java	
++++ /local/scr/mtufano/Chart/15/b/random-global-embeddings/3/AstorMain-b/src/variant-1898/org/jfree/chart/text/TextLine.java	
+@@ -52,7 +52,7 @@
+ 		while (iterator.hasNext()) {
+ 			org.jfree.chart.text.TextFragment fragment = ((org.jfree.chart.text.TextFragment) (iterator.next()));
+ 			org.jfree.chart.util.Size2D d = fragment.calculateDimensions(g2);
+-			fragment.draw(g2, x, (anchorY + yOffset), org.jfree.chart.text.TextAnchor.BASELINE_LEFT, rotateX, rotateY, angle);
++			g2.setPaint(java.awt.Color.blue);
+ 			x = x + ((float) (d.getWidth()));
+ 		} 
+ 	}
+
+--- /local/scr/mtufano/Chart/15/b/random-global-embeddings/3/AstorMain-b/src/default/org/jfree/chart/plot/PiePlot3D.java	
++++ /local/scr/mtufano/Chart/15/b/random-global-embeddings/3/AstorMain-b/src/variant-1898/org/jfree/chart/plot/PiePlot3D.java	
+@@ -50,8 +50,11 @@
+ 		g2.clip(plotArea);
+ 		double gapPercent = getInteriorGap();
+ 		double labelPercent = 0.0;
+-		if ((getLabelGenerator()) != null) {
+-			labelPercent = (getLabelGap()) + (getMaximumLabelWidth());
++		if (org.jfree.data.general.DatasetUtilities.isEmptyOrNull(getDataset())) {
++			drawNoDataMessage(g2, plotArea);
++			g2.setClip(savedClip);
++			drawOutline(g2, plotArea);
++			return ;
+ 		}
+ 		double gapHorizontal = ((plotArea.getWidth()) * (gapPercent + labelPercent)) * 2.0;
+ 		double gapVertical = ((plotArea.getHeight()) * gapPercent) * 2.0;

@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "org.jfree.data.time.TimePeriodValues.this.minEndIndex = index\nfixed statement= org.jfree.data.time.TimePeriodValues.this.maxMiddleIndex = -1\ngeneration= 6\ningredientScope= LOCAL\noperation: ReplaceOp\nlocation= org.jfree.data.time.TimePeriodValues\nline= 552\nlineSuspiciousness= 0.707\noriginal statement= return org.jfree.data.time.TimePeriodValues.this.maxMiddleIndex",
+    "diffpatch": "--- /local/scr/mtufano/Chart/7/b/random-package-default/1/AstorMain-b/src/default/org/jfree/data/time/TimePeriodValues.java\t\n+++ /local/scr/mtufano/Chart/7/b/random-package-default/1/AstorMain-b/src/variant-1109/org/jfree/data/time/TimePeriodValues.java\t\n@@ -128,6 +128,7 @@\n \t\t\tlong minEnd = getDataItem(org.jfree.data.time.TimePeriodValues.this.minEndIndex).getPeriod().getEnd().getTime();\n \t\t\tif (end < minEnd) {\n \t\t\t\torg.jfree.data.time.TimePeriodValues.this.minEndIndex = index;\n+\t\t\t\torg.jfree.data.time.TimePeriodValues.this.maxMiddleIndex = -1;\n \t\t\t}\n \t\t}else {\n \t\t\torg.jfree.data.time.TimePeriodValues.this.minEndIndex = index;\n@@ -257,7 +258,7 @@\n \t}\n \n \tpublic int getMaxMiddleIndex() {\n-\t\treturn org.jfree.data.time.TimePeriodValues.this.maxMiddleIndex;\n+\t\treturn org.jfree.data.time.TimePeriodValues.this.maxStartIndex;\n \t}\n \n \tpublic int getMinEndIndex() {\n\n--- /local/scr/mtufano/Chart/7/b/random-package-default/1/AstorMain-b/src/default/org/jfree/data/time/TimePeriodValues.java\t\n+++ /local/scr/mtufano/Chart/7/b/random-package-default/1/AstorMain-b/src/variant-1109/org/jfree/data/time/TimePeriodValues.java\t\n@@ -128,6 +128,7 @@\n \t\t\tlong minEnd = getDataItem(org.jfree.data.time.TimePeriodValues.this.minEndIndex).getPeriod().getEnd().getTime();\n \t\t\tif (end < minEnd) {\n \t\t\t\torg.jfree.data.time.TimePeriodValues.this.minEndIndex = index;\n+\t\t\t\torg.jfree.data.time.TimePeriodValues.this.maxMiddleIndex = -1;\n \t\t\t}\n \t\t}else {\n \t\t\torg.jfree.data.time.TimePeriodValues.this.minEndIndex = index;\n@@ -257,7 +258,7 @@\n \t}\n \n \tpublic int getMaxMiddleIndex() {\n-\t\treturn org.jfree.data.time.TimePeriodValues.this.maxMiddleIndex;\n+\t\treturn org.jfree.data.time.TimePeriodValues.this.maxStartIndex;\n \t}\n \n \tpublic int getMinEndIndex() {",
+    "generation": 6,
+    "ingredients": null,
+    "patch": "org.jfree.data.time.TimePeriodValues.this.maxMiddleIndex = -1\ngeneration= 6\ningredientScope= LOCAL\noperation: ReplaceOp\nlocation= org.jfree.data.time.TimePeriodValues\nline= 552\nlineSuspiciousness= 0.707\noriginal statement= return org.jfree.data.time.TimePeriodValues.this.maxMiddleIndex\nfixed statement= return org.jfree.data.time.TimePeriodValues.this.maxStartIndex",
+    "patchLocation": {
+        "className": "org.jfree.data.time.TimePeriodValues",
+        "line": 317,
+        "lineSuspiciousness": 0.447
+    },
+    "scope": "LOCAL",
+    "time": "171",
+    "type": "InsertAfterOp",
+    "variant": 1109
+}

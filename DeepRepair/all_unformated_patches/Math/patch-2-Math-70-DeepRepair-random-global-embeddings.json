@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl.this.iterationCount = 0\nfixed statement= int numIterations = 0\ngeneration= 1\ningredientScope= PACKAGE\noperation: ReplaceOp\nlocation= org.apache.commons.math.analysis.solvers.BisectionSolver\nline= 72\nlineSuspiciousness= 1\noriginal statement= return solve(min, max)",
+    "diffpatch": "--- /local/scr/mtufano/Math/70/b/random-global-embeddings/3/AstorMain-b/src/default/org/apache/commons/math/analysis/solvers/UnivariateRealSolverImpl.java\t\n+++ /local/scr/mtufano/Math/70/b/random-global-embeddings/3/AstorMain-b/src/variant-6/org/apache/commons/math/analysis/solvers/UnivariateRealSolverImpl.java\t\n@@ -76,6 +76,7 @@\n \t}\n \n \tprotected final void clearResult() {\n+\t\tint numIterations = 0;\n \t\torg.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl.this.iterationCount = 0;\n \t\torg.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl.this.resultComputed = false;\n \t}\n\n--- /local/scr/mtufano/Math/70/b/random-global-embeddings/3/AstorMain-b/src/default/org/apache/commons/math/analysis/solvers/BisectionSolver.java\t\n+++ /local/scr/mtufano/Math/70/b/random-global-embeddings/3/AstorMain-b/src/variant-6/org/apache/commons/math/analysis/solvers/BisectionSolver.java\t\n@@ -24,7 +24,7 @@\n \t}\n \n \tpublic double solve(final org.apache.commons.math.analysis.UnivariateRealFunction f, double min, double max, double initial) throws org.apache.commons.math.FunctionEvaluationException, org.apache.commons.math.MaxIterationsExceededException {\n-\t\treturn solve(min, max);\n+\t\treturn solve(f, min, max);\n \t}\n \n \tpublic double solve(final org.apache.commons.math.analysis.UnivariateRealFunction f, double min, double max) throws org.apache.commons.math.FunctionEvaluationException, org.apache.commons.math.MaxIterationsExceededException {",
+    "generation": 1,
+    "ingredients": null,
+    "patch": "int numIterations = 0\ngeneration= 1\ningredientScope= PACKAGE\noperation: ReplaceOp\nlocation= org.apache.commons.math.analysis.solvers.BisectionSolver\nline= 72\nlineSuspiciousness= 1\noriginal statement= return solve(min, max)\nfixed statement= return solve(f, min, max)",
+    "patchLocation": {
+        "className": "org.apache.commons.math.analysis.solvers.UnivariateRealSolverImpl",
+        "line": 165,
+        "lineSuspiciousness": 0.5
+    },
+    "scope": "PACKAGE",
+    "time": "21",
+    "type": "InsertBeforeOp",
+    "variant": 6
+}

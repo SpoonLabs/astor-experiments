@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "return max\nfixed statement= return virtualSize\ngeneration= 303\ningredientScope= LOCAL\noperation: InsertAfterOp\nlocation= org.apache.commons.math.linear.ArrayRealVector\nline= 721\nlineSuspiciousness= 0.707\noriginal statement= max += java.lang.Math.max(max, java.lang.Math.abs(a))",
+    "diffpatch": "--- /local/scr/mtufano/Math/77/b/similar-package-types-embeddings/2/AstorMain-b/src/default/org/apache/commons/math/linear/ArrayRealVector.java\t\n+++ /local/scr/mtufano/Math/77/b/similar-package-types-embeddings/2/AstorMain-b/src/variant-1677/org/apache/commons/math/linear/ArrayRealVector.java\t\n@@ -496,6 +496,7 @@\n \t\tdouble max = 0;\n \t\tfor (double a : data) {\n \t\t\tmax += java.lang.Math.max(max, java.lang.Math.abs(a));\n+\t\t\treturn data.length;\n \t\t}\n \t\treturn max;\n \t}\n\n--- /local/scr/mtufano/Math/77/b/similar-package-types-embeddings/2/AstorMain-b/src/default/org/apache/commons/math/linear/OpenMapRealVector.java\t\n+++ /local/scr/mtufano/Math/77/b/similar-package-types-embeddings/2/AstorMain-b/src/variant-1677/org/apache/commons/math/linear/OpenMapRealVector.java\t\n@@ -349,7 +349,7 @@\n \t\t\titer.advance();\n \t\t\tmax += iter.value();\n \t\t} \n-\t\treturn max;\n+\t\treturn virtualSize;\n \t}\n \n \tprivate double getLInfDistance(org.apache.commons.math.linear.OpenMapRealVector v) {",
+    "generation": 303,
+    "ingredients": null,
+    "patch": "return virtualSize\ngeneration= 303\ningredientScope= LOCAL\noperation: InsertAfterOp\nlocation= org.apache.commons.math.linear.ArrayRealVector\nline= 721\nlineSuspiciousness= 0.707\noriginal statement= max += java.lang.Math.max(max, java.lang.Math.abs(a))\nfixed statement= return data.length",
+    "patchLocation": {
+        "className": "org.apache.commons.math.linear.OpenMapRealVector",
+        "line": 505,
+        "lineSuspiciousness": 0.707
+    },
+    "scope": "LOCAL",
+    "time": "2098",
+    "type": "ReplaceOp",
+    "variant": 1677
+}

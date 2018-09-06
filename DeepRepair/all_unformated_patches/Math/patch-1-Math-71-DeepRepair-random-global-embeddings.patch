@@ -1,0 +1,22 @@
+--- /local/scr/mtufano/Math/71/b/random-global-embeddings/1/AstorMain-b/src/default/org/apache/commons/math/ode/nonstiff/AdaptiveStepsizeIntegrator.java	
++++ /local/scr/mtufano/Math/71/b/random-global-embeddings/1/AstorMain-b/src/variant-310/org/apache/commons/math/ode/nonstiff/AdaptiveStepsizeIntegrator.java	
+@@ -63,7 +63,7 @@
+ 
+ 	public double initializeStep(final org.apache.commons.math.ode.FirstOrderDifferentialEquations equations, final boolean forward, final int order, final double[] scale, final double t0, final double[] y0, final double[] yDot0, final double[] y1, final double[] yDot1) throws org.apache.commons.math.ode.DerivativeException {
+ 		if ((initialStep) > 0) {
+-			return forward ? initialStep : -(initialStep);
++			return stepStart;
+ 		}
+ 		double ratio;
+ 		double yOnScale2 = 0;
+
+--- /local/scr/mtufano/Math/71/b/random-global-embeddings/1/AstorMain-b/src/default/org/apache/commons/math/ode/nonstiff/RungeKuttaIntegrator.java	
++++ /local/scr/mtufano/Math/71/b/random-global-embeddings/1/AstorMain-b/src/variant-310/org/apache/commons/math/ode/nonstiff/RungeKuttaIntegrator.java	
+@@ -79,6 +79,7 @@
+ 					final double dt = (manager.getEventTime()) - (stepStart);
+ 					if ((java.lang.Math.abs(dt)) <= (java.lang.Math.ulp(stepStart))) {
+ 						loop = false;
++						return t;
+ 					}else {
+ 						stepSize = dt;
+ 					}

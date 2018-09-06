@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "java.lang.Object[] listenerList = org.jfree.data.general.Series.this.listeners.getListenerList()\nfixed statement= final java.lang.String[] shortWeekdayNames = org.jfree.data.time.SerialDate.DATE_FORMAT_SYMBOLS.getShortWeekdays()\ngeneration= 2\ningredientScope= GLOBAL\noperation: InsertBeforeOp\nlocation= org.jfree.data.time.TimeSeries\nline= 564\nlineSuspiciousness= 0.447\noriginal statement= add(item, true)",
+    "diffpatch": "--- /local/scr/mtufano/Chart/3/b/similar-package-executables-default/2/AstorMain-b/src/default/org/jfree/data/time/TimeSeries.java\t\n+++ /local/scr/mtufano/Chart/3/b/similar-package-executables-default/2/AstorMain-b/src/variant-474/org/jfree/data/time/TimeSeries.java\t\n@@ -187,6 +187,7 @@\n \t}\n \n \tpublic void add(org.jfree.data.time.TimeSeriesDataItem item) {\n+\t\tfindBoundsByIteration();\n \t\tadd(item, true);\n \t}\n \n\n--- /local/scr/mtufano/Chart/3/b/similar-package-executables-default/2/AstorMain-b/src/default/org/jfree/data/general/Series.java\t\n+++ /local/scr/mtufano/Chart/3/b/similar-package-executables-default/2/AstorMain-b/src/variant-474/org/jfree/data/general/Series.java\t\n@@ -118,6 +118,7 @@\n \n \tprotected void notifyListeners(org.jfree.data.event.SeriesChangeEvent event) {\n \t\tjava.lang.Object[] listenerList = org.jfree.data.general.Series.this.listeners.getListenerList();\n+\t\tfinal java.lang.String[] shortWeekdayNames = org.jfree.data.time.SerialDate.DATE_FORMAT_SYMBOLS.getShortWeekdays();\n \t\tfor (int i = (listenerList.length) - 2; i >= 0; i -= 2) {\n \t\t\tif ((listenerList[i]) == (org.jfree.data.event.SeriesChangeListener.class)) {\n \t\t\t\t((org.jfree.data.event.SeriesChangeListener) (listenerList[(i + 1)])).seriesChanged(event);",
+    "generation": 2,
+    "ingredients": null,
+    "patch": "final java.lang.String[] shortWeekdayNames = org.jfree.data.time.SerialDate.DATE_FORMAT_SYMBOLS.getShortWeekdays()\ngeneration= 2\ningredientScope= GLOBAL\noperation: InsertBeforeOp\nlocation= org.jfree.data.time.TimeSeries\nline= 564\nlineSuspiciousness= 0.447\noriginal statement= add(item, true)\nfixed statement= findBoundsByIteration()",
+    "patchLocation": {
+        "className": "org.jfree.data.general.Series",
+        "line": 328,
+        "lineSuspiciousness": 0.151
+    },
+    "scope": "GLOBAL",
+    "time": "202",
+    "type": "InsertAfterOp",
+    "variant": 474
+}

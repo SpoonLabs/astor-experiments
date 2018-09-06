@@ -1,0 +1,25 @@
+--- /local/scr/mtufano/Lang/39/b/random-local-default/1/AstorMain-b/src/default/org/apache/commons/lang3/StringUtils.java	
++++ /local/scr/mtufano/Lang/39/b/random-local-default/1/AstorMain-b/src/variant-41/org/apache/commons/lang3/StringUtils.java	
+@@ -1162,10 +1162,18 @@
+ 		}
+ 		int start = 0;
+ 		int increase = 0;
+-		for (int i = 0; i < (searchList.length); i++) {
+-			int greater = (replacementList[i].length()) - (searchList[i].length());
+-			if (greater > 0) {
+-				increase += 3 * greater;
++		for (int i = 0; i < searchLength; i++) {
++			if ((((noMoreMatchesForReplIndex[i]) || ((searchList[i]) == null)) || ((searchList[i].length()) == 0)) || ((replacementList[i]) == null)) {
++				continue;
++			}
++			tempIndex = text.indexOf(searchList[i]);
++			if (tempIndex == (-1)) {
++				noMoreMatchesForReplIndex[i] = true;
++			}else {
++				if ((textIndex == (-1)) || (tempIndex < textIndex)) {
++					textIndex = tempIndex;
++					replaceIndex = i;
++				}
+ 			}
+ 		}
+ 		increase = java.lang.Math.min(increase, ((text.length()) / 5));

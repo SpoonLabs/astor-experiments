@@ -1,0 +1,72 @@
+--- /local/scr/mtufano/Chart/26/b/similar-package-types-embeddings/3/AstorMain-b/src/default/org/jfree/chart/axis/AxisCollection.java	
++++ /local/scr/mtufano/Chart/26/b/similar-package-types-embeddings/3/AstorMain-b/src/variant-474/org/jfree/chart/axis/AxisCollection.java	
+@@ -45,18 +45,10 @@
+ 		if (edge == (org.jfree.chart.util.RectangleEdge.TOP)) {
+ 			org.jfree.chart.axis.AxisCollection.this.axesAtTop.add(axis);
+ 		}else
+-			if (edge == (org.jfree.chart.util.RectangleEdge.BOTTOM)) {
+-				org.jfree.chart.axis.AxisCollection.this.axesAtBottom.add(axis);
+-			}else
+-				if (edge == (org.jfree.chart.util.RectangleEdge.LEFT)) {
+-					org.jfree.chart.axis.AxisCollection.this.axesAtLeft.add(axis);
+-				}else
+-					if (edge == (org.jfree.chart.util.RectangleEdge.RIGHT)) {
+-						org.jfree.chart.axis.AxisCollection.this.axesAtRight.add(axis);
++			if (axis == null) {
++				throw new java.lang.IllegalArgumentException("Null 'axis' argument.");
+ 					}
+ 				
+-			
+-		
+ 	}
+ }
+ 
+
+--- /local/scr/mtufano/Chart/26/b/similar-package-types-embeddings/3/AstorMain-b/src/default/org/jfree/chart/plot/CategoryPlot.java	
++++ /local/scr/mtufano/Chart/26/b/similar-package-types-embeddings/3/AstorMain-b/src/variant-474/org/jfree/chart/plot/CategoryPlot.java	
+@@ -414,6 +414,7 @@
+ 
+ 	public org.jfree.chart.util.RectangleEdge getRangeAxisEdge(int index) {
+ 		org.jfree.chart.axis.AxisLocation location = getRangeAxisLocation(index);
++		org.jfree.chart.plot.CategoryPlot.this.orientation = org.jfree.chart.plot.PlotOrientation.VERTICAL;
+ 		org.jfree.chart.util.RectangleEdge result = org.jfree.chart.plot.Plot.resolveRangeAxisLocation(location, org.jfree.chart.plot.CategoryPlot.this.orientation);
+ 		if (result == null) {
+ 			result = org.jfree.chart.util.RectangleEdge.opposite(getRangeAxisEdge(0));
+@@ -705,6 +706,7 @@
+ 				org.jfree.data.category.CategoryDataset dataset = getDataset(datasetIndex);
+ 				if (dataset != null) {
+ 					org.jfree.chart.renderer.category.CategoryItemRenderer renderer = getRenderer(datasetIndex);
++					org.jfree.chart.plot.CategoryPlot.this.orientation = org.jfree.chart.plot.PlotOrientation.VERTICAL;
+ 					if (renderer != null) {
+ 						int seriesCount = dataset.getRowCount();
+ 						for (int i = 0; i < seriesCount; i++) {
+
+--- /local/scr/mtufano/Chart/26/b/similar-package-types-embeddings/3/AstorMain-b/src/default/org/jfree/chart/plot/CategoryPlot.java	
++++ /local/scr/mtufano/Chart/26/b/similar-package-types-embeddings/3/AstorMain-b/src/variant-474/org/jfree/chart/plot/CategoryPlot.java	
+@@ -414,6 +414,7 @@
+ 
+ 	public org.jfree.chart.util.RectangleEdge getRangeAxisEdge(int index) {
+ 		org.jfree.chart.axis.AxisLocation location = getRangeAxisLocation(index);
++		org.jfree.chart.plot.CategoryPlot.this.orientation = org.jfree.chart.plot.PlotOrientation.VERTICAL;
+ 		org.jfree.chart.util.RectangleEdge result = org.jfree.chart.plot.Plot.resolveRangeAxisLocation(location, org.jfree.chart.plot.CategoryPlot.this.orientation);
+ 		if (result == null) {
+ 			result = org.jfree.chart.util.RectangleEdge.opposite(getRangeAxisEdge(0));
+@@ -705,6 +706,7 @@
+ 				org.jfree.data.category.CategoryDataset dataset = getDataset(datasetIndex);
+ 				if (dataset != null) {
+ 					org.jfree.chart.renderer.category.CategoryItemRenderer renderer = getRenderer(datasetIndex);
++					org.jfree.chart.plot.CategoryPlot.this.orientation = org.jfree.chart.plot.PlotOrientation.VERTICAL;
+ 					if (renderer != null) {
+ 						int seriesCount = dataset.getRowCount();
+ 						for (int i = 0; i < seriesCount; i++) {
+
+--- /local/scr/mtufano/Chart/26/b/similar-package-types-embeddings/3/AstorMain-b/src/default/org/jfree/chart/text/TextUtilities.java	
++++ /local/scr/mtufano/Chart/26/b/similar-package-types-embeddings/3/AstorMain-b/src/variant-474/org/jfree/chart/text/TextUtilities.java	
+@@ -301,6 +301,7 @@
+ 		float leading = metrics.getLeading();
+ 		float xAdj = 0.0F;
+ 		float yAdj = 0.0F;
++		boolean isJava14 = org.jfree.chart.util.ObjectUtilities.isJDK14();
+ 		if (((((anchor == (org.jfree.chart.text.TextAnchor.TOP_LEFT)) || (anchor == (org.jfree.chart.text.TextAnchor.CENTER_LEFT))) || (anchor == (org.jfree.chart.text.TextAnchor.BOTTOM_LEFT))) || (anchor == (org.jfree.chart.text.TextAnchor.BASELINE_LEFT))) || (anchor == (org.jfree.chart.text.TextAnchor.HALF_ASCENT_LEFT))) {
+ 			xAdj = 0.0F;
+ 		}else

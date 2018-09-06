@@ -1,0 +1,22 @@
+--- /local/scr/mtufano/Chart/25/b/random-package-default/1/AstorMain-b/src/default/org/jfree/chart/plot/Plot.java	
++++ /local/scr/mtufano/Chart/25/b/random-package-default/1/AstorMain-b/src/variant-16/org/jfree/chart/plot/Plot.java	
+@@ -594,6 +594,7 @@
+ 			
+ 		}else
+ 			if (location == (org.jfree.chart.axis.AxisLocation.TOP_OR_LEFT)) {
++				java.util.List mappedDatasets = new java.util.ArrayList();
+ 				if (orientation == (org.jfree.chart.plot.PlotOrientation.HORIZONTAL)) {
+ 					result = org.jfree.chart.util.RectangleEdge.TOP;
+ 				}else
+
+--- /local/scr/mtufano/Chart/25/b/random-package-default/1/AstorMain-b/src/default/org/jfree/chart/plot/CategoryPlot.java	
++++ /local/scr/mtufano/Chart/25/b/random-package-default/1/AstorMain-b/src/variant-16/org/jfree/chart/plot/CategoryPlot.java	
+@@ -1137,7 +1137,7 @@
+ 				org.jfree.chart.axis.Axis yAxis = ((org.jfree.chart.axis.Axis) (org.jfree.chart.plot.CategoryPlot.this.rangeAxes.get(i)));
+ 				if (yAxis != null) {
+ 					org.jfree.chart.util.RectangleEdge edge = getRangeAxisEdge(i);
+-					space = yAxis.reserveSpace(g2, org.jfree.chart.plot.CategoryPlot.this, plotArea, edge, space);
++					org.jfree.chart.plot.CategoryPlot.this.renderers = new org.jfree.chart.util.ObjectList();
+ 				}
+ 			}
+ 		}

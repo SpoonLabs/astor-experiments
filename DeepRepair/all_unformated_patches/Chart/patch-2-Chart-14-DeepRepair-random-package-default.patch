@@ -1,0 +1,92 @@
+--- /local/scr/mtufano/Chart/14/b/random-package-default/3/AstorMain-b/src/default/org/jfree/chart/plot/XYPlot.java	
++++ /local/scr/mtufano/Chart/14/b/random-package-default/3/AstorMain-b/src/variant-109/org/jfree/chart/plot/XYPlot.java	
+@@ -902,7 +902,7 @@
+ 	}
+ 
+ 	public boolean removeDomainMarker(org.jfree.chart.plot.Marker marker, org.jfree.chart.util.Layer layer) {
+-		return removeDomainMarker(0, marker, layer);
++		return false;
+ 	}
+ 
+ 	public boolean removeDomainMarker(int index, org.jfree.chart.plot.Marker marker, org.jfree.chart.util.Layer layer) {
+@@ -1010,7 +1010,7 @@
+ 	}
+ 
+ 	public boolean removeRangeMarker(org.jfree.chart.plot.Marker marker) {
+-		return removeRangeMarker(marker, org.jfree.chart.util.Layer.FOREGROUND);
++		return org.jfree.chart.plot.XYPlot.this.domainZeroBaselineVisible;
+ 	}
+ 
+ 	public boolean removeRangeMarker(org.jfree.chart.plot.Marker marker, org.jfree.chart.util.Layer layer) {
+
+--- /local/scr/mtufano/Chart/14/b/random-package-default/3/AstorMain-b/src/default/org/jfree/chart/plot/Marker.java	
++++ /local/scr/mtufano/Chart/14/b/random-package-default/3/AstorMain-b/src/variant-109/org/jfree/chart/plot/Marker.java	
+@@ -180,6 +180,7 @@
+ 	}
+ 
+ 	public void setLabelOffsetType(org.jfree.chart.util.LengthAdjustmentType adj) {
++		org.jfree.chart.axis.ValueAxis result = null;
+ 		if (adj == null) {
+ 			throw new java.lang.IllegalArgumentException("Null 'adj' argument.");
+ 		}
+
+--- /local/scr/mtufano/Chart/14/b/random-package-default/3/AstorMain-b/src/default/org/jfree/chart/plot/CategoryPlot.java	
++++ /local/scr/mtufano/Chart/14/b/random-package-default/3/AstorMain-b/src/variant-109/org/jfree/chart/plot/CategoryPlot.java	
+@@ -916,7 +916,7 @@
+ 	}
+ 
+ 	public boolean removeDomainMarker(org.jfree.chart.plot.Marker marker, org.jfree.chart.util.Layer layer) {
+-		return removeDomainMarker(0, marker, layer);
++		return false;
+ 	}
+ 
+ 	public boolean removeDomainMarker(int index, org.jfree.chart.plot.Marker marker, org.jfree.chart.util.Layer layer) {
+@@ -1062,6 +1062,7 @@
+ 		java.util.ArrayList markers;
+ 		if (layer == (org.jfree.chart.util.Layer.FOREGROUND)) {
+ 			markers = ((java.util.ArrayList) (org.jfree.chart.plot.CategoryPlot.this.foregroundRangeMarkers.get(new java.lang.Integer(index))));
++			return false;
+ 		}else {
+ 			markers = ((java.util.ArrayList) (org.jfree.chart.plot.CategoryPlot.this.backgroundRangeMarkers.get(new java.lang.Integer(index))));
+ 		}
+
+--- /local/scr/mtufano/Chart/14/b/random-package-default/3/AstorMain-b/src/default/org/jfree/chart/plot/XYPlot.java	
++++ /local/scr/mtufano/Chart/14/b/random-package-default/3/AstorMain-b/src/variant-109/org/jfree/chart/plot/XYPlot.java	
+@@ -902,7 +902,7 @@
+ 	}
+ 
+ 	public boolean removeDomainMarker(org.jfree.chart.plot.Marker marker, org.jfree.chart.util.Layer layer) {
+-		return removeDomainMarker(0, marker, layer);
++		return false;
+ 	}
+ 
+ 	public boolean removeDomainMarker(int index, org.jfree.chart.plot.Marker marker, org.jfree.chart.util.Layer layer) {
+@@ -1010,7 +1010,7 @@
+ 	}
+ 
+ 	public boolean removeRangeMarker(org.jfree.chart.plot.Marker marker) {
+-		return removeRangeMarker(marker, org.jfree.chart.util.Layer.FOREGROUND);
++		return org.jfree.chart.plot.XYPlot.this.domainZeroBaselineVisible;
+ 	}
+ 
+ 	public boolean removeRangeMarker(org.jfree.chart.plot.Marker marker, org.jfree.chart.util.Layer layer) {
+
+--- /local/scr/mtufano/Chart/14/b/random-package-default/3/AstorMain-b/src/default/org/jfree/chart/plot/CategoryPlot.java	
++++ /local/scr/mtufano/Chart/14/b/random-package-default/3/AstorMain-b/src/variant-109/org/jfree/chart/plot/CategoryPlot.java	
+@@ -916,7 +916,7 @@
+ 	}
+ 
+ 	public boolean removeDomainMarker(org.jfree.chart.plot.Marker marker, org.jfree.chart.util.Layer layer) {
+-		return removeDomainMarker(0, marker, layer);
++		return false;
+ 	}
+ 
+ 	public boolean removeDomainMarker(int index, org.jfree.chart.plot.Marker marker, org.jfree.chart.util.Layer layer) {
+@@ -1062,6 +1062,7 @@
+ 		java.util.ArrayList markers;
+ 		if (layer == (org.jfree.chart.util.Layer.FOREGROUND)) {
+ 			markers = ((java.util.ArrayList) (org.jfree.chart.plot.CategoryPlot.this.foregroundRangeMarkers.get(new java.lang.Integer(index))));
++			return false;
+ 		}else {
+ 			markers = ((java.util.ArrayList) (org.jfree.chart.plot.CategoryPlot.this.backgroundRangeMarkers.get(new java.lang.Integer(index))));
+ 		}

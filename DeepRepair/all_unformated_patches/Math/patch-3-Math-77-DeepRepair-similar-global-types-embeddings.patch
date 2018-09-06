@@ -1,0 +1,22 @@
+--- /local/scr/mtufano/Math/77/b/similar-global-types-embeddings/2/AstorMain-b/src/default/org/apache/commons/math/linear/OpenMapRealVector.java	
++++ /local/scr/mtufano/Math/77/b/similar-global-types-embeddings/2/AstorMain-b/src/variant-1788/org/apache/commons/math/linear/OpenMapRealVector.java	
+@@ -349,7 +349,7 @@
+ 			iter.advance();
+ 			max += iter.value();
+ 		} 
+-		return max;
++		return virtualSize;
+ 	}
+ 
+ 	private double getLInfDistance(org.apache.commons.math.linear.OpenMapRealVector v) {
+
+--- /local/scr/mtufano/Math/77/b/similar-global-types-embeddings/2/AstorMain-b/src/default/org/apache/commons/math/linear/ArrayRealVector.java	
++++ /local/scr/mtufano/Math/77/b/similar-global-types-embeddings/2/AstorMain-b/src/variant-1788/org/apache/commons/math/linear/ArrayRealVector.java	
+@@ -496,6 +496,7 @@
+ 		double max = 0;
+ 		for (double a : data) {
+ 			max += java.lang.Math.max(max, java.lang.Math.abs(a));
++			return data.length;
+ 		}
+ 		return max;
+ 	}

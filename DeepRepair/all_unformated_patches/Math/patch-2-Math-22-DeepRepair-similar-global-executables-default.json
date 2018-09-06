@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "return false\nfixed statement= return true\ngeneration= 65\ningredientScope= PACKAGE\noperation: ReplaceOp\nlocation= org.apache.commons.math3.distribution.FDistribution\nline= 275\nlineSuspiciousness= 0.707\noriginal statement= return true",
+    "diffpatch": "--- /local/scr/mtufano/Math/22/b/similar-global-executables-default/3/AstorMain-b/src/default/org/apache/commons/math3/distribution/UniformRealDistribution.java\t\n+++ /local/scr/mtufano/Math/22/b/similar-global-executables-default/3/AstorMain-b/src/variant-142/org/apache/commons/math3/distribution/UniformRealDistribution.java\t\n@@ -80,7 +80,7 @@\n \t}\n \n \tpublic boolean isSupportUpperBoundInclusive() {\n-\t\treturn false;\n+\t\treturn true;\n \t}\n \n \tpublic boolean isSupportConnected() {\n\n--- /local/scr/mtufano/Math/22/b/similar-global-executables-default/3/AstorMain-b/src/default/org/apache/commons/math3/distribution/FDistribution.java\t\n+++ /local/scr/mtufano/Math/22/b/similar-global-executables-default/3/AstorMain-b/src/variant-142/org/apache/commons/math3/distribution/FDistribution.java\t\n@@ -109,7 +109,7 @@\n \t}\n \n \tpublic boolean isSupportLowerBoundInclusive() {\n-\t\treturn true;\n+\t\treturn false;\n \t}\n \n \tpublic boolean isSupportUpperBoundInclusive() {",
+    "generation": 65,
+    "ingredients": null,
+    "patch": "return true\ngeneration= 65\ningredientScope= PACKAGE\noperation: ReplaceOp\nlocation= org.apache.commons.math3.distribution.FDistribution\nline= 275\nlineSuspiciousness= 0.707\noriginal statement= return true\nfixed statement= return false",
+    "patchLocation": {
+        "className": "org.apache.commons.math3.distribution.UniformRealDistribution",
+        "line": 184,
+        "lineSuspiciousness": 0.707
+    },
+    "scope": "PACKAGE",
+    "time": "792",
+    "type": "ReplaceOp",
+    "variant": 142
+}

@@ -1,0 +1,116 @@
+--- /local/scr/mtufano/Chart/14/b/similar-global-types-default/3/AstorMain-b/src/default/org/jfree/chart/plot/CategoryPlot.java	
++++ /local/scr/mtufano/Chart/14/b/similar-global-types-default/3/AstorMain-b/src/variant-2762/org/jfree/chart/plot/CategoryPlot.java	
+@@ -912,10 +912,11 @@
+ 	}
+ 
+ 	public boolean removeDomainMarker(org.jfree.chart.plot.Marker marker) {
+-		return removeDomainMarker(marker, org.jfree.chart.util.Layer.FOREGROUND);
++		return org.jfree.chart.plot.CategoryPlot.this.domainGridlinesVisible;
+ 	}
+ 
+ 	public boolean removeDomainMarker(org.jfree.chart.plot.Marker marker, org.jfree.chart.util.Layer layer) {
++		org.jfree.chart.plot.CategoryPlot.this.orientation = org.jfree.chart.plot.PlotOrientation.VERTICAL;
+ 		return removeDomainMarker(0, marker, layer);
+ 	}
+ 
+@@ -1044,7 +1045,7 @@
+ 	}
+ 
+ 	public boolean removeRangeMarker(org.jfree.chart.plot.Marker marker) {
+-		return removeRangeMarker(marker, org.jfree.chart.util.Layer.FOREGROUND);
++		return org.jfree.chart.plot.CategoryPlot.this.domainGridlinesVisible;
+ 	}
+ 
+ 	public boolean removeRangeMarker(org.jfree.chart.plot.Marker marker, org.jfree.chart.util.Layer layer) {
+
+--- /local/scr/mtufano/Chart/14/b/similar-global-types-default/3/AstorMain-b/src/default/org/jfree/chart/plot/XYPlot.java	
++++ /local/scr/mtufano/Chart/14/b/similar-global-types-default/3/AstorMain-b/src/variant-2762/org/jfree/chart/plot/XYPlot.java	
+@@ -906,7 +906,7 @@
+ 	}
+ 
+ 	public boolean removeDomainMarker(int index, org.jfree.chart.plot.Marker marker, org.jfree.chart.util.Layer layer) {
+-		return removeDomainMarker(index, marker, layer, true);
++		return org.jfree.chart.plot.XYPlot.this.domainZeroBaselineVisible;
+ 	}
+ 
+ 	public boolean removeDomainMarker(int index, org.jfree.chart.plot.Marker marker, org.jfree.chart.util.Layer layer, boolean notify) {
+@@ -1014,7 +1014,7 @@
+ 	}
+ 
+ 	public boolean removeRangeMarker(org.jfree.chart.plot.Marker marker, org.jfree.chart.util.Layer layer) {
+-		return removeRangeMarker(0, marker, layer);
++		return org.jfree.chart.plot.XYPlot.this.domainZeroBaselineVisible;
+ 	}
+ 
+ 	public boolean removeRangeMarker(int index, org.jfree.chart.plot.Marker marker, org.jfree.chart.util.Layer layer) {
+
+--- /local/scr/mtufano/Chart/14/b/similar-global-types-default/3/AstorMain-b/src/default/org/jfree/chart/plot/XYPlot.java	
++++ /local/scr/mtufano/Chart/14/b/similar-global-types-default/3/AstorMain-b/src/variant-2762/org/jfree/chart/plot/XYPlot.java	
+@@ -906,7 +906,7 @@
+ 	}
+ 
+ 	public boolean removeDomainMarker(int index, org.jfree.chart.plot.Marker marker, org.jfree.chart.util.Layer layer) {
+-		return removeDomainMarker(index, marker, layer, true);
++		return org.jfree.chart.plot.XYPlot.this.domainZeroBaselineVisible;
+ 	}
+ 
+ 	public boolean removeDomainMarker(int index, org.jfree.chart.plot.Marker marker, org.jfree.chart.util.Layer layer, boolean notify) {
+@@ -1014,7 +1014,7 @@
+ 	}
+ 
+ 	public boolean removeRangeMarker(org.jfree.chart.plot.Marker marker, org.jfree.chart.util.Layer layer) {
+-		return removeRangeMarker(0, marker, layer);
++		return org.jfree.chart.plot.XYPlot.this.domainZeroBaselineVisible;
+ 	}
+ 
+ 	public boolean removeRangeMarker(int index, org.jfree.chart.plot.Marker marker, org.jfree.chart.util.Layer layer) {
+
+--- /local/scr/mtufano/Chart/14/b/similar-global-types-default/3/AstorMain-b/src/default/org/jfree/chart/plot/CategoryPlot.java	
++++ /local/scr/mtufano/Chart/14/b/similar-global-types-default/3/AstorMain-b/src/variant-2762/org/jfree/chart/plot/CategoryPlot.java	
+@@ -912,10 +912,11 @@
+ 	}
+ 
+ 	public boolean removeDomainMarker(org.jfree.chart.plot.Marker marker) {
+-		return removeDomainMarker(marker, org.jfree.chart.util.Layer.FOREGROUND);
++		return org.jfree.chart.plot.CategoryPlot.this.domainGridlinesVisible;
+ 	}
+ 
+ 	public boolean removeDomainMarker(org.jfree.chart.plot.Marker marker, org.jfree.chart.util.Layer layer) {
++		org.jfree.chart.plot.CategoryPlot.this.orientation = org.jfree.chart.plot.PlotOrientation.VERTICAL;
+ 		return removeDomainMarker(0, marker, layer);
+ 	}
+ 
+@@ -1044,7 +1045,7 @@
+ 	}
+ 
+ 	public boolean removeRangeMarker(org.jfree.chart.plot.Marker marker) {
+-		return removeRangeMarker(marker, org.jfree.chart.util.Layer.FOREGROUND);
++		return org.jfree.chart.plot.CategoryPlot.this.domainGridlinesVisible;
+ 	}
+ 
+ 	public boolean removeRangeMarker(org.jfree.chart.plot.Marker marker, org.jfree.chart.util.Layer layer) {
+
+--- /local/scr/mtufano/Chart/14/b/similar-global-types-default/3/AstorMain-b/src/default/org/jfree/chart/plot/CategoryPlot.java	
++++ /local/scr/mtufano/Chart/14/b/similar-global-types-default/3/AstorMain-b/src/variant-2762/org/jfree/chart/plot/CategoryPlot.java	
+@@ -912,10 +912,11 @@
+ 	}
+ 
+ 	public boolean removeDomainMarker(org.jfree.chart.plot.Marker marker) {
+-		return removeDomainMarker(marker, org.jfree.chart.util.Layer.FOREGROUND);
++		return org.jfree.chart.plot.CategoryPlot.this.domainGridlinesVisible;
+ 	}
+ 
+ 	public boolean removeDomainMarker(org.jfree.chart.plot.Marker marker, org.jfree.chart.util.Layer layer) {
++		org.jfree.chart.plot.CategoryPlot.this.orientation = org.jfree.chart.plot.PlotOrientation.VERTICAL;
+ 		return removeDomainMarker(0, marker, layer);
+ 	}
+ 
+@@ -1044,7 +1045,7 @@
+ 	}
+ 
+ 	public boolean removeRangeMarker(org.jfree.chart.plot.Marker marker) {
+-		return removeRangeMarker(marker, org.jfree.chart.util.Layer.FOREGROUND);
++		return org.jfree.chart.plot.CategoryPlot.this.domainGridlinesVisible;
+ 	}
+ 
+ 	public boolean removeRangeMarker(org.jfree.chart.plot.Marker marker, org.jfree.chart.util.Layer layer) {

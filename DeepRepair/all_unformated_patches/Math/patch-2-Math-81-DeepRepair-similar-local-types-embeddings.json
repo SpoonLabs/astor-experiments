@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "b2 = (work[(nn - 5)]) / (work[(nn - 7)])",
+    "diffpatch": "--- /local/scr/mtufano/Math/81/b/similar-local-types-embeddings/3/AstorMain-b/src/default/org/apache/commons/math/linear/EigenDecompositionImpl.java\t\n+++ /local/scr/mtufano/Math/81/b/similar-local-types-embeddings/3/AstorMain-b/src/variant-14/org/apache/commons/math/linear/EigenDecompositionImpl.java\t\n@@ -938,7 +938,7 @@\n \t\t\t\t\t\t\tif ((work[(nn - 5)]) > (work[(nn - 7)])) {\n \t\t\t\t\t\t\t\treturn ;\n \t\t\t\t\t\t\t}\n-\t\t\t\t\t\t\tb2 = (work[(nn - 5)]) / (work[(nn - 7)]);\n+\t\t\t\t\t\t\torg.apache.commons.math.linear.EigenDecompositionImpl.this.splitTolerance = splitTolerance;\n \t\t\t\t\t\t\tnp = nn - 9;\n \t\t\t\t\t\t}else {\n \t\t\t\t\t\t\tnp = nn - (2 * (pingPong));",
+    "generation": 13,
+    "ingredients": null,
+    "patch": "org.apache.commons.math.linear.EigenDecompositionImpl.this.splitTolerance = splitTolerance",
+    "patchLocation": {
+        "className": "org.apache.commons.math.linear.EigenDecompositionImpl",
+        "line": 1484,
+        "lineSuspiciousness": 0.5
+    },
+    "scope": "LOCAL",
+    "time": "53",
+    "type": "ReplaceOp",
+    "variant": 14
+}

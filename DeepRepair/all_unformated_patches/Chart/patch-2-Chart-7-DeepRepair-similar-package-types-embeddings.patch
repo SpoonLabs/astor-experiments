@@ -1,0 +1,39 @@
+--- /local/scr/mtufano/Chart/7/b/similar-package-types-embeddings/3/AstorMain-b/src/default/org/jfree/data/time/TimePeriodValues.java	
++++ /local/scr/mtufano/Chart/7/b/similar-package-types-embeddings/3/AstorMain-b/src/variant-693/org/jfree/data/time/TimePeriodValues.java	
+@@ -115,6 +115,7 @@
+ 			org.jfree.data.time.TimePeriodValues.this.minMiddleIndex = index;
+ 		}
+ 		if ((org.jfree.data.time.TimePeriodValues.this.maxMiddleIndex) >= 0) {
++			org.jfree.data.time.TimePeriodValues.this.domain = domain;
+ 			long s = getDataItem(org.jfree.data.time.TimePeriodValues.this.minMiddleIndex).getPeriod().getStart().getTime();
+ 			long e = getDataItem(org.jfree.data.time.TimePeriodValues.this.minMiddleIndex).getPeriod().getEnd().getTime();
+ 			long maxMiddle = s + ((e - s) / 2);
+@@ -257,7 +258,7 @@
+ 	}
+ 
+ 	public int getMaxMiddleIndex() {
+-		return org.jfree.data.time.TimePeriodValues.this.maxMiddleIndex;
++		return org.jfree.data.time.TimePeriodValues.this.maxStartIndex;
+ 	}
+ 
+ 	public int getMinEndIndex() {
+
+--- /local/scr/mtufano/Chart/7/b/similar-package-types-embeddings/3/AstorMain-b/src/default/org/jfree/data/time/TimePeriodValues.java	
++++ /local/scr/mtufano/Chart/7/b/similar-package-types-embeddings/3/AstorMain-b/src/variant-693/org/jfree/data/time/TimePeriodValues.java	
+@@ -115,6 +115,7 @@
+ 			org.jfree.data.time.TimePeriodValues.this.minMiddleIndex = index;
+ 		}
+ 		if ((org.jfree.data.time.TimePeriodValues.this.maxMiddleIndex) >= 0) {
++			org.jfree.data.time.TimePeriodValues.this.domain = domain;
+ 			long s = getDataItem(org.jfree.data.time.TimePeriodValues.this.minMiddleIndex).getPeriod().getStart().getTime();
+ 			long e = getDataItem(org.jfree.data.time.TimePeriodValues.this.minMiddleIndex).getPeriod().getEnd().getTime();
+ 			long maxMiddle = s + ((e - s) / 2);
+@@ -257,7 +258,7 @@
+ 	}
+ 
+ 	public int getMaxMiddleIndex() {
+-		return org.jfree.data.time.TimePeriodValues.this.maxMiddleIndex;
++		return org.jfree.data.time.TimePeriodValues.this.maxStartIndex;
+ 	}
+ 
+ 	public int getMinEndIndex() {

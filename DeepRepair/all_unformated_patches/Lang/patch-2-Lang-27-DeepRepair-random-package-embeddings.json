@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "mant = str.substring(0, expPos)",
+    "diffpatch": "--- /local/scr/mtufano/Lang/27/b/random-package-embeddings/2/AstorMain-b/src/default/org/apache/commons/lang3/math/NumberUtils.java\t\n+++ /local/scr/mtufano/Lang/27/b/random-package-embeddings/2/AstorMain-b/src/variant-1890/org/apache/commons/lang3/math/NumberUtils.java\t\n@@ -165,6 +165,7 @@\n \t\t\tmant = str.substring(0, decPos);\n \t\t}else {\n \t\t\tif (expPos > (-1)) {\n+\t\t\t\tjava.lang.Double d = org.apache.commons.lang3.math.NumberUtils.createDouble(str);\n \t\t\t\tmant = str.substring(0, expPos);\n \t\t\t}else {\n \t\t\t\tmant = str;",
+    "generation": 1889,
+    "ingredients": null,
+    "patch": "java.lang.Double d = org.apache.commons.lang3.math.NumberUtils.createDouble(str)",
+    "patchLocation": {
+        "className": "org.apache.commons.lang3.math.NumberUtils",
+        "line": 489,
+        "lineSuspiciousness": 0.707
+    },
+    "scope": "LOCAL",
+    "time": "379",
+    "type": "InsertBeforeOp",
+    "variant": 1890
+}

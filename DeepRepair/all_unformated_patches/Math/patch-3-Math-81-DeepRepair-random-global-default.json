@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "eMin = java.lang.Math.min(work[(j4 - 1)], eMin)",
+    "diffpatch": "--- /local/scr/mtufano/Math/81/b/random-global-default/2/AstorMain-b/src/default/org/apache/commons/math/linear/EigenDecompositionImpl.java\t\n+++ /local/scr/mtufano/Math/81/b/random-global-default/2/AstorMain-b/src/variant-16/org/apache/commons/math/linear/EigenDecompositionImpl.java\t\n@@ -780,7 +780,7 @@\n \t\t\t\td = (d * tmp) - (tau);\n \t\t\t\tdMin = java.lang.Math.min(dMin, d);\n \t\t\t\twork[(j4 - 1)] = (work[j4]) * tmp;\n-\t\t\t\teMin = java.lang.Math.min(work[(j4 - 1)], eMin);\n+\t\t\t\tdMin = d;\n \t\t\t}\n \t\t}\n \t\tdN2 = d;",
+    "generation": 15,
+    "ingredients": null,
+    "patch": "dMin = d",
+    "patchLocation": {
+        "className": "org.apache.commons.math.linear.EigenDecompositionImpl",
+        "line": 1294,
+        "lineSuspiciousness": 0.25
+    },
+    "scope": "LOCAL",
+    "time": "29",
+    "type": "ReplaceOp",
+    "variant": 16
+}

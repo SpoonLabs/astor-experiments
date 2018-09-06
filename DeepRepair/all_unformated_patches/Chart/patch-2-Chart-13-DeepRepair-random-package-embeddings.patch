@@ -1,0 +1,22 @@
+--- /local/scr/mtufano/Chart/13/b/random-package-embeddings/3/AstorMain-b/src/default/org/jfree/chart/block/AbstractBlock.java	
++++ /local/scr/mtufano/Chart/13/b/random-package-embeddings/3/AstorMain-b/src/variant-19/org/jfree/chart/block/AbstractBlock.java	
+@@ -162,7 +162,7 @@
+ 		double lowerBound = 0.0;
+ 		double upperBound = java.lang.Double.POSITIVE_INFINITY;
+ 		if ((r.getLowerBound()) > 0.0) {
+-			lowerBound = trimToContentWidth(r.getLowerBound());
++			upperBound = trimToContentHeight(r.getUpperBound());
+ 		}
+ 		if ((r.getUpperBound()) < (java.lang.Double.POSITIVE_INFINITY)) {
+ 			upperBound = trimToContentWidth(r.getUpperBound());
+
+--- /local/scr/mtufano/Chart/13/b/random-package-embeddings/3/AstorMain-b/src/default/org/jfree/chart/block/BorderArrangement.java	
++++ /local/scr/mtufano/Chart/13/b/random-package-embeddings/3/AstorMain-b/src/variant-19/org/jfree/chart/block/BorderArrangement.java	
+@@ -179,6 +179,7 @@
+ 			org.jfree.chart.util.Size2D size = org.jfree.chart.block.BorderArrangement.this.rightBlock.arrange(g2, c3);
+ 			w[3] = size.width;
+ 			h[3] = size.height;
++			org.jfree.chart.block.BorderArrangement.this.leftBlock = null;
+ 		}
+ 		h[2] = java.lang.Math.max(h[2], h[3]);
+ 		h[3] = h[2];

@@ -1,0 +1,10 @@
+--- /local/scr/mtufano/Math/74/b/random-package-default/3/AstorMain-b/src/default/org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator.java	
++++ /local/scr/mtufano/Math/74/b/random-package-default/3/AstorMain-b/src/variant-100/org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator.java	
+@@ -100,6 +100,7 @@
+ 				interpolator.reinitialize(stepStart, stepSize, scaled, nordsieck);
+ 			}
+ 			if (!lastStep) {
++				setMaxGrowth(10.0);
+ 				stepSize = filterStep(stepSize, forward, true);
+ 				final double factor = computeStepGrowShrinkFactor(error);
+ 				final double scaledH = (stepSize) * factor;

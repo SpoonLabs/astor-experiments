@@ -1,0 +1,39 @@
+--- /local/scr/mtufano/Chart/3/b/random-package-embeddings/2/AstorMain-b/src/default/org/jfree/data/time/TimeSeries.java	
++++ /local/scr/mtufano/Chart/3/b/random-package-embeddings/2/AstorMain-b/src/variant-257/org/jfree/data/time/TimeSeries.java	
+@@ -245,7 +245,7 @@
+ 			}
+ 			removeAgedItems(false);
+ 			if (notify) {
+-				fireSeriesChanged();
++				updateBoundsForRemovedItem(item);
+ 			}
+ 		}
+ 	}
+@@ -463,6 +463,7 @@
+ 	}
+ 
+ 	public org.jfree.data.time.TimeSeries createCopy(int start, int end) throws java.lang.CloneNotSupportedException {
++		fireSeriesChanged();
+ 		if (start < 0) {
+ 			throw new java.lang.IllegalArgumentException("Requires start >= 0.");
+ 		}
+
+--- /local/scr/mtufano/Chart/3/b/random-package-embeddings/2/AstorMain-b/src/default/org/jfree/data/time/TimeSeries.java	
++++ /local/scr/mtufano/Chart/3/b/random-package-embeddings/2/AstorMain-b/src/variant-257/org/jfree/data/time/TimeSeries.java	
+@@ -245,7 +245,7 @@
+ 			}
+ 			removeAgedItems(false);
+ 			if (notify) {
+-				fireSeriesChanged();
++				updateBoundsForRemovedItem(item);
+ 			}
+ 		}
+ 	}
+@@ -463,6 +463,7 @@
+ 	}
+ 
+ 	public org.jfree.data.time.TimeSeries createCopy(int start, int end) throws java.lang.CloneNotSupportedException {
++		fireSeriesChanged();
+ 		if (start < 0) {
+ 			throw new java.lang.IllegalArgumentException("Requires start >= 0.");
+ 		}

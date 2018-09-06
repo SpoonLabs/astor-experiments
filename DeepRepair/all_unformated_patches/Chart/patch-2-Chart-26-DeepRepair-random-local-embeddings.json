@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "java.util.List result = new java.util.ArrayList()\nfixed statement= org.jfree.data.Range range = getRange()\ngeneration= 4\ningredientScope= LOCAL\noperation: ReplaceOp\nlocation= org.jfree.chart.axis.Axis\nline= 1190\nlineSuspiciousness= 0.699\noriginal statement= if ((plotState != null) && (hotspot != null)) {\n\torg.jfree.chart.ChartRenderingInfo owner = plotState.getOwner();\n\torg.jfree.chart.entity.EntityCollection entities = owner.getEntityCollection();\n\tif (entities != null) {\n\t\tentities.add(new org.jfree.chart.entity.AxisLabelEntity(org.jfree.chart.axis.Axis.this, hotspot, org.jfree.chart.axis.Axis.this.labelToolTip, org.jfree.chart.axis.Axis.this.labelURL));\n\t}\n}",
+    "diffpatch": "--- /local/scr/mtufano/Chart/26/b/random-local-embeddings/3/AstorMain-b/src/default/org/jfree/chart/axis/NumberAxis.java\t\n+++ /local/scr/mtufano/Chart/26/b/random-local-embeddings/3/AstorMain-b/src/variant-371/org/jfree/chart/axis/NumberAxis.java\t\n@@ -562,6 +562,7 @@\n \t}\n \n \tpublic java.util.List refreshTicks(java.awt.Graphics2D g2, org.jfree.chart.axis.AxisState state, java.awt.geom.Rectangle2D dataArea, org.jfree.chart.util.RectangleEdge edge) {\n+\t\torg.jfree.data.Range range = getRange();\n \t\tjava.util.List result = new java.util.ArrayList();\n \t\tif (org.jfree.chart.util.RectangleEdge.isTopOrBottom(edge)) {\n \t\t\tresult = refreshTicksHorizontal(g2, dataArea, edge);\n\n--- /local/scr/mtufano/Chart/26/b/random-local-embeddings/3/AstorMain-b/src/default/org/jfree/chart/axis/Axis.java\t\n+++ /local/scr/mtufano/Chart/26/b/random-local-embeddings/3/AstorMain-b/src/variant-371/org/jfree/chart/axis/Axis.java\t\n@@ -476,12 +476,8 @@\n \t\t\t\t\n \t\t\t\n \t\t\n-\t\tif ((plotState != null) && (hotspot != null)) {\n-\t\t\torg.jfree.chart.ChartRenderingInfo owner = plotState.getOwner();\n-\t\t\torg.jfree.chart.entity.EntityCollection entities = owner.getEntityCollection();\n-\t\t\tif (entities != null) {\n-\t\t\t\tentities.add(new org.jfree.chart.entity.AxisLabelEntity(org.jfree.chart.axis.Axis.this, hotspot, org.jfree.chart.axis.Axis.this.labelToolTip, org.jfree.chart.axis.Axis.this.labelURL));\n-\t\t\t}\n+\t\tif ((label == null) || (label.equals(\"\"))) {\n+\t\t\treturn state;\n \t\t}\n \t\treturn state;\n \t}",
+    "generation": 4,
+    "ingredients": null,
+    "patch": "org.jfree.data.Range range = getRange()\ngeneration= 4\ningredientScope= LOCAL\noperation: ReplaceOp\nlocation= org.jfree.chart.axis.Axis\nline= 1190\nlineSuspiciousness= 0.699\noriginal statement= if ((plotState != null) && (hotspot != null)) {\n\torg.jfree.chart.ChartRenderingInfo owner = plotState.getOwner();\n\torg.jfree.chart.entity.EntityCollection entities = owner.getEntityCollection();\n\tif (entities != null) {\n\t\tentities.add(new org.jfree.chart.entity.AxisLabelEntity(org.jfree.chart.axis.Axis.this, hotspot, org.jfree.chart.axis.Axis.this.labelToolTip, org.jfree.chart.axis.Axis.this.labelURL));\n\t}\n}\nfixed statement= if ((label == null) || (label.equals(\"\"))) {\n\treturn state;\n}",
+    "patchLocation": {
+        "className": "org.jfree.chart.axis.NumberAxis",
+        "line": 1149,
+        "lineSuspiciousness": 0.65
+    },
+    "scope": "LOCAL",
+    "time": "403",
+    "type": "InsertBeforeOp",
+    "variant": 371
+}

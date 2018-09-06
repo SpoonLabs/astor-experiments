@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "return org.apache.commons.math3.complex.Complex.NaN",
+    "diffpatch": "--- /local/scr/mtufano/Math/5/b/similar-global-executables-embeddings/1/AstorMain-b/src/default/org/apache/commons/math3/complex/Complex.java\t\n+++ /local/scr/mtufano/Math/5/b/similar-global-executables-embeddings/1/AstorMain-b/src/variant-516/org/apache/commons/math3/complex/Complex.java\t\n@@ -121,7 +121,7 @@\n \t\t\treturn org.apache.commons.math3.complex.Complex.NaN;\n \t\t}\n \t\tif (((real) == 0.0) && ((imaginary) == 0.0)) {\n-\t\t\treturn org.apache.commons.math3.complex.Complex.NaN;\n+\t\t\treturn org.apache.commons.math3.complex.Complex.INF;\n \t\t}\n \t\tif (isInfinite) {\n \t\t\treturn org.apache.commons.math3.complex.Complex.ZERO;",
+    "generation": 515,
+    "ingredients": null,
+    "patch": "return org.apache.commons.math3.complex.Complex.INF",
+    "patchLocation": {
+        "className": "org.apache.commons.math3.complex.Complex",
+        "line": 305,
+        "lineSuspiciousness": 1.0
+    },
+    "scope": "LOCAL",
+    "time": "2241",
+    "type": "ReplaceOp",
+    "variant": 516
+}

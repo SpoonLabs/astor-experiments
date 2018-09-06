@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "int sum = 0",
+    "diffpatch": "--- /local/scr/mtufano/Math/57/b/similar-local-types-default/1/AstorMain-b/src/default/org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.java\t\n+++ /local/scr/mtufano/Math/57/b/similar-local-types-default/1/AstorMain-b/src/variant-4197/org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.java\t\n@@ -75,7 +75,7 @@\n \t\tresultSet.add(new org.apache.commons.math.stat.clustering.Cluster<T>(firstPoint));\n \t\tfinal double[] dx2 = new double[pointSet.size()];\n \t\twhile ((resultSet.size()) < k) {\n-\t\t\tint sum = 0;\n+\t\t\tdouble sum = 0.0;\n \t\t\tfor (int i = 0; i < (pointSet.size()); i++) {\n \t\t\t\tfinal T p = pointSet.get(i);\n \t\t\t\tfinal org.apache.commons.math.stat.clustering.Cluster<T> nearest = org.apache.commons.math.stat.clustering.KMeansPlusPlusClusterer.getNearestCluster(resultSet, p);",
+    "generation": 4196,
+    "ingredients": null,
+    "patch": "double sum = 0.0",
+    "patchLocation": {
+        "className": "org.apache.commons.math.stat.clustering.KMeansPlusPlusClusterer",
+        "line": 175,
+        "lineSuspiciousness": 0.577
+    },
+    "scope": "GLOBAL",
+    "time": "3172",
+    "type": "ReplaceOp",
+    "variant": 4197
+}

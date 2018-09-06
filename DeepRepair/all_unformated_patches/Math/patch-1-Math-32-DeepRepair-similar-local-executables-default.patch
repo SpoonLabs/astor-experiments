@@ -1,0 +1,11 @@
+--- /local/scr/mtufano/Math/32/b/similar-local-executables-default/3/AstorMain-b/src/default/org/apache/commons/math3/geometry/euclidean/threed/Vector3D.java	
++++ /local/scr/mtufano/Math/32/b/similar-local-executables-default/3/AstorMain-b/src/variant-938/org/apache/commons/math3/geometry/euclidean/threed/Vector3D.java	
+@@ -163,7 +163,7 @@
+ 		}else
+ 			if (((y) >= (-threshold)) && ((y) <= threshold)) {
+ 				double inverse = 1 / (org.apache.commons.math3.util.FastMath.sqrt((((x) * (x)) + ((z) * (z)))));
+-				return new org.apache.commons.math3.geometry.euclidean.threed.Vector3D(((-inverse) * (z)), 0, (inverse * (x)));
++				return new org.apache.commons.math3.geometry.euclidean.threed.Vector3D((inverse * (y)), ((-inverse) * (x)), 0);
+ 			}
+ 		
+ 		double inverse = 1 / (org.apache.commons.math3.util.FastMath.sqrt((((x) * (x)) + ((y) * (y)))));

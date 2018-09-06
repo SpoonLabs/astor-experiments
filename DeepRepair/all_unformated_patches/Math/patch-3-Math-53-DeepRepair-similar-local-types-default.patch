@@ -1,0 +1,12 @@
+--- /local/scr/mtufano/Math/53/b/similar-local-types-default/2/AstorMain-b/src/default/org/apache/commons/math/complex/Complex.java	
++++ /local/scr/mtufano/Math/53/b/similar-local-types-default/2/AstorMain-b/src/variant-187/org/apache/commons/math/complex/Complex.java	
+@@ -55,6 +55,9 @@
+ 	}
+ 
+ 	public org.apache.commons.math.complex.Complex add(org.apache.commons.math.complex.Complex rhs) throws org.apache.commons.math.exception.NullArgumentException {
++		if ((isNaN) || (rhs.isNaN)) {
++			return org.apache.commons.math.complex.Complex.NaN;
++		}
+ 		org.apache.commons.math.util.MathUtils.checkNotNull(rhs);
+ 		return createComplex(((real) + (rhs.getReal())), ((imaginary) + (rhs.getImaginary())));
+ 	}

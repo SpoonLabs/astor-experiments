@@ -1,0 +1,35 @@
+--- /local/scr/mtufano/Math/70/b/similar-local-types-default/2/AstorMain-b/src/default/org/apache/commons/math/analysis/solvers/BisectionSolver.java	
++++ /local/scr/mtufano/Math/70/b/similar-local-types-default/2/AstorMain-b/src/variant-5/org/apache/commons/math/analysis/solvers/BisectionSolver.java	
+@@ -24,12 +24,12 @@
+ 	}
+ 
+ 	public double solve(final org.apache.commons.math.analysis.UnivariateRealFunction f, double min, double max, double initial) throws org.apache.commons.math.FunctionEvaluationException, org.apache.commons.math.MaxIterationsExceededException {
+-		return solve(min, max);
++		return solve(f, min, max);
+ 	}
+ 
+ 	public double solve(final org.apache.commons.math.analysis.UnivariateRealFunction f, double min, double max) throws org.apache.commons.math.FunctionEvaluationException, org.apache.commons.math.MaxIterationsExceededException {
+ 		clearResult();
+-		verifyInterval(min, max);
++		clearResult();
+ 		double m;
+ 		double fm;
+ 		double fmin;
+
+--- /local/scr/mtufano/Math/70/b/similar-local-types-default/2/AstorMain-b/src/default/org/apache/commons/math/analysis/solvers/BisectionSolver.java	
++++ /local/scr/mtufano/Math/70/b/similar-local-types-default/2/AstorMain-b/src/variant-5/org/apache/commons/math/analysis/solvers/BisectionSolver.java	
+@@ -24,12 +24,12 @@
+ 	}
+ 
+ 	public double solve(final org.apache.commons.math.analysis.UnivariateRealFunction f, double min, double max, double initial) throws org.apache.commons.math.FunctionEvaluationException, org.apache.commons.math.MaxIterationsExceededException {
+-		return solve(min, max);
++		return solve(f, min, max);
+ 	}
+ 
+ 	public double solve(final org.apache.commons.math.analysis.UnivariateRealFunction f, double min, double max) throws org.apache.commons.math.FunctionEvaluationException, org.apache.commons.math.MaxIterationsExceededException {
+ 		clearResult();
+-		verifyInterval(min, max);
++		clearResult();
+ 		double m;
+ 		double fm;
+ 		double fmin;

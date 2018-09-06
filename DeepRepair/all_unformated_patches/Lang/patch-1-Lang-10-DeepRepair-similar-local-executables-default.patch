@@ -1,0 +1,11 @@
+--- /local/scr/mtufano/Lang/10/b/similar-local-executables-default/1/AstorMain-b/src/default/org/apache/commons/lang3/time/FastDateParser.java	
++++ /local/scr/mtufano/Lang/10/b/similar-local-executables-default/1/AstorMain-b/src/variant-639/org/apache/commons/lang3/time/FastDateParser.java	
+@@ -157,7 +157,7 @@
+ 			if (java.lang.Character.isWhitespace(c)) {
+ 				if (!wasWhite) {
+ 					wasWhite = true;
+-					regex.append("\\s*+");
++					regex.append(c);
+ 				}
+ 				continue;
+ 			}

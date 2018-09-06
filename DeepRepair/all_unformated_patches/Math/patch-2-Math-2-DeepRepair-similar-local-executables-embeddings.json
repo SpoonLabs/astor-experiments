@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "if (chebyshevApplies) {\n\tdouble k = org.apache.commons.math3.util.FastMath.sqrt(((1.0 - p) / p));\n\tdouble tmp = mu - (k * sigma);\n\tif (tmp > lower) {\n\t\tlower = ((int) (java.lang.Math.ceil(tmp))) - 1;\n\t}\n\tk = 1.0 / k;\n\ttmp = mu + (k * sigma);\n\tif (tmp < upper) {\n\t\tupper = ((int) (java.lang.Math.ceil(tmp))) - 1;\n\t}\n}",
+    "diffpatch": "--- /local/scr/mtufano/Math/2/b/similar-local-executables-embeddings/3/AstorMain-b/src/default/org/apache/commons/math3/distribution/AbstractIntegerDistribution.java\t\n+++ /local/scr/mtufano/Math/2/b/similar-local-executables-embeddings/3/AstorMain-b/src/variant-121/org/apache/commons/math3/distribution/AbstractIntegerDistribution.java\t\n@@ -49,17 +49,8 @@\n \t\tfinal double mu = getNumericalMean();\n \t\tfinal double sigma = org.apache.commons.math3.util.FastMath.sqrt(getNumericalVariance());\n \t\tfinal boolean chebyshevApplies = !(((((java.lang.Double.isInfinite(mu)) || (java.lang.Double.isNaN(mu))) || (java.lang.Double.isInfinite(sigma))) || (java.lang.Double.isNaN(sigma))) || (sigma == 0.0));\n-\t\tif (chebyshevApplies) {\n-\t\t\tdouble k = org.apache.commons.math3.util.FastMath.sqrt(((1.0 - p) / p));\n-\t\t\tdouble tmp = mu - (k * sigma);\n-\t\t\tif (tmp > lower) {\n-\t\t\t\tlower = ((int) (java.lang.Math.ceil(tmp))) - 1;\n-\t\t\t}\n-\t\t\tk = 1.0 / k;\n-\t\t\ttmp = mu + (k * sigma);\n-\t\t\tif (tmp < upper) {\n-\t\t\t\tupper = ((int) (java.lang.Math.ceil(tmp))) - 1;\n-\t\t\t}\n+\t\tif ((p < 0.0) || (p > 1.0)) {\n+\t\t\tthrow new org.apache.commons.math3.exception.OutOfRangeException(p, 0, 1);\n \t\t}\n \t\treturn solveInverseCumulativeProbability(p, lower, upper);\n \t}",
+    "generation": 120,
+    "ingredients": null,
+    "patch": "if ((p < 0.0) || (p > 1.0)) {\n\tthrow new org.apache.commons.math3.exception.OutOfRangeException(p, 0, 1);\n}",
+    "patchLocation": {
+        "className": "org.apache.commons.math3.distribution.AbstractIntegerDistribution",
+        "line": 129,
+        "lineSuspiciousness": 0.408
+    },
+    "scope": "LOCAL",
+    "time": "578",
+    "type": "ReplaceOp",
+    "variant": 121
+}

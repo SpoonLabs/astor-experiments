@@ -1,0 +1,37 @@
+--- /local/scr/mtufano/Chart/25/b/random-local-embeddings/1/AstorMain-b/src/default/org/jfree/chart/plot/CategoryPlot.java	
++++ /local/scr/mtufano/Chart/25/b/random-local-embeddings/1/AstorMain-b/src/variant-235/org/jfree/chart/plot/CategoryPlot.java	
+@@ -317,6 +317,7 @@
+ 				axis.configure();
+ 			}
+ 		}
++		org.jfree.chart.plot.CategoryPlot.this.axisOffset = new org.jfree.chart.util.RectangleInsets(4.0, 4.0, 4.0, 4.0);
+ 	}
+ 
+ 	public org.jfree.chart.axis.ValueAxis getRangeAxis() {
+@@ -1261,6 +1262,7 @@
+ 	}
+ 
+ 	public void drawBackground(java.awt.Graphics2D g2, java.awt.geom.Rectangle2D area) {
++		org.jfree.chart.plot.CategoryPlot.this.renderers = new org.jfree.chart.util.ObjectList();
+ 		fillBackground(g2, area, org.jfree.chart.plot.CategoryPlot.this.orientation);
+ 		drawBackgroundImage(g2, area);
+ 	}
+
+--- /local/scr/mtufano/Chart/25/b/random-local-embeddings/1/AstorMain-b/src/default/org/jfree/chart/plot/CategoryPlot.java	
++++ /local/scr/mtufano/Chart/25/b/random-local-embeddings/1/AstorMain-b/src/variant-235/org/jfree/chart/plot/CategoryPlot.java	
+@@ -317,6 +317,7 @@
+ 				axis.configure();
+ 			}
+ 		}
++		org.jfree.chart.plot.CategoryPlot.this.axisOffset = new org.jfree.chart.util.RectangleInsets(4.0, 4.0, 4.0, 4.0);
+ 	}
+ 
+ 	public org.jfree.chart.axis.ValueAxis getRangeAxis() {
+@@ -1261,6 +1262,7 @@
+ 	}
+ 
+ 	public void drawBackground(java.awt.Graphics2D g2, java.awt.geom.Rectangle2D area) {
++		org.jfree.chart.plot.CategoryPlot.this.renderers = new org.jfree.chart.util.ObjectList();
+ 		fillBackground(g2, area, org.jfree.chart.plot.CategoryPlot.this.orientation);
+ 		drawBackgroundImage(g2, area);
+ 	}

@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "lowerBound = trimToContentWidth(r.getLowerBound())\nfixed statement= upperBound = trimToContentHeight(r.getUpperBound())\ngeneration= 1\ningredientScope= LOCAL\noperation: ReplaceOp\nlocation= org.jfree.chart.block.BorderArrangement\nline= 426\nlineSuspiciousness= 1\noriginal statement= w[0] = constraint.getWidth()",
+    "diffpatch": "--- /local/scr/mtufano/Chart/13/b/random-global-default/3/AstorMain-b/src/default/org/jfree/chart/block/BorderArrangement.java\t\n+++ /local/scr/mtufano/Chart/13/b/random-global-default/3/AstorMain-b/src/variant-57/org/jfree/chart/block/BorderArrangement.java\t\n@@ -254,7 +254,7 @@\n \tprotected org.jfree.chart.util.Size2D arrangeFF(org.jfree.chart.block.BlockContainer container, java.awt.Graphics2D g2, org.jfree.chart.block.RectangleConstraint constraint) {\n \t\tdouble[] w = new double[5];\n \t\tdouble[] h = new double[5];\n-\t\tw[0] = constraint.getWidth();\n+\t\torg.jfree.chart.block.BorderArrangement.this.leftBlock = null;\n \t\tif ((org.jfree.chart.block.BorderArrangement.this.topBlock) != null) {\n \t\t\torg.jfree.chart.block.RectangleConstraint c1 = new org.jfree.chart.block.RectangleConstraint(w[0], null, org.jfree.chart.block.LengthConstraintType.FIXED, 0.0, new org.jfree.data.Range(0.0, constraint.getHeight()), org.jfree.chart.block.LengthConstraintType.RANGE);\n \t\t\torg.jfree.chart.util.Size2D size = org.jfree.chart.block.BorderArrangement.this.topBlock.arrange(g2, c1);\n\n--- /local/scr/mtufano/Chart/13/b/random-global-default/3/AstorMain-b/src/default/org/jfree/chart/block/AbstractBlock.java\t\n+++ /local/scr/mtufano/Chart/13/b/random-global-default/3/AstorMain-b/src/variant-57/org/jfree/chart/block/AbstractBlock.java\t\n@@ -162,7 +162,7 @@\n \t\tdouble lowerBound = 0.0;\n \t\tdouble upperBound = java.lang.Double.POSITIVE_INFINITY;\n \t\tif ((r.getLowerBound()) > 0.0) {\n-\t\t\tlowerBound = trimToContentWidth(r.getLowerBound());\n+\t\t\tupperBound = trimToContentHeight(r.getUpperBound());\n \t\t}\n \t\tif ((r.getUpperBound()) < (java.lang.Double.POSITIVE_INFINITY)) {\n \t\t\tupperBound = trimToContentWidth(r.getUpperBound());",
+    "generation": 1,
+    "ingredients": null,
+    "patch": "upperBound = trimToContentHeight(r.getUpperBound())\ngeneration= 1\ningredientScope= LOCAL\noperation: ReplaceOp\nlocation= org.jfree.chart.block.BorderArrangement\nline= 426\nlineSuspiciousness= 1\noriginal statement= w[0] = constraint.getWidth()\nfixed statement= org.jfree.chart.block.BorderArrangement.this.leftBlock = null",
+    "patchLocation": {
+        "className": "org.jfree.chart.block.AbstractBlock",
+        "line": 443,
+        "lineSuspiciousness": 1.0
+    },
+    "scope": "LOCAL",
+    "time": "25",
+    "type": "ReplaceOp",
+    "variant": 57
+}

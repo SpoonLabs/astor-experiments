@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "if (renderer != null) {\n\trenderer.setPlot(org.jfree.chart.plot.CategoryPlot.this);\n\trenderer.addChangeListener(org.jfree.chart.plot.CategoryPlot.this);\n}\nfixed statement= if (renderer != null) {\n\trenderer.setPlot(org.jfree.chart.plot.CategoryPlot.this);\n\trenderer.addChangeListener(org.jfree.chart.plot.CategoryPlot.this);\n}\ngeneration= 11\ningredientScope= LOCAL\noperation: ReplaceOp\nlocation= org.jfree.chart.renderer.category.AbstractCategoryItemRenderer\nline= 1797\nlineSuspiciousness= 0.162\noriginal statement= if (dataset != null) {\n\treturn result;\n}",
+    "diffpatch": "--- /local/scr/mtufano/Chart/1/b/similar-local-types-default/2/AstorMain-b/src/default/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java\t\n+++ /local/scr/mtufano/Chart/1/b/similar-local-types-default/2/AstorMain-b/src/variant-218/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java\t\n@@ -766,8 +766,8 @@\n \t\t}\n \t\tint index = org.jfree.chart.renderer.category.AbstractCategoryItemRenderer.this.plot.getIndexOf(org.jfree.chart.renderer.category.AbstractCategoryItemRenderer.this);\n \t\torg.jfree.data.category.CategoryDataset dataset = org.jfree.chart.renderer.category.AbstractCategoryItemRenderer.this.plot.getDataset(index);\n-\t\tif (dataset != null) {\n-\t\t\treturn result;\n+\t\tif (plot == null) {\n+\t\t\tthrow new java.lang.IllegalArgumentException(\"Null 'plot' argument.\");\n \t\t}\n \t\tint seriesCount = dataset.getRowCount();\n \t\tif (plot.getRowRenderingOrder().equals(org.jfree.chart.util.SortOrder.ASCENDING)) {",
+    "generation": 11,
+    "ingredients": null,
+    "patch": "if (renderer != null) {\n\trenderer.setPlot(org.jfree.chart.plot.CategoryPlot.this);\n\trenderer.addChangeListener(org.jfree.chart.plot.CategoryPlot.this);\n}\ngeneration= 11\ningredientScope= LOCAL\noperation: ReplaceOp\nlocation= org.jfree.chart.renderer.category.AbstractCategoryItemRenderer\nline= 1797\nlineSuspiciousness= 0.162\noriginal statement= if (dataset != null) {\n\treturn result;\n}\nfixed statement= if (plot == null) {\n\tthrow new java.lang.IllegalArgumentException(\"Null 'plot' argument.\");\n}",
+    "patchLocation": {
+        "className": "org.jfree.chart.plot.CategoryPlot",
+        "line": 1673,
+        "lineSuspiciousness": 0.354
+    },
+    "scope": "LOCAL",
+    "time": "118",
+    "type": "ReplaceOp",
+    "variant": 218
+}

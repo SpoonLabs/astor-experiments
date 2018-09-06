@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "x1 = x1 + (0.5 * tolerance)",
+    "diffpatch": "--- /local/scr/mtufano/Math/78/b/random-global-default/2/AstorMain-b/src/default/org/apache/commons/math/analysis/solvers/BrentSolver.java\t\n+++ /local/scr/mtufano/Math/78/b/random-global-default/2/AstorMain-b/src/variant-35/org/apache/commons/math/analysis/solvers/BrentSolver.java\t\n@@ -143,6 +143,7 @@\n \t\t\t\tx1 = x1 + delta;\n \t\t\t}else\n \t\t\t\tif (dx > 0.0) {\n+\t\t\t\t\tabsoluteAccuracy = defaultAbsoluteAccuracy;\n \t\t\t\t\tx1 = x1 + (0.5 * tolerance);\n \t\t\t\t}else\n \t\t\t\t\tif (dx <= 0.0) {",
+    "generation": 34,
+    "ingredients": null,
+    "patch": "absoluteAccuracy = defaultAbsoluteAccuracy",
+    "patchLocation": {
+        "className": "org.apache.commons.math.analysis.solvers.BrentSolver",
+        "line": 296,
+        "lineSuspiciousness": 0.258
+    },
+    "scope": "GLOBAL",
+    "time": "25",
+    "type": "InsertBeforeOp",
+    "variant": 35
+}

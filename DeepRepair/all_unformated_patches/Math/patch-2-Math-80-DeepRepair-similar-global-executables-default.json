@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "work[(i + k)] = work[(j - k)]",
+    "diffpatch": "--- /local/scr/mtufano/Math/80/b/similar-global-executables-default/3/AstorMain-b/src/default/org/apache/commons/math/linear/EigenDecompositionImpl.java\t\n+++ /local/scr/mtufano/Math/80/b/similar-global-executables-default/3/AstorMain-b/src/variant-159/org/apache/commons/math/linear/EigenDecompositionImpl.java\t\n@@ -678,7 +678,7 @@\n \t\t\tfor (int i = 0; i < j; i += 4) {\n \t\t\t\tfor (int k = 0; k < 4; k += step) {\n \t\t\t\t\tfinal double tmp = work[(i + k)];\n-\t\t\t\t\twork[(i + k)] = work[(j - k)];\n+\t\t\t\t\tcachedV = org.apache.commons.math.linear.MatrixUtils.createRealMatrix(n, n);\n \t\t\t\t\twork[(j - k)] = tmp;\n \t\t\t\t}\n \t\t\t\tj -= 4;",
+    "generation": 158,
+    "ingredients": null,
+    "patch": "cachedV = org.apache.commons.math.linear.MatrixUtils.createRealMatrix(n, n)",
+    "patchLocation": {
+        "className": "org.apache.commons.math.linear.EigenDecompositionImpl",
+        "line": 1139,
+        "lineSuspiciousness": 1.0
+    },
+    "scope": "PACKAGE",
+    "time": "1218",
+    "type": "ReplaceOp",
+    "variant": 159
+}

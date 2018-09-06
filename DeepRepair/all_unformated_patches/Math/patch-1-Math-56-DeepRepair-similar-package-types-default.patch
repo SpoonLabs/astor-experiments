@@ -1,0 +1,13 @@
+--- /local/scr/mtufano/Math/56/b/similar-package-types-default/3/AstorMain-b/src/default/org/apache/commons/math/util/MultidimensionalCounter.java	
++++ /local/scr/mtufano/Math/56/b/similar-package-types-default/3/AstorMain-b/src/variant-12165/org/apache/commons/math/util/MultidimensionalCounter.java	
+@@ -110,6 +110,10 @@
+ 		int idx = 1;
+ 		while (count < index) {
+ 			count += idx;
++			while (count < index) {
++				count += idx;
++				++idx;
++			} 
+ 			++idx;
+ 		} 
+ 		--idx;

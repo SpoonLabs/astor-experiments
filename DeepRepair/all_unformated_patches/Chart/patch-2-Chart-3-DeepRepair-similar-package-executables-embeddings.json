@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "java.lang.Object[] listenerList = org.jfree.data.general.Series.this.listeners.getListenerList()\nfixed statement= final java.lang.String[] shortWeekdayNames = org.jfree.data.time.SerialDate.DATE_FORMAT_SYMBOLS.getShortWeekdays()\ngeneration= 2\ningredientScope= GLOBAL\noperation: InsertBeforeOp\nlocation= org.jfree.data.time.TimeSeries\nline= 878\nlineSuspiciousness= 0.152\noriginal statement= long latest = getTimePeriod(((getItemCount()) - 1)).getSerialIndex()",
+    "diffpatch": "--- /local/scr/mtufano/Chart/3/b/similar-package-executables-embeddings/2/AstorMain-b/src/default/org/jfree/data/time/TimeSeries.java\t\n+++ /local/scr/mtufano/Chart/3/b/similar-package-executables-embeddings/2/AstorMain-b/src/variant-493/org/jfree/data/time/TimeSeries.java\t\n@@ -370,6 +370,7 @@\n \n \tpublic void removeAgedItems(boolean notify) {\n \t\tif ((getItemCount()) > 1) {\n+\t\t\tfindBoundsByIteration();\n \t\t\tlong latest = getTimePeriod(((getItemCount()) - 1)).getSerialIndex();\n \t\t\tboolean removed = false;\n \t\t\twhile ((latest - (getTimePeriod(0).getSerialIndex())) > (org.jfree.data.time.TimeSeries.this.maximumItemAge)) {\n\n--- /local/scr/mtufano/Chart/3/b/similar-package-executables-embeddings/2/AstorMain-b/src/default/org/jfree/data/general/Series.java\t\n+++ /local/scr/mtufano/Chart/3/b/similar-package-executables-embeddings/2/AstorMain-b/src/variant-493/org/jfree/data/general/Series.java\t\n@@ -118,6 +118,7 @@\n \n \tprotected void notifyListeners(org.jfree.data.event.SeriesChangeEvent event) {\n \t\tjava.lang.Object[] listenerList = org.jfree.data.general.Series.this.listeners.getListenerList();\n+\t\tfinal java.lang.String[] shortWeekdayNames = org.jfree.data.time.SerialDate.DATE_FORMAT_SYMBOLS.getShortWeekdays();\n \t\tfor (int i = (listenerList.length) - 2; i >= 0; i -= 2) {\n \t\t\tif ((listenerList[i]) == (org.jfree.data.event.SeriesChangeListener.class)) {\n \t\t\t\t((org.jfree.data.event.SeriesChangeListener) (listenerList[(i + 1)])).seriesChanged(event);",
+    "generation": 2,
+    "ingredients": null,
+    "patch": "final java.lang.String[] shortWeekdayNames = org.jfree.data.time.SerialDate.DATE_FORMAT_SYMBOLS.getShortWeekdays()\ngeneration= 2\ningredientScope= GLOBAL\noperation: InsertBeforeOp\nlocation= org.jfree.data.time.TimeSeries\nline= 878\nlineSuspiciousness= 0.152\noriginal statement= long latest = getTimePeriod(((getItemCount()) - 1)).getSerialIndex()\nfixed statement= findBoundsByIteration()",
+    "patchLocation": {
+        "className": "org.jfree.data.general.Series",
+        "line": 328,
+        "lineSuspiciousness": 0.151
+    },
+    "scope": "GLOBAL",
+    "time": "223",
+    "type": "InsertAfterOp",
+    "variant": 493
+}

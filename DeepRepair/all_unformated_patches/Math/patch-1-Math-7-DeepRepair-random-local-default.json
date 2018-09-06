@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "forward = interpolator.isForward()",
+    "diffpatch": "--- /local/scr/mtufano/Math/7/b/random-local-default/2/AstorMain-b/src/default/org/apache/commons/math3/ode/events/EventState.java\t\n+++ /local/scr/mtufano/Math/7/b/random-local-default/2/AstorMain-b/src/variant-50/org/apache/commons/math3/ode/events/EventState.java\t\n@@ -79,6 +79,7 @@\n \n \tpublic boolean evaluateStep(final org.apache.commons.math3.ode.sampling.StepInterpolator interpolator) throws org.apache.commons.math3.exception.MaxCountExceededException, org.apache.commons.math3.exception.NoBracketingException {\n \t\ttry {\n+\t\t\tt0 = interpolator.getPreviousTime();\n \t\t\tforward = interpolator.isForward();\n \t\t\tfinal double t1 = interpolator.getCurrentTime();\n \t\t\tfinal double dt = t1 - (t0);",
+    "generation": 49,
+    "ingredients": null,
+    "patch": "t0 = interpolator.getPreviousTime()",
+    "patchLocation": {
+        "className": "org.apache.commons.math3.ode.events.EventState",
+        "line": 196,
+        "lineSuspiciousness": 0.209
+    },
+    "scope": "LOCAL",
+    "time": "531",
+    "type": "InsertBeforeOp",
+    "variant": 50
+}

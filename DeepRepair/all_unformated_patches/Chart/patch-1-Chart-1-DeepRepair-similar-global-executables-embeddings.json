@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "if (dataset != null) {\n\treturn result;\n}",
+    "diffpatch": "--- /local/scr/mtufano/Chart/1/b/similar-global-executables-embeddings/1/AstorMain-b/src/default/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java\t\n+++ /local/scr/mtufano/Chart/1/b/similar-global-executables-embeddings/1/AstorMain-b/src/variant-3/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java\t\n@@ -766,7 +766,7 @@\n \t\t}\n \t\tint index = org.jfree.chart.renderer.category.AbstractCategoryItemRenderer.this.plot.getIndexOf(org.jfree.chart.renderer.category.AbstractCategoryItemRenderer.this);\n \t\torg.jfree.data.category.CategoryDataset dataset = org.jfree.chart.renderer.category.AbstractCategoryItemRenderer.this.plot.getDataset(index);\n-\t\tif (dataset != null) {\n+\t\tif ((org.jfree.chart.renderer.category.AbstractCategoryItemRenderer.this.plot) == null) {\n \t\t\treturn result;\n \t\t}\n \t\tint seriesCount = dataset.getRowCount();",
+    "generation": 2,
+    "ingredients": null,
+    "patch": "if ((org.jfree.chart.renderer.category.AbstractCategoryItemRenderer.this.plot) == null) {\n\treturn result;\n}",
+    "patchLocation": {
+        "className": "org.jfree.chart.renderer.category.AbstractCategoryItemRenderer",
+        "line": 1797,
+        "lineSuspiciousness": 0.162
+    },
+    "scope": "LOCAL",
+    "time": "30",
+    "type": "ReplaceOp",
+    "variant": 3
+}

@@ -1,0 +1,10 @@
+--- /local/scr/mtufano/Math/64/b/random-local-default/1/AstorMain-b/src/default/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java	
++++ /local/scr/mtufano/Math/64/b/random-local-default/1/AstorMain-b/src/variant-2100/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java	
+@@ -197,6 +197,7 @@
+ 					for (int j = 0; j < (solvedCols); ++j) {
+ 						int pj = permutation[j];
+ 						point[pj] = oldX[pj];
++						current = new org.apache.commons.math.optimization.VectorialPointValuePair(point, objective);
+ 					}
+ 					tmpVec = residuals;
+ 					residuals = oldRes;

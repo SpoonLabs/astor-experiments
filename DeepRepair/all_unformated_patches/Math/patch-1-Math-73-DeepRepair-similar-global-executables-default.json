@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "if ((java.lang.Math.abs(yInitial)) <= (functionValueAccuracy)) {\n\tsetResult(initial, 0);\n\treturn result;\n}",
+    "diffpatch": "--- /local/scr/mtufano/Math/73/b/similar-global-executables-default/1/AstorMain-b/src/default/org/apache/commons/math/analysis/solvers/BrentSolver.java\t\n+++ /local/scr/mtufano/Math/73/b/similar-global-executables-default/1/AstorMain-b/src/variant-886/org/apache/commons/math/analysis/solvers/BrentSolver.java\t\n@@ -35,6 +35,7 @@\n \t\t\tsetResult(initial, 0);\n \t\t\treturn result;\n \t\t}\n+\t\tverifyBracketing(min, max, f);\n \t\tdouble yMin = f.value(min);\n \t\tif ((java.lang.Math.abs(yMin)) <= (functionValueAccuracy)) {\n \t\t\tsetResult(yMin, 0);",
+    "generation": 885,
+    "ingredients": null,
+    "patch": "verifyBracketing(min, max, f)",
+    "patchLocation": {
+        "className": "org.apache.commons.math.analysis.solvers.BrentSolver",
+        "line": 107,
+        "lineSuspiciousness": 0.707
+    },
+    "scope": "PACKAGE",
+    "time": "1269",
+    "type": "InsertAfterOp",
+    "variant": 886
+}

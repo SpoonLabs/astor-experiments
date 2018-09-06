@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "java.lang.System.arraycopy(x, start, x, 0, nbPoints)",
+    "diffpatch": "--- /local/scr/mtufano/Math/40/b/similar-global-executables-default/3/AstorMain-b/src/default/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java\t\n+++ /local/scr/mtufano/Math/40/b/similar-global-executables-default/3/AstorMain-b/src/variant-1210/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java\t\n@@ -147,7 +147,7 @@\n \t\t\t}\n \t\t\tif ((nbPoints > 2) && ((end - start) != nbPoints)) {\n \t\t\t\tnbPoints = end - start;\n-\t\t\t\tjava.lang.System.arraycopy(x, start, x, 0, nbPoints);\n+\t\t\t\tjava.lang.System.arraycopy(x, 1, x, 0, nbPoints);\n \t\t\t\tjava.lang.System.arraycopy(y, start, y, 0, nbPoints);\n \t\t\t\tsignChangeIndex -= start;\n \t\t\t}else",
+    "generation": 1209,
+    "ingredients": null,
+    "patch": "java.lang.System.arraycopy(x, 1, x, 0, nbPoints)",
+    "patchLocation": {
+        "className": "org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver",
+        "line": 295,
+        "lineSuspiciousness": 0.236
+    },
+    "scope": "LOCAL",
+    "time": "10824",
+    "type": "ReplaceOp",
+    "variant": 1210
+}

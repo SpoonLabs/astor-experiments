@@ -1,0 +1,10 @@
+--- /local/scr/mtufano/Math/40/b/random-package-embeddings/2/AstorMain-b/src/default/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	
++++ /local/scr/mtufano/Math/40/b/random-package-embeddings/2/AstorMain-b/src/variant-561/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	
+@@ -132,6 +132,7 @@
+ 						++start;
+ 					}else {
+ 						--end;
++						signChangeIndex = 2;
+ 					}
+ 					nextX = java.lang.Double.NaN;
+ 				}

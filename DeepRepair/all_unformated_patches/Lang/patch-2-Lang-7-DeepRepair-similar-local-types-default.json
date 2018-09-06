@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "return null",
+    "diffpatch": "--- /local/scr/mtufano/Lang/7/b/similar-local-types-default/3/AstorMain-b/src/default/org/apache/commons/lang3/math/NumberUtils.java\t\n+++ /local/scr/mtufano/Lang/7/b/similar-local-types-default/3/AstorMain-b/src/variant-62/org/apache/commons/lang3/math/NumberUtils.java\t\n@@ -142,7 +142,7 @@\n \t\t\tthrow new java.lang.NumberFormatException(\"A blank string is not a valid number\");\n \t\t}\n \t\tif (str.startsWith(\"--\")) {\n-\t\t\treturn null;\n+\t\t\treturn java.lang.Integer.parseInt(str);\n \t\t}\n \t\tif ((((str.startsWith(\"0x\")) || (str.startsWith(\"-0x\"))) || (str.startsWith(\"0X\"))) || (str.startsWith(\"-0X\"))) {\n \t\t\tint hexDigits = (str.length()) - 2;",
+    "generation": 61,
+    "ingredients": null,
+    "patch": "return java.lang.Integer.parseInt(str)",
+    "patchLocation": {
+        "className": "org.apache.commons.lang3.math.NumberUtils",
+        "line": 453,
+        "lineSuspiciousness": 0.707
+    },
+    "scope": "LOCAL",
+    "time": "42",
+    "type": "ReplaceOp",
+    "variant": 62
+}

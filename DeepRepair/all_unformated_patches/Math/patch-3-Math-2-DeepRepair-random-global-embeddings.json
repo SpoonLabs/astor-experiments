@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "return org.apache.commons.math3.util.FastMath.max(0, (((getSampleSize()) + (getNumberOfSuccesses())) - (getPopulationSize())))",
+    "diffpatch": "--- /local/scr/mtufano/Math/2/b/random-global-embeddings/2/AstorMain-b/src/default/org/apache/commons/math3/distribution/HypergeometricDistribution.java\t\n+++ /local/scr/mtufano/Math/2/b/random-global-embeddings/2/AstorMain-b/src/variant-15/org/apache/commons/math3/distribution/HypergeometricDistribution.java\t\n@@ -141,6 +141,7 @@\n \t}\n \n \tpublic int getSupportLowerBound() {\n+\t\tnumericalVarianceIsCalculated = true;\n \t\treturn org.apache.commons.math3.util.FastMath.max(0, (((getSampleSize()) + (getNumberOfSuccesses())) - (getPopulationSize())));\n \t}",
+    "generation": 14,
+    "ingredients": null,
+    "patch": "numericalVarianceIsCalculated = true",
+    "patchLocation": {
+        "className": "org.apache.commons.math3.distribution.HypergeometricDistribution",
+        "line": 308,
+        "lineSuspiciousness": 0.378
+    },
+    "scope": "LOCAL",
+    "time": "675",
+    "type": "InsertBeforeOp",
+    "variant": 15
+}

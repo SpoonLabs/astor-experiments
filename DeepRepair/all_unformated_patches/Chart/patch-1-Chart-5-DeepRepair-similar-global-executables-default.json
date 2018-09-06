@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "org.jfree.data.xy.XYSeries.this.data.add(((-index) - 1), new org.jfree.data.xy.XYDataItem(x, y))",
+    "diffpatch": "--- /local/scr/mtufano/Chart/5/b/similar-global-executables-default/1/AstorMain-b/src/default/org/jfree/data/xy/XYSeries.java\t\n+++ /local/scr/mtufano/Chart/5/b/similar-global-executables-default/1/AstorMain-b/src/variant-11/org/jfree/data/xy/XYSeries.java\t\n@@ -203,7 +203,7 @@\n \t\t\texisting.setY(y);\n \t\t}else {\n \t\t\tif (org.jfree.data.xy.XYSeries.this.autoSort) {\n-\t\t\t\torg.jfree.data.xy.XYSeries.this.data.add(((-index) - 1), new org.jfree.data.xy.XYDataItem(x, y));\n+\t\t\t\torg.jfree.data.xy.XYSeries.this.data.add(new org.jfree.data.xy.XYDataItem(x, y));\n \t\t\t}else {\n \t\t\t\torg.jfree.data.xy.XYSeries.this.data.add(new org.jfree.data.xy.XYDataItem(x, y));\n \t\t\t}",
+    "generation": 10,
+    "ingredients": null,
+    "patch": "org.jfree.data.xy.XYSeries.this.data.add(new org.jfree.data.xy.XYDataItem(x, y))",
+    "patchLocation": {
+        "className": "org.jfree.data.xy.XYSeries",
+        "line": 564,
+        "lineSuspiciousness": 0.707
+    },
+    "scope": "LOCAL",
+    "time": "51",
+    "type": "ReplaceOp",
+    "variant": 11
+}

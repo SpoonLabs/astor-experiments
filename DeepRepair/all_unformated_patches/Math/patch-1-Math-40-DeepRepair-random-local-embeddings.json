@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "if (java.lang.Double.isNaN(nextX)) {\n\tnextX = xA + (0.5 * (xB - xA));\n\tstart = signChangeIndex - 1;\n\tend = signChangeIndex;\n}",
+    "diffpatch": "--- /local/scr/mtufano/Math/40/b/random-local-embeddings/1/AstorMain-b/src/default/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java\t\n+++ /local/scr/mtufano/Math/40/b/random-local-embeddings/1/AstorMain-b/src/variant-4/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java\t\n@@ -141,6 +141,7 @@\n \t\t\t\tstart = signChangeIndex - 1;\n \t\t\t\tend = signChangeIndex;\n \t\t\t}\n+\t\t\tsignChangeIndex = 2;\n \t\t\tfinal double nextY = computeObjectiveValue(nextX);\n \t\t\tif (org.apache.commons.math.util.Precision.equals(nextY, 0.0, 1)) {\n \t\t\t\treturn nextX;",
+    "generation": 3,
+    "ingredients": null,
+    "patch": "signChangeIndex = 2",
+    "patchLocation": {
+        "className": "org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver",
+        "line": 275,
+        "lineSuspiciousness": 0.2
+    },
+    "scope": "LOCAL",
+    "time": "174",
+    "type": "InsertAfterOp",
+    "variant": 4
+}

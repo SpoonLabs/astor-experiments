@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "ta = tb",
+    "diffpatch": "--- /local/scr/mtufano/Math/71/b/random-package-default/2/AstorMain-b/src/default/org/apache/commons/math/ode/events/EventState.java\t\n+++ /local/scr/mtufano/Math/71/b/random-package-default/2/AstorMain-b/src/variant-154/org/apache/commons/math/ode/events/EventState.java\t\n@@ -124,6 +124,9 @@\n \t\t\t\t\t\n \t\t\t\t}else {\n \t\t\t\t\tta = tb;\n+\t\t\t\t\tif ((pendingEvent) && ((java.lang.Math.abs((t1 - (pendingEventTime)))) <= (convergence))) {\n+\t\t\t\t\t\treturn false;\n+\t\t\t\t\t}\n \t\t\t\t\tga = gb;\n \t\t\t\t}\n \t\t\t}",
+    "generation": 153,
+    "ingredients": null,
+    "patch": "if ((pendingEvent) && ((java.lang.Math.abs((t1 - (pendingEventTime)))) <= (convergence))) {\n\treturn false;\n}",
+    "patchLocation": {
+        "className": "org.apache.commons.math.ode.events.EventState",
+        "line": 253,
+        "lineSuspiciousness": 0.147
+    },
+    "scope": "LOCAL",
+    "time": "2495",
+    "type": "InsertAfterOp",
+    "variant": 154
+}

@@ -1,0 +1,11 @@
+--- /local/scr/mtufano/Math/74/b/random-global-default/1/AstorMain-b/src/default/org/apache/commons/math/ode/MultistepIntegrator.java	
++++ /local/scr/mtufano/Math/74/b/random-global-default/1/AstorMain-b/src/variant-118/org/apache/commons/math/ode/MultistepIntegrator.java	
+@@ -62,7 +62,7 @@
+ 				throw de;
+ 			}
+ 		}
+-		starter.clearStepHandlers();
++		setMaxGrowth(10.0);
+ 	}
+ 
+ 	protected abstract org.apache.commons.math.linear.Array2DRowRealMatrix initializeHighOrderDerivatives(final double[] first, final double[][] multistep);

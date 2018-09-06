@@ -1,0 +1,10 @@
+--- /local/scr/mtufano/Math/74/b/random-global-default/3/AstorMain-b/src/default/org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator.java	
++++ /local/scr/mtufano/Math/74/b/random-global-default/3/AstorMain-b/src/variant-146/org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator.java	
+@@ -18,6 +18,7 @@
+ 		sanityChecks(equations, t0, y0, t, y);
+ 		setEquations(equations);
+ 		resetEvaluations();
++		setMaxGrowth(10.0);
+ 		final boolean forward = t > t0;
+ 		if (y != y0) {
+ 			java.lang.System.arraycopy(y0, 0, y, 0, n);

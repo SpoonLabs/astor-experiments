@@ -1,0 +1,39 @@
+--- /local/scr/mtufano/Chart/3/b/random-package-embeddings/3/AstorMain-b/src/default/org/jfree/data/time/TimeSeries.java	
++++ /local/scr/mtufano/Chart/3/b/random-package-embeddings/3/AstorMain-b/src/variant-3/org/jfree/data/time/TimeSeries.java	
+@@ -195,6 +195,7 @@
+ 			throw new java.lang.IllegalArgumentException("Null 'item' argument.");
+ 		}
+ 		item = ((org.jfree.data.time.TimeSeriesDataItem) (item.clone()));
++		notify = true;
+ 		java.lang.Class c = item.getPeriod().getClass();
+ 		if ((org.jfree.data.time.TimeSeries.this.timePeriodClass) == null) {
+ 			org.jfree.data.time.TimeSeries.this.timePeriodClass = c;
+@@ -245,7 +246,7 @@
+ 			}
+ 			removeAgedItems(false);
+ 			if (notify) {
+-				fireSeriesChanged();
++				findBoundsByIteration();
+ 			}
+ 		}
+ 	}
+
+--- /local/scr/mtufano/Chart/3/b/random-package-embeddings/3/AstorMain-b/src/default/org/jfree/data/time/TimeSeries.java	
++++ /local/scr/mtufano/Chart/3/b/random-package-embeddings/3/AstorMain-b/src/variant-3/org/jfree/data/time/TimeSeries.java	
+@@ -195,6 +195,7 @@
+ 			throw new java.lang.IllegalArgumentException("Null 'item' argument.");
+ 		}
+ 		item = ((org.jfree.data.time.TimeSeriesDataItem) (item.clone()));
++		notify = true;
+ 		java.lang.Class c = item.getPeriod().getClass();
+ 		if ((org.jfree.data.time.TimeSeries.this.timePeriodClass) == null) {
+ 			org.jfree.data.time.TimeSeries.this.timePeriodClass = c;
+@@ -245,7 +246,7 @@
+ 			}
+ 			removeAgedItems(false);
+ 			if (notify) {
+-				fireSeriesChanged();
++				findBoundsByIteration();
+ 			}
+ 		}
+ 	}

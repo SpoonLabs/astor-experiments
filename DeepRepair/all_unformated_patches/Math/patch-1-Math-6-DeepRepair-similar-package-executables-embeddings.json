@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "return iterations.getCount()",
+    "diffpatch": "--- /local/scr/mtufano/Math/6/b/similar-package-executables-embeddings/3/AstorMain-b/src/default/org/apache/commons/math3/optim/BaseOptimizer.java\t\n+++ /local/scr/mtufano/Math/6/b/similar-package-executables-embeddings/3/AstorMain-b/src/variant-399/org/apache/commons/math3/optim/BaseOptimizer.java\t\n@@ -29,7 +29,7 @@\n \t}\n \n \tpublic int getIterations() {\n-\t\treturn iterations.getCount();\n+\t\treturn evaluations.getCount();\n \t}\n \n \tpublic org.apache.commons.math3.optim.ConvergenceChecker<PAIR> getConvergenceChecker() {",
+    "generation": 398,
+    "ingredients": null,
+    "patch": "return evaluations.getCount()",
+    "patchLocation": {
+        "className": "org.apache.commons.math3.optim.BaseOptimizer",
+        "line": 93,
+        "lineSuspiciousness": 1.0
+    },
+    "scope": "LOCAL",
+    "time": "4699",
+    "type": "ReplaceOp",
+    "variant": 399
+}

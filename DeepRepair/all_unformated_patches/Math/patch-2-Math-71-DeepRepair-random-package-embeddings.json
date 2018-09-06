@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "return forward ? initialStep : -(initialStep)\nfixed statement= return stepStart\ngeneration= 70\ningredientScope= LOCAL\noperation: InsertBeforeOp\nlocation= org.apache.commons.math.ode.events.EventState\nline= 248\nlineSuspiciousness= 0.15\noriginal statement= return true",
+    "diffpatch": "--- /local/scr/mtufano/Math/71/b/random-package-embeddings/2/AstorMain-b/src/default/org/apache/commons/math/ode/nonstiff/AdaptiveStepsizeIntegrator.java\t\n+++ /local/scr/mtufano/Math/71/b/random-package-embeddings/2/AstorMain-b/src/variant-512/org/apache/commons/math/ode/nonstiff/AdaptiveStepsizeIntegrator.java\t\n@@ -63,7 +63,7 @@\n \n \tpublic double initializeStep(final org.apache.commons.math.ode.FirstOrderDifferentialEquations equations, final boolean forward, final int order, final double[] scale, final double t0, final double[] y0, final double[] yDot0, final double[] y1, final double[] yDot1) throws org.apache.commons.math.ode.DerivativeException {\n \t\tif ((initialStep) > 0) {\n-\t\t\treturn forward ? initialStep : -(initialStep);\n+\t\t\treturn stepStart;\n \t\t}\n \t\tdouble ratio;\n \t\tdouble yOnScale2 = 0;\n\n--- /local/scr/mtufano/Math/71/b/random-package-embeddings/2/AstorMain-b/src/default/org/apache/commons/math/ode/events/EventState.java\t\n+++ /local/scr/mtufano/Math/71/b/random-package-embeddings/2/AstorMain-b/src/variant-512/org/apache/commons/math/ode/events/EventState.java\t\n@@ -119,6 +119,14 @@\n \t\t\t\t\t\t\t\treturn false;\n \t\t\t\t\t\t\t}\n \t\t\t\t\t\t\tpendingEvent = true;\n+\t\t\t\t\t\t\tif ((java.lang.Double.isNaN(previousEventTime)) || ((java.lang.Math.abs(((previousEventTime) - root))) > (convergence))) {\n+\t\t\t\t\t\t\t\tpendingEventTime = root;\n+\t\t\t\t\t\t\t\tif ((pendingEvent) && ((java.lang.Math.abs((t1 - (pendingEventTime)))) <= (convergence))) {\n+\t\t\t\t\t\t\t\t\treturn false;\n+\t\t\t\t\t\t\t\t}\n+\t\t\t\t\t\t\t\tpendingEvent = true;\n+\t\t\t\t\t\t\t\treturn true;\n+\t\t\t\t\t\t\t}\n \t\t\t\t\t\t\treturn true;\n \t\t\t\t\t\t}",
+    "generation": 70,
+    "ingredients": null,
+    "patch": "return stepStart\ngeneration= 70\ningredientScope= LOCAL\noperation: InsertBeforeOp\nlocation= org.apache.commons.math.ode.events.EventState\nline= 248\nlineSuspiciousness= 0.15\noriginal statement= return true\nfixed statement= if ((java.lang.Double.isNaN(previousEventTime)) || ((java.lang.Math.abs(((previousEventTime) - root))) > (convergence))) {\n\tpendingEventTime = root;\n\tif ((pendingEvent) && ((java.lang.Math.abs((t1 - (pendingEventTime)))) <= (convergence))) {\n\t\treturn false;\n\t}\n\tpendingEvent = true;\n\treturn true;\n}",
+    "patchLocation": {
+        "className": "org.apache.commons.math.ode.nonstiff.AdaptiveStepsizeIntegrator",
+        "line": 211,
+        "lineSuspiciousness": 0.5
+    },
+    "scope": "LOCAL",
+    "time": "8903",
+    "type": "ReplaceOp",
+    "variant": 512
+}

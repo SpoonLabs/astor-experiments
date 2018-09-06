@@ -1,0 +1,13 @@
+--- /local/scr/mtufano/Lang/7/b/random-local-embeddings/1/AstorMain-b/src/default/org/apache/commons/lang3/math/NumberUtils.java	
++++ /local/scr/mtufano/Lang/7/b/random-local-embeddings/1/AstorMain-b/src/variant-843/org/apache/commons/lang3/math/NumberUtils.java	
+@@ -141,8 +141,8 @@
+ 		if (org.apache.commons.lang3.StringUtils.isBlank(str)) {
+ 			throw new java.lang.NumberFormatException("A blank string is not a valid number");
+ 		}
+-		if (str.startsWith("--")) {
+-			return null;
++		if (org.apache.commons.lang3.StringUtils.isBlank(str)) {
++			throw new java.lang.NumberFormatException("A blank string is not a valid number");
+ 		}
+ 		if ((((str.startsWith("0x")) || (str.startsWith("-0x"))) || (str.startsWith("0X"))) || (str.startsWith("-0X"))) {
+ 			int hexDigits = (str.length()) - 2;

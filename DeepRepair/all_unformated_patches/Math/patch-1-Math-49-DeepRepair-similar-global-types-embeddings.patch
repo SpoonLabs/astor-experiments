@@ -1,0 +1,10 @@
+--- /local/scr/mtufano/Math/49/b/similar-global-types-embeddings/1/AstorMain-b/src/default/org/apache/commons/math/util/OpenIntToDoubleHashMap.java	
++++ /local/scr/mtufano/Math/49/b/similar-global-types-embeddings/1/AstorMain-b/src/variant-605/org/apache/commons/math/util/OpenIntToDoubleHashMap.java	
+@@ -223,7 +223,7 @@
+ 		final double previous = values[index];
+ 		values[index] = missingEntries;
+ 		--(size);
+-		++(count);
++		++(index);
+ 		return previous;
+ 	}

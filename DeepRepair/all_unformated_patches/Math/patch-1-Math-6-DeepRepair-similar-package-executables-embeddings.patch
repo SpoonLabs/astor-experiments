@@ -1,0 +1,11 @@
+--- /local/scr/mtufano/Math/6/b/similar-package-executables-embeddings/3/AstorMain-b/src/default/org/apache/commons/math3/optim/BaseOptimizer.java	
++++ /local/scr/mtufano/Math/6/b/similar-package-executables-embeddings/3/AstorMain-b/src/variant-399/org/apache/commons/math3/optim/BaseOptimizer.java	
+@@ -29,7 +29,7 @@
+ 	}
+ 
+ 	public int getIterations() {
+-		return iterations.getCount();
++		return evaluations.getCount();
+ 	}
+ 
+ 	public org.apache.commons.math3.optim.ConvergenceChecker<PAIR> getConvergenceChecker() {

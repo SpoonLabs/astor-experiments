@@ -1,0 +1,22 @@
+--- /local/scr/mtufano/Chart/7/b/similar-global-executables-default/3/AstorMain-b/src/default/org/jfree/data/time/Year.java	
++++ /local/scr/mtufano/Chart/7/b/similar-global-executables-default/3/AstorMain-b/src/variant-292/org/jfree/data/time/Year.java	
+@@ -80,6 +80,7 @@
+ 
+ 	public long getLastMillisecond(java.util.Calendar calendar) {
+ 		calendar.set(org.jfree.data.time.Year.this.year, java.util.Calendar.DECEMBER, 31, 23, 59, 59);
++		calendar.set(org.jfree.data.time.Year.this.year, java.util.Calendar.DECEMBER, 31, 23, 59, 59);
+ 		calendar.set(java.util.Calendar.MILLISECOND, 999);
+ 		return calendar.getTime().getTime();
+ 	}
+
+--- /local/scr/mtufano/Chart/7/b/similar-global-executables-default/3/AstorMain-b/src/default/org/jfree/data/time/TimePeriodValues.java	
++++ /local/scr/mtufano/Chart/7/b/similar-global-executables-default/3/AstorMain-b/src/variant-292/org/jfree/data/time/TimePeriodValues.java	
+@@ -257,7 +257,7 @@
+ 	}
+ 
+ 	public int getMaxMiddleIndex() {
+-		return org.jfree.data.time.TimePeriodValues.this.maxMiddleIndex;
++		return org.jfree.data.time.TimePeriodValues.this.maxStartIndex;
+ 	}
+ 
+ 	public int getMinEndIndex() {

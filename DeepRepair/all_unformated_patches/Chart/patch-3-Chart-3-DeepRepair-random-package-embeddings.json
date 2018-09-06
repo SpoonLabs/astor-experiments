@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "if (start < 0) {\n\tthrow new java.lang.IllegalArgumentException(\"Requires start >= 0.\");\n}\nfixed statement= fireSeriesChanged()\ngeneration= 2\ningredientScope= LOCAL\noperation: ReplaceOp\nlocation= org.jfree.data.time.TimeSeries\nline= 638\nlineSuspiciousness= 0.151\noriginal statement= fireSeriesChanged()",
+    "diffpatch": "--- /local/scr/mtufano/Chart/3/b/random-package-embeddings/2/AstorMain-b/src/default/org/jfree/data/time/TimeSeries.java\t\n+++ /local/scr/mtufano/Chart/3/b/random-package-embeddings/2/AstorMain-b/src/variant-257/org/jfree/data/time/TimeSeries.java\t\n@@ -245,7 +245,7 @@\n \t\t\t}\n \t\t\tremoveAgedItems(false);\n \t\t\tif (notify) {\n-\t\t\t\tfireSeriesChanged();\n+\t\t\t\tupdateBoundsForRemovedItem(item);\n \t\t\t}\n \t\t}\n \t}\n@@ -463,6 +463,7 @@\n \t}\n \n \tpublic org.jfree.data.time.TimeSeries createCopy(int start, int end) throws java.lang.CloneNotSupportedException {\n+\t\tfireSeriesChanged();\n \t\tif (start < 0) {\n \t\t\tthrow new java.lang.IllegalArgumentException(\"Requires start >= 0.\");\n \t\t}\n\n--- /local/scr/mtufano/Chart/3/b/random-package-embeddings/2/AstorMain-b/src/default/org/jfree/data/time/TimeSeries.java\t\n+++ /local/scr/mtufano/Chart/3/b/random-package-embeddings/2/AstorMain-b/src/variant-257/org/jfree/data/time/TimeSeries.java\t\n@@ -245,7 +245,7 @@\n \t\t\t}\n \t\t\tremoveAgedItems(false);\n \t\t\tif (notify) {\n-\t\t\t\tfireSeriesChanged();\n+\t\t\t\tupdateBoundsForRemovedItem(item);\n \t\t\t}\n \t\t}\n \t}\n@@ -463,6 +463,7 @@\n \t}\n \n \tpublic org.jfree.data.time.TimeSeries createCopy(int start, int end) throws java.lang.CloneNotSupportedException {\n+\t\tfireSeriesChanged();\n \t\tif (start < 0) {\n \t\t\tthrow new java.lang.IllegalArgumentException(\"Requires start >= 0.\");\n \t\t}",
+    "generation": 2,
+    "ingredients": null,
+    "patch": "fireSeriesChanged()\ngeneration= 2\ningredientScope= LOCAL\noperation: ReplaceOp\nlocation= org.jfree.data.time.TimeSeries\nline= 638\nlineSuspiciousness= 0.151\noriginal statement= fireSeriesChanged()\nfixed statement= updateBoundsForRemovedItem(item)",
+    "patchLocation": {
+        "className": "org.jfree.data.time.TimeSeries",
+        "line": 1050,
+        "lineSuspiciousness": 0.577
+    },
+    "scope": "LOCAL",
+    "time": "72",
+    "type": "InsertBeforeOp",
+    "variant": 257
+}

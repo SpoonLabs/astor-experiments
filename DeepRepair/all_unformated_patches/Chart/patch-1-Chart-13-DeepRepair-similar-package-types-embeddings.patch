@@ -1,0 +1,24 @@
+--- /local/scr/mtufano/Chart/13/b/similar-package-types-embeddings/1/AstorMain-b/src/default/org/jfree/chart/block/BorderArrangement.java	
++++ /local/scr/mtufano/Chart/13/b/similar-package-types-embeddings/1/AstorMain-b/src/variant-5/org/jfree/chart/block/BorderArrangement.java	
+@@ -268,9 +268,7 @@
+ 		}
+ 		h[2] = ((constraint.getHeight()) - (h[1])) - (h[0]);
+ 		if ((org.jfree.chart.block.BorderArrangement.this.leftBlock) != null) {
+-			org.jfree.chart.block.RectangleConstraint c3 = new org.jfree.chart.block.RectangleConstraint(0.0, new org.jfree.data.Range(0.0, constraint.getWidth()), org.jfree.chart.block.LengthConstraintType.RANGE, h[2], null, org.jfree.chart.block.LengthConstraintType.FIXED);
+-			org.jfree.chart.util.Size2D size = org.jfree.chart.block.BorderArrangement.this.leftBlock.arrange(g2, c3);
+-			w[2] = size.width;
++			org.jfree.chart.block.BorderArrangement.this.leftBlock.setBounds(new java.awt.geom.Rectangle2D.Double(0.0, h[0], w[2], h[2]));
+ 		}
+ 		h[3] = h[2];
+ 		if ((org.jfree.chart.block.BorderArrangement.this.rightBlock) != null) {
+
+--- /local/scr/mtufano/Chart/13/b/similar-package-types-embeddings/1/AstorMain-b/src/default/org/jfree/chart/block/AbstractBlock.java	
++++ /local/scr/mtufano/Chart/13/b/similar-package-types-embeddings/1/AstorMain-b/src/variant-5/org/jfree/chart/block/AbstractBlock.java	
+@@ -163,6 +163,7 @@
+ 		double upperBound = java.lang.Double.POSITIVE_INFINITY;
+ 		if ((r.getLowerBound()) > 0.0) {
+ 			lowerBound = trimToContentWidth(r.getLowerBound());
++			org.jfree.chart.block.AbstractBlock.this.id = null;
+ 		}
+ 		if ((r.getUpperBound()) < (java.lang.Double.POSITIVE_INFINITY)) {
+ 			upperBound = trimToContentWidth(r.getUpperBound());

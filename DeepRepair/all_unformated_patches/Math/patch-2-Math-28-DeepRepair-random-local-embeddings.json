@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "if (row == (tableau.getBasicRow(i))) {\n\tif (i < minIndex) {\n\t\tminIndex = i;\n\t\tminRow = row;\n\t}\n}",
+    "diffpatch": "--- /local/scr/mtufano/Math/28/b/random-local-embeddings/3/AstorMain-b/src/default/org/apache/commons/math3/optimization/linear/SimplexSolver.java\t\n+++ /local/scr/mtufano/Math/28/b/random-local-embeddings/3/AstorMain-b/src/variant-243/org/apache/commons/math3/optimization/linear/SimplexSolver.java\t\n@@ -78,6 +78,7 @@\n \t\t\t\t\t\t\t\tminRow = row;\n \t\t\t\t\t\t\t}\n \t\t\t\t\t\t}\n+\t\t\t\t\t\treturn minRatioPositions.get(0);\n \t\t\t\t\t}\n \t\t\t\t}\n \t\t\t\treturn minRow;",
+    "generation": 242,
+    "ingredients": null,
+    "patch": "return minRatioPositions.get(0)",
+    "patchLocation": {
+        "className": "org.apache.commons.math3.optimization.linear.SimplexSolver",
+        "line": 143,
+        "lineSuspiciousness": 0.5
+    },
+    "scope": "LOCAL",
+    "time": "917",
+    "type": "InsertAfterOp",
+    "variant": 243
+}

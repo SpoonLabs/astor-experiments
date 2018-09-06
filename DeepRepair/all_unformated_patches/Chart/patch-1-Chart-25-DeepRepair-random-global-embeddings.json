@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "for (int i = 0; i < (org.jfree.chart.plot.CategoryPlot.this.domainAxes.size()); i++) {\n\torg.jfree.chart.axis.CategoryAxis axis = ((org.jfree.chart.axis.CategoryAxis) (org.jfree.chart.plot.CategoryPlot.this.domainAxes.get(i)));\n\tif (axis != null) {\n\t\taxis.configure();\n\t}\n}\nfixed statement= double[] h = new double[5]\ngeneration= 2\ningredientScope= GLOBAL\noperation: ReplaceOp\nlocation= org.jfree.chart.plot.CategoryPlot\nline= 2804\nlineSuspiciousness= 0.894\noriginal statement= cursor = (dataArea.getMinX()) - (org.jfree.chart.plot.CategoryPlot.this.axisOffset.calculateLeftOutset(dataArea.getWidth()))",
+    "diffpatch": "--- /local/scr/mtufano/Chart/25/b/random-global-embeddings/1/AstorMain-b/src/default/org/jfree/chart/plot/CategoryPlot.java\t\n+++ /local/scr/mtufano/Chart/25/b/random-global-embeddings/1/AstorMain-b/src/variant-386/org/jfree/chart/plot/CategoryPlot.java\t\n@@ -317,6 +317,7 @@\n \t\t\t\taxis.configure();\n \t\t\t}\n \t\t}\n+\t\tdouble[] h = new double[5];\n \t}\n \n \tpublic org.jfree.chart.axis.ValueAxis getRangeAxis() {\n@@ -1300,7 +1301,7 @@\n \t\t\t\taxisStateMap.put(axis, axisState);\n \t\t\t}\n \t\t} \n-\t\tcursor = (dataArea.getMinX()) - (org.jfree.chart.plot.CategoryPlot.this.axisOffset.calculateLeftOutset(dataArea.getWidth()));\n+\t\torg.jfree.chart.plot.CategoryPlot.this.datasets = new org.jfree.chart.util.ObjectList();\n \t\titerator = axisCollection.getAxesAtLeft().iterator();\n \t\twhile (iterator.hasNext()) {\n \t\t\torg.jfree.chart.axis.Axis axis = ((org.jfree.chart.axis.Axis) (iterator.next()));\n\n--- /local/scr/mtufano/Chart/25/b/random-global-embeddings/1/AstorMain-b/src/default/org/jfree/chart/plot/CategoryPlot.java\t\n+++ /local/scr/mtufano/Chart/25/b/random-global-embeddings/1/AstorMain-b/src/variant-386/org/jfree/chart/plot/CategoryPlot.java\t\n@@ -317,6 +317,7 @@\n \t\t\t\taxis.configure();\n \t\t\t}\n \t\t}\n+\t\tdouble[] h = new double[5];\n \t}\n \n \tpublic org.jfree.chart.axis.ValueAxis getRangeAxis() {\n@@ -1300,7 +1301,7 @@\n \t\t\t\taxisStateMap.put(axis, axisState);\n \t\t\t}\n \t\t} \n-\t\tcursor = (dataArea.getMinX()) - (org.jfree.chart.plot.CategoryPlot.this.axisOffset.calculateLeftOutset(dataArea.getWidth()));\n+\t\torg.jfree.chart.plot.CategoryPlot.this.datasets = new org.jfree.chart.util.ObjectList();\n \t\titerator = axisCollection.getAxesAtLeft().iterator();\n \t\twhile (iterator.hasNext()) {\n \t\t\torg.jfree.chart.axis.Axis axis = ((org.jfree.chart.axis.Axis) (iterator.next()));",
+    "generation": 2,
+    "ingredients": null,
+    "patch": "double[] h = new double[5]\ngeneration= 2\ningredientScope= GLOBAL\noperation: ReplaceOp\nlocation= org.jfree.chart.plot.CategoryPlot\nline= 2804\nlineSuspiciousness= 0.894\noriginal statement= cursor = (dataArea.getMinX()) - (org.jfree.chart.plot.CategoryPlot.this.axisOffset.calculateLeftOutset(dataArea.getWidth()))\nfixed statement= org.jfree.chart.plot.CategoryPlot.this.datasets = new org.jfree.chart.util.ObjectList()",
+    "patchLocation": {
+        "className": "org.jfree.chart.plot.CategoryPlot",
+        "line": 852,
+        "lineSuspiciousness": 0.894
+    },
+    "scope": "GLOBAL",
+    "time": "368",
+    "type": "InsertAfterOp",
+    "variant": 386
+}

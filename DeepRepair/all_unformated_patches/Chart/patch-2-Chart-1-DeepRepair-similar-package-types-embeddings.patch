@@ -1,0 +1,33 @@
+--- /local/scr/mtufano/Chart/1/b/similar-package-types-embeddings/3/AstorMain-b/src/default/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java	
++++ /local/scr/mtufano/Chart/1/b/similar-package-types-embeddings/3/AstorMain-b/src/variant-41/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java	
+@@ -764,10 +764,11 @@
+ 		if ((org.jfree.chart.renderer.category.AbstractCategoryItemRenderer.this.plot) == null) {
+ 			return result;
+ 		}
++		org.jfree.chart.renderer.category.AbstractCategoryItemRenderer.this.itemLabelGeneratorList = new org.jfree.chart.util.ObjectList();
+ 		int index = org.jfree.chart.renderer.category.AbstractCategoryItemRenderer.this.plot.getIndexOf(org.jfree.chart.renderer.category.AbstractCategoryItemRenderer.this);
+ 		org.jfree.data.category.CategoryDataset dataset = org.jfree.chart.renderer.category.AbstractCategoryItemRenderer.this.plot.getDataset(index);
+-		if (dataset != null) {
+-			return result;
++		if (plot == null) {
++			throw new java.lang.IllegalArgumentException("Null 'plot' argument.");
+ 		}
+ 		int seriesCount = dataset.getRowCount();
+ 		if (plot.getRowRenderingOrder().equals(org.jfree.chart.util.SortOrder.ASCENDING)) {
+
+--- /local/scr/mtufano/Chart/1/b/similar-package-types-embeddings/3/AstorMain-b/src/default/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java	
++++ /local/scr/mtufano/Chart/1/b/similar-package-types-embeddings/3/AstorMain-b/src/variant-41/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java	
+@@ -764,10 +764,11 @@
+ 		if ((org.jfree.chart.renderer.category.AbstractCategoryItemRenderer.this.plot) == null) {
+ 			return result;
+ 		}
++		org.jfree.chart.renderer.category.AbstractCategoryItemRenderer.this.itemLabelGeneratorList = new org.jfree.chart.util.ObjectList();
+ 		int index = org.jfree.chart.renderer.category.AbstractCategoryItemRenderer.this.plot.getIndexOf(org.jfree.chart.renderer.category.AbstractCategoryItemRenderer.this);
+ 		org.jfree.data.category.CategoryDataset dataset = org.jfree.chart.renderer.category.AbstractCategoryItemRenderer.this.plot.getDataset(index);
+-		if (dataset != null) {
+-			return result;
++		if (plot == null) {
++			throw new java.lang.IllegalArgumentException("Null 'plot' argument.");
+ 		}
+ 		int seriesCount = dataset.getRowCount();
+ 		if (plot.getRowRenderingOrder().equals(org.jfree.chart.util.SortOrder.ASCENDING)) {

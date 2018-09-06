@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "notifyListeners(new org.jfree.data.general.SeriesChangeEvent(org.jfree.data.general.Series.this))\nfixed statement= if (org.jfree.data.general.Series.this.notify) {\n\tnotifyListeners(new org.jfree.data.general.SeriesChangeEvent(org.jfree.data.general.Series.this));\n}\ngeneration= 3\ningredientScope= LOCAL\noperation: InsertAfterOp\nlocation= org.jfree.data.time.TimeSeries\nline= 942\nlineSuspiciousness= 0.707\noriginal statement= endIndex = endIndex - 1",
+    "diffpatch": "--- /local/scr/mtufano/Chart/9/b/similar-package-executables-embeddings/2/AstorMain-b/src/default/org/jfree/data/time/TimeSeries.java\t\n+++ /local/scr/mtufano/Chart/9/b/similar-package-executables-embeddings/2/AstorMain-b/src/variant-13350/org/jfree/data/time/TimeSeries.java\t\n@@ -407,6 +407,9 @@\n \t\tif (endIndex < 0) {\n \t\t\tendIndex = -(endIndex + 1);\n \t\t\tendIndex = endIndex - 1;\n+\t\t\tif ((endIndex < 1) || (endIndex > (org.jfree.data.time.Week.LAST_WEEK_IN_YEAR))) {\n+\t\t\t\tendIndex = -1;\n+\t\t\t}\n \t\t}\n \t\tif (endIndex < 0) {\n \t\t\temptyRange = true;\n\n--- /local/scr/mtufano/Chart/9/b/similar-package-executables-embeddings/2/AstorMain-b/src/default/org/jfree/data/general/Series.java\t\n+++ /local/scr/mtufano/Chart/9/b/similar-package-executables-embeddings/2/AstorMain-b/src/variant-13350/org/jfree/data/general/Series.java\t\n@@ -112,6 +112,9 @@\n \n \tpublic void fireSeriesChanged() {\n \t\tif (org.jfree.data.general.Series.this.notify) {\n+\t\t\tif (org.jfree.data.general.Series.this.notify) {\n+\t\t\t\tnotifyListeners(new org.jfree.data.general.SeriesChangeEvent(org.jfree.data.general.Series.this));\n+\t\t\t}\n \t\t\tnotifyListeners(new org.jfree.data.general.SeriesChangeEvent(org.jfree.data.general.Series.this));\n \t\t}\n \t}",
+    "generation": 3,
+    "ingredients": null,
+    "patch": "if (org.jfree.data.general.Series.this.notify) {\n\tnotifyListeners(new org.jfree.data.general.SeriesChangeEvent(org.jfree.data.general.Series.this));\n}\ngeneration= 3\ningredientScope= LOCAL\noperation: InsertAfterOp\nlocation= org.jfree.data.time.TimeSeries\nline= 942\nlineSuspiciousness= 0.707\noriginal statement= endIndex = endIndex - 1\nfixed statement= if ((endIndex < 1) || (endIndex > (org.jfree.data.time.Week.LAST_WEEK_IN_YEAR))) {\n\tendIndex = -1;\n}",
+    "patchLocation": {
+        "className": "org.jfree.data.general.Series",
+        "line": 314,
+        "lineSuspiciousness": 0.189
+    },
+    "scope": "LOCAL",
+    "time": "5947",
+    "type": "InsertBeforeOp",
+    "variant": 13350
+}

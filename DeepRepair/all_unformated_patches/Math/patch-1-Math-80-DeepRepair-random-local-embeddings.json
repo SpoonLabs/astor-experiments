@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "flipIfWarranted(n, 2)",
+    "diffpatch": "--- /local/scr/mtufano/Math/80/b/random-local-embeddings/1/AstorMain-b/src/default/org/apache/commons/math/linear/EigenDecompositionImpl.java\t\n+++ /local/scr/mtufano/Math/80/b/random-local-embeddings/1/AstorMain-b/src/variant-63/org/apache/commons/math/linear/EigenDecompositionImpl.java\t\n@@ -479,7 +479,7 @@\n \t\tif (sumOffDiag == 0) {\n \t\t\treturn ;\n \t\t}\n-\t\tflipIfWarranted(n, 2);\n+\t\tupdateSigma(tau);\n \t\tinitialSplits(n);\n \t\ttType = 0;\n \t\tdMin1 = 0;",
+    "generation": 62,
+    "ingredients": null,
+    "patch": "updateSigma(tau)",
+    "patchLocation": {
+        "className": "org.apache.commons.math.linear.EigenDecompositionImpl",
+        "line": 840,
+        "lineSuspiciousness": 0.243
+    },
+    "scope": "LOCAL",
+    "time": "64",
+    "type": "ReplaceOp",
+    "variant": 63
+}

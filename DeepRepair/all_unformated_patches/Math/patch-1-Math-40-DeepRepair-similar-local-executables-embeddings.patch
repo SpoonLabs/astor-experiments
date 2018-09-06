@@ -1,0 +1,10 @@
+--- /local/scr/mtufano/Math/40/b/similar-local-executables-embeddings/1/AstorMain-b/src/default/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	
++++ /local/scr/mtufano/Math/40/b/similar-local-executables-embeddings/1/AstorMain-b/src/variant-1235/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	
+@@ -132,6 +132,7 @@
+ 						++start;
+ 					}else {
+ 						--end;
++						x[1] = getStartValue();
+ 					}
+ 					nextX = java.lang.Double.NaN;
+ 				}

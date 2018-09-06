@@ -1,0 +1,39 @@
+--- /local/scr/mtufano/Chart/25/b/random-local-embeddings/3/AstorMain-b/src/default/org/jfree/chart/plot/CategoryPlot.java	
++++ /local/scr/mtufano/Chart/25/b/random-local-embeddings/3/AstorMain-b/src/variant-90/org/jfree/chart/plot/CategoryPlot.java	
+@@ -773,7 +773,7 @@
+ 		}else {
+ 			org.jfree.chart.event.PlotChangeEvent e = new org.jfree.chart.event.PlotChangeEvent(org.jfree.chart.plot.CategoryPlot.this);
+ 			e.setType(org.jfree.chart.event.ChartChangeEventType.DATASET_UPDATED);
+-			notifyListeners(e);
++			notifyListeners(new org.jfree.chart.event.PlotChangeEvent(org.jfree.chart.plot.CategoryPlot.this));
+ 		}
+ 	}
+ 
+@@ -1586,6 +1586,7 @@
+ 		while (iterator.hasNext()) {
+ 			org.jfree.data.category.CategoryDataset dataset = ((org.jfree.data.category.CategoryDataset) (iterator.next()));
+ 			for (int i = 0; i < (dataset.getColumnCount()); i++) {
++				org.jfree.chart.plot.CategoryPlot.this.datasets = new org.jfree.chart.util.ObjectList();
+ 				java.lang.Comparable category = dataset.getColumnKey(i);
+ 				if (!(result.contains(category))) {
+ 					result.add(category);
+
+--- /local/scr/mtufano/Chart/25/b/random-local-embeddings/3/AstorMain-b/src/default/org/jfree/chart/plot/CategoryPlot.java	
++++ /local/scr/mtufano/Chart/25/b/random-local-embeddings/3/AstorMain-b/src/variant-90/org/jfree/chart/plot/CategoryPlot.java	
+@@ -773,7 +773,7 @@
+ 		}else {
+ 			org.jfree.chart.event.PlotChangeEvent e = new org.jfree.chart.event.PlotChangeEvent(org.jfree.chart.plot.CategoryPlot.this);
+ 			e.setType(org.jfree.chart.event.ChartChangeEventType.DATASET_UPDATED);
+-			notifyListeners(e);
++			notifyListeners(new org.jfree.chart.event.PlotChangeEvent(org.jfree.chart.plot.CategoryPlot.this));
+ 		}
+ 	}
+ 
+@@ -1586,6 +1586,7 @@
+ 		while (iterator.hasNext()) {
+ 			org.jfree.data.category.CategoryDataset dataset = ((org.jfree.data.category.CategoryDataset) (iterator.next()));
+ 			for (int i = 0; i < (dataset.getColumnCount()); i++) {
++				org.jfree.chart.plot.CategoryPlot.this.datasets = new org.jfree.chart.util.ObjectList();
+ 				java.lang.Comparable category = dataset.getColumnKey(i);
+ 				if (!(result.contains(category))) {
+ 					result.add(category);

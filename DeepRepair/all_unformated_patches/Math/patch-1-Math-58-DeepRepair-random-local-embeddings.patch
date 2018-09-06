@@ -1,0 +1,10 @@
+--- /local/scr/mtufano/Math/58/b/random-local-embeddings/2/AstorMain-b/src/default/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java	
++++ /local/scr/mtufano/Math/58/b/random-local-embeddings/2/AstorMain-b/src/variant-395/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java	
+@@ -159,6 +159,7 @@
+ 					}
+ 				}
+ 				double coeff1 = 0;
++				previousCost = org.apache.commons.math.util.FastMath.max(previousCost, lmPar);
+ 				for (int j = 0; j < (solvedCols); ++j) {
+ 					coeff1 += (work1[j]) * (work1[j]);
+ 				}

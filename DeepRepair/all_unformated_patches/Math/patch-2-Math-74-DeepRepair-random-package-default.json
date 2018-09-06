@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "stepSize = filterStep(stepSize, forward, true)",
+    "diffpatch": "--- /local/scr/mtufano/Math/74/b/random-package-default/3/AstorMain-b/src/default/org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator.java\t\n+++ /local/scr/mtufano/Math/74/b/random-package-default/3/AstorMain-b/src/variant-100/org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator.java\t\n@@ -100,6 +100,7 @@\n \t\t\t\tinterpolator.reinitialize(stepStart, stepSize, scaled, nordsieck);\n \t\t\t}\n \t\t\tif (!lastStep) {\n+\t\t\t\tsetMaxGrowth(10.0);\n \t\t\t\tstepSize = filterStep(stepSize, forward, true);\n \t\t\t\tfinal double factor = computeStepGrowShrinkFactor(error);\n \t\t\t\tfinal double scaledH = (stepSize) * factor;",
+    "generation": 99,
+    "ingredients": null,
+    "patch": "setMaxGrowth(10.0)",
+    "patchLocation": {
+        "className": "org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegrator",
+        "line": 343,
+        "lineSuspiciousness": 0.5
+    },
+    "scope": "PACKAGE",
+    "time": "855",
+    "type": "InsertBeforeOp",
+    "variant": 100
+}

@@ -1,0 +1,10 @@
+--- /local/scr/mtufano/Math/74/b/random-package-embeddings/1/AstorMain-b/src/default/org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator.java	
++++ /local/scr/mtufano/Math/74/b/random-package-embeddings/1/AstorMain-b/src/variant-45/org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator.java	
+@@ -94,6 +94,7 @@
+ 				interpolator.setInterpolatedTime(nextStep);
+ 				handler.handleStep(interpolator, lastStep);
+ 			}
++			setMaxGrowth(10.0);
+ 			stepStart = nextStep;
+ 			if ((!lastStep) && (manager.reset(stepStart, y))) {
+ 				start(stepStart, y, t);

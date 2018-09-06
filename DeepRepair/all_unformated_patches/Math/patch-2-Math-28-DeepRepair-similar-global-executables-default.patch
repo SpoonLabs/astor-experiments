@@ -1,0 +1,11 @@
+--- /local/scr/mtufano/Math/28/b/similar-global-executables-default/3/AstorMain-b/src/default/org/apache/commons/math3/optimization/linear/SimplexSolver.java	
++++ /local/scr/mtufano/Math/28/b/similar-global-executables-default/3/AstorMain-b/src/variant-250/org/apache/commons/math3/optimization/linear/SimplexSolver.java	
+@@ -80,7 +80,7 @@
+ 						}
+ 					}
+ 				}
+-				return minRow;
++				return minRatioPositions.get(0);
+ 			}
+ 		
+ 		return minRatioPositions.get(0);

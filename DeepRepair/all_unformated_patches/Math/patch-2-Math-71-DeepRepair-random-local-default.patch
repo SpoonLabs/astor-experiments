@@ -1,0 +1,22 @@
+--- /local/scr/mtufano/Math/71/b/random-local-default/3/AstorMain-b/src/default/org/apache/commons/math/ode/nonstiff/AdaptiveStepsizeIntegrator.java	
++++ /local/scr/mtufano/Math/71/b/random-local-default/3/AstorMain-b/src/variant-554/org/apache/commons/math/ode/nonstiff/AdaptiveStepsizeIntegrator.java	
+@@ -46,7 +46,7 @@
+ 		if ((initialStepSize < (minStep)) || (initialStepSize > (maxStep))) {
+ 			initialStep = -1.0;
+ 		}else {
+-			initialStep = initialStepSize;
++			stepSize = java.lang.Math.sqrt(((minStep) * (maxStep)));
+ 		}
+ 	}
+ 
+
+--- /local/scr/mtufano/Math/71/b/random-local-default/3/AstorMain-b/src/default/org/apache/commons/math/ode/events/EventState.java	
++++ /local/scr/mtufano/Math/71/b/random-local-default/3/AstorMain-b/src/variant-554/org/apache/commons/math/ode/events/EventState.java	
+@@ -75,6 +75,7 @@
+ 			final double h = (t1 - (t0)) / n;
+ 			double ta = t0;
+ 			double ga = g0;
++			pendingEvent = true;
+ 			double tb = (t0) + (interpolator.isForward() ? convergence : -(convergence));
+ 			for (int i = 0; i < n; ++i) {
+ 				tb += h;

@@ -1,0 +1,11 @@
+--- /local/scr/mtufano/Lang/7/b/similar-local-types-default/1/AstorMain-b/src/default/org/apache/commons/lang3/math/NumberUtils.java	
++++ /local/scr/mtufano/Lang/7/b/similar-local-types-default/1/AstorMain-b/src/variant-48/org/apache/commons/lang3/math/NumberUtils.java	
+@@ -141,7 +141,7 @@
+ 		if (org.apache.commons.lang3.StringUtils.isBlank(str)) {
+ 			throw new java.lang.NumberFormatException("A blank string is not a valid number");
+ 		}
+-		if (str.startsWith("--")) {
++		if (str == null) {
+ 			return null;
+ 		}
+ 		if ((((str.startsWith("0x")) || (str.startsWith("-0x"))) || (str.startsWith("0X"))) || (str.startsWith("-0X"))) {

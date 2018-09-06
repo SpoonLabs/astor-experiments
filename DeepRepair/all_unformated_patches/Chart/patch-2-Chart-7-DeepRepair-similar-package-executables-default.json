@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "calendar.set(java.util.Calendar.MILLISECOND, 999)\nfixed statement= calendar.set(org.jfree.data.time.Year.this.year, java.util.Calendar.DECEMBER, 31, 23, 59, 59)\ngeneration= 9\ningredientScope= LOCAL\noperation: ReplaceOp\nlocation= org.jfree.data.time.TimePeriodValues\nline= 552\nlineSuspiciousness= 0.707\noriginal statement= return org.jfree.data.time.TimePeriodValues.this.maxMiddleIndex",
+    "diffpatch": "--- /local/scr/mtufano/Chart/7/b/similar-package-executables-default/3/AstorMain-b/src/default/org/jfree/data/time/Year.java\t\n+++ /local/scr/mtufano/Chart/7/b/similar-package-executables-default/3/AstorMain-b/src/variant-39/org/jfree/data/time/Year.java\t\n@@ -80,6 +80,7 @@\n \n \tpublic long getLastMillisecond(java.util.Calendar calendar) {\n \t\tcalendar.set(org.jfree.data.time.Year.this.year, java.util.Calendar.DECEMBER, 31, 23, 59, 59);\n+\t\tcalendar.set(org.jfree.data.time.Year.this.year, java.util.Calendar.DECEMBER, 31, 23, 59, 59);\n \t\tcalendar.set(java.util.Calendar.MILLISECOND, 999);\n \t\treturn calendar.getTime().getTime();\n \t}\n\n--- /local/scr/mtufano/Chart/7/b/similar-package-executables-default/3/AstorMain-b/src/default/org/jfree/data/time/TimePeriodValues.java\t\n+++ /local/scr/mtufano/Chart/7/b/similar-package-executables-default/3/AstorMain-b/src/variant-39/org/jfree/data/time/TimePeriodValues.java\t\n@@ -257,7 +257,7 @@\n \t}\n \n \tpublic int getMaxMiddleIndex() {\n-\t\treturn org.jfree.data.time.TimePeriodValues.this.maxMiddleIndex;\n+\t\treturn org.jfree.data.time.TimePeriodValues.this.maxStartIndex;\n \t}\n \n \tpublic int getMinEndIndex() {",
+    "generation": 9,
+    "ingredients": null,
+    "patch": "calendar.set(org.jfree.data.time.Year.this.year, java.util.Calendar.DECEMBER, 31, 23, 59, 59)\ngeneration= 9\ningredientScope= LOCAL\noperation: ReplaceOp\nlocation= org.jfree.data.time.TimePeriodValues\nline= 552\nlineSuspiciousness= 0.707\noriginal statement= return org.jfree.data.time.TimePeriodValues.this.maxMiddleIndex\nfixed statement= return org.jfree.data.time.TimePeriodValues.this.maxStartIndex",
+    "patchLocation": {
+        "className": "org.jfree.data.time.Year",
+        "line": 253,
+        "lineSuspiciousness": 0.316
+    },
+    "scope": "LOCAL",
+    "time": "31",
+    "type": "InsertBeforeOp",
+    "variant": 39
+}

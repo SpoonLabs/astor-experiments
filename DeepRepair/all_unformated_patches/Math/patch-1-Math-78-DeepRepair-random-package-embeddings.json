@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "for (int i = 0; i < n; ++i) {\n\ttb += h;\n\tinterpolator.setInterpolatedTime(tb);\n\tfinal double gb = handler.g(tb, interpolator.getInterpolatedState());\n\tif ((g0Positive) ^ (gb >= 0)) {\n\t\tincreasing = gb >= ga;\n\t\tfinal org.apache.commons.math.analysis.UnivariateRealFunction f = new org.apache.commons.math.analysis.UnivariateRealFunction() {\n\t\t\tpublic double value(final double t) throws org.apache.commons.math.FunctionEvaluationException {\n\t\t\t\ttry {\n\t\t\t\t\tinterpolator.setInterpolatedTime(t);\n\t\t\t\t\treturn handler.g(t, interpolator.getInterpolatedState());\n\t\t\t\t} catch (org.apache.commons.math.ode.DerivativeException e) {\n\t\t\t\t\tthrow new org.apache.commons.math.FunctionEvaluationException(e, t);\n\t\t\t\t} catch (org.apache.commons.math.ode.events.EventException e) {\n\t\t\t\t\tthrow new org.apache.commons.math.FunctionEvaluationException(e, t);\n\t\t\t\t}\n\t\t\t}\n\t\t};\n\t\tfinal org.apache.commons.math.analysis.solvers.BrentSolver solver = new org.apache.commons.math.analysis.solvers.BrentSolver();\n\t\tsolver.setAbsoluteAccuracy(convergence);\n\t\tsolver.setMaximalIterationCount(maxIterationCount);\n\t\tfinal double root = ta <= tb ? solver.solve(f, ta, tb) : solver.solve(f, tb, ta);\n\t\tif (((java.lang.Math.abs((root - ta))) <= (convergence)) && ((java.lang.Math.abs((root - (previousEventTime)))) <= (convergence))) {\n\t\t\tta = tb;\n\t\t\tga = gb;\n\t\t}else\n\t\t\tif ((java.lang.Double.isNaN(previousEventTime)) || ((java.lang.Math.abs(((previousEventTime) - root))) > (convergence))) {\n\t\t\t\tpendingEventTime = root;\n\t\t\t\tif ((pendingEvent) && ((java.lang.Math.abs((t1 - (pendingEventTime)))) <= (convergence))) {\n\t\t\t\t\treturn false;\n\t\t\t\t}\n\t\t\t\tpendingEvent = true;\n\t\t\t\treturn true;\n\t\t\t}\n\t\t\n\t}else {\n\t\tta = tb;\n\t\tga = gb;\n\t}\n}",
+    "diffpatch": "--- /local/scr/mtufano/Math/78/b/random-package-embeddings/1/AstorMain-b/src/default/org/apache/commons/math/ode/events/EventState.java\t\n+++ /local/scr/mtufano/Math/78/b/random-package-embeddings/1/AstorMain-b/src/variant-843/org/apache/commons/math/ode/events/EventState.java\t\n@@ -76,6 +76,7 @@\n \t\t\tdouble ta = t0;\n \t\t\tdouble ga = g0;\n \t\t\tdouble tb = (t0) + (interpolator.isForward() ? convergence : -(convergence));\n+\t\t\tta = tb;\n \t\t\tfor (int i = 0; i < n; ++i) {\n \t\t\t\ttb += h;\n \t\t\t\tinterpolator.setInterpolatedTime(tb);",
+    "generation": 842,
+    "ingredients": null,
+    "patch": "ta = tb",
+    "patchLocation": {
+        "className": "org.apache.commons.math.ode.events.EventState",
+        "line": 180,
+        "lineSuspiciousness": 0.107
+    },
+    "scope": "LOCAL",
+    "time": "437",
+    "type": "InsertBeforeOp",
+    "variant": 843
+}

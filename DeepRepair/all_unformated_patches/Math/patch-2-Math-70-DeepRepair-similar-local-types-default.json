@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "verifyInterval(min, max)\nfixed statement= clearResult()\ngeneration= 2\ningredientScope= LOCAL\noperation: ReplaceOp\nlocation= org.apache.commons.math.analysis.solvers.BisectionSolver\nline= 72\nlineSuspiciousness= 1\noriginal statement= return solve(min, max)",
+    "diffpatch": "--- /local/scr/mtufano/Math/70/b/similar-local-types-default/2/AstorMain-b/src/default/org/apache/commons/math/analysis/solvers/BisectionSolver.java\t\n+++ /local/scr/mtufano/Math/70/b/similar-local-types-default/2/AstorMain-b/src/variant-5/org/apache/commons/math/analysis/solvers/BisectionSolver.java\t\n@@ -24,12 +24,12 @@\n \t}\n \n \tpublic double solve(final org.apache.commons.math.analysis.UnivariateRealFunction f, double min, double max, double initial) throws org.apache.commons.math.FunctionEvaluationException, org.apache.commons.math.MaxIterationsExceededException {\n-\t\treturn solve(min, max);\n+\t\treturn solve(f, min, max);\n \t}\n \n \tpublic double solve(final org.apache.commons.math.analysis.UnivariateRealFunction f, double min, double max) throws org.apache.commons.math.FunctionEvaluationException, org.apache.commons.math.MaxIterationsExceededException {\n \t\tclearResult();\n-\t\tverifyInterval(min, max);\n+\t\tclearResult();\n \t\tdouble m;\n \t\tdouble fm;\n \t\tdouble fmin;\n\n--- /local/scr/mtufano/Math/70/b/similar-local-types-default/2/AstorMain-b/src/default/org/apache/commons/math/analysis/solvers/BisectionSolver.java\t\n+++ /local/scr/mtufano/Math/70/b/similar-local-types-default/2/AstorMain-b/src/variant-5/org/apache/commons/math/analysis/solvers/BisectionSolver.java\t\n@@ -24,12 +24,12 @@\n \t}\n \n \tpublic double solve(final org.apache.commons.math.analysis.UnivariateRealFunction f, double min, double max, double initial) throws org.apache.commons.math.FunctionEvaluationException, org.apache.commons.math.MaxIterationsExceededException {\n-\t\treturn solve(min, max);\n+\t\treturn solve(f, min, max);\n \t}\n \n \tpublic double solve(final org.apache.commons.math.analysis.UnivariateRealFunction f, double min, double max) throws org.apache.commons.math.FunctionEvaluationException, org.apache.commons.math.MaxIterationsExceededException {\n \t\tclearResult();\n-\t\tverifyInterval(min, max);\n+\t\tclearResult();\n \t\tdouble m;\n \t\tdouble fm;\n \t\tdouble fmin;",
+    "generation": 2,
+    "ingredients": null,
+    "patch": "clearResult()\ngeneration= 2\ningredientScope= LOCAL\noperation: ReplaceOp\nlocation= org.apache.commons.math.analysis.solvers.BisectionSolver\nline= 72\nlineSuspiciousness= 1\noriginal statement= return solve(min, max)\nfixed statement= return solve(f, min, max)",
+    "patchLocation": {
+        "className": "org.apache.commons.math.analysis.solvers.BisectionSolver",
+        "line": 80,
+        "lineSuspiciousness": 0.5
+    },
+    "scope": "LOCAL",
+    "time": "17",
+    "type": "ReplaceOp",
+    "variant": 5
+}

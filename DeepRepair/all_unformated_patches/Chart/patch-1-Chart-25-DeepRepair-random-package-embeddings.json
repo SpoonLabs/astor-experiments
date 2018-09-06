@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "if (orientation == (org.jfree.chart.plot.PlotOrientation.HORIZONTAL)) {\n\tresult = org.jfree.chart.util.RectangleEdge.TOP;\n}else\n\tif (orientation == (org.jfree.chart.plot.PlotOrientation.VERTICAL)) {\n\t\tresult = org.jfree.chart.util.RectangleEdge.LEFT;\n\t}\n\nfixed statement= java.util.List mappedDatasets = new java.util.ArrayList()\ngeneration= 3\ningredientScope= PACKAGE\noperation: InsertBeforeOp\nlocation= org.jfree.chart.plot.CategoryPlot\nline= 2614\nlineSuspiciousness= 0.894\noriginal statement= drawDomainMarkers(g2, dataArea, i, org.jfree.chart.util.Layer.BACKGROUND)",
+    "diffpatch": "--- /local/scr/mtufano/Chart/25/b/random-package-embeddings/1/AstorMain-b/src/default/org/jfree/chart/plot/CategoryPlot.java\t\n+++ /local/scr/mtufano/Chart/25/b/random-package-embeddings/1/AstorMain-b/src/variant-139/org/jfree/chart/plot/CategoryPlot.java\t\n@@ -1186,6 +1186,7 @@\n \t\t\tdrawRangeGridlines(g2, dataArea, rangeAxisState.getTicks());\n \t\t}\n \t\tfor (int i = 0; i < (org.jfree.chart.plot.CategoryPlot.this.renderers.size()); i++) {\n+\t\t\torg.jfree.chart.plot.CategoryPlot.this.renderers = new org.jfree.chart.util.ObjectList();\n \t\t\tdrawDomainMarkers(g2, dataArea, i, org.jfree.chart.util.Layer.BACKGROUND);\n \t\t}\n \t\tfor (int i = 0; i < (org.jfree.chart.plot.CategoryPlot.this.renderers.size()); i++) {\n\n--- /local/scr/mtufano/Chart/25/b/random-package-embeddings/1/AstorMain-b/src/default/org/jfree/chart/plot/Plot.java\t\n+++ /local/scr/mtufano/Chart/25/b/random-package-embeddings/1/AstorMain-b/src/variant-139/org/jfree/chart/plot/Plot.java\t\n@@ -594,6 +594,7 @@\n \t\t\t\n \t\t}else\n \t\t\tif (location == (org.jfree.chart.axis.AxisLocation.TOP_OR_LEFT)) {\n+\t\t\t\tjava.util.List mappedDatasets = new java.util.ArrayList();\n \t\t\t\tif (orientation == (org.jfree.chart.plot.PlotOrientation.HORIZONTAL)) {\n \t\t\t\t\tresult = org.jfree.chart.util.RectangleEdge.TOP;\n \t\t\t\t}else",
+    "generation": 3,
+    "ingredients": null,
+    "patch": "java.util.List mappedDatasets = new java.util.ArrayList()\ngeneration= 3\ningredientScope= PACKAGE\noperation: InsertBeforeOp\nlocation= org.jfree.chart.plot.CategoryPlot\nline= 2614\nlineSuspiciousness= 0.894\noriginal statement= drawDomainMarkers(g2, dataArea, i, org.jfree.chart.util.Layer.BACKGROUND)\nfixed statement= org.jfree.chart.plot.CategoryPlot.this.renderers = new org.jfree.chart.util.ObjectList()",
+    "patchLocation": {
+        "className": "org.jfree.chart.plot.Plot",
+        "line": 1386,
+        "lineSuspiciousness": 0.894
+    },
+    "scope": "PACKAGE",
+    "time": "137",
+    "type": "InsertBeforeOp",
+    "variant": 139
+}

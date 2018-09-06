@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "double yA = y[(signChangeIndex - 1)]",
+    "diffpatch": "--- /local/scr/mtufano/Math/40/b/random-local-default/1/AstorMain-b/src/default/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java\t\n+++ /local/scr/mtufano/Math/40/b/random-local-default/1/AstorMain-b/src/variant-313/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java\t\n@@ -87,6 +87,7 @@\n \t\tfinal double[] tmpX = new double[x.length];\n \t\tdouble xA = x[(signChangeIndex - 1)];\n \t\tdouble yA = y[(signChangeIndex - 1)];\n+\t\tsignChangeIndex = 2;\n \t\tdouble absYA = org.apache.commons.math.util.FastMath.abs(yA);\n \t\tint agingA = 0;\n \t\tdouble xB = x[signChangeIndex];",
+    "generation": 312,
+    "ingredients": null,
+    "patch": "signChangeIndex = 2",
+    "patchLocation": {
+        "className": "org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver",
+        "line": 199,
+        "lineSuspiciousness": 0.2
+    },
+    "scope": "LOCAL",
+    "time": "1813",
+    "type": "InsertAfterOp",
+    "variant": 313
+}

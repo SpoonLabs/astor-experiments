@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "fw = fx",
+    "diffpatch": "--- /local/scr/mtufano/Math/24/b/random-local-embeddings/2/AstorMain-b/src/default/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java\t\n+++ /local/scr/mtufano/Math/24/b/random-local-embeddings/2/AstorMain-b/src/variant-2202/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java\t\n@@ -135,6 +135,24 @@\n \t\t\t\t\tv = w;\n \t\t\t\t\tfv = fw;\n \t\t\t\t\tw = x;\n+\t\t\t\t\tif (((p > (q * (a - x))) && (p < (q * (b - x)))) && ((org.apache.commons.math3.util.FastMath.abs(p)) < (org.apache.commons.math3.util.FastMath.abs(((0.5 * q) * r))))) {\n+\t\t\t\t\t\td = p / q;\n+\t\t\t\t\t\tu = x + d;\n+\t\t\t\t\t\tif (((u - a) < tol2) || ((b - u) < tol2)) {\n+\t\t\t\t\t\t\tif (x <= m) {\n+\t\t\t\t\t\t\t\td = tol1;\n+\t\t\t\t\t\t\t}else {\n+\t\t\t\t\t\t\t\td = -tol1;\n+\t\t\t\t\t\t\t}\n+\t\t\t\t\t\t}\n+\t\t\t\t\t}else {\n+\t\t\t\t\t\tif (x < m) {\n+\t\t\t\t\t\t\te = b - x;\n+\t\t\t\t\t\t}else {\n+\t\t\t\t\t\t\te = a - x;\n+\t\t\t\t\t\t}\n+\t\t\t\t\t\td = (org.apache.commons.math3.optimization.univariate.BrentOptimizer.GOLDEN_SECTION) * e;\n+\t\t\t\t\t}\n \t\t\t\t\tfw = fx;\n \t\t\t\t\tx = u;\n \t\t\t\t\tfx = fu;",
+    "generation": 2201,
+    "ingredients": null,
+    "patch": "if (((p > (q * (a - x))) && (p < (q * (b - x)))) && ((org.apache.commons.math3.util.FastMath.abs(p)) < (org.apache.commons.math3.util.FastMath.abs(((0.5 * q) * r))))) {\n\td = p / q;\n\tu = x + d;\n\tif (((u - a) < tol2) || ((b - u) < tol2)) {\n\t\tif (x <= m) {\n\t\t\td = tol1;\n\t\t}else {\n\t\t\td = -tol1;\n\t\t}\n\t}\n}else {\n\tif (x < m) {\n\t\te = b - x;\n\t}else {\n\t\te = a - x;\n\t}\n\td = (org.apache.commons.math3.optimization.univariate.BrentOptimizer.GOLDEN_SECTION) * e;\n}",
+    "patchLocation": {
+        "className": "org.apache.commons.math3.optimization.univariate.BrentOptimizer",
+        "line": 244,
+        "lineSuspiciousness": 0.258
+    },
+    "scope": "LOCAL",
+    "time": "6741",
+    "type": "InsertBeforeOp",
+    "variant": 2202
+}

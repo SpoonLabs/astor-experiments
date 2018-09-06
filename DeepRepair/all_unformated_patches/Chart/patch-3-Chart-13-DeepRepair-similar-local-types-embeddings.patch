@@ -1,0 +1,22 @@
+--- /local/scr/mtufano/Chart/13/b/similar-local-types-embeddings/2/AstorMain-b/src/default/org/jfree/chart/block/BorderArrangement.java	
++++ /local/scr/mtufano/Chart/13/b/similar-local-types-embeddings/2/AstorMain-b/src/variant-13/org/jfree/chart/block/BorderArrangement.java	
+@@ -189,7 +189,7 @@
+ 			h[4] = size.height;
+ 		}
+ 		double height = ((h[0]) + (h[1])) + (java.lang.Math.max(h[2], java.lang.Math.max(h[3], h[4])));
+-		return arrange(container, g2, new org.jfree.chart.block.RectangleConstraint(width, height));
++		return new org.jfree.chart.util.Size2D(width, height);
+ 	}
+ 
+ 	protected org.jfree.chart.util.Size2D arrangeRR(org.jfree.chart.block.BlockContainer container, org.jfree.data.Range widthRange, org.jfree.data.Range heightRange, java.awt.Graphics2D g2) {
+
+--- /local/scr/mtufano/Chart/13/b/similar-local-types-embeddings/2/AstorMain-b/src/default/org/jfree/chart/block/AbstractBlock.java	
++++ /local/scr/mtufano/Chart/13/b/similar-local-types-embeddings/2/AstorMain-b/src/variant-13/org/jfree/chart/block/AbstractBlock.java	
+@@ -162,6 +162,7 @@
+ 		double lowerBound = 0.0;
+ 		double upperBound = java.lang.Double.POSITIVE_INFINITY;
+ 		if ((r.getLowerBound()) > 0.0) {
++			org.jfree.chart.block.AbstractBlock.this.id = null;
+ 			lowerBound = trimToContentWidth(r.getLowerBound());
+ 		}
+ 		if ((r.getUpperBound()) < (java.lang.Double.POSITIVE_INFINITY)) {

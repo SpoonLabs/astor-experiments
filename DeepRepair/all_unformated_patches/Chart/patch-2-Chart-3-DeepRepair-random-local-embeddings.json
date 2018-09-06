@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "org.jfree.data.general.Series clone = ((org.jfree.data.general.Series) (super.clone()))\nfixed statement= org.jfree.data.general.Series.this.description = description\ngeneration= 6\ningredientScope= LOCAL\noperation: InsertBeforeOp\nlocation= org.jfree.data.time.TimeSeries\nline= 627\nlineSuspiciousness= 0.151\noriginal statement= updateBoundsForAddedItem(item)",
+    "diffpatch": "--- /local/scr/mtufano/Chart/3/b/random-local-embeddings/3/AstorMain-b/src/default/org/jfree/data/time/TimeSeries.java\t\n+++ /local/scr/mtufano/Chart/3/b/random-local-embeddings/3/AstorMain-b/src/variant-134/org/jfree/data/time/TimeSeries.java\t\n@@ -238,6 +238,7 @@\n \t\t\t}\n \t\t}\n \t\tif (added) {\n+\t\t\tfindBoundsByIteration();\n \t\t\tupdateBoundsForAddedItem(item);\n \t\t\tif ((getItemCount()) > (org.jfree.data.time.TimeSeries.this.maximumItemCount)) {\n \t\t\t\torg.jfree.data.time.TimeSeriesDataItem d = ((org.jfree.data.time.TimeSeriesDataItem) (org.jfree.data.time.TimeSeries.this.data.remove(0)));\n\n--- /local/scr/mtufano/Chart/3/b/random-local-embeddings/3/AstorMain-b/src/default/org/jfree/data/general/Series.java\t\n+++ /local/scr/mtufano/Chart/3/b/random-local-embeddings/3/AstorMain-b/src/variant-134/org/jfree/data/general/Series.java\t\n@@ -73,6 +73,7 @@\n \n \tpublic java.lang.Object clone() throws java.lang.CloneNotSupportedException {\n \t\torg.jfree.data.general.Series clone = ((org.jfree.data.general.Series) (super.clone()));\n+\t\torg.jfree.data.general.Series.this.description = description;\n \t\tclone.listeners = new javax.swing.event.EventListenerList();\n \t\tclone.propertyChangeSupport = new java.beans.PropertyChangeSupport(clone);\n \t\treturn clone;",
+    "generation": 6,
+    "ingredients": null,
+    "patch": "org.jfree.data.general.Series.this.description = description\ngeneration= 6\ningredientScope= LOCAL\noperation: InsertBeforeOp\nlocation= org.jfree.data.time.TimeSeries\nline= 627\nlineSuspiciousness= 0.151\noriginal statement= updateBoundsForAddedItem(item)\nfixed statement= findBoundsByIteration()",
+    "patchLocation": {
+        "className": "org.jfree.data.general.Series",
+        "line": 243,
+        "lineSuspiciousness": 0.354
+    },
+    "scope": "LOCAL",
+    "time": "53",
+    "type": "InsertAfterOp",
+    "variant": 134
+}

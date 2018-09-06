@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "return forward ? initialStep : -(initialStep)\nfixed statement= return stepStart\ngeneration= 217\ningredientScope= GLOBAL\noperation: InsertAfterOp\nlocation= org.apache.commons.math.ode.nonstiff.RungeKuttaIntegrator\nline= 180\nlineSuspiciousness= 0.707\noriginal statement= loop = false",
+    "diffpatch": "--- /local/scr/mtufano/Math/71/b/random-global-embeddings/1/AstorMain-b/src/default/org/apache/commons/math/ode/nonstiff/AdaptiveStepsizeIntegrator.java\t\n+++ /local/scr/mtufano/Math/71/b/random-global-embeddings/1/AstorMain-b/src/variant-310/org/apache/commons/math/ode/nonstiff/AdaptiveStepsizeIntegrator.java\t\n@@ -63,7 +63,7 @@\n \n \tpublic double initializeStep(final org.apache.commons.math.ode.FirstOrderDifferentialEquations equations, final boolean forward, final int order, final double[] scale, final double t0, final double[] y0, final double[] yDot0, final double[] y1, final double[] yDot1) throws org.apache.commons.math.ode.DerivativeException {\n \t\tif ((initialStep) > 0) {\n-\t\t\treturn forward ? initialStep : -(initialStep);\n+\t\t\treturn stepStart;\n \t\t}\n \t\tdouble ratio;\n \t\tdouble yOnScale2 = 0;\n\n--- /local/scr/mtufano/Math/71/b/random-global-embeddings/1/AstorMain-b/src/default/org/apache/commons/math/ode/nonstiff/RungeKuttaIntegrator.java\t\n+++ /local/scr/mtufano/Math/71/b/random-global-embeddings/1/AstorMain-b/src/variant-310/org/apache/commons/math/ode/nonstiff/RungeKuttaIntegrator.java\t\n@@ -79,6 +79,7 @@\n \t\t\t\t\tfinal double dt = (manager.getEventTime()) - (stepStart);\n \t\t\t\t\tif ((java.lang.Math.abs(dt)) <= (java.lang.Math.ulp(stepStart))) {\n \t\t\t\t\t\tloop = false;\n+\t\t\t\t\t\treturn t;\n \t\t\t\t\t}else {\n \t\t\t\t\t\tstepSize = dt;\n \t\t\t\t\t}",
+    "generation": 217,
+    "ingredients": null,
+    "patch": "return stepStart\ngeneration= 217\ningredientScope= GLOBAL\noperation: InsertAfterOp\nlocation= org.apache.commons.math.ode.nonstiff.RungeKuttaIntegrator\nline= 180\nlineSuspiciousness= 0.707\noriginal statement= loop = false\nfixed statement= return t",
+    "patchLocation": {
+        "className": "org.apache.commons.math.ode.nonstiff.AdaptiveStepsizeIntegrator",
+        "line": 211,
+        "lineSuspiciousness": 0.5
+    },
+    "scope": "GLOBAL",
+    "time": "4008",
+    "type": "ReplaceOp",
+    "variant": 310
+}

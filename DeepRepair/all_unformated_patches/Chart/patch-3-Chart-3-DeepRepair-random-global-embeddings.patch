@@ -1,0 +1,36 @@
+--- /local/scr/mtufano/Chart/3/b/random-global-embeddings/2/AstorMain-b/src/default/org/jfree/data/time/TimeSeries.java	
++++ /local/scr/mtufano/Chart/3/b/random-global-embeddings/2/AstorMain-b/src/variant-76/org/jfree/data/time/TimeSeries.java	
+@@ -214,6 +214,7 @@
+ 		int count = getItemCount();
+ 		if (count == 0) {
+ 			org.jfree.data.time.TimeSeries.this.data.add(item);
++			findBoundsByIteration();
+ 			added = true;
+ 		}else {
+ 			org.jfree.data.time.RegularTimePeriod last = getTimePeriod(((getItemCount()) - 1));
+@@ -256,6 +257,7 @@
+ 
+ 	public void add(org.jfree.data.time.RegularTimePeriod period, double value, boolean notify) {
+ 		org.jfree.data.time.TimeSeriesDataItem item = new org.jfree.data.time.TimeSeriesDataItem(period, value);
++		java.lang.StringBuffer b = new java.lang.StringBuffer();
+ 		add(item, notify);
+ 	}
+ 
+
+--- /local/scr/mtufano/Chart/3/b/random-global-embeddings/2/AstorMain-b/src/default/org/jfree/data/time/TimeSeries.java	
++++ /local/scr/mtufano/Chart/3/b/random-global-embeddings/2/AstorMain-b/src/variant-76/org/jfree/data/time/TimeSeries.java	
+@@ -214,6 +214,7 @@
+ 		int count = getItemCount();
+ 		if (count == 0) {
+ 			org.jfree.data.time.TimeSeries.this.data.add(item);
++			findBoundsByIteration();
+ 			added = true;
+ 		}else {
+ 			org.jfree.data.time.RegularTimePeriod last = getTimePeriod(((getItemCount()) - 1));
+@@ -256,6 +257,7 @@
+ 
+ 	public void add(org.jfree.data.time.RegularTimePeriod period, double value, boolean notify) {
+ 		org.jfree.data.time.TimeSeriesDataItem item = new org.jfree.data.time.TimeSeriesDataItem(period, value);
++		java.lang.StringBuffer b = new java.lang.StringBuffer();
+ 		add(item, notify);
+ 	}

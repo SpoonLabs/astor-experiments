@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "s = (gam * (1 - (java.lang.Math.sqrt(a2)))) / (1 + a2)",
+    "diffpatch": "--- /local/scr/mtufano/Math/81/b/random-global-embeddings/3/AstorMain-b/src/default/org/apache/commons/math/linear/EigenDecompositionImpl.java\t\n+++ /local/scr/mtufano/Math/81/b/random-global-embeddings/3/AstorMain-b/src/variant-7/org/apache/commons/math/linear/EigenDecompositionImpl.java\t\n@@ -971,7 +971,7 @@\n \t\t\t\t\t\t}\n \t\t\t\t\t\ta2 = cnst3 * a2;\n \t\t\t\t\t\tif (a2 < cnst1) {\n-\t\t\t\t\t\t\ts = (gam * (1 - (java.lang.Math.sqrt(a2)))) / (1 + a2);\n+\t\t\t\t\t\t\tqMax = java.lang.Math.max(qMax, java.lang.Math.max(work[(3 + (pingPong))], work[(7 + (pingPong))]));\n \t\t\t\t\t\t}\n \t\t\t\t\t\ttau = s;\n \t\t\t\t\t}",
+    "generation": 6,
+    "ingredients": null,
+    "patch": "qMax = java.lang.Math.max(qMax, java.lang.Math.max(work[(3 + (pingPong))], work[(7 + (pingPong))]))",
+    "patchLocation": {
+        "className": "org.apache.commons.math.linear.EigenDecompositionImpl",
+        "line": 1521,
+        "lineSuspiciousness": 0.316
+    },
+    "scope": "LOCAL",
+    "time": "23",
+    "type": "ReplaceOp",
+    "variant": 7
+}

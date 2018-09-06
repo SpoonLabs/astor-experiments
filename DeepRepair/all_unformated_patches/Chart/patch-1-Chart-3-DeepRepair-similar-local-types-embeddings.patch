@@ -1,0 +1,39 @@
+--- /local/scr/mtufano/Chart/3/b/similar-local-types-embeddings/1/AstorMain-b/src/default/org/jfree/data/time/TimeSeries.java	
++++ /local/scr/mtufano/Chart/3/b/similar-local-types-embeddings/1/AstorMain-b/src/variant-1809/org/jfree/data/time/TimeSeries.java	
+@@ -195,6 +195,7 @@
+ 			throw new java.lang.IllegalArgumentException("Null 'item' argument.");
+ 		}
+ 		item = ((org.jfree.data.time.TimeSeriesDataItem) (item.clone()));
++		org.jfree.data.time.TimeSeries.this.domain = domain;
+ 		java.lang.Class c = item.getPeriod().getClass();
+ 		if ((org.jfree.data.time.TimeSeries.this.timePeriodClass) == null) {
+ 			org.jfree.data.time.TimeSeries.this.timePeriodClass = c;
+@@ -238,7 +239,7 @@
+ 			}
+ 		}
+ 		if (added) {
+-			updateBoundsForAddedItem(item);
++			findBoundsByIteration();
+ 			if ((getItemCount()) > (org.jfree.data.time.TimeSeries.this.maximumItemCount)) {
+ 				org.jfree.data.time.TimeSeriesDataItem d = ((org.jfree.data.time.TimeSeriesDataItem) (org.jfree.data.time.TimeSeries.this.data.remove(0)));
+ 				updateBoundsForRemovedItem(d);
+
+--- /local/scr/mtufano/Chart/3/b/similar-local-types-embeddings/1/AstorMain-b/src/default/org/jfree/data/time/TimeSeries.java	
++++ /local/scr/mtufano/Chart/3/b/similar-local-types-embeddings/1/AstorMain-b/src/variant-1809/org/jfree/data/time/TimeSeries.java	
+@@ -195,6 +195,7 @@
+ 			throw new java.lang.IllegalArgumentException("Null 'item' argument.");
+ 		}
+ 		item = ((org.jfree.data.time.TimeSeriesDataItem) (item.clone()));
++		org.jfree.data.time.TimeSeries.this.domain = domain;
+ 		java.lang.Class c = item.getPeriod().getClass();
+ 		if ((org.jfree.data.time.TimeSeries.this.timePeriodClass) == null) {
+ 			org.jfree.data.time.TimeSeries.this.timePeriodClass = c;
+@@ -238,7 +239,7 @@
+ 			}
+ 		}
+ 		if (added) {
+-			updateBoundsForAddedItem(item);
++			findBoundsByIteration();
+ 			if ((getItemCount()) > (org.jfree.data.time.TimeSeries.this.maximumItemCount)) {
+ 				org.jfree.data.time.TimeSeriesDataItem d = ((org.jfree.data.time.TimeSeriesDataItem) (org.jfree.data.time.TimeSeries.this.data.remove(0)));
+ 				updateBoundsForRemovedItem(d);

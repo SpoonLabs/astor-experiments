@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "final org.apache.commons.math3.optimization.direct.CMAESOptimizer.FitnessFunction fitfun = new org.apache.commons.math3.optimization.direct.CMAESOptimizer.FitnessFunction()",
+    "diffpatch": "--- /local/scr/mtufano/Math/18/b/random-package-embeddings/1/AstorMain-b/src/default/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java\t\n+++ /local/scr/mtufano/Math/18/b/random-package-embeddings/1/AstorMain-b/src/variant-510/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java\t\n@@ -159,6 +159,7 @@\n \t\tcheckParameters();\n \t\tisMinimize = getGoalType().equals(org.apache.commons.math3.optimization.GoalType.MINIMIZE);\n \t\tfinal org.apache.commons.math3.optimization.direct.CMAESOptimizer.FitnessFunction fitfun = new org.apache.commons.math3.optimization.direct.CMAESOptimizer.FitnessFunction();\n+\t\tboundaries = null;\n \t\tfinal double[] guess = fitfun.encode(getStartPoint());\n \t\tdimension = guess.length;\n \t\tinitializeCMA(guess);",
+    "generation": 509,
+    "ingredients": null,
+    "patch": "boundaries = null",
+    "patchLocation": {
+        "className": "org.apache.commons.math3.optimization.direct.CMAESOptimizer",
+        "line": 359,
+        "lineSuspiciousness": 0.243
+    },
+    "scope": "LOCAL",
+    "time": "2658",
+    "type": "InsertAfterOp",
+    "variant": 510
+}

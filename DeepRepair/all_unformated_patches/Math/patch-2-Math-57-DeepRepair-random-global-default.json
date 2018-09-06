@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "return center\nfixed statement= final double[] as = new double[2]\ngeneration= 3\ningredientScope= GLOBAL\noperation: ReplaceOp\nlocation= org.apache.commons.math.stat.clustering.KMeansPlusPlusClusterer\nline= 175\nlineSuspiciousness= 0.577\noriginal statement= int sum = 0",
+    "diffpatch": "--- /local/scr/mtufano/Math/57/b/random-global-default/3/AstorMain-b/src/default/org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.java\t\n+++ /local/scr/mtufano/Math/57/b/random-global-default/3/AstorMain-b/src/variant-6925/org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.java\t\n@@ -75,7 +75,7 @@\n \t\tresultSet.add(new org.apache.commons.math.stat.clustering.Cluster<T>(firstPoint));\n \t\tfinal double[] dx2 = new double[pointSet.size()];\n \t\twhile ((resultSet.size()) < k) {\n-\t\t\tint sum = 0;\n+\t\t\tdouble sum = 0;\n \t\t\tfor (int i = 0; i < (pointSet.size()); i++) {\n \t\t\t\tfinal T p = pointSet.get(i);\n \t\t\t\tfinal org.apache.commons.math.stat.clustering.Cluster<T> nearest = org.apache.commons.math.stat.clustering.KMeansPlusPlusClusterer.getNearestCluster(resultSet, p);\n\n--- /local/scr/mtufano/Math/57/b/random-global-default/3/AstorMain-b/src/default/org/apache/commons/math/stat/clustering/Cluster.java\t\n+++ /local/scr/mtufano/Math/57/b/random-global-default/3/AstorMain-b/src/variant-6925/org/apache/commons/math/stat/clustering/Cluster.java\t\n@@ -24,6 +24,7 @@\n \t}\n \n \tpublic T getCenter() {\n+\t\tfinal double[] as = new double[2];\n \t\treturn center;\n \t}\n }",
+    "generation": 3,
+    "ingredients": null,
+    "patch": "final double[] as = new double[2]\ngeneration= 3\ningredientScope= GLOBAL\noperation: ReplaceOp\nlocation= org.apache.commons.math.stat.clustering.KMeansPlusPlusClusterer\nline= 175\nlineSuspiciousness= 0.577\noriginal statement= int sum = 0\nfixed statement= double sum = 0",
+    "patchLocation": {
+        "className": "org.apache.commons.math.stat.clustering.Cluster",
+        "line": 71,
+        "lineSuspiciousness": 0.5
+    },
+    "scope": "GLOBAL",
+    "time": "4985",
+    "type": "InsertBeforeOp",
+    "variant": 6925
+}

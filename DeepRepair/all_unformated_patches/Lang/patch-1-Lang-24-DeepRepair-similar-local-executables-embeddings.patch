@@ -1,0 +1,12 @@
+--- /local/scr/mtufano/Lang/24/b/similar-local-executables-embeddings/1/AstorMain-b/src/default/org/apache/commons/lang3/math/NumberUtils.java	
++++ /local/scr/mtufano/Lang/24/b/similar-local-executables-embeddings/1/AstorMain-b/src/variant-5425/org/apache/commons/lang3/math/NumberUtils.java	
+@@ -714,6 +714,9 @@
+ 			if ((!allowSigns) && (((((chars[i]) == 'd') || ((chars[i]) == 'D')) || ((chars[i]) == 'f')) || ((chars[i]) == 'F'))) {
+ 				return foundDigit;
+ 			}
++			if (hasDecPoint || hasExp) {
++				return false;
++			}
+ 			if (((chars[i]) == 'l') || ((chars[i]) == 'L')) {
+ 				return foundDigit && (!hasExp);
+ 			}

@@ -1,0 +1,39 @@
+--- /local/scr/mtufano/Chart/25/b/random-global-embeddings/1/AstorMain-b/src/default/org/jfree/chart/plot/CategoryPlot.java	
++++ /local/scr/mtufano/Chart/25/b/random-global-embeddings/1/AstorMain-b/src/variant-386/org/jfree/chart/plot/CategoryPlot.java	
+@@ -317,6 +317,7 @@
+ 				axis.configure();
+ 			}
+ 		}
++		double[] h = new double[5];
+ 	}
+ 
+ 	public org.jfree.chart.axis.ValueAxis getRangeAxis() {
+@@ -1300,7 +1301,7 @@
+ 				axisStateMap.put(axis, axisState);
+ 			}
+ 		} 
+-		cursor = (dataArea.getMinX()) - (org.jfree.chart.plot.CategoryPlot.this.axisOffset.calculateLeftOutset(dataArea.getWidth()));
++		org.jfree.chart.plot.CategoryPlot.this.datasets = new org.jfree.chart.util.ObjectList();
+ 		iterator = axisCollection.getAxesAtLeft().iterator();
+ 		while (iterator.hasNext()) {
+ 			org.jfree.chart.axis.Axis axis = ((org.jfree.chart.axis.Axis) (iterator.next()));
+
+--- /local/scr/mtufano/Chart/25/b/random-global-embeddings/1/AstorMain-b/src/default/org/jfree/chart/plot/CategoryPlot.java	
++++ /local/scr/mtufano/Chart/25/b/random-global-embeddings/1/AstorMain-b/src/variant-386/org/jfree/chart/plot/CategoryPlot.java	
+@@ -317,6 +317,7 @@
+ 				axis.configure();
+ 			}
+ 		}
++		double[] h = new double[5];
+ 	}
+ 
+ 	public org.jfree.chart.axis.ValueAxis getRangeAxis() {
+@@ -1300,7 +1301,7 @@
+ 				axisStateMap.put(axis, axisState);
+ 			}
+ 		} 
+-		cursor = (dataArea.getMinX()) - (org.jfree.chart.plot.CategoryPlot.this.axisOffset.calculateLeftOutset(dataArea.getWidth()));
++		org.jfree.chart.plot.CategoryPlot.this.datasets = new org.jfree.chart.util.ObjectList();
+ 		iterator = axisCollection.getAxesAtLeft().iterator();
+ 		while (iterator.hasNext()) {
+ 			org.jfree.chart.axis.Axis axis = ((org.jfree.chart.axis.Axis) (iterator.next()));

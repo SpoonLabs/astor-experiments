@@ -1,0 +1,21 @@
+--- /local/scr/mtufano/Chart/26/b/random-local-default/3/AstorMain-b/src/default/org/jfree/chart/axis/Axis.java	
++++ /local/scr/mtufano/Chart/26/b/random-local-default/3/AstorMain-b/src/variant-109/org/jfree/chart/axis/Axis.java	
+@@ -108,7 +108,7 @@
+ 	}
+ 
+ 	public boolean isVisible() {
+-		return org.jfree.chart.axis.Axis.this.visible;
++		return false;
+ 	}
+ 
+ 	public void setVisible(boolean flag) {
+
+--- /local/scr/mtufano/Chart/26/b/random-local-default/3/AstorMain-b/src/default/org/jfree/chart/util/RectangleInsets.java	
++++ /local/scr/mtufano/Chart/26/b/random-local-default/3/AstorMain-b/src/variant-109/org/jfree/chart/util/RectangleInsets.java	
+@@ -218,6 +218,7 @@
+ 		if ((org.jfree.chart.util.RectangleInsets.this.unitType) == (org.jfree.chart.util.UnitType.RELATIVE)) {
+ 			result = (org.jfree.chart.util.RectangleInsets.this.left) * width;
+ 		}
++		result = (org.jfree.chart.util.RectangleInsets.this.left) * width;
+ 		return result;
+ 	}

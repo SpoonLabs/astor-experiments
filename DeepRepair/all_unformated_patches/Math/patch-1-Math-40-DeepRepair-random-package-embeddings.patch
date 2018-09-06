@@ -1,0 +1,10 @@
+--- /local/scr/mtufano/Math/40/b/random-package-embeddings/1/AstorMain-b/src/default/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	
++++ /local/scr/mtufano/Math/40/b/random-package-embeddings/1/AstorMain-b/src/variant-101/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	
+@@ -168,6 +168,7 @@
+ 			if ((nextY * yA) <= 0) {
+ 				xB = nextX;
+ 				yB = nextY;
++				signChangeIndex++;
+ 				absYB = org.apache.commons.math.util.FastMath.abs(yB);
+ 				++agingA;
+ 				agingB = 0;

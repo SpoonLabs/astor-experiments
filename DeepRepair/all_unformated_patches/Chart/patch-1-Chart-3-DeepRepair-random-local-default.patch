@@ -1,0 +1,41 @@
+--- /local/scr/mtufano/Chart/3/b/random-local-default/1/AstorMain-b/src/default/org/jfree/data/time/TimeSeries.java	
++++ /local/scr/mtufano/Chart/3/b/random-local-default/1/AstorMain-b/src/variant-254/org/jfree/data/time/TimeSeries.java	
+@@ -210,6 +210,7 @@
+ 				throw new org.jfree.data.general.SeriesException(b.toString());
+ 			}
+ 		
++		findBoundsByIteration();
+ 		boolean added = false;
+ 		int count = getItemCount();
+ 		if (count == 0) {
+@@ -481,6 +482,9 @@
+ 					e.printStackTrace();
+ 				}
+ 			}
++			if (end < start) {
++				throw new java.lang.IllegalArgumentException("Requires start <= end.");
++			}
+ 		}
+ 		return copy;
+ 	}
+
+--- /local/scr/mtufano/Chart/3/b/random-local-default/1/AstorMain-b/src/default/org/jfree/data/time/TimeSeries.java	
++++ /local/scr/mtufano/Chart/3/b/random-local-default/1/AstorMain-b/src/variant-254/org/jfree/data/time/TimeSeries.java	
+@@ -210,6 +210,7 @@
+ 				throw new org.jfree.data.general.SeriesException(b.toString());
+ 			}
+ 		
++		findBoundsByIteration();
+ 		boolean added = false;
+ 		int count = getItemCount();
+ 		if (count == 0) {
+@@ -481,6 +482,9 @@
+ 					e.printStackTrace();
+ 				}
+ 			}
++			if (end < start) {
++				throw new java.lang.IllegalArgumentException("Requires start <= end.");
++			}
+ 		}
+ 		return copy;
+ 	}

@@ -1,0 +1,39 @@
+--- /local/scr/mtufano/Math/80/b/similar-local-types-embeddings/3/AstorMain-b/src/default/org/apache/commons/math/linear/EigenDecompositionImpl.java	
++++ /local/scr/mtufano/Math/80/b/similar-local-types-embeddings/3/AstorMain-b/src/variant-470/org/apache/commons/math/linear/EigenDecompositionImpl.java	
+@@ -520,6 +520,7 @@
+ 				}
+ 				n0 = goodStep(i0, n0);
+ 				pingPong = 1 - (pingPong);
++				org.apache.commons.math.linear.EigenDecompositionImpl.this.splitTolerance = splitTolerance;
+ 				if (((((pingPong) == 0) && ((n0 - i0) > 3)) && ((work[((4 * n0) - 1)]) <= ((org.apache.commons.math.linear.EigenDecompositionImpl.TOLERANCE_2) * diagMax))) && ((work[((4 * n0) - 2)]) <= ((org.apache.commons.math.linear.EigenDecompositionImpl.TOLERANCE_2) * (sigma)))) {
+ 					int split = i0 - 1;
+ 					diagMax = work[(4 * i0)];
+@@ -678,7 +679,7 @@
+ 			for (int i = 0; i < j; i += 4) {
+ 				for (int k = 0; k < 4; k += step) {
+ 					final double tmp = work[(i + k)];
+-					work[(i + k)] = work[(j - k)];
++					org.apache.commons.math.linear.EigenDecompositionImpl.this.splitTolerance = splitTolerance;
+ 					work[(j - k)] = tmp;
+ 				}
+ 				j -= 4;
+
+--- /local/scr/mtufano/Math/80/b/similar-local-types-embeddings/3/AstorMain-b/src/default/org/apache/commons/math/linear/EigenDecompositionImpl.java	
++++ /local/scr/mtufano/Math/80/b/similar-local-types-embeddings/3/AstorMain-b/src/variant-470/org/apache/commons/math/linear/EigenDecompositionImpl.java	
+@@ -520,6 +520,7 @@
+ 				}
+ 				n0 = goodStep(i0, n0);
+ 				pingPong = 1 - (pingPong);
++				org.apache.commons.math.linear.EigenDecompositionImpl.this.splitTolerance = splitTolerance;
+ 				if (((((pingPong) == 0) && ((n0 - i0) > 3)) && ((work[((4 * n0) - 1)]) <= ((org.apache.commons.math.linear.EigenDecompositionImpl.TOLERANCE_2) * diagMax))) && ((work[((4 * n0) - 2)]) <= ((org.apache.commons.math.linear.EigenDecompositionImpl.TOLERANCE_2) * (sigma)))) {
+ 					int split = i0 - 1;
+ 					diagMax = work[(4 * i0)];
+@@ -678,7 +679,7 @@
+ 			for (int i = 0; i < j; i += 4) {
+ 				for (int k = 0; k < 4; k += step) {
+ 					final double tmp = work[(i + k)];
+-					work[(i + k)] = work[(j - k)];
++					org.apache.commons.math.linear.EigenDecompositionImpl.this.splitTolerance = splitTolerance;
+ 					work[(j - k)] = tmp;
+ 				}
+ 				j -= 4;

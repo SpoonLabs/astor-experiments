@@ -1,0 +1,11 @@
+--- /local/scr/mtufano/Math/28/b/similar-package-executables-default/1/AstorMain-b/src/default/org/apache/commons/math3/optimization/linear/SimplexTableau.java	
++++ /local/scr/mtufano/Math/28/b/similar-package-executables-default/1/AstorMain-b/src/variant-599/org/apache/commons/math3/optimization/linear/SimplexTableau.java	
+@@ -248,7 +248,7 @@
+ 		for (int i = 0; i < (getWidth()); i++) {
+ 			double result = (tableau.getEntry(minuendRow, i)) - ((tableau.getEntry(subtrahendRow, i)) * multiple);
+ 			if ((org.apache.commons.math3.util.FastMath.abs(result)) < (org.apache.commons.math3.optimization.linear.SimplexTableau.CUTOFF_THRESHOLD)) {
+-				result = 0.0;
++				result = -result;
+ 			}
+ 			tableau.setEntry(minuendRow, i, result);
+ 		}

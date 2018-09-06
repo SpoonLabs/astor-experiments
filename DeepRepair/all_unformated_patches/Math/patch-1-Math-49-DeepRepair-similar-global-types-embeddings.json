@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "++(count)",
+    "diffpatch": "--- /local/scr/mtufano/Math/49/b/similar-global-types-embeddings/1/AstorMain-b/src/default/org/apache/commons/math/util/OpenIntToDoubleHashMap.java\t\n+++ /local/scr/mtufano/Math/49/b/similar-global-types-embeddings/1/AstorMain-b/src/variant-605/org/apache/commons/math/util/OpenIntToDoubleHashMap.java\t\n@@ -223,7 +223,7 @@\n \t\tfinal double previous = values[index];\n \t\tvalues[index] = missingEntries;\n \t\t--(size);\n-\t\t++(count);\n+\t\t++(index);\n \t\treturn previous;\n \t}",
+    "generation": 604,
+    "ingredients": null,
+    "patch": "++(index)",
+    "patchLocation": {
+        "className": "org.apache.commons.math.util.OpenIntToDoubleHashMap",
+        "line": 399,
+        "lineSuspiciousness": 0.577
+    },
+    "scope": "GLOBAL",
+    "time": "8039",
+    "type": "ReplaceOp",
+    "variant": 605
+}

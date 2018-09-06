@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "return createComplex(((real) + (rhs.getReal())), ((imaginary) + (rhs.getImaginary())))\nfixed statement= org.apache.commons.math.util.MathUtils.checkNotNull(rhs)\ngeneration= 4\ningredientScope= LOCAL\noperation: InsertAfterOp\nlocation= org.apache.commons.math.complex.Complex\nline= 152\nlineSuspiciousness= 0.224\noriginal statement= org.apache.commons.math.util.MathUtils.checkNotNull(rhs)",
+    "diffpatch": "--- /local/scr/mtufano/Math/53/b/similar-global-executables-embeddings/3/AstorMain-b/src/default/org/apache/commons/math/complex/Complex.java\t\n+++ /local/scr/mtufano/Math/53/b/similar-global-executables-embeddings/3/AstorMain-b/src/variant-23/org/apache/commons/math/complex/Complex.java\t\n@@ -56,6 +56,10 @@\n \n \tpublic org.apache.commons.math.complex.Complex add(org.apache.commons.math.complex.Complex rhs) throws org.apache.commons.math.exception.NullArgumentException {\n \t\torg.apache.commons.math.util.MathUtils.checkNotNull(rhs);\n+\t\tif ((isNaN) || (rhs.isNaN)) {\n+\t\t\treturn org.apache.commons.math.complex.Complex.NaN;\n+\t\t}\n+\t\torg.apache.commons.math.util.MathUtils.checkNotNull(rhs);\n \t\treturn createComplex(((real) + (rhs.getReal())), ((imaginary) + (rhs.getImaginary())));\n \t}\n \n\n--- /local/scr/mtufano/Math/53/b/similar-global-executables-embeddings/3/AstorMain-b/src/default/org/apache/commons/math/complex/Complex.java\t\n+++ /local/scr/mtufano/Math/53/b/similar-global-executables-embeddings/3/AstorMain-b/src/variant-23/org/apache/commons/math/complex/Complex.java\t\n@@ -56,6 +56,10 @@\n \n \tpublic org.apache.commons.math.complex.Complex add(org.apache.commons.math.complex.Complex rhs) throws org.apache.commons.math.exception.NullArgumentException {\n \t\torg.apache.commons.math.util.MathUtils.checkNotNull(rhs);\n+\t\tif ((isNaN) || (rhs.isNaN)) {\n+\t\t\treturn org.apache.commons.math.complex.Complex.NaN;\n+\t\t}\n+\t\torg.apache.commons.math.util.MathUtils.checkNotNull(rhs);\n \t\treturn createComplex(((real) + (rhs.getReal())), ((imaginary) + (rhs.getImaginary())));\n \t}",
+    "generation": 4,
+    "ingredients": null,
+    "patch": "org.apache.commons.math.util.MathUtils.checkNotNull(rhs)\ngeneration= 4\ningredientScope= LOCAL\noperation: InsertAfterOp\nlocation= org.apache.commons.math.complex.Complex\nline= 152\nlineSuspiciousness= 0.224\noriginal statement= org.apache.commons.math.util.MathUtils.checkNotNull(rhs)\nfixed statement= if ((isNaN) || (rhs.isNaN)) {\n\treturn org.apache.commons.math.complex.Complex.NaN;\n}",
+    "patchLocation": {
+        "className": "org.apache.commons.math.complex.Complex",
+        "line": 153,
+        "lineSuspiciousness": 0.224
+    },
+    "scope": "LOCAL",
+    "time": "145",
+    "type": "InsertBeforeOp",
+    "variant": 23
+}

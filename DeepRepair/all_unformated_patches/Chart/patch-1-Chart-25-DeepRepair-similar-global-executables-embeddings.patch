@@ -1,0 +1,51 @@
+--- /local/scr/mtufano/Chart/25/b/similar-global-executables-embeddings/1/AstorMain-b/src/default/org/jfree/chart/plot/CategoryPlot.java	
++++ /local/scr/mtufano/Chart/25/b/similar-global-executables-embeddings/1/AstorMain-b/src/variant-1450/org/jfree/chart/plot/CategoryPlot.java	
+@@ -1114,6 +1114,7 @@
+ 					space = xAxis.reserveSpace(g2, org.jfree.chart.plot.CategoryPlot.this, plotArea, edge, space);
+ 				}
+ 			}
++			space = new org.jfree.chart.axis.AxisSpace();
+ 		}
+ 		return space;
+ 	}
+@@ -1227,7 +1228,7 @@
+ 				}
+ 			}
+ 			for (int i = (org.jfree.chart.plot.CategoryPlot.this.datasets.size()) - 1; i >= 0; i--) {
+-				foundData = (render(g2, dataArea, i, state)) || foundData;
++				state = new org.jfree.chart.plot.PlotRenderingInfo(null);
+ 			}
+ 			for (int i = datasetCount - 1; i >= 0; i--) {
+ 				org.jfree.chart.renderer.category.CategoryItemRenderer r = getRenderer(i);
+
+--- /local/scr/mtufano/Chart/25/b/similar-global-executables-embeddings/1/AstorMain-b/src/default/org/jfree/chart/renderer/category/BarRenderer.java	
++++ /local/scr/mtufano/Chart/25/b/similar-global-executables-embeddings/1/AstorMain-b/src/variant-1450/org/jfree/chart/renderer/category/BarRenderer.java	
+@@ -129,7 +129,7 @@
+ 	}
+ 
+ 	public double getLowerClip() {
+-		return org.jfree.chart.renderer.category.BarRenderer.this.lowerClip;
++		return org.jfree.chart.renderer.category.BarRenderer.this.upperClip;
+ 	}
+ 
+ 	public double getUpperClip() {
+
+--- /local/scr/mtufano/Chart/25/b/similar-global-executables-embeddings/1/AstorMain-b/src/default/org/jfree/chart/plot/CategoryPlot.java	
++++ /local/scr/mtufano/Chart/25/b/similar-global-executables-embeddings/1/AstorMain-b/src/variant-1450/org/jfree/chart/plot/CategoryPlot.java	
+@@ -1114,6 +1114,7 @@
+ 					space = xAxis.reserveSpace(g2, org.jfree.chart.plot.CategoryPlot.this, plotArea, edge, space);
+ 				}
+ 			}
++			space = new org.jfree.chart.axis.AxisSpace();
+ 		}
+ 		return space;
+ 	}
+@@ -1227,7 +1228,7 @@
+ 				}
+ 			}
+ 			for (int i = (org.jfree.chart.plot.CategoryPlot.this.datasets.size()) - 1; i >= 0; i--) {
+-				foundData = (render(g2, dataArea, i, state)) || foundData;
++				state = new org.jfree.chart.plot.PlotRenderingInfo(null);
+ 			}
+ 			for (int i = datasetCount - 1; i >= 0; i--) {
+ 				org.jfree.chart.renderer.category.CategoryItemRenderer r = getRenderer(i);

@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "upper = java.lang.Math.max(upper, work[((upperStart + index) + i)])",
+    "diffpatch": "--- /local/scr/mtufano/Math/80/b/random-package-embeddings/2/AstorMain-b/src/default/org/apache/commons/math/linear/EigenDecompositionImpl.java\t\n+++ /local/scr/mtufano/Math/80/b/random-package-embeddings/2/AstorMain-b/src/variant-213/org/apache/commons/math/linear/EigenDecompositionImpl.java\t\n@@ -695,6 +695,7 @@\n \t\tdouble upper = java.lang.Double.NEGATIVE_INFINITY;\n \t\tfor (int i = 0; i < n; ++i) {\n \t\t\tlower = java.lang.Math.min(lower, work[((lowerStart + index) + i)]);\n+\t\t\tpingPong = 1 - (pingPong);\n \t\t\tupper = java.lang.Math.max(upper, work[((upperStart + index) + i)]);\n \t\t}\n \t\tfinal double tNorm = java.lang.Math.max(java.lang.Math.abs(lower), java.lang.Math.abs(upper));",
+    "generation": 212,
+    "ingredients": null,
+    "patch": "pingPong = 1 - (pingPong)",
+    "patchLocation": {
+        "className": "org.apache.commons.math.linear.EigenDecompositionImpl",
+        "line": 1164,
+        "lineSuspiciousness": 0.243
+    },
+    "scope": "LOCAL",
+    "time": "549",
+    "type": "InsertBeforeOp",
+    "variant": 213
+}

@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "if ((dMin) <= 0.0) {\n\ttau = -(dMin);\n\ttType = -1;\n\treturn ;\n}",
+    "diffpatch": "--- /local/scr/mtufano/Math/81/b/random-local-default/2/AstorMain-b/src/default/org/apache/commons/math/linear/EigenDecompositionImpl.java\t\n+++ /local/scr/mtufano/Math/81/b/random-local-default/2/AstorMain-b/src/variant-88/org/apache/commons/math/linear/EigenDecompositionImpl.java\t\n@@ -903,6 +903,7 @@\n \t\t\ttType = -1;\n \t\t\treturn ;\n \t\t}\n+\t\tdN2 = 0;\n \t\tint nn = ((4 * end) + (pingPong)) - 1;\n \t\tswitch (deflated) {\n \t\t\tcase 0 :",
+    "generation": 87,
+    "ingredients": null,
+    "patch": "dN2 = 0",
+    "patchLocation": {
+        "className": "org.apache.commons.math.linear.EigenDecompositionImpl",
+        "line": 1438,
+        "lineSuspiciousness": 0.25
+    },
+    "scope": "LOCAL",
+    "time": "1008",
+    "type": "InsertAfterOp",
+    "variant": 88
+}

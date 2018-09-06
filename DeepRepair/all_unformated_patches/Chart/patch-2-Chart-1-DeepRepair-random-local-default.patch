@@ -1,0 +1,22 @@
+--- /local/scr/mtufano/Chart/1/b/random-local-default/3/AstorMain-b/src/default/org/jfree/chart/plot/CategoryPlot.java	
++++ /local/scr/mtufano/Chart/1/b/random-local-default/3/AstorMain-b/src/variant-255/org/jfree/chart/plot/CategoryPlot.java	
+@@ -663,6 +663,7 @@
+ 		org.jfree.chart.plot.CategoryPlot.this.renderers.set(index, renderer);
+ 		if (renderer != null) {
+ 			renderer.setPlot(org.jfree.chart.plot.CategoryPlot.this);
++			fireChangeEvent();
+ 			renderer.addChangeListener(org.jfree.chart.plot.CategoryPlot.this);
+ 		}
+ 		configureDomainAxes();
+
+--- /local/scr/mtufano/Chart/1/b/random-local-default/3/AstorMain-b/src/default/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java	
++++ /local/scr/mtufano/Chart/1/b/random-local-default/3/AstorMain-b/src/variant-255/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java	
+@@ -766,7 +766,7 @@
+ 		}
+ 		int index = org.jfree.chart.renderer.category.AbstractCategoryItemRenderer.this.plot.getIndexOf(org.jfree.chart.renderer.category.AbstractCategoryItemRenderer.this);
+ 		org.jfree.data.category.CategoryDataset dataset = org.jfree.chart.renderer.category.AbstractCategoryItemRenderer.this.plot.getDataset(index);
+-		if (dataset != null) {
++		if ((org.jfree.chart.renderer.category.AbstractCategoryItemRenderer.this.plot) == null) {
+ 			return result;
+ 		}
+ 		int seriesCount = dataset.getRowCount();

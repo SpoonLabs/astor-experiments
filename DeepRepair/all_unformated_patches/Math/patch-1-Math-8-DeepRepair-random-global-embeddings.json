@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "out[i] = sample()",
+    "diffpatch": "--- /local/scr/mtufano/Math/8/b/random-global-embeddings/1/AstorMain-b/src/default/org/apache/commons/math3/distribution/DiscreteDistribution.java\t\n+++ /local/scr/mtufano/Math/8/b/random-global-embeddings/1/AstorMain-b/src/variant-180/org/apache/commons/math3/distribution/DiscreteDistribution.java\t\n@@ -69,7 +69,7 @@\n \t\t}\n \t\tfinal T[] out = ((T[]) (java.lang.reflect.Array.newInstance(singletons.get(0).getClass(), sampleSize)));\n \t\tfor (int i = 0; i < sampleSize; i++) {\n-\t\t\tout[i] = sample();\n+\t\t\tsampleSize = sampleSize >> 8;\n \t\t}\n \t\treturn out;\n \t}",
+    "generation": 179,
+    "ingredients": null,
+    "patch": "sampleSize = sampleSize >> 8",
+    "patchLocation": {
+        "className": "org.apache.commons.math3.distribution.DiscreteDistribution",
+        "line": 190,
+        "lineSuspiciousness": 1.0
+    },
+    "scope": "GLOBAL",
+    "time": "379",
+    "type": "ReplaceOp",
+    "variant": 180
+}

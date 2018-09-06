@@ -1,0 +1,10 @@
+--- /local/scr/mtufano/Lang/39/b/random-local-embeddings/2/AstorMain-b/src/default/org/apache/commons/lang3/StringUtils.java	
++++ /local/scr/mtufano/Lang/39/b/random-local-embeddings/2/AstorMain-b/src/variant-1130/org/apache/commons/lang3/StringUtils.java	
+@@ -1167,6 +1167,7 @@
+ 			if (greater > 0) {
+ 				increase += 3 * greater;
+ 			}
++			break;
+ 		}
+ 		increase = java.lang.Math.min(increase, ((text.length()) / 5));
+ 		java.lang.StringBuilder buf = new java.lang.StringBuilder(((text.length()) + increase));

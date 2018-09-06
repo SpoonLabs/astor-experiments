@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "org.apache.commons.math.util.MathUtils.checkNotNull(rhs)",
+    "diffpatch": "--- /local/scr/mtufano/Math/53/b/random-local-default/1/AstorMain-b/src/default/org/apache/commons/math/complex/Complex.java\t\n+++ /local/scr/mtufano/Math/53/b/random-local-default/1/AstorMain-b/src/variant-49/org/apache/commons/math/complex/Complex.java\t\n@@ -55,6 +55,9 @@\n \t}\n \n \tpublic org.apache.commons.math.complex.Complex add(org.apache.commons.math.complex.Complex rhs) throws org.apache.commons.math.exception.NullArgumentException {\n+\t\tif ((isNaN) || (rhs.isNaN)) {\n+\t\t\treturn org.apache.commons.math.complex.Complex.NaN;\n+\t\t}\n \t\torg.apache.commons.math.util.MathUtils.checkNotNull(rhs);\n \t\treturn createComplex(((real) + (rhs.getReal())), ((imaginary) + (rhs.getImaginary())));\n \t}",
+    "generation": 48,
+    "ingredients": null,
+    "patch": "if ((isNaN) || (rhs.isNaN)) {\n\treturn org.apache.commons.math.complex.Complex.NaN;\n}",
+    "patchLocation": {
+        "className": "org.apache.commons.math.complex.Complex",
+        "line": 152,
+        "lineSuspiciousness": 0.224
+    },
+    "scope": "LOCAL",
+    "time": "118",
+    "type": "InsertBeforeOp",
+    "variant": 49
+}

@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "throw new org.apache.commons.math.ConvergenceException(org.apache.commons.math.exception.util.LocalizedFormats.CONTINUED_FRACTION_NAN_DIVERGENCE, x)",
+    "diffpatch": "--- /local/scr/mtufano/Math/60/b/similar-local-types-default/1/AstorMain-b/src/default/org/apache/commons/math/util/ContinuedFraction.java\t\n+++ /local/scr/mtufano/Math/60/b/similar-local-types-default/1/AstorMain-b/src/variant-247/org/apache/commons/math/util/ContinuedFraction.java\t\n@@ -73,7 +73,7 @@\n \t\t\t}\n \t\t\tdouble r = p2 / q2;\n \t\t\tif (java.lang.Double.isNaN(r)) {\n-\t\t\t\tthrow new org.apache.commons.math.ConvergenceException(org.apache.commons.math.exception.util.LocalizedFormats.CONTINUED_FRACTION_NAN_DIVERGENCE, x);\n+\t\t\t\tthrow new org.apache.commons.math.MaxIterationsExceededException(maxIterations);\n \t\t\t}\n \t\t\trelativeError = org.apache.commons.math.util.FastMath.abs(((r / c) - 1.0));\n \t\t\tc = p2 / q2;",
+    "generation": 246,
+    "ingredients": null,
+    "patch": "throw new org.apache.commons.math.MaxIterationsExceededException(maxIterations)",
+    "patchLocation": {
+        "className": "org.apache.commons.math.util.ContinuedFraction",
+        "line": 186,
+        "lineSuspiciousness": 1.0
+    },
+    "scope": "GLOBAL",
+    "time": "313",
+    "type": "ReplaceOp",
+    "variant": 247
+}

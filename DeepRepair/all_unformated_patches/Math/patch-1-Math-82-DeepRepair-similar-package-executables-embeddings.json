@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "minValue = tableau.getEntry(0, i)",
+    "diffpatch": "--- /local/scr/mtufano/Math/82/b/similar-package-executables-embeddings/1/AstorMain-b/src/default/org/apache/commons/math/optimization/linear/SimplexSolver.java\t\n+++ /local/scr/mtufano/Math/82/b/similar-package-executables-embeddings/1/AstorMain-b/src/variant-1031/org/apache/commons/math/optimization/linear/SimplexSolver.java\t\n@@ -21,7 +21,7 @@\n \t\tjava.lang.Integer minPos = null;\n \t\tfor (int i = tableau.getNumObjectiveFunctions(); i < ((tableau.getWidth()) - 1); i++) {\n \t\t\tif ((org.apache.commons.math.util.MathUtils.compareTo(tableau.getEntry(0, i), minValue, epsilon)) < 0) {\n-\t\t\t\tminValue = tableau.getEntry(0, i);\n+\t\t\t\tminValue = 0;\n \t\t\t\tminPos = i;\n \t\t\t}\n \t\t}",
+    "generation": 1030,
+    "ingredients": null,
+    "patch": "minValue = 0",
+    "patchLocation": {
+        "className": "org.apache.commons.math.optimization.linear.SimplexSolver",
+        "line": 63,
+        "lineSuspiciousness": 0.267
+    },
+    "scope": "GLOBAL",
+    "time": "4394",
+    "type": "ReplaceOp",
+    "variant": 1031
+}

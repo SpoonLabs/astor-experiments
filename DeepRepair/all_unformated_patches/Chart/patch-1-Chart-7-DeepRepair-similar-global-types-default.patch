@@ -1,0 +1,39 @@
+--- /local/scr/mtufano/Chart/7/b/similar-global-types-default/1/AstorMain-b/src/default/org/jfree/data/time/TimePeriodValues.java	
++++ /local/scr/mtufano/Chart/7/b/similar-global-types-default/1/AstorMain-b/src/variant-381/org/jfree/data/time/TimePeriodValues.java	
+@@ -122,6 +122,7 @@
+ 				org.jfree.data.time.TimePeriodValues.this.maxMiddleIndex = index;
+ 			}
+ 		}else {
++			org.jfree.data.time.TimePeriodValues.this.domain = domain;
+ 			org.jfree.data.time.TimePeriodValues.this.maxMiddleIndex = index;
+ 		}
+ 		if ((org.jfree.data.time.TimePeriodValues.this.minEndIndex) >= 0) {
+@@ -257,7 +258,7 @@
+ 	}
+ 
+ 	public int getMaxMiddleIndex() {
+-		return org.jfree.data.time.TimePeriodValues.this.maxMiddleIndex;
++		return org.jfree.data.time.TimePeriodValues.this.maxStartIndex;
+ 	}
+ 
+ 	public int getMinEndIndex() {
+
+--- /local/scr/mtufano/Chart/7/b/similar-global-types-default/1/AstorMain-b/src/default/org/jfree/data/time/TimePeriodValues.java	
++++ /local/scr/mtufano/Chart/7/b/similar-global-types-default/1/AstorMain-b/src/variant-381/org/jfree/data/time/TimePeriodValues.java	
+@@ -122,6 +122,7 @@
+ 				org.jfree.data.time.TimePeriodValues.this.maxMiddleIndex = index;
+ 			}
+ 		}else {
++			org.jfree.data.time.TimePeriodValues.this.domain = domain;
+ 			org.jfree.data.time.TimePeriodValues.this.maxMiddleIndex = index;
+ 		}
+ 		if ((org.jfree.data.time.TimePeriodValues.this.minEndIndex) >= 0) {
+@@ -257,7 +258,7 @@
+ 	}
+ 
+ 	public int getMaxMiddleIndex() {
+-		return org.jfree.data.time.TimePeriodValues.this.maxMiddleIndex;
++		return org.jfree.data.time.TimePeriodValues.this.maxStartIndex;
+ 	}
+ 
+ 	public int getMinEndIndex() {

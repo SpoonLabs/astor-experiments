@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "clone.listeners = new javax.swing.event.EventListenerList()\nfixed statement= clone.propertyChangeSupport = new java.beans.PropertyChangeSupport(clone)\ngeneration= 8\ningredientScope= LOCAL\noperation: InsertAfterOp\nlocation= org.jfree.data.time.TimeSeries\nline= 564\nlineSuspiciousness= 0.447\noriginal statement= add(item, true)",
+    "diffpatch": "--- /local/scr/mtufano/Chart/3/b/similar-local-executables-embeddings/1/AstorMain-b/src/default/org/jfree/data/general/Series.java\t\n+++ /local/scr/mtufano/Chart/3/b/similar-local-executables-embeddings/1/AstorMain-b/src/variant-120/org/jfree/data/general/Series.java\t\n@@ -73,7 +73,7 @@\n \n \tpublic java.lang.Object clone() throws java.lang.CloneNotSupportedException {\n \t\torg.jfree.data.general.Series clone = ((org.jfree.data.general.Series) (super.clone()));\n-\t\tclone.listeners = new javax.swing.event.EventListenerList();\n+\t\tclone.propertyChangeSupport = new java.beans.PropertyChangeSupport(clone);\n \t\tclone.propertyChangeSupport = new java.beans.PropertyChangeSupport(clone);\n \t\treturn clone;\n \t}\n\n--- /local/scr/mtufano/Chart/3/b/similar-local-executables-embeddings/1/AstorMain-b/src/default/org/jfree/data/time/TimeSeries.java\t\n+++ /local/scr/mtufano/Chart/3/b/similar-local-executables-embeddings/1/AstorMain-b/src/variant-120/org/jfree/data/time/TimeSeries.java\t\n@@ -188,6 +188,7 @@\n \n \tpublic void add(org.jfree.data.time.TimeSeriesDataItem item) {\n \t\tadd(item, true);\n+\t\tfindBoundsByIteration();\n \t}\n \n \tpublic void add(org.jfree.data.time.TimeSeriesDataItem item, boolean notify) {",
+    "generation": 8,
+    "ingredients": null,
+    "patch": "clone.propertyChangeSupport = new java.beans.PropertyChangeSupport(clone)\ngeneration= 8\ningredientScope= LOCAL\noperation: InsertAfterOp\nlocation= org.jfree.data.time.TimeSeries\nline= 564\nlineSuspiciousness= 0.447\noriginal statement= add(item, true)\nfixed statement= findBoundsByIteration()",
+    "patchLocation": {
+        "className": "org.jfree.data.general.Series",
+        "line": 244,
+        "lineSuspiciousness": 0.354
+    },
+    "scope": "LOCAL",
+    "time": "50",
+    "type": "ReplaceOp",
+    "variant": 120
+}

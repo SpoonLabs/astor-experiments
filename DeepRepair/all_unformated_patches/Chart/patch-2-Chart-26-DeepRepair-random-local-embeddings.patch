@@ -1,0 +1,28 @@
+--- /local/scr/mtufano/Chart/26/b/random-local-embeddings/3/AstorMain-b/src/default/org/jfree/chart/axis/NumberAxis.java	
++++ /local/scr/mtufano/Chart/26/b/random-local-embeddings/3/AstorMain-b/src/variant-371/org/jfree/chart/axis/NumberAxis.java	
+@@ -562,6 +562,7 @@
+ 	}
+ 
+ 	public java.util.List refreshTicks(java.awt.Graphics2D g2, org.jfree.chart.axis.AxisState state, java.awt.geom.Rectangle2D dataArea, org.jfree.chart.util.RectangleEdge edge) {
++		org.jfree.data.Range range = getRange();
+ 		java.util.List result = new java.util.ArrayList();
+ 		if (org.jfree.chart.util.RectangleEdge.isTopOrBottom(edge)) {
+ 			result = refreshTicksHorizontal(g2, dataArea, edge);
+
+--- /local/scr/mtufano/Chart/26/b/random-local-embeddings/3/AstorMain-b/src/default/org/jfree/chart/axis/Axis.java	
++++ /local/scr/mtufano/Chart/26/b/random-local-embeddings/3/AstorMain-b/src/variant-371/org/jfree/chart/axis/Axis.java	
+@@ -476,12 +476,8 @@
+ 				
+ 			
+ 		
+-		if ((plotState != null) && (hotspot != null)) {
+-			org.jfree.chart.ChartRenderingInfo owner = plotState.getOwner();
+-			org.jfree.chart.entity.EntityCollection entities = owner.getEntityCollection();
+-			if (entities != null) {
+-				entities.add(new org.jfree.chart.entity.AxisLabelEntity(org.jfree.chart.axis.Axis.this, hotspot, org.jfree.chart.axis.Axis.this.labelToolTip, org.jfree.chart.axis.Axis.this.labelURL));
+-			}
++		if ((label == null) || (label.equals(""))) {
++			return state;
+ 		}
+ 		return state;
+ 	}

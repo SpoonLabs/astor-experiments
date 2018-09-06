@@ -1,0 +1,21 @@
+--- /local/scr/mtufano/Chart/3/b/similar-global-executables-embeddings/2/AstorMain-b/src/default/org/jfree/data/time/TimeSeries.java	
++++ /local/scr/mtufano/Chart/3/b/similar-global-executables-embeddings/2/AstorMain-b/src/variant-493/org/jfree/data/time/TimeSeries.java	
+@@ -370,6 +370,7 @@
+ 
+ 	public void removeAgedItems(boolean notify) {
+ 		if ((getItemCount()) > 1) {
++			findBoundsByIteration();
+ 			long latest = getTimePeriod(((getItemCount()) - 1)).getSerialIndex();
+ 			boolean removed = false;
+ 			while ((latest - (getTimePeriod(0).getSerialIndex())) > (org.jfree.data.time.TimeSeries.this.maximumItemAge)) {
+
+--- /local/scr/mtufano/Chart/3/b/similar-global-executables-embeddings/2/AstorMain-b/src/default/org/jfree/data/general/Series.java	
++++ /local/scr/mtufano/Chart/3/b/similar-global-executables-embeddings/2/AstorMain-b/src/variant-493/org/jfree/data/general/Series.java	
+@@ -118,6 +118,7 @@
+ 
+ 	protected void notifyListeners(org.jfree.data.event.SeriesChangeEvent event) {
+ 		java.lang.Object[] listenerList = org.jfree.data.general.Series.this.listeners.getListenerList();
++		java.lang.Object[] ls = listeners.getListenerList();
+ 		for (int i = (listenerList.length) - 2; i >= 0; i -= 2) {
+ 			if ((listenerList[i]) == (org.jfree.data.event.SeriesChangeListener.class)) {
+ 				((org.jfree.data.event.SeriesChangeListener) (listenerList[(i + 1)])).seriesChanged(event);

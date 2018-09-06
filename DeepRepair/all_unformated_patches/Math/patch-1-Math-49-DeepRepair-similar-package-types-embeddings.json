@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "entries.remove(index)",
+    "diffpatch": "--- /local/scr/mtufano/Math/49/b/similar-package-types-embeddings/1/AstorMain-b/src/default/org/apache/commons/math/linear/OpenMapRealVector.java\t\n+++ /local/scr/mtufano/Math/49/b/similar-package-types-embeddings/1/AstorMain-b/src/variant-641/org/apache/commons/math/linear/OpenMapRealVector.java\t\n@@ -470,7 +470,7 @@\n \t\t\tentries.put(index, value);\n \t\t}else\n \t\t\tif (entries.containsKey(index)) {\n-\t\t\t\tentries.remove(index);\n+\t\t\t\tentries.put(index, value);\n \t\t\t}\n \t\t\n \t}",
+    "generation": 640,
+    "ingredients": null,
+    "patch": "entries.put(index, value)",
+    "patchLocation": {
+        "className": "org.apache.commons.math.linear.OpenMapRealVector",
+        "line": 667,
+        "lineSuspiciousness": 0.577
+    },
+    "scope": "LOCAL",
+    "time": "1339",
+    "type": "ReplaceOp",
+    "variant": 641
+}

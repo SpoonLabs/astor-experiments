@@ -1,0 +1,10 @@
+--- /local/scr/mtufano/Math/40/b/random-package-embeddings/3/AstorMain-b/src/default/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	
++++ /local/scr/mtufano/Math/40/b/random-package-embeddings/3/AstorMain-b/src/variant-341/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	
+@@ -128,6 +128,7 @@
+ 				java.lang.System.arraycopy(x, start, tmpX, start, (end - start));
+ 				nextX = guessX(targetY, tmpX, y, start, end);
+ 				if (!((nextX > xA) && (nextX < xB))) {
++					signChangeIndex = 2;
+ 					if ((signChangeIndex - start) >= (end - signChangeIndex)) {
+ 						++start;
+ 					}else {

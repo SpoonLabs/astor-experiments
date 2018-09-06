@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "for (int i = 0; i < (x.length); ++i) {\n\tif (!(org.apache.commons.math.util.MathUtils.equals(x[i], y[i]))) {\n\t\treturn false;\n\t}\n}\nfixed statement= long ret\ngeneration= 1\ningredientScope= LOCAL\noperation: ReplaceOp\nlocation= org.apache.commons.math.util.MathUtils\nline= 417\nlineSuspiciousness= 1\noriginal statement= return ((java.lang.Double.isNaN(x)) && (java.lang.Double.isNaN(y))) || (x == y)",
+    "diffpatch": "--- /local/scr/mtufano/Math/63/b/similar-global-types-embeddings/3/AstorMain-b/src/default/org/apache/commons/math/util/MathUtils.java\t\n+++ /local/scr/mtufano/Math/63/b/similar-global-types-embeddings/3/AstorMain-b/src/variant-171/org/apache/commons/math/util/MathUtils.java\t\n@@ -181,7 +181,7 @@\n \t}\n \n \tpublic static boolean equals(double x, double y) {\n-\t\treturn ((java.lang.Double.isNaN(x)) && (java.lang.Double.isNaN(y))) || (x == y);\n+\t\treturn (org.apache.commons.math.util.MathUtils.equals(x, y, 1)) || ((org.apache.commons.math.util.FastMath.abs((y - x))) <= (SAFE_MIN));\n \t}\n \n \tpublic static boolean equalsIncludingNaN(double x, double y) {\n@@ -226,6 +226,7 @@\n \t\t\t\treturn false;\n \t\t\t}\n \t\t}\n+\t\tlong ret;\n \t\treturn true;\n \t}\n \n\n--- /local/scr/mtufano/Math/63/b/similar-global-types-embeddings/3/AstorMain-b/src/default/org/apache/commons/math/util/MathUtils.java\t\n+++ /local/scr/mtufano/Math/63/b/similar-global-types-embeddings/3/AstorMain-b/src/variant-171/org/apache/commons/math/util/MathUtils.java\t\n@@ -181,7 +181,7 @@\n \t}\n \n \tpublic static boolean equals(double x, double y) {\n-\t\treturn ((java.lang.Double.isNaN(x)) && (java.lang.Double.isNaN(y))) || (x == y);\n+\t\treturn (org.apache.commons.math.util.MathUtils.equals(x, y, 1)) || ((org.apache.commons.math.util.FastMath.abs((y - x))) <= (SAFE_MIN));\n \t}\n \n \tpublic static boolean equalsIncludingNaN(double x, double y) {\n@@ -226,6 +226,7 @@\n \t\t\t\treturn false;\n \t\t\t}\n \t\t}\n+\t\tlong ret;\n \t\treturn true;\n \t}",
+    "generation": 1,
+    "ingredients": null,
+    "patch": "long ret\ngeneration= 1\ningredientScope= LOCAL\noperation: ReplaceOp\nlocation= org.apache.commons.math.util.MathUtils\nline= 417\nlineSuspiciousness= 1\noriginal statement= return ((java.lang.Double.isNaN(x)) && (java.lang.Double.isNaN(y))) || (x == y)\nfixed statement= return (org.apache.commons.math.util.MathUtils.equals(x, y, 1)) || ((org.apache.commons.math.util.FastMath.abs((y - x))) <= (org.apache.commons.math.util.MathUtils.SAFE_MIN))",
+    "patchLocation": {
+        "className": "org.apache.commons.math.util.MathUtils",
+        "line": 529,
+        "lineSuspiciousness": 1.0
+    },
+    "scope": "LOCAL",
+    "time": "252",
+    "type": "InsertAfterOp",
+    "variant": 171
+}

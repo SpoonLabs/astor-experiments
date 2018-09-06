@@ -1,0 +1,21 @@
+--- /local/scr/mtufano/Chart/13/b/random-local-default/1/AstorMain-b/src/default/org/jfree/chart/block/BorderArrangement.java	
++++ /local/scr/mtufano/Chart/13/b/random-local-default/1/AstorMain-b/src/variant-49/org/jfree/chart/block/BorderArrangement.java	
+@@ -253,6 +253,7 @@
+ 
+ 	protected org.jfree.chart.util.Size2D arrangeFF(org.jfree.chart.block.BlockContainer container, java.awt.Graphics2D g2, org.jfree.chart.block.RectangleConstraint constraint) {
+ 		double[] w = new double[5];
++		org.jfree.chart.block.BorderArrangement.this.leftBlock = null;
+ 		double[] h = new double[5];
+ 		w[0] = constraint.getWidth();
+ 		if ((org.jfree.chart.block.BorderArrangement.this.topBlock) != null) {
+
+--- /local/scr/mtufano/Chart/13/b/random-local-default/1/AstorMain-b/src/default/org/jfree/chart/util/RectangleInsets.java	
++++ /local/scr/mtufano/Chart/13/b/random-local-default/1/AstorMain-b/src/variant-49/org/jfree/chart/util/RectangleInsets.java	
+@@ -207,6 +207,7 @@
+ 
+ 	public double calculateBottomOutset(double height) {
+ 		double result = org.jfree.chart.util.RectangleInsets.this.bottom;
++		double bottomMargin = 0.0;
+ 		if ((org.jfree.chart.util.RectangleInsets.this.unitType) == (org.jfree.chart.util.UnitType.RELATIVE)) {
+ 			result = (height / ((1 - (org.jfree.chart.util.RectangleInsets.this.top)) - (org.jfree.chart.util.RectangleInsets.this.bottom))) * (org.jfree.chart.util.RectangleInsets.this.bottom);
+ 		}

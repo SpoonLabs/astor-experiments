@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "item = ((org.jfree.data.time.TimeSeriesDataItem) (item.clone()))\nfixed statement= org.jfree.data.time.TimeSeries.this.domain = domain\ngeneration= 1\ningredientScope= LOCAL\noperation: ReplaceOp\nlocation= org.jfree.data.time.TimeSeries\nline= 638\nlineSuspiciousness= 0.151\noriginal statement= fireSeriesChanged()",
+    "diffpatch": "--- /local/scr/mtufano/Chart/3/b/similar-global-types-default/1/AstorMain-b/src/default/org/jfree/data/time/TimeSeries.java\t\n+++ /local/scr/mtufano/Chart/3/b/similar-global-types-default/1/AstorMain-b/src/variant-2489/org/jfree/data/time/TimeSeries.java\t\n@@ -195,6 +195,7 @@\n \t\t\tthrow new java.lang.IllegalArgumentException(\"Null 'item' argument.\");\n \t\t}\n \t\titem = ((org.jfree.data.time.TimeSeriesDataItem) (item.clone()));\n+\t\torg.jfree.data.time.TimeSeries.this.domain = domain;\n \t\tjava.lang.Class c = item.getPeriod().getClass();\n \t\tif ((org.jfree.data.time.TimeSeries.this.timePeriodClass) == null) {\n \t\t\torg.jfree.data.time.TimeSeries.this.timePeriodClass = c;\n@@ -245,7 +246,7 @@\n \t\t\t}\n \t\t\tremoveAgedItems(false);\n \t\t\tif (notify) {\n-\t\t\t\tfireSeriesChanged();\n+\t\t\t\tfindBoundsByIteration();\n \t\t\t}\n \t\t}\n \t}\n\n--- /local/scr/mtufano/Chart/3/b/similar-global-types-default/1/AstorMain-b/src/default/org/jfree/data/time/TimeSeries.java\t\n+++ /local/scr/mtufano/Chart/3/b/similar-global-types-default/1/AstorMain-b/src/variant-2489/org/jfree/data/time/TimeSeries.java\t\n@@ -195,6 +195,7 @@\n \t\t\tthrow new java.lang.IllegalArgumentException(\"Null 'item' argument.\");\n \t\t}\n \t\titem = ((org.jfree.data.time.TimeSeriesDataItem) (item.clone()));\n+\t\torg.jfree.data.time.TimeSeries.this.domain = domain;\n \t\tjava.lang.Class c = item.getPeriod().getClass();\n \t\tif ((org.jfree.data.time.TimeSeries.this.timePeriodClass) == null) {\n \t\t\torg.jfree.data.time.TimeSeries.this.timePeriodClass = c;\n@@ -245,7 +246,7 @@\n \t\t\t}\n \t\t\tremoveAgedItems(false);\n \t\t\tif (notify) {\n-\t\t\t\tfireSeriesChanged();\n+\t\t\t\tfindBoundsByIteration();\n \t\t\t}\n \t\t}\n \t}",
+    "generation": 1,
+    "ingredients": null,
+    "patch": "org.jfree.data.time.TimeSeries.this.domain = domain\ngeneration= 1\ningredientScope= LOCAL\noperation: ReplaceOp\nlocation= org.jfree.data.time.TimeSeries\nline= 638\nlineSuspiciousness= 0.151\noriginal statement= fireSeriesChanged()\nfixed statement= findBoundsByIteration()",
+    "patchLocation": {
+        "className": "org.jfree.data.time.TimeSeries",
+        "line": 579,
+        "lineSuspiciousness": 0.151
+    },
+    "scope": "LOCAL",
+    "time": "4881",
+    "type": "InsertAfterOp",
+    "variant": 2489
+}

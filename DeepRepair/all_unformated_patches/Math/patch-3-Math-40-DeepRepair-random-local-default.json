@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "if ((signChangeIndex - start) >= (end - signChangeIndex)) {\n\t++start;\n}else {\n\t--end;\n}",
+    "diffpatch": "--- /local/scr/mtufano/Math/40/b/random-local-default/2/AstorMain-b/src/default/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java\t\n+++ /local/scr/mtufano/Math/40/b/random-local-default/2/AstorMain-b/src/variant-313/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java\t\n@@ -128,6 +128,7 @@\n \t\t\t\tjava.lang.System.arraycopy(x, start, tmpX, start, (end - start));\n \t\t\t\tnextX = guessX(targetY, tmpX, y, start, end);\n \t\t\t\tif (!((nextX > xA) && (nextX < xB))) {\n+\t\t\t\t\tsignChangeIndex = 2;\n \t\t\t\t\tif ((signChangeIndex - start) >= (end - signChangeIndex)) {\n \t\t\t\t\t\t++start;\n \t\t\t\t\t}else {",
+    "generation": 312,
+    "ingredients": null,
+    "patch": "signChangeIndex = 2",
+    "patchLocation": {
+        "className": "org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver",
+        "line": 260,
+        "lineSuspiciousness": 0.229
+    },
+    "scope": "LOCAL",
+    "time": "1186",
+    "type": "InsertBeforeOp",
+    "variant": 313
+}

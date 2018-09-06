@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "return ((org.jfree.data.time.TimePeriodValue) (org.jfree.data.time.TimePeriodValues.this.data.get(index)))\nfixed statement= org.jfree.data.time.TimePeriodValues.this.minEndIndex = index\ngeneration= 2\ningredientScope= LOCAL\noperation: ReplaceOp\nlocation= org.jfree.data.time.TimePeriodValues\nline= 306\nlineSuspiciousness= 0.277\noriginal statement= org.jfree.data.time.TimePeriodValues.this.maxMiddleIndex = index",
+    "diffpatch": "--- /local/scr/mtufano/Chart/7/b/random-global-embeddings/2/AstorMain-b/src/default/org/jfree/data/time/TimePeriodValues.java\t\n+++ /local/scr/mtufano/Chart/7/b/random-global-embeddings/2/AstorMain-b/src/variant-1722/org/jfree/data/time/TimePeriodValues.java\t\n@@ -64,6 +64,7 @@\n \t}\n \n \tpublic org.jfree.data.time.TimePeriodValue getDataItem(int index) {\n+\t\torg.jfree.data.time.TimePeriodValues.this.minEndIndex = index;\n \t\treturn ((org.jfree.data.time.TimePeriodValue) (org.jfree.data.time.TimePeriodValues.this.data.get(index)));\n \t}\n \n@@ -119,7 +120,7 @@\n \t\t\tlong e = getDataItem(org.jfree.data.time.TimePeriodValues.this.minMiddleIndex).getPeriod().getEnd().getTime();\n \t\t\tlong maxMiddle = s + ((e - s) / 2);\n \t\t\tif (middle > maxMiddle) {\n-\t\t\t\torg.jfree.data.time.TimePeriodValues.this.maxMiddleIndex = index;\n+\t\t\t\tmaxMiddleIndex = 1;\n \t\t\t}\n \t\t}else {\n \t\t\torg.jfree.data.time.TimePeriodValues.this.maxMiddleIndex = index;\n\n--- /local/scr/mtufano/Chart/7/b/random-global-embeddings/2/AstorMain-b/src/default/org/jfree/data/time/TimePeriodValues.java\t\n+++ /local/scr/mtufano/Chart/7/b/random-global-embeddings/2/AstorMain-b/src/variant-1722/org/jfree/data/time/TimePeriodValues.java\t\n@@ -64,6 +64,7 @@\n \t}\n \n \tpublic org.jfree.data.time.TimePeriodValue getDataItem(int index) {\n+\t\torg.jfree.data.time.TimePeriodValues.this.minEndIndex = index;\n \t\treturn ((org.jfree.data.time.TimePeriodValue) (org.jfree.data.time.TimePeriodValues.this.data.get(index)));\n \t}\n \n@@ -119,7 +120,7 @@\n \t\t\tlong e = getDataItem(org.jfree.data.time.TimePeriodValues.this.minMiddleIndex).getPeriod().getEnd().getTime();\n \t\t\tlong maxMiddle = s + ((e - s) / 2);\n \t\t\tif (middle > maxMiddle) {\n-\t\t\t\torg.jfree.data.time.TimePeriodValues.this.maxMiddleIndex = index;\n+\t\t\t\tmaxMiddleIndex = 1;\n \t\t\t}\n \t\t}else {\n \t\t\torg.jfree.data.time.TimePeriodValues.this.maxMiddleIndex = index;",
+    "generation": 2,
+    "ingredients": null,
+    "patch": "org.jfree.data.time.TimePeriodValues.this.minEndIndex = index\ngeneration= 2\ningredientScope= LOCAL\noperation: ReplaceOp\nlocation= org.jfree.data.time.TimePeriodValues\nline= 306\nlineSuspiciousness= 0.277\noriginal statement= org.jfree.data.time.TimePeriodValues.this.maxMiddleIndex = index\nfixed statement= maxMiddleIndex = 1",
+    "patchLocation": {
+        "className": "org.jfree.data.time.TimePeriodValues",
+        "line": 205,
+        "lineSuspiciousness": 0.277
+    },
+    "scope": "LOCAL",
+    "time": "271",
+    "type": "InsertBeforeOp",
+    "variant": 1722
+}

@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "final double nhalf = (numeratorDegreesOfFreedom) / 2\nfixed statement= if (x == 0) {\n\treturn x;\n}\ngeneration= 17\ningredientScope= GLOBAL\noperation: ReplaceOp\nlocation= org.apache.commons.math3.distribution.UniformRealDistribution\nline= 184\nlineSuspiciousness= 0.707\noriginal statement= return false",
+    "diffpatch": "--- /local/scr/mtufano/Math/22/b/random-global-default/2/AstorMain-b/src/default/org/apache/commons/math3/distribution/FDistribution.java\t\n+++ /local/scr/mtufano/Math/22/b/random-global-default/2/AstorMain-b/src/variant-1388/org/apache/commons/math3/distribution/FDistribution.java\t\n@@ -41,6 +41,9 @@\n \n \tpublic double density(double x) {\n \t\tfinal double nhalf = (numeratorDegreesOfFreedom) / 2;\n+\t\tif (x == 0) {\n+\t\t\treturn x;\n+\t\t}\n \t\tfinal double mhalf = (denominatorDegreesOfFreedom) / 2;\n \t\tfinal double logx = org.apache.commons.math3.util.FastMath.log(x);\n \t\tfinal double logn = org.apache.commons.math3.util.FastMath.log(numeratorDegreesOfFreedom);\n\n--- /local/scr/mtufano/Math/22/b/random-global-default/2/AstorMain-b/src/default/org/apache/commons/math3/distribution/UniformRealDistribution.java\t\n+++ /local/scr/mtufano/Math/22/b/random-global-default/2/AstorMain-b/src/variant-1388/org/apache/commons/math3/distribution/UniformRealDistribution.java\t\n@@ -80,7 +80,7 @@\n \t}\n \n \tpublic boolean isSupportUpperBoundInclusive() {\n-\t\treturn false;\n+\t\treturn true;\n \t}\n \n \tpublic boolean isSupportConnected() {",
+    "generation": 17,
+    "ingredients": null,
+    "patch": "if (x == 0) {\n\treturn x;\n}\ngeneration= 17\ningredientScope= GLOBAL\noperation: ReplaceOp\nlocation= org.apache.commons.math3.distribution.UniformRealDistribution\nline= 184\nlineSuspiciousness= 0.707\noriginal statement= return false\nfixed statement= return true",
+    "patchLocation": {
+        "className": "org.apache.commons.math3.distribution.FDistribution",
+        "line": 129,
+        "lineSuspiciousness": 0.354
+    },
+    "scope": "GLOBAL",
+    "time": "8410",
+    "type": "InsertAfterOp",
+    "variant": 1388
+}

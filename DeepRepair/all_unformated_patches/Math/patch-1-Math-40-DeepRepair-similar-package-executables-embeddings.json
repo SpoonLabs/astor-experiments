@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "--end",
+    "diffpatch": "--- /local/scr/mtufano/Math/40/b/similar-package-executables-embeddings/1/AstorMain-b/src/default/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java\t\n+++ /local/scr/mtufano/Math/40/b/similar-package-executables-embeddings/1/AstorMain-b/src/variant-1244/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java\t\n@@ -131,6 +131,7 @@\n \t\t\t\t\tif ((signChangeIndex - start) >= (end - signChangeIndex)) {\n \t\t\t\t\t\t++start;\n \t\t\t\t\t}else {\n+\t\t\t\t\t\tx[1] = getStartValue();\n \t\t\t\t\t\t--end;\n \t\t\t\t\t}\n \t\t\t\t\tnextX = java.lang.Double.NaN;",
+    "generation": 1243,
+    "ingredients": null,
+    "patch": "x[1] = getStartValue()",
+    "patchLocation": {
+        "className": "org.apache.commons.math.analysis.solvers.BracketingNthOrderBrentSolver",
+        "line": 265,
+        "lineSuspiciousness": 0.267
+    },
+    "scope": "LOCAL",
+    "time": "8646",
+    "type": "InsertBeforeOp",
+    "variant": 1244
+}

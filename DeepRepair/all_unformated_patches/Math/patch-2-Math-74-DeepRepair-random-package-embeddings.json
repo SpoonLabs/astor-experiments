@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "final int n = y0.length",
+    "diffpatch": "--- /local/scr/mtufano/Math/74/b/random-package-embeddings/3/AstorMain-b/src/default/org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator.java\t\n+++ /local/scr/mtufano/Math/74/b/random-package-embeddings/3/AstorMain-b/src/variant-117/org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator.java\t\n@@ -14,6 +14,7 @@\n \n \t@java.lang.Override\n \tpublic double integrate(final org.apache.commons.math.ode.FirstOrderDifferentialEquations equations, final double t0, final double[] y0, final double t, final double[] y) throws org.apache.commons.math.ode.DerivativeException, org.apache.commons.math.ode.IntegratorException {\n+\t\tsetMaxGrowth(10.0);\n \t\tfinal int n = y0.length;\n \t\tsanityChecks(equations, t0, y0, t, y);\n \t\tsetEquations(equations);",
+    "generation": 116,
+    "ingredients": null,
+    "patch": "setMaxGrowth(10.0)",
+    "patchLocation": {
+        "className": "org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegrator",
+        "line": 208,
+        "lineSuspiciousness": 0.408
+    },
+    "scope": "PACKAGE",
+    "time": "801",
+    "type": "InsertBeforeOp",
+    "variant": 117
+}

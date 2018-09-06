@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "starter.clearStepHandlers()",
+    "diffpatch": "--- /local/scr/mtufano/Math/74/b/random-global-default/1/AstorMain-b/src/default/org/apache/commons/math/ode/MultistepIntegrator.java\t\n+++ /local/scr/mtufano/Math/74/b/random-global-default/1/AstorMain-b/src/variant-118/org/apache/commons/math/ode/MultistepIntegrator.java\t\n@@ -62,7 +62,7 @@\n \t\t\t\tthrow de;\n \t\t\t}\n \t\t}\n-\t\tstarter.clearStepHandlers();\n+\t\tsetMaxGrowth(10.0);\n \t}\n \n \tprotected abstract org.apache.commons.math.linear.Array2DRowRealMatrix initializeHighOrderDerivatives(final double[] first, final double[][] multistep);",
+    "generation": 117,
+    "ingredients": null,
+    "patch": "setMaxGrowth(10.0)",
+    "patchLocation": {
+        "className": "org.apache.commons.math.ode.MultistepIntegrator",
+        "line": 233,
+        "lineSuspiciousness": 0.316
+    },
+    "scope": "GLOBAL",
+    "time": "557",
+    "type": "ReplaceOp",
+    "variant": 118
+}

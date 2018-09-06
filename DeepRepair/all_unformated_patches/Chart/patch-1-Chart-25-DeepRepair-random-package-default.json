@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "if (orientation == (org.jfree.chart.plot.PlotOrientation.HORIZONTAL)) {\n\tresult = org.jfree.chart.util.RectangleEdge.TOP;\n}else\n\tif (orientation == (org.jfree.chart.plot.PlotOrientation.VERTICAL)) {\n\t\tresult = org.jfree.chart.util.RectangleEdge.LEFT;\n\t}\n\nfixed statement= java.util.List mappedDatasets = new java.util.ArrayList()\ngeneration= 3\ningredientScope= PACKAGE\noperation: ReplaceOp\nlocation= org.jfree.chart.plot.CategoryPlot\nline= 2512\nlineSuspiciousness= 0.894\noriginal statement= space = yAxis.reserveSpace(g2, org.jfree.chart.plot.CategoryPlot.this, plotArea, edge, space)",
+    "diffpatch": "--- /local/scr/mtufano/Chart/25/b/random-package-default/1/AstorMain-b/src/default/org/jfree/chart/plot/Plot.java\t\n+++ /local/scr/mtufano/Chart/25/b/random-package-default/1/AstorMain-b/src/variant-16/org/jfree/chart/plot/Plot.java\t\n@@ -594,6 +594,7 @@\n \t\t\t\n \t\t}else\n \t\t\tif (location == (org.jfree.chart.axis.AxisLocation.TOP_OR_LEFT)) {\n+\t\t\t\tjava.util.List mappedDatasets = new java.util.ArrayList();\n \t\t\t\tif (orientation == (org.jfree.chart.plot.PlotOrientation.HORIZONTAL)) {\n \t\t\t\t\tresult = org.jfree.chart.util.RectangleEdge.TOP;\n \t\t\t\t}else\n\n--- /local/scr/mtufano/Chart/25/b/random-package-default/1/AstorMain-b/src/default/org/jfree/chart/plot/CategoryPlot.java\t\n+++ /local/scr/mtufano/Chart/25/b/random-package-default/1/AstorMain-b/src/variant-16/org/jfree/chart/plot/CategoryPlot.java\t\n@@ -1137,7 +1137,7 @@\n \t\t\t\torg.jfree.chart.axis.Axis yAxis = ((org.jfree.chart.axis.Axis) (org.jfree.chart.plot.CategoryPlot.this.rangeAxes.get(i)));\n \t\t\t\tif (yAxis != null) {\n \t\t\t\t\torg.jfree.chart.util.RectangleEdge edge = getRangeAxisEdge(i);\n-\t\t\t\t\tspace = yAxis.reserveSpace(g2, org.jfree.chart.plot.CategoryPlot.this, plotArea, edge, space);\n+\t\t\t\t\torg.jfree.chart.plot.CategoryPlot.this.renderers = new org.jfree.chart.util.ObjectList();\n \t\t\t\t}\n \t\t\t}\n \t\t}",
+    "generation": 3,
+    "ingredients": null,
+    "patch": "java.util.List mappedDatasets = new java.util.ArrayList()\ngeneration= 3\ningredientScope= PACKAGE\noperation: ReplaceOp\nlocation= org.jfree.chart.plot.CategoryPlot\nline= 2512\nlineSuspiciousness= 0.894\noriginal statement= space = yAxis.reserveSpace(g2, org.jfree.chart.plot.CategoryPlot.this, plotArea, edge, space)\nfixed statement= org.jfree.chart.plot.CategoryPlot.this.renderers = new org.jfree.chart.util.ObjectList()",
+    "patchLocation": {
+        "className": "org.jfree.chart.plot.Plot",
+        "line": 1386,
+        "lineSuspiciousness": 0.894
+    },
+    "scope": "PACKAGE",
+    "time": "25",
+    "type": "InsertBeforeOp",
+    "variant": 16
+}

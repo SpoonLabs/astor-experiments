@@ -1,0 +1,10 @@
+--- /local/scr/mtufano/Math/81/b/random-local-default/2/AstorMain-b/src/default/org/apache/commons/math/linear/EigenDecompositionImpl.java	
++++ /local/scr/mtufano/Math/81/b/random-local-default/2/AstorMain-b/src/variant-88/org/apache/commons/math/linear/EigenDecompositionImpl.java	
+@@ -903,6 +903,7 @@
+ 			tType = -1;
+ 			return ;
+ 		}
++		dN2 = 0;
+ 		int nn = ((4 * end) + (pingPong)) - 1;
+ 		switch (deflated) {
+ 			case 0 :

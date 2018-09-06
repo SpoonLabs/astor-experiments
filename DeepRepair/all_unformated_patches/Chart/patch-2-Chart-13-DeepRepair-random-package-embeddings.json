@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "lowerBound = trimToContentWidth(r.getLowerBound())\nfixed statement= upperBound = trimToContentHeight(r.getUpperBound())\ngeneration= 1\ningredientScope= LOCAL\noperation: InsertAfterOp\nlocation= org.jfree.chart.block.BorderArrangement\nline= 308\nlineSuspiciousness= 1\noriginal statement= h[3] = size.height",
+    "diffpatch": "--- /local/scr/mtufano/Chart/13/b/random-package-embeddings/3/AstorMain-b/src/default/org/jfree/chart/block/AbstractBlock.java\t\n+++ /local/scr/mtufano/Chart/13/b/random-package-embeddings/3/AstorMain-b/src/variant-19/org/jfree/chart/block/AbstractBlock.java\t\n@@ -162,7 +162,7 @@\n \t\tdouble lowerBound = 0.0;\n \t\tdouble upperBound = java.lang.Double.POSITIVE_INFINITY;\n \t\tif ((r.getLowerBound()) > 0.0) {\n-\t\t\tlowerBound = trimToContentWidth(r.getLowerBound());\n+\t\t\tupperBound = trimToContentHeight(r.getUpperBound());\n \t\t}\n \t\tif ((r.getUpperBound()) < (java.lang.Double.POSITIVE_INFINITY)) {\n \t\t\tupperBound = trimToContentWidth(r.getUpperBound());\n\n--- /local/scr/mtufano/Chart/13/b/random-package-embeddings/3/AstorMain-b/src/default/org/jfree/chart/block/BorderArrangement.java\t\n+++ /local/scr/mtufano/Chart/13/b/random-package-embeddings/3/AstorMain-b/src/variant-19/org/jfree/chart/block/BorderArrangement.java\t\n@@ -179,6 +179,7 @@\n \t\t\torg.jfree.chart.util.Size2D size = org.jfree.chart.block.BorderArrangement.this.rightBlock.arrange(g2, c3);\n \t\t\tw[3] = size.width;\n \t\t\th[3] = size.height;\n+\t\t\torg.jfree.chart.block.BorderArrangement.this.leftBlock = null;\n \t\t}\n \t\th[2] = java.lang.Math.max(h[2], h[3]);\n \t\th[3] = h[2];",
+    "generation": 1,
+    "ingredients": null,
+    "patch": "upperBound = trimToContentHeight(r.getUpperBound())\ngeneration= 1\ningredientScope= LOCAL\noperation: InsertAfterOp\nlocation= org.jfree.chart.block.BorderArrangement\nline= 308\nlineSuspiciousness= 1\noriginal statement= h[3] = size.height\nfixed statement= org.jfree.chart.block.BorderArrangement.this.leftBlock = null",
+    "patchLocation": {
+        "className": "org.jfree.chart.block.AbstractBlock",
+        "line": 443,
+        "lineSuspiciousness": 1.0
+    },
+    "scope": "LOCAL",
+    "time": "20",
+    "type": "ReplaceOp",
+    "variant": 19
+}

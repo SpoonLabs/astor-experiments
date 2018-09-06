@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "if ((1.5 * (work[pingPong])) < (work[((4 * (n - 1)) + (pingPong))])) {\n\tint j = (4 * n) - 1;\n\tfor (int i = 0; i < j; i += 4) {\n\t\tfor (int k = 0; k < 4; k += step) {\n\t\t\tfinal double tmp = work[(i + k)];\n\t\t\twork[(i + k)] = work[(j - k)];\n\t\t\twork[(j - k)] = tmp;\n\t\t}\n\t\tj -= 4;\n\t}\n\treturn true;\n}",
+    "diffpatch": "--- /local/scr/mtufano/Math/80/b/random-global-default/1/AstorMain-b/src/default/org/apache/commons/math/linear/EigenDecompositionImpl.java\t\n+++ /local/scr/mtufano/Math/80/b/random-global-default/1/AstorMain-b/src/variant-74/org/apache/commons/math/linear/EigenDecompositionImpl.java\t\n@@ -673,17 +673,10 @@\n \t}\n \n \tprivate boolean flipIfWarranted(final int n, final int step) {\n-\t\tif ((1.5 * (work[pingPong])) < (work[((4 * (n - 1)) + (pingPong))])) {\n-\t\t\tint j = (4 * n) - 1;\n-\t\t\tfor (int i = 0; i < j; i += 4) {\n-\t\t\t\tfor (int k = 0; k < 4; k += step) {\n-\t\t\t\t\tfinal double tmp = work[(i + k)];\n-\t\t\t\t\twork[(i + k)] = work[(j - k)];\n-\t\t\t\t\twork[(j - k)] = tmp;\n-\t\t\t\t}\n-\t\t\t\tj -= 4;\n-\t\t\t}\n-\t\t\treturn true;\n+\t\tif ((tType) == (-18)) {\n+\t\t\tg = 0.25 * 0.333;\n+\t\t}else {\n+\t\t\tg = 0.25;\n \t\t}\n \t\treturn false;\n \t}",
+    "generation": 73,
+    "ingredients": null,
+    "patch": "if ((tType) == (-18)) {\n\tg = 0.25 * 0.333;\n}else {\n\tg = 0.25;\n}",
+    "patchLocation": {
+        "className": "org.apache.commons.math.linear.EigenDecompositionImpl",
+        "line": 1133,
+        "lineSuspiciousness": 0.243
+    },
+    "scope": "LOCAL",
+    "time": "478",
+    "type": "ReplaceOp",
+    "variant": 74
+}

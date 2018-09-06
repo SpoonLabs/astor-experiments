@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "fragment.draw(g2, x, (anchorY + yOffset), org.jfree.chart.text.TextAnchor.BASELINE_LEFT, rotateX, rotateY, angle)\nfixed statement= g2.setPaint(java.awt.Color.blue)\ngeneration= 1\ningredientScope= GLOBAL\noperation: ReplaceOp\nlocation= org.jfree.chart.plot.PiePlot3D\nline= 247\nlineSuspiciousness= 0.707\noriginal statement= if ((getLabelGenerator()) != null) {\n\tlabelPercent = (getLabelGap()) + (getMaximumLabelWidth());\n}",
+    "diffpatch": "--- /local/scr/mtufano/Chart/15/b/random-global-embeddings/3/AstorMain-b/src/default/org/jfree/chart/text/TextLine.java\t\n+++ /local/scr/mtufano/Chart/15/b/random-global-embeddings/3/AstorMain-b/src/variant-1898/org/jfree/chart/text/TextLine.java\t\n@@ -52,7 +52,7 @@\n \t\twhile (iterator.hasNext()) {\n \t\t\torg.jfree.chart.text.TextFragment fragment = ((org.jfree.chart.text.TextFragment) (iterator.next()));\n \t\t\torg.jfree.chart.util.Size2D d = fragment.calculateDimensions(g2);\n-\t\t\tfragment.draw(g2, x, (anchorY + yOffset), org.jfree.chart.text.TextAnchor.BASELINE_LEFT, rotateX, rotateY, angle);\n+\t\t\tg2.setPaint(java.awt.Color.blue);\n \t\t\tx = x + ((float) (d.getWidth()));\n \t\t} \n \t}\n\n--- /local/scr/mtufano/Chart/15/b/random-global-embeddings/3/AstorMain-b/src/default/org/jfree/chart/plot/PiePlot3D.java\t\n+++ /local/scr/mtufano/Chart/15/b/random-global-embeddings/3/AstorMain-b/src/variant-1898/org/jfree/chart/plot/PiePlot3D.java\t\n@@ -50,8 +50,11 @@\n \t\tg2.clip(plotArea);\n \t\tdouble gapPercent = getInteriorGap();\n \t\tdouble labelPercent = 0.0;\n-\t\tif ((getLabelGenerator()) != null) {\n-\t\t\tlabelPercent = (getLabelGap()) + (getMaximumLabelWidth());\n+\t\tif (org.jfree.data.general.DatasetUtilities.isEmptyOrNull(getDataset())) {\n+\t\t\tdrawNoDataMessage(g2, plotArea);\n+\t\t\tg2.setClip(savedClip);\n+\t\t\tdrawOutline(g2, plotArea);\n+\t\t\treturn ;\n \t\t}\n \t\tdouble gapHorizontal = ((plotArea.getWidth()) * (gapPercent + labelPercent)) * 2.0;\n \t\tdouble gapVertical = ((plotArea.getHeight()) * gapPercent) * 2.0;",
+    "generation": 1,
+    "ingredients": null,
+    "patch": "g2.setPaint(java.awt.Color.blue)\ngeneration= 1\ningredientScope= GLOBAL\noperation: ReplaceOp\nlocation= org.jfree.chart.plot.PiePlot3D\nline= 247\nlineSuspiciousness= 0.707\noriginal statement= if ((getLabelGenerator()) != null) {\n\tlabelPercent = (getLabelGap()) + (getMaximumLabelWidth());\n}\nfixed statement= if (org.jfree.data.general.DatasetUtilities.isEmptyOrNull(getDataset())) {\n\tdrawNoDataMessage(g2, plotArea);\n\tg2.setClip(savedClip);\n\tdrawOutline(g2, plotArea);\n\treturn ;\n}",
+    "patchLocation": {
+        "className": "org.jfree.chart.text.TextLine",
+        "line": 162,
+        "lineSuspiciousness": 0.174
+    },
+    "scope": "GLOBAL",
+    "time": "1151",
+    "type": "ReplaceOp",
+    "variant": 1898
+}

@@ -1,0 +1,39 @@
+--- /local/scr/mtufano/Chart/7/b/random-global-default/2/AstorMain-b/src/default/org/jfree/data/time/TimePeriodValues.java	
++++ /local/scr/mtufano/Chart/7/b/random-global-default/2/AstorMain-b/src/variant-233/org/jfree/data/time/TimePeriodValues.java	
+@@ -64,6 +64,7 @@
+ 	}
+ 
+ 	public org.jfree.data.time.TimePeriodValue getDataItem(int index) {
++		org.jfree.data.time.TimePeriodValues.this.minEndIndex = index;
+ 		return ((org.jfree.data.time.TimePeriodValue) (org.jfree.data.time.TimePeriodValues.this.data.get(index)));
+ 	}
+ 
+@@ -257,7 +258,7 @@
+ 	}
+ 
+ 	public int getMaxMiddleIndex() {
+-		return org.jfree.data.time.TimePeriodValues.this.maxMiddleIndex;
++		return org.jfree.data.time.TimePeriodValues.this.maxEndIndex;
+ 	}
+ 
+ 	public int getMinEndIndex() {
+
+--- /local/scr/mtufano/Chart/7/b/random-global-default/2/AstorMain-b/src/default/org/jfree/data/time/TimePeriodValues.java	
++++ /local/scr/mtufano/Chart/7/b/random-global-default/2/AstorMain-b/src/variant-233/org/jfree/data/time/TimePeriodValues.java	
+@@ -64,6 +64,7 @@
+ 	}
+ 
+ 	public org.jfree.data.time.TimePeriodValue getDataItem(int index) {
++		org.jfree.data.time.TimePeriodValues.this.minEndIndex = index;
+ 		return ((org.jfree.data.time.TimePeriodValue) (org.jfree.data.time.TimePeriodValues.this.data.get(index)));
+ 	}
+ 
+@@ -257,7 +258,7 @@
+ 	}
+ 
+ 	public int getMaxMiddleIndex() {
+-		return org.jfree.data.time.TimePeriodValues.this.maxMiddleIndex;
++		return org.jfree.data.time.TimePeriodValues.this.maxEndIndex;
+ 	}
+ 
+ 	public int getMinEndIndex() {

@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "oldDelta = delta",
+    "diffpatch": "--- /local/scr/mtufano/Math/78/b/random-package-embeddings/3/AstorMain-b/src/default/org/apache/commons/math/analysis/solvers/BrentSolver.java\t\n+++ /local/scr/mtufano/Math/78/b/random-package-embeddings/3/AstorMain-b/src/variant-4822/org/apache/commons/math/analysis/solvers/BrentSolver.java\t\n@@ -155,7 +155,7 @@\n \t\t\t\tx2 = x0;\n \t\t\t\ty2 = y0;\n \t\t\t\tdelta = x1 - x0;\n-\t\t\t\toldDelta = delta;\n+\t\t\t\toldDelta = oldDelta - (0.5 * oldDelta);\n \t\t\t}\n \t\t\ti++;\n \t\t}",
+    "generation": 4821,
+    "ingredients": null,
+    "patch": "oldDelta = oldDelta - (0.5 * oldDelta)",
+    "patchLocation": {
+        "className": "org.apache.commons.math.analysis.solvers.BrentSolver",
+        "line": 305,
+        "lineSuspiciousness": 0.117
+    },
+    "scope": "LOCAL",
+    "time": "2038",
+    "type": "ReplaceOp",
+    "variant": 4822
+}

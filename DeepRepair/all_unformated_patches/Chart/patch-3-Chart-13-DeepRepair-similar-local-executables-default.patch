@@ -1,0 +1,47 @@
+--- /local/scr/mtufano/Chart/13/b/similar-local-executables-default/2/AstorMain-b/src/default/org/jfree/chart/block/BorderArrangement.java	
++++ /local/scr/mtufano/Chart/13/b/similar-local-executables-default/2/AstorMain-b/src/variant-45/org/jfree/chart/block/BorderArrangement.java	
+@@ -273,16 +273,14 @@
+ 			w[2] = size.width;
+ 		}
+ 		h[3] = h[2];
+-		if ((org.jfree.chart.block.BorderArrangement.this.rightBlock) != null) {
+-			org.jfree.chart.block.RectangleConstraint c4 = new org.jfree.chart.block.RectangleConstraint(0.0, new org.jfree.data.Range(0.0, ((constraint.getWidth()) - (w[2]))), org.jfree.chart.block.LengthConstraintType.RANGE, h[2], null, org.jfree.chart.block.LengthConstraintType.FIXED);
+-			org.jfree.chart.util.Size2D size = org.jfree.chart.block.BorderArrangement.this.rightBlock.arrange(g2, c4);
+-			w[3] = size.width;
++		if ((org.jfree.chart.block.BorderArrangement.this.topBlock) != null) {
++			org.jfree.chart.block.BorderArrangement.this.topBlock.setBounds(new java.awt.geom.Rectangle2D.Double(0.0, 0.0, w[0], h[0]));
+ 		}
+ 		h[4] = h[2];
+ 		w[4] = ((constraint.getWidth()) - (w[3])) - (w[2]);
+ 		org.jfree.chart.block.RectangleConstraint c5 = new org.jfree.chart.block.RectangleConstraint(w[4], h[4]);
+-		if ((org.jfree.chart.block.BorderArrangement.this.centerBlock) != null) {
+-			org.jfree.chart.block.BorderArrangement.this.centerBlock.arrange(g2, c5);
++		if ((org.jfree.chart.block.BorderArrangement.this.topBlock) != null) {
++			org.jfree.chart.block.BorderArrangement.this.topBlock.setBounds(new java.awt.geom.Rectangle2D.Double(0.0, 0.0, w[0], h[0]));
+ 		}
+ 		if ((org.jfree.chart.block.BorderArrangement.this.topBlock) != null) {
+ 			org.jfree.chart.block.BorderArrangement.this.topBlock.setBounds(new java.awt.geom.Rectangle2D.Double(0.0, 0.0, w[0], h[0]));
+
+--- /local/scr/mtufano/Chart/13/b/similar-local-executables-default/2/AstorMain-b/src/default/org/jfree/chart/block/BorderArrangement.java	
++++ /local/scr/mtufano/Chart/13/b/similar-local-executables-default/2/AstorMain-b/src/variant-45/org/jfree/chart/block/BorderArrangement.java	
+@@ -273,16 +273,14 @@
+ 			w[2] = size.width;
+ 		}
+ 		h[3] = h[2];
+-		if ((org.jfree.chart.block.BorderArrangement.this.rightBlock) != null) {
+-			org.jfree.chart.block.RectangleConstraint c4 = new org.jfree.chart.block.RectangleConstraint(0.0, new org.jfree.data.Range(0.0, ((constraint.getWidth()) - (w[2]))), org.jfree.chart.block.LengthConstraintType.RANGE, h[2], null, org.jfree.chart.block.LengthConstraintType.FIXED);
+-			org.jfree.chart.util.Size2D size = org.jfree.chart.block.BorderArrangement.this.rightBlock.arrange(g2, c4);
+-			w[3] = size.width;
++		if ((org.jfree.chart.block.BorderArrangement.this.topBlock) != null) {
++			org.jfree.chart.block.BorderArrangement.this.topBlock.setBounds(new java.awt.geom.Rectangle2D.Double(0.0, 0.0, w[0], h[0]));
+ 		}
+ 		h[4] = h[2];
+ 		w[4] = ((constraint.getWidth()) - (w[3])) - (w[2]);
+ 		org.jfree.chart.block.RectangleConstraint c5 = new org.jfree.chart.block.RectangleConstraint(w[4], h[4]);
+-		if ((org.jfree.chart.block.BorderArrangement.this.centerBlock) != null) {
+-			org.jfree.chart.block.BorderArrangement.this.centerBlock.arrange(g2, c5);
++		if ((org.jfree.chart.block.BorderArrangement.this.topBlock) != null) {
++			org.jfree.chart.block.BorderArrangement.this.topBlock.setBounds(new java.awt.geom.Rectangle2D.Double(0.0, 0.0, w[0], h[0]));
+ 		}
+ 		if ((org.jfree.chart.block.BorderArrangement.this.topBlock) != null) {
+ 			org.jfree.chart.block.BorderArrangement.this.topBlock.setBounds(new java.awt.geom.Rectangle2D.Double(0.0, 0.0, w[0], h[0]));

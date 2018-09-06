@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "if ((getItemCount()) > (org.jfree.data.xy.XYSeries.this.maximumItemCount)) {\n\torg.jfree.data.xy.XYSeries.this.data.remove(0);\n}\nfixed statement= fireSeriesChanged()\ngeneration= 3\ningredientScope= LOCAL\noperation: ReplaceOp\nlocation= org.jfree.data.xy.XYSeries\nline= 564\nlineSuspiciousness= 0.707\noriginal statement= org.jfree.data.xy.XYSeries.this.data.add(((-index) - 1), new org.jfree.data.xy.XYDataItem(x, y))",
+    "diffpatch": "--- /local/scr/mtufano/Chart/5/b/random-package-default/2/AstorMain-b/src/default/org/jfree/data/xy/XYSeries.java\t\n+++ /local/scr/mtufano/Chart/5/b/random-package-default/2/AstorMain-b/src/variant-145/org/jfree/data/xy/XYSeries.java\t\n@@ -203,10 +203,11 @@\n \t\t\texisting.setY(y);\n \t\t}else {\n \t\t\tif (org.jfree.data.xy.XYSeries.this.autoSort) {\n-\t\t\t\torg.jfree.data.xy.XYSeries.this.data.add(((-index) - 1), new org.jfree.data.xy.XYDataItem(x, y));\n+\t\t\t\tadd(x, y, true);\n \t\t\t}else {\n \t\t\t\torg.jfree.data.xy.XYSeries.this.data.add(new org.jfree.data.xy.XYDataItem(x, y));\n \t\t\t}\n+\t\t\tfireSeriesChanged();\n \t\t\tif ((getItemCount()) > (org.jfree.data.xy.XYSeries.this.maximumItemCount)) {\n \t\t\t\torg.jfree.data.xy.XYSeries.this.data.remove(0);\n \t\t\t}\n\n--- /local/scr/mtufano/Chart/5/b/random-package-default/2/AstorMain-b/src/default/org/jfree/data/xy/XYSeries.java\t\n+++ /local/scr/mtufano/Chart/5/b/random-package-default/2/AstorMain-b/src/variant-145/org/jfree/data/xy/XYSeries.java\t\n@@ -203,10 +203,11 @@\n \t\t\texisting.setY(y);\n \t\t}else {\n \t\t\tif (org.jfree.data.xy.XYSeries.this.autoSort) {\n-\t\t\t\torg.jfree.data.xy.XYSeries.this.data.add(((-index) - 1), new org.jfree.data.xy.XYDataItem(x, y));\n+\t\t\t\tadd(x, y, true);\n \t\t\t}else {\n \t\t\t\torg.jfree.data.xy.XYSeries.this.data.add(new org.jfree.data.xy.XYDataItem(x, y));\n \t\t\t}\n+\t\t\tfireSeriesChanged();\n \t\t\tif ((getItemCount()) > (org.jfree.data.xy.XYSeries.this.maximumItemCount)) {\n \t\t\t\torg.jfree.data.xy.XYSeries.this.data.remove(0);\n \t\t\t}",
+    "generation": 3,
+    "ingredients": null,
+    "patch": "fireSeriesChanged()\ngeneration= 3\ningredientScope= LOCAL\noperation: ReplaceOp\nlocation= org.jfree.data.xy.XYSeries\nline= 564\nlineSuspiciousness= 0.707\noriginal statement= org.jfree.data.xy.XYSeries.this.data.add(((-index) - 1), new org.jfree.data.xy.XYDataItem(x, y))\nfixed statement= add(x, y, true)",
+    "patchLocation": {
+        "className": "org.jfree.data.xy.XYSeries",
+        "line": 570,
+        "lineSuspiciousness": 0.577
+    },
+    "scope": "LOCAL",
+    "time": "34",
+    "type": "InsertBeforeOp",
+    "variant": 145
+}

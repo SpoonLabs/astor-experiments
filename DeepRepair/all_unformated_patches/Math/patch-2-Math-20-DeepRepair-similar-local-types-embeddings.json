@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "repaired[i] = 1.0",
+    "diffpatch": "--- /local/scr/mtufano/Math/20/b/similar-local-types-embeddings/2/AstorMain-b/src/default/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java\t\n+++ /local/scr/mtufano/Math/20/b/similar-local-types-embeddings/2/AstorMain-b/src/variant-34/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java\t\n@@ -586,7 +586,7 @@\n \t\t\t\t\trepaired[i] = 0;\n \t\t\t\t}else\n \t\t\t\t\tif ((x[i]) > 1.0) {\n-\t\t\t\t\t\trepaired[i] = 1.0;\n+\t\t\t\t\t\trepaired = (repaired == null) ? null : ((double[]) (repaired.clone()));\n \t\t\t\t\t}else {\n \t\t\t\t\t\trepaired[i] = x[i];\n \t\t\t\t\t}",
+    "generation": 33,
+    "ingredients": null,
+    "patch": "repaired = (repaired == null) ? null : ((double[]) (repaired.clone()))",
+    "patchLocation": {
+        "className": "org.apache.commons.math3.optimization.direct.CMAESOptimizer",
+        "line": 995,
+        "lineSuspiciousness": 0.707
+    },
+    "scope": "LOCAL",
+    "time": "393",
+    "type": "ReplaceOp",
+    "variant": 34
+}

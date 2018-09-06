@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "org.jfree.chart.plot.Plot.this.insets = insets\nfixed statement= boolean include = true\ngeneration= 2\ningredientScope= PACKAGE\noperation: InsertAfterOp\nlocation= org.jfree.chart.plot.PiePlot3D\nline= 248\nlineSuspiciousness= 0.707\noriginal statement= labelPercent = (getLabelGap()) + (getMaximumLabelWidth())",
+    "diffpatch": "--- /local/scr/mtufano/Chart/15/b/random-global-default/2/AstorMain-b/src/default/org/jfree/chart/plot/PiePlot3D.java\t\n+++ /local/scr/mtufano/Chart/15/b/random-global-default/2/AstorMain-b/src/variant-606/org/jfree/chart/plot/PiePlot3D.java\t\n@@ -52,6 +52,7 @@\n \t\tdouble labelPercent = 0.0;\n \t\tif ((getLabelGenerator()) != null) {\n \t\t\tlabelPercent = (getLabelGap()) + (getMaximumLabelWidth());\n+\t\t\treturn ;\n \t\t}\n \t\tdouble gapHorizontal = ((plotArea.getWidth()) * (gapPercent + labelPercent)) * 2.0;\n \t\tdouble gapVertical = ((plotArea.getHeight()) * gapPercent) * 2.0;\n\n--- /local/scr/mtufano/Chart/15/b/random-global-default/2/AstorMain-b/src/default/org/jfree/chart/plot/Plot.java\t\n+++ /local/scr/mtufano/Chart/15/b/random-global-default/2/AstorMain-b/src/variant-606/org/jfree/chart/plot/Plot.java\t\n@@ -156,6 +156,7 @@\n \t\t\tthrow new java.lang.IllegalArgumentException(\"Null 'insets' argument.\");\n \t\t}\n \t\tif (!(org.jfree.chart.plot.Plot.this.insets.equals(insets))) {\n+\t\t\tboolean include = true;\n \t\t\torg.jfree.chart.plot.Plot.this.insets = insets;\n \t\t\tif (notify) {\n \t\t\t\tnotifyListeners(new org.jfree.chart.event.PlotChangeEvent(org.jfree.chart.plot.Plot.this));",
+    "generation": 2,
+    "ingredients": null,
+    "patch": "boolean include = true\ngeneration= 2\ningredientScope= PACKAGE\noperation: InsertAfterOp\nlocation= org.jfree.chart.plot.PiePlot3D\nline= 248\nlineSuspiciousness= 0.707\noriginal statement= labelPercent = (getLabelGap()) + (getMaximumLabelWidth())\nfixed statement= return ",
+    "patchLocation": {
+        "className": "org.jfree.chart.plot.Plot",
+        "line": 523,
+        "lineSuspiciousness": 0.229
+    },
+    "scope": "PACKAGE",
+    "time": "339",
+    "type": "InsertBeforeOp",
+    "variant": 606
+}

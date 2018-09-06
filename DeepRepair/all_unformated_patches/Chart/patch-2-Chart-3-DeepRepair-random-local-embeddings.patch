@@ -1,0 +1,21 @@
+--- /local/scr/mtufano/Chart/3/b/random-local-embeddings/3/AstorMain-b/src/default/org/jfree/data/time/TimeSeries.java	
++++ /local/scr/mtufano/Chart/3/b/random-local-embeddings/3/AstorMain-b/src/variant-134/org/jfree/data/time/TimeSeries.java	
+@@ -238,6 +238,7 @@
+ 			}
+ 		}
+ 		if (added) {
++			findBoundsByIteration();
+ 			updateBoundsForAddedItem(item);
+ 			if ((getItemCount()) > (org.jfree.data.time.TimeSeries.this.maximumItemCount)) {
+ 				org.jfree.data.time.TimeSeriesDataItem d = ((org.jfree.data.time.TimeSeriesDataItem) (org.jfree.data.time.TimeSeries.this.data.remove(0)));
+
+--- /local/scr/mtufano/Chart/3/b/random-local-embeddings/3/AstorMain-b/src/default/org/jfree/data/general/Series.java	
++++ /local/scr/mtufano/Chart/3/b/random-local-embeddings/3/AstorMain-b/src/variant-134/org/jfree/data/general/Series.java	
+@@ -73,6 +73,7 @@
+ 
+ 	public java.lang.Object clone() throws java.lang.CloneNotSupportedException {
+ 		org.jfree.data.general.Series clone = ((org.jfree.data.general.Series) (super.clone()));
++		org.jfree.data.general.Series.this.description = description;
+ 		clone.listeners = new javax.swing.event.EventListenerList();
+ 		clone.propertyChangeSupport = new java.beans.PropertyChangeSupport(clone);
+ 		return clone;

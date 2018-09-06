@@ -1,0 +1,10 @@
+--- /local/scr/mtufano/Math/74/b/random-package-embeddings/2/AstorMain-b/src/default/org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator.java	
++++ /local/scr/mtufano/Math/74/b/random-package-embeddings/2/AstorMain-b/src/variant-384/org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator.java	
+@@ -60,6 +60,7 @@
+ 					for (int j = 0; j < (y0.length); ++j) {
+ 						correctedScaled[j] = (stepSize) * (yDot[j]);
+ 					}
++					setMaxGrowth(10.0);
+ 					updateHighOrderDerivativesPhase2(predictedScaled, correctedScaled, nordsieckTmp);
+ 					interpolatorTmp.reinitialize(stepEnd, stepSize, correctedScaled, nordsieckTmp);
+ 					interpolatorTmp.storeTime(stepStart);

@@ -1,0 +1,10 @@
+--- /local/scr/mtufano/Lang/38/b/random-package-embeddings/1/AstorMain-b/src/default/org/apache/commons/lang3/time/FastDateFormat.java	
++++ /local/scr/mtufano/Lang/38/b/random-package-embeddings/1/AstorMain-b/src/variant-441/org/apache/commons/lang3/time/FastDateFormat.java	
+@@ -435,6 +435,7 @@
+ 	public java.lang.StringBuffer format(java.util.Calendar calendar, java.lang.StringBuffer buf) {
+ 		if (mTimeZoneForced) {
+ 			calendar = ((java.util.Calendar) (calendar.clone()));
++			int value = calendar.get(java.util.Calendar.HOUR_OF_DAY);
+ 			calendar.setTimeZone(mTimeZone);
+ 		}
+ 		return applyRules(calendar, buf);

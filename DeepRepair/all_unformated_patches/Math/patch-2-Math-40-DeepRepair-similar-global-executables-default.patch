@@ -1,0 +1,11 @@
+--- /local/scr/mtufano/Math/40/b/similar-global-executables-default/3/AstorMain-b/src/default/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	
++++ /local/scr/mtufano/Math/40/b/similar-global-executables-default/3/AstorMain-b/src/variant-1210/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	
+@@ -147,7 +147,7 @@
+ 			}
+ 			if ((nbPoints > 2) && ((end - start) != nbPoints)) {
+ 				nbPoints = end - start;
+-				java.lang.System.arraycopy(x, start, x, 0, nbPoints);
++				java.lang.System.arraycopy(x, 1, x, 0, nbPoints);
+ 				java.lang.System.arraycopy(y, start, y, 0, nbPoints);
+ 				signChangeIndex -= start;
+ 			}else

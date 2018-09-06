@@ -1,0 +1,22 @@
+--- /local/scr/mtufano/Math/71/b/random-package-embeddings/3/AstorMain-b/src/default/org/apache/commons/math/ode/nonstiff/AdaptiveStepsizeIntegrator.java	
++++ /local/scr/mtufano/Math/71/b/random-package-embeddings/3/AstorMain-b/src/variant-160/org/apache/commons/math/ode/nonstiff/AdaptiveStepsizeIntegrator.java	
+@@ -63,6 +63,7 @@
+ 
+ 	public double initializeStep(final org.apache.commons.math.ode.FirstOrderDifferentialEquations equations, final boolean forward, final int order, final double[] scale, final double t0, final double[] y0, final double[] yDot0, final double[] y1, final double[] yDot1) throws org.apache.commons.math.ode.DerivativeException {
+ 		if ((initialStep) > 0) {
++			initialStep += (initialStep) * (initialStep);
+ 			return forward ? initialStep : -(initialStep);
+ 		}
+ 		double ratio;
+
+--- /local/scr/mtufano/Math/71/b/random-package-embeddings/3/AstorMain-b/src/default/org/apache/commons/math/ode/events/EventState.java	
++++ /local/scr/mtufano/Math/71/b/random-package-embeddings/3/AstorMain-b/src/variant-160/org/apache/commons/math/ode/events/EventState.java	
+@@ -119,6 +119,9 @@
+ 								return false;
+ 							}
+ 							pendingEvent = true;
++							if ((pendingEvent) && ((java.lang.Math.abs((t1 - (pendingEventTime)))) <= (convergence))) {
++								return false;
++							}
+ 							return true;
+ 						}

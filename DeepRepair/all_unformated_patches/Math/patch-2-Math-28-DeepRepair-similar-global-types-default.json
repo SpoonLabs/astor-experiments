@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "return minRow",
+    "diffpatch": "--- /local/scr/mtufano/Math/28/b/similar-global-types-default/3/AstorMain-b/src/default/org/apache/commons/math3/optimization/linear/SimplexSolver.java\t\n+++ /local/scr/mtufano/Math/28/b/similar-global-types-default/3/AstorMain-b/src/variant-250/org/apache/commons/math3/optimization/linear/SimplexSolver.java\t\n@@ -80,7 +80,7 @@\n \t\t\t\t\t\t}\n \t\t\t\t\t}\n \t\t\t\t}\n-\t\t\t\treturn minRow;\n+\t\t\t\treturn minRatioPositions.get(0);\n \t\t\t}\n \t\t\n \t\treturn minRatioPositions.get(0);",
+    "generation": 249,
+    "ingredients": null,
+    "patch": "return minRatioPositions.get(0)",
+    "patchLocation": {
+        "className": "org.apache.commons.math3.optimization.linear.SimplexSolver",
+        "line": 151,
+        "lineSuspiciousness": 0.5
+    },
+    "scope": "LOCAL",
+    "time": "1257",
+    "type": "ReplaceOp",
+    "variant": 250
+}

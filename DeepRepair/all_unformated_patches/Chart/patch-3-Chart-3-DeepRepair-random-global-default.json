@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "org.jfree.data.time.TimeSeriesDataItem item = new org.jfree.data.time.TimeSeriesDataItem(period, value)\nfixed statement= java.lang.StringBuffer b = new java.lang.StringBuffer()\ngeneration= 4\ningredientScope= LOCAL\noperation: InsertAfterOp\nlocation= org.jfree.data.time.TimeSeries\nline= 564\nlineSuspiciousness= 0.447\noriginal statement= add(item, true)",
+    "diffpatch": "--- /local/scr/mtufano/Chart/3/b/random-global-default/2/AstorMain-b/src/default/org/jfree/data/time/TimeSeries.java\t\n+++ /local/scr/mtufano/Chart/3/b/random-global-default/2/AstorMain-b/src/variant-120/org/jfree/data/time/TimeSeries.java\t\n@@ -188,6 +188,7 @@\n \n \tpublic void add(org.jfree.data.time.TimeSeriesDataItem item) {\n \t\tadd(item, true);\n+\t\torg.jfree.data.time.TimeSeriesDataItem oldItem = addOrUpdate(item.getPeriod(), item.getValue());\n \t}\n \n \tpublic void add(org.jfree.data.time.TimeSeriesDataItem item, boolean notify) {\n@@ -256,6 +257,7 @@\n \n \tpublic void add(org.jfree.data.time.RegularTimePeriod period, double value, boolean notify) {\n \t\torg.jfree.data.time.TimeSeriesDataItem item = new org.jfree.data.time.TimeSeriesDataItem(period, value);\n+\t\tjava.lang.StringBuffer b = new java.lang.StringBuffer();\n \t\tadd(item, notify);\n \t}\n \n\n--- /local/scr/mtufano/Chart/3/b/random-global-default/2/AstorMain-b/src/default/org/jfree/data/time/TimeSeries.java\t\n+++ /local/scr/mtufano/Chart/3/b/random-global-default/2/AstorMain-b/src/variant-120/org/jfree/data/time/TimeSeries.java\t\n@@ -188,6 +188,7 @@\n \n \tpublic void add(org.jfree.data.time.TimeSeriesDataItem item) {\n \t\tadd(item, true);\n+\t\torg.jfree.data.time.TimeSeriesDataItem oldItem = addOrUpdate(item.getPeriod(), item.getValue());\n \t}\n \n \tpublic void add(org.jfree.data.time.TimeSeriesDataItem item, boolean notify) {\n@@ -256,6 +257,7 @@\n \n \tpublic void add(org.jfree.data.time.RegularTimePeriod period, double value, boolean notify) {\n \t\torg.jfree.data.time.TimeSeriesDataItem item = new org.jfree.data.time.TimeSeriesDataItem(period, value);\n+\t\tjava.lang.StringBuffer b = new java.lang.StringBuffer();\n \t\tadd(item, notify);\n \t}",
+    "generation": 4,
+    "ingredients": null,
+    "patch": "java.lang.StringBuffer b = new java.lang.StringBuffer()\ngeneration= 4\ningredientScope= LOCAL\noperation: InsertAfterOp\nlocation= org.jfree.data.time.TimeSeries\nline= 564\nlineSuspiciousness= 0.447\noriginal statement= add(item, true)\nfixed statement= org.jfree.data.time.TimeSeriesDataItem oldItem = addOrUpdate(item.getPeriod(), item.getValue())",
+    "patchLocation": {
+        "className": "org.jfree.data.time.TimeSeries",
+        "line": 666,
+        "lineSuspiciousness": 0.177
+    },
+    "scope": "LOCAL",
+    "time": "42",
+    "type": "InsertAfterOp",
+    "variant": 120
+}

@@ -1,0 +1,11 @@
+--- /local/scr/mtufano/Math/49/b/similar-package-executables-embeddings/1/AstorMain-b/src/default/org/apache/commons/math/linear/OpenMapRealVector.java	
++++ /local/scr/mtufano/Math/49/b/similar-package-executables-embeddings/1/AstorMain-b/src/variant-270/org/apache/commons/math/linear/OpenMapRealVector.java	
+@@ -470,7 +470,7 @@
+ 			entries.put(index, value);
+ 		}else
+ 			if (entries.containsKey(index)) {
+-				entries.remove(index);
++				entries.put(index, value);
+ 			}
+ 		
+ 	}

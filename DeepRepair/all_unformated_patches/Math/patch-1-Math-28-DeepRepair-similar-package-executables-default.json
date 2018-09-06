@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "result = 0.0",
+    "diffpatch": "--- /local/scr/mtufano/Math/28/b/similar-package-executables-default/1/AstorMain-b/src/default/org/apache/commons/math3/optimization/linear/SimplexTableau.java\t\n+++ /local/scr/mtufano/Math/28/b/similar-package-executables-default/1/AstorMain-b/src/variant-599/org/apache/commons/math3/optimization/linear/SimplexTableau.java\t\n@@ -248,7 +248,7 @@\n \t\tfor (int i = 0; i < (getWidth()); i++) {\n \t\t\tdouble result = (tableau.getEntry(minuendRow, i)) - ((tableau.getEntry(subtrahendRow, i)) * multiple);\n \t\t\tif ((org.apache.commons.math3.util.FastMath.abs(result)) < (org.apache.commons.math3.optimization.linear.SimplexTableau.CUTOFF_THRESHOLD)) {\n-\t\t\t\tresult = 0.0;\n+\t\t\t\tresult = -result;\n \t\t\t}\n \t\t\ttableau.setEntry(minuendRow, i, result);\n \t\t}",
+    "generation": 598,
+    "ingredients": null,
+    "patch": "result = -result",
+    "patchLocation": {
+        "className": "org.apache.commons.math3.optimization.linear.SimplexTableau",
+        "line": 467,
+        "lineSuspiciousness": 0.204
+    },
+    "scope": "GLOBAL",
+    "time": "3111",
+    "type": "ReplaceOp",
+    "variant": 599
+}

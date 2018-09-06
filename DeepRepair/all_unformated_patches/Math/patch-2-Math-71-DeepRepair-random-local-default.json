@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "initialStep = initialStepSize\nfixed statement= stepSize = java.lang.Math.sqrt(((minStep) * (maxStep)))\ngeneration= 36\ningredientScope= LOCAL\noperation: InsertAfterOp\nlocation= org.apache.commons.math.ode.events.EventState\nline= 178\nlineSuspiciousness= 0.147\noriginal statement= double ga = g0",
+    "diffpatch": "--- /local/scr/mtufano/Math/71/b/random-local-default/3/AstorMain-b/src/default/org/apache/commons/math/ode/nonstiff/AdaptiveStepsizeIntegrator.java\t\n+++ /local/scr/mtufano/Math/71/b/random-local-default/3/AstorMain-b/src/variant-554/org/apache/commons/math/ode/nonstiff/AdaptiveStepsizeIntegrator.java\t\n@@ -46,7 +46,7 @@\n \t\tif ((initialStepSize < (minStep)) || (initialStepSize > (maxStep))) {\n \t\t\tinitialStep = -1.0;\n \t\t}else {\n-\t\t\tinitialStep = initialStepSize;\n+\t\t\tstepSize = java.lang.Math.sqrt(((minStep) * (maxStep)));\n \t\t}\n \t}\n \n\n--- /local/scr/mtufano/Math/71/b/random-local-default/3/AstorMain-b/src/default/org/apache/commons/math/ode/events/EventState.java\t\n+++ /local/scr/mtufano/Math/71/b/random-local-default/3/AstorMain-b/src/variant-554/org/apache/commons/math/ode/events/EventState.java\t\n@@ -75,6 +75,7 @@\n \t\t\tfinal double h = (t1 - (t0)) / n;\n \t\t\tdouble ta = t0;\n \t\t\tdouble ga = g0;\n+\t\t\tpendingEvent = true;\n \t\t\tdouble tb = (t0) + (interpolator.isForward() ? convergence : -(convergence));\n \t\t\tfor (int i = 0; i < n; ++i) {\n \t\t\t\ttb += h;",
+    "generation": 36,
+    "ingredients": null,
+    "patch": "stepSize = java.lang.Math.sqrt(((minStep) * (maxStep)))\ngeneration= 36\ningredientScope= LOCAL\noperation: InsertAfterOp\nlocation= org.apache.commons.math.ode.events.EventState\nline= 178\nlineSuspiciousness= 0.147\noriginal statement= double ga = g0\nfixed statement= pendingEvent = true",
+    "patchLocation": {
+        "className": "org.apache.commons.math.ode.nonstiff.AdaptiveStepsizeIntegrator",
+        "line": 153,
+        "lineSuspiciousness": 0.5
+    },
+    "scope": "LOCAL",
+    "time": "7863",
+    "type": "ReplaceOp",
+    "variant": 554
+}

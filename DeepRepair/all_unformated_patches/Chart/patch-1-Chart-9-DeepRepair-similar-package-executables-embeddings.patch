@@ -1,0 +1,47 @@
+--- /local/scr/mtufano/Chart/9/b/similar-package-executables-embeddings/1/AstorMain-b/src/default/org/jfree/data/time/TimeSeries.java	
++++ /local/scr/mtufano/Chart/9/b/similar-package-executables-embeddings/1/AstorMain-b/src/variant-16168/org/jfree/data/time/TimeSeries.java	
+@@ -389,8 +389,8 @@
+ 		if (start == null) {
+ 			throw new java.lang.IllegalArgumentException("Null 'start' argument.");
+ 		}
+-		if (end == null) {
+-			throw new java.lang.IllegalArgumentException("Null 'end' argument.");
++		if (start == null) {
++			throw new java.lang.IllegalArgumentException("Null 'start' argument.");
+ 		}
+ 		if ((start.compareTo(end)) > 0) {
+ 			throw new java.lang.IllegalArgumentException("Requires start on or before end.");
+@@ -407,6 +407,9 @@
+ 		if (endIndex < 0) {
+ 			endIndex = -(endIndex + 1);
+ 			endIndex = endIndex - 1;
++			if ((endIndex < 1) || (endIndex > (org.jfree.data.time.Week.LAST_WEEK_IN_YEAR))) {
++				endIndex = -1;
++			}
+ 		}
+ 		if (endIndex < 0) {
+ 			emptyRange = true;
+
+--- /local/scr/mtufano/Chart/9/b/similar-package-executables-embeddings/1/AstorMain-b/src/default/org/jfree/data/time/TimeSeries.java	
++++ /local/scr/mtufano/Chart/9/b/similar-package-executables-embeddings/1/AstorMain-b/src/variant-16168/org/jfree/data/time/TimeSeries.java	
+@@ -389,8 +389,8 @@
+ 		if (start == null) {
+ 			throw new java.lang.IllegalArgumentException("Null 'start' argument.");
+ 		}
+-		if (end == null) {
+-			throw new java.lang.IllegalArgumentException("Null 'end' argument.");
++		if (start == null) {
++			throw new java.lang.IllegalArgumentException("Null 'start' argument.");
+ 		}
+ 		if ((start.compareTo(end)) > 0) {
+ 			throw new java.lang.IllegalArgumentException("Requires start on or before end.");
+@@ -407,6 +407,9 @@
+ 		if (endIndex < 0) {
+ 			endIndex = -(endIndex + 1);
+ 			endIndex = endIndex - 1;
++			if ((endIndex < 1) || (endIndex > (org.jfree.data.time.Week.LAST_WEEK_IN_YEAR))) {
++				endIndex = -1;
++			}
+ 		}
+ 		if (endIndex < 0) {
+ 			emptyRange = true;

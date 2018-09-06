@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "fragment.draw(g2, x, (anchorY + yOffset), org.jfree.chart.text.TextAnchor.BASELINE_LEFT, rotateX, rotateY, angle)\nfixed statement= org.jfree.chart.text.TextLine.this.fragments = new java.util.ArrayList()\ngeneration= 1\ningredientScope= LOCAL\noperation: ReplaceOp\nlocation= org.jfree.chart.ChartFactory\nline= 694\nlineSuspiciousness= 0.5\noriginal statement= org.jfree.chart.plot.PiePlot3D plot = new org.jfree.chart.plot.PiePlot3D(dataset)",
+    "diffpatch": "--- /local/scr/mtufano/Chart/15/b/similar-global-types-default/1/AstorMain-b/src/default/org/jfree/chart/text/TextLine.java\t\n+++ /local/scr/mtufano/Chart/15/b/similar-global-types-default/1/AstorMain-b/src/variant-59/org/jfree/chart/text/TextLine.java\t\n@@ -53,6 +53,7 @@\n \t\t\torg.jfree.chart.text.TextFragment fragment = ((org.jfree.chart.text.TextFragment) (iterator.next()));\n \t\t\torg.jfree.chart.util.Size2D d = fragment.calculateDimensions(g2);\n \t\t\tfragment.draw(g2, x, (anchorY + yOffset), org.jfree.chart.text.TextAnchor.BASELINE_LEFT, rotateX, rotateY, angle);\n+\t\t\torg.jfree.chart.text.TextLine.this.fragments = new java.util.ArrayList();\n \t\t\tx = x + ((float) (d.getWidth()));\n \t\t} \n \t}\n\n--- /local/scr/mtufano/Chart/15/b/similar-global-types-default/1/AstorMain-b/src/default/org/jfree/chart/ChartFactory.java\t\n+++ /local/scr/mtufano/Chart/15/b/similar-global-types-default/1/AstorMain-b/src/variant-59/org/jfree/chart/ChartFactory.java\t\n@@ -187,7 +187,7 @@\n \t}\n \n \tpublic static org.jfree.chart.JFreeChart createPieChart3D(java.lang.String title, org.jfree.data.general.PieDataset dataset, boolean legend, boolean tooltips, boolean urls) {\n-\t\torg.jfree.chart.plot.PiePlot3D plot = new org.jfree.chart.plot.PiePlot3D(dataset);\n+\t\torg.jfree.chart.plot.PiePlot plot = new org.jfree.chart.plot.PiePlot(dataset);\n \t\tplot.setInsets(new org.jfree.chart.util.RectangleInsets(0.0, 5.0, 5.0, 5.0));\n \t\tif (tooltips) {\n \t\t\tplot.setToolTipGenerator(new org.jfree.chart.labels.StandardPieToolTipGenerator());",
+    "generation": 1,
+    "ingredients": null,
+    "patch": "org.jfree.chart.text.TextLine.this.fragments = new java.util.ArrayList()\ngeneration= 1\ningredientScope= LOCAL\noperation: ReplaceOp\nlocation= org.jfree.chart.ChartFactory\nline= 694\nlineSuspiciousness= 0.5\noriginal statement= org.jfree.chart.plot.PiePlot3D plot = new org.jfree.chart.plot.PiePlot3D(dataset)\nfixed statement= org.jfree.chart.plot.PiePlot plot = new org.jfree.chart.plot.PiePlot(dataset)",
+    "patchLocation": {
+        "className": "org.jfree.chart.text.TextLine",
+        "line": 162,
+        "lineSuspiciousness": 0.174
+    },
+    "scope": "LOCAL",
+    "time": "147",
+    "type": "InsertAfterOp",
+    "variant": 59
+}

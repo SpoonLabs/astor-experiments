@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "return ((java.lang.Double.isNaN(x)) && (java.lang.Double.isNaN(y))) || (x == y)",
+    "diffpatch": "--- /local/scr/mtufano/Math/63/b/similar-local-types-embeddings/1/AstorMain-b/src/default/org/apache/commons/math/util/MathUtils.java\t\n+++ /local/scr/mtufano/Math/63/b/similar-local-types-embeddings/1/AstorMain-b/src/variant-110/org/apache/commons/math/util/MathUtils.java\t\n@@ -181,7 +181,7 @@\n \t}\n \n \tpublic static boolean equals(double x, double y) {\n-\t\treturn ((java.lang.Double.isNaN(x)) && (java.lang.Double.isNaN(y))) || (x == y);\n+\t\treturn (org.apache.commons.math.util.MathUtils.equals(x, y, 1)) || ((org.apache.commons.math.util.FastMath.abs((y - x))) <= (SAFE_MIN));\n \t}\n \n \tpublic static boolean equalsIncludingNaN(double x, double y) {",
+    "generation": 109,
+    "ingredients": null,
+    "patch": "return (org.apache.commons.math.util.MathUtils.equals(x, y, 1)) || ((org.apache.commons.math.util.FastMath.abs((y - x))) <= (org.apache.commons.math.util.MathUtils.SAFE_MIN))",
+    "patchLocation": {
+        "className": "org.apache.commons.math.util.MathUtils",
+        "line": 417,
+        "lineSuspiciousness": 1.0
+    },
+    "scope": "LOCAL",
+    "time": "95",
+    "type": "ReplaceOp",
+    "variant": 110
+}

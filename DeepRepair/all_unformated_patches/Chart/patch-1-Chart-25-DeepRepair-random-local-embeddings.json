@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "for (int i = 0; i < (org.jfree.chart.plot.CategoryPlot.this.domainAxes.size()); i++) {\n\torg.jfree.chart.axis.CategoryAxis axis = ((org.jfree.chart.axis.CategoryAxis) (org.jfree.chart.plot.CategoryPlot.this.domainAxes.get(i)));\n\tif (axis != null) {\n\t\taxis.configure();\n\t}\n}\nfixed statement= org.jfree.chart.plot.CategoryPlot.this.axisOffset = new org.jfree.chart.util.RectangleInsets(4.0, 4.0, 4.0, 4.0)\ngeneration= 2\ningredientScope= LOCAL\noperation: InsertBeforeOp\nlocation= org.jfree.chart.plot.CategoryPlot\nline= 2735\nlineSuspiciousness= 0.894\noriginal statement= fillBackground(g2, area, org.jfree.chart.plot.CategoryPlot.this.orientation)",
+    "diffpatch": "--- /local/scr/mtufano/Chart/25/b/random-local-embeddings/1/AstorMain-b/src/default/org/jfree/chart/plot/CategoryPlot.java\t\n+++ /local/scr/mtufano/Chart/25/b/random-local-embeddings/1/AstorMain-b/src/variant-235/org/jfree/chart/plot/CategoryPlot.java\t\n@@ -317,6 +317,7 @@\n \t\t\t\taxis.configure();\n \t\t\t}\n \t\t}\n+\t\torg.jfree.chart.plot.CategoryPlot.this.axisOffset = new org.jfree.chart.util.RectangleInsets(4.0, 4.0, 4.0, 4.0);\n \t}\n \n \tpublic org.jfree.chart.axis.ValueAxis getRangeAxis() {\n@@ -1261,6 +1262,7 @@\n \t}\n \n \tpublic void drawBackground(java.awt.Graphics2D g2, java.awt.geom.Rectangle2D area) {\n+\t\torg.jfree.chart.plot.CategoryPlot.this.renderers = new org.jfree.chart.util.ObjectList();\n \t\tfillBackground(g2, area, org.jfree.chart.plot.CategoryPlot.this.orientation);\n \t\tdrawBackgroundImage(g2, area);\n \t}\n\n--- /local/scr/mtufano/Chart/25/b/random-local-embeddings/1/AstorMain-b/src/default/org/jfree/chart/plot/CategoryPlot.java\t\n+++ /local/scr/mtufano/Chart/25/b/random-local-embeddings/1/AstorMain-b/src/variant-235/org/jfree/chart/plot/CategoryPlot.java\t\n@@ -317,6 +317,7 @@\n \t\t\t\taxis.configure();\n \t\t\t}\n \t\t}\n+\t\torg.jfree.chart.plot.CategoryPlot.this.axisOffset = new org.jfree.chart.util.RectangleInsets(4.0, 4.0, 4.0, 4.0);\n \t}\n \n \tpublic org.jfree.chart.axis.ValueAxis getRangeAxis() {\n@@ -1261,6 +1262,7 @@\n \t}\n \n \tpublic void drawBackground(java.awt.Graphics2D g2, java.awt.geom.Rectangle2D area) {\n+\t\torg.jfree.chart.plot.CategoryPlot.this.renderers = new org.jfree.chart.util.ObjectList();\n \t\tfillBackground(g2, area, org.jfree.chart.plot.CategoryPlot.this.orientation);\n \t\tdrawBackgroundImage(g2, area);\n \t}",
+    "generation": 2,
+    "ingredients": null,
+    "patch": "org.jfree.chart.plot.CategoryPlot.this.axisOffset = new org.jfree.chart.util.RectangleInsets(4.0, 4.0, 4.0, 4.0)\ngeneration= 2\ningredientScope= LOCAL\noperation: InsertBeforeOp\nlocation= org.jfree.chart.plot.CategoryPlot\nline= 2735\nlineSuspiciousness= 0.894\noriginal statement= fillBackground(g2, area, org.jfree.chart.plot.CategoryPlot.this.orientation)\nfixed statement= org.jfree.chart.plot.CategoryPlot.this.renderers = new org.jfree.chart.util.ObjectList()",
+    "patchLocation": {
+        "className": "org.jfree.chart.plot.CategoryPlot",
+        "line": 852,
+        "lineSuspiciousness": 0.894
+    },
+    "scope": "LOCAL",
+    "time": "202",
+    "type": "InsertAfterOp",
+    "variant": 235
+}

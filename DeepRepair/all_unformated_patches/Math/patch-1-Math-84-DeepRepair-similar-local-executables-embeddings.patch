@@ -1,0 +1,9 @@
+--- /local/scr/mtufano/Math/84/b/similar-local-executables-embeddings/1/AstorMain-b/src/default/org/apache/commons/math/optimization/direct/MultiDirectional.java	
++++ /local/scr/mtufano/Math/84/b/similar-local-executables-embeddings/1/AstorMain-b/src/variant-2053/org/apache/commons/math/optimization/direct/MultiDirectional.java	
+@@ -37,6 +37,7 @@
+ 			if ((comparator.compare(contracted, best)) < 0) {
+ 				return ;
+ 			}
++			return ;
+ 		} 
+ 	}

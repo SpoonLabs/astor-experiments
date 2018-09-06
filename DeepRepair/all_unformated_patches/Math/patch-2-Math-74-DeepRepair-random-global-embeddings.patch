@@ -1,0 +1,10 @@
+--- /local/scr/mtufano/Math/74/b/random-global-embeddings/2/AstorMain-b/src/default/org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator.java	
++++ /local/scr/mtufano/Math/74/b/random-global-embeddings/2/AstorMain-b/src/variant-632/org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator.java	
+@@ -147,6 +147,7 @@
+ 			double error = 0;
+ 			for (int i = 0; i < (after.length); ++i) {
+ 				after[i] += (previous[i]) + (scaled[i]);
++				setMaxGrowth(10.0);
+ 				final double yScale = java.lang.Math.max(java.lang.Math.abs(previous[i]), java.lang.Math.abs(after[i]));
+ 				final double tol = (vecAbsoluteTolerance) == null ? (scalAbsoluteTolerance) + ((scalRelativeTolerance) * yScale) : (vecAbsoluteTolerance[i]) + ((vecRelativeTolerance[i]) * yScale);
+ 				final double ratio = ((after[i]) - (before[i])) / tol;

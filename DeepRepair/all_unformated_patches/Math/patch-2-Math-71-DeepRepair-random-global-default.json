@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "return true",
+    "diffpatch": "--- /local/scr/mtufano/Math/71/b/random-global-default/3/AstorMain-b/src/default/org/apache/commons/math/ode/events/EventState.java\t\n+++ /local/scr/mtufano/Math/71/b/random-global-default/3/AstorMain-b/src/variant-237/org/apache/commons/math/ode/events/EventState.java\t\n@@ -119,6 +119,19 @@\n \t\t\t\t\t\t\t\treturn false;\n \t\t\t\t\t\t\t}\n \t\t\t\t\t\t\tpendingEvent = true;\n+\t\t\t\t\t\t\tif (((java.lang.Math.abs((root - ta))) <= (convergence)) && ((java.lang.Math.abs((root - (previousEventTime)))) <= (convergence))) {\n+\t\t\t\t\t\t\t\tta = tb;\n+\t\t\t\t\t\t\t\tga = gb;\n+\t\t\t\t\t\t\t}else\n+\t\t\t\t\t\t\t\tif ((java.lang.Double.isNaN(previousEventTime)) || ((java.lang.Math.abs(((previousEventTime) - root))) > (convergence))) {\n+\t\t\t\t\t\t\t\t\tpendingEventTime = root;\n+\t\t\t\t\t\t\t\t\tif ((pendingEvent) && ((java.lang.Math.abs((t1 - (pendingEventTime)))) <= (convergence))) {\n+\t\t\t\t\t\t\t\t\t\treturn false;\n+\t\t\t\t\t\t\t\t\t}\n+\t\t\t\t\t\t\t\t\tpendingEvent = true;\n+\t\t\t\t\t\t\t\t\treturn true;\n+\t\t\t\t\t\t\t\t}\n+\t\t\t\t\t\t\t\n \t\t\t\t\t\t\treturn true;\n \t\t\t\t\t\t}",
+    "generation": 236,
+    "ingredients": null,
+    "patch": "if (((java.lang.Math.abs((root - ta))) <= (convergence)) && ((java.lang.Math.abs((root - (previousEventTime)))) <= (convergence))) {\n\tta = tb;\n\tga = gb;\n}else\n\tif ((java.lang.Double.isNaN(previousEventTime)) || ((java.lang.Math.abs(((previousEventTime) - root))) > (convergence))) {\n\t\tpendingEventTime = root;\n\t\tif ((pendingEvent) && ((java.lang.Math.abs((t1 - (pendingEventTime)))) <= (convergence))) {\n\t\t\treturn false;\n\t\t}\n\t\tpendingEvent = true;\n\t\treturn true;\n\t}\n",
+    "patchLocation": {
+        "className": "org.apache.commons.math.ode.events.EventState",
+        "line": 248,
+        "lineSuspiciousness": 0.15
+    },
+    "scope": "LOCAL",
+    "time": "2071",
+    "type": "InsertBeforeOp",
+    "variant": 237
+}

@@ -1,0 +1,21 @@
+--- /local/scr/mtufano/Chart/15/b/random-global-default/2/AstorMain-b/src/default/org/jfree/chart/plot/PiePlot3D.java	
++++ /local/scr/mtufano/Chart/15/b/random-global-default/2/AstorMain-b/src/variant-606/org/jfree/chart/plot/PiePlot3D.java	
+@@ -52,6 +52,7 @@
+ 		double labelPercent = 0.0;
+ 		if ((getLabelGenerator()) != null) {
+ 			labelPercent = (getLabelGap()) + (getMaximumLabelWidth());
++			return ;
+ 		}
+ 		double gapHorizontal = ((plotArea.getWidth()) * (gapPercent + labelPercent)) * 2.0;
+ 		double gapVertical = ((plotArea.getHeight()) * gapPercent) * 2.0;
+
+--- /local/scr/mtufano/Chart/15/b/random-global-default/2/AstorMain-b/src/default/org/jfree/chart/plot/Plot.java	
++++ /local/scr/mtufano/Chart/15/b/random-global-default/2/AstorMain-b/src/variant-606/org/jfree/chart/plot/Plot.java	
+@@ -156,6 +156,7 @@
+ 			throw new java.lang.IllegalArgumentException("Null 'insets' argument.");
+ 		}
+ 		if (!(org.jfree.chart.plot.Plot.this.insets.equals(insets))) {
++			boolean include = true;
+ 			org.jfree.chart.plot.Plot.this.insets = insets;
+ 			if (notify) {
+ 				notifyListeners(new org.jfree.chart.event.PlotChangeEvent(org.jfree.chart.plot.Plot.this));

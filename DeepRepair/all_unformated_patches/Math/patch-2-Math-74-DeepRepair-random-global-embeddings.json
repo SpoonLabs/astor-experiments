@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "after[i] += (previous[i]) + (scaled[i])",
+    "diffpatch": "--- /local/scr/mtufano/Math/74/b/random-global-embeddings/2/AstorMain-b/src/default/org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator.java\t\n+++ /local/scr/mtufano/Math/74/b/random-global-embeddings/2/AstorMain-b/src/variant-632/org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator.java\t\n@@ -147,6 +147,7 @@\n \t\t\tdouble error = 0;\n \t\t\tfor (int i = 0; i < (after.length); ++i) {\n \t\t\t\tafter[i] += (previous[i]) + (scaled[i]);\n+\t\t\t\tsetMaxGrowth(10.0);\n \t\t\t\tfinal double yScale = java.lang.Math.max(java.lang.Math.abs(previous[i]), java.lang.Math.abs(after[i]));\n \t\t\t\tfinal double tol = (vecAbsoluteTolerance) == null ? (scalAbsoluteTolerance) + ((scalRelativeTolerance) * yScale) : (vecAbsoluteTolerance[i]) + ((vecRelativeTolerance[i]) * yScale);\n \t\t\t\tfinal double ratio = ((after[i]) - (before[i])) / tol;",
+    "generation": 631,
+    "ingredients": null,
+    "patch": "setMaxGrowth(10.0)",
+    "patchLocation": {
+        "className": "org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegrator",
+        "line": 426,
+        "lineSuspiciousness": 0.5
+    },
+    "scope": "PACKAGE",
+    "time": "7872",
+    "type": "InsertAfterOp",
+    "variant": 632
+}

@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "if ((org.jfree.chart.util.RectangleInsets.this.unitType) == (org.jfree.chart.util.UnitType.RELATIVE)) {\n\tresult = (org.jfree.chart.util.RectangleInsets.this.left) * width;\n}\nfixed statement= result = (org.jfree.chart.util.RectangleInsets.this.left) * width\ngeneration= 3\ningredientScope= LOCAL\noperation: ReplaceOp\nlocation= org.jfree.chart.axis.Axis\nline= 314\nlineSuspiciousness= 0.699\noriginal statement= return org.jfree.chart.axis.Axis.this.visible",
+    "diffpatch": "--- /local/scr/mtufano/Chart/26/b/random-local-default/3/AstorMain-b/src/default/org/jfree/chart/axis/Axis.java\t\n+++ /local/scr/mtufano/Chart/26/b/random-local-default/3/AstorMain-b/src/variant-109/org/jfree/chart/axis/Axis.java\t\n@@ -108,7 +108,7 @@\n \t}\n \n \tpublic boolean isVisible() {\n-\t\treturn org.jfree.chart.axis.Axis.this.visible;\n+\t\treturn false;\n \t}\n \n \tpublic void setVisible(boolean flag) {\n\n--- /local/scr/mtufano/Chart/26/b/random-local-default/3/AstorMain-b/src/default/org/jfree/chart/util/RectangleInsets.java\t\n+++ /local/scr/mtufano/Chart/26/b/random-local-default/3/AstorMain-b/src/variant-109/org/jfree/chart/util/RectangleInsets.java\t\n@@ -218,6 +218,7 @@\n \t\tif ((org.jfree.chart.util.RectangleInsets.this.unitType) == (org.jfree.chart.util.UnitType.RELATIVE)) {\n \t\t\tresult = (org.jfree.chart.util.RectangleInsets.this.left) * width;\n \t\t}\n+\t\tresult = (org.jfree.chart.util.RectangleInsets.this.left) * width;\n \t\treturn result;\n \t}",
+    "generation": 3,
+    "ingredients": null,
+    "patch": "result = (org.jfree.chart.util.RectangleInsets.this.left) * width\ngeneration= 3\ningredientScope= LOCAL\noperation: ReplaceOp\nlocation= org.jfree.chart.axis.Axis\nline= 314\nlineSuspiciousness= 0.699\noriginal statement= return org.jfree.chart.axis.Axis.this.visible\nfixed statement= return false",
+    "patchLocation": {
+        "className": "org.jfree.chart.util.RectangleInsets",
+        "line": 419,
+        "lineSuspiciousness": 0.684
+    },
+    "scope": "LOCAL",
+    "time": "122",
+    "type": "InsertAfterOp",
+    "variant": 109
+}

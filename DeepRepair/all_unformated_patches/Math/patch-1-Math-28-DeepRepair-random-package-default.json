@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "minRatioPositions.add(i)",
+    "diffpatch": "--- /local/scr/mtufano/Math/28/b/random-package-default/1/AstorMain-b/src/default/org/apache/commons/math3/optimization/linear/SimplexSolver.java\t\n+++ /local/scr/mtufano/Math/28/b/random-package-default/1/AstorMain-b/src/variant-323/org/apache/commons/math3/optimization/linear/SimplexSolver.java\t\n@@ -44,7 +44,7 @@\n \t\t\t\tfinal double ratio = rhs / entry;\n \t\t\t\tfinal int cmp = java.lang.Double.compare(ratio, minRatio);\n \t\t\t\tif (cmp == 0) {\n-\t\t\t\t\tminRatioPositions.add(i);\n+\t\t\t\t\tsetMaxIterations(org.apache.commons.math3.optimization.linear.AbstractLinearOptimizer.DEFAULT_MAX_ITERATIONS);\n \t\t\t\t}else\n \t\t\t\t\tif (cmp < 0) {\n \t\t\t\t\t\tminRatio = ratio;",
+    "generation": 322,
+    "ingredients": null,
+    "patch": "setMaxIterations(org.apache.commons.math3.optimization.linear.AbstractLinearOptimizer.DEFAULT_MAX_ITERATIONS)",
+    "patchLocation": {
+        "className": "org.apache.commons.math3.optimization.linear.SimplexSolver",
+        "line": 104,
+        "lineSuspiciousness": 0.316
+    },
+    "scope": "PACKAGE",
+    "time": "983",
+    "type": "ReplaceOp",
+    "variant": 323
+}

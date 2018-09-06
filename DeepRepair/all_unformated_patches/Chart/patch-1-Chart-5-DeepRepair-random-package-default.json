@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "int index = indexOf(x)\nfixed statement= if (x == null) {\n\tthrow new java.lang.IllegalArgumentException(\"Null 'x' argument.\");\n}\ngeneration= 4\ningredientScope= LOCAL\noperation: ReplaceOp\nlocation= org.jfree.data.xy.XYSeries\nline= 564\nlineSuspiciousness= 0.707\noriginal statement= org.jfree.data.xy.XYSeries.this.data.add(((-index) - 1), new org.jfree.data.xy.XYDataItem(x, y))",
+    "diffpatch": "--- /local/scr/mtufano/Chart/5/b/random-package-default/1/AstorMain-b/src/default/org/jfree/data/xy/XYSeries.java\t\n+++ /local/scr/mtufano/Chart/5/b/random-package-default/1/AstorMain-b/src/variant-154/org/jfree/data/xy/XYSeries.java\t\n@@ -192,6 +192,9 @@\n \t\t\tthrow new java.lang.IllegalArgumentException(\"Null 'x' argument.\");\n \t\t}\n \t\torg.jfree.data.xy.XYDataItem overwritten = null;\n+\t\tif (x == null) {\n+\t\t\tthrow new java.lang.IllegalArgumentException(\"Null 'x' argument.\");\n+\t\t}\n \t\tint index = indexOf(x);\n \t\tif ((index >= 0) && (!(org.jfree.data.xy.XYSeries.this.allowDuplicateXValues))) {\n \t\t\torg.jfree.data.xy.XYDataItem existing = ((org.jfree.data.xy.XYDataItem) (org.jfree.data.xy.XYSeries.this.data.get(index)));\n@@ -203,7 +206,7 @@\n \t\t\texisting.setY(y);\n \t\t}else {\n \t\t\tif (org.jfree.data.xy.XYSeries.this.autoSort) {\n-\t\t\t\torg.jfree.data.xy.XYSeries.this.data.add(((-index) - 1), new org.jfree.data.xy.XYDataItem(x, y));\n+\t\t\t\tadd(x, y, true);\n \t\t\t}else {\n \t\t\t\torg.jfree.data.xy.XYSeries.this.data.add(new org.jfree.data.xy.XYDataItem(x, y));\n \t\t\t}\n\n--- /local/scr/mtufano/Chart/5/b/random-package-default/1/AstorMain-b/src/default/org/jfree/data/xy/XYSeries.java\t\n+++ /local/scr/mtufano/Chart/5/b/random-package-default/1/AstorMain-b/src/variant-154/org/jfree/data/xy/XYSeries.java\t\n@@ -192,6 +192,9 @@\n \t\t\tthrow new java.lang.IllegalArgumentException(\"Null 'x' argument.\");\n \t\t}\n \t\torg.jfree.data.xy.XYDataItem overwritten = null;\n+\t\tif (x == null) {\n+\t\t\tthrow new java.lang.IllegalArgumentException(\"Null 'x' argument.\");\n+\t\t}\n \t\tint index = indexOf(x);\n \t\tif ((index >= 0) && (!(org.jfree.data.xy.XYSeries.this.allowDuplicateXValues))) {\n \t\t\torg.jfree.data.xy.XYDataItem existing = ((org.jfree.data.xy.XYDataItem) (org.jfree.data.xy.XYSeries.this.data.get(index)));\n@@ -203,7 +206,7 @@\n \t\t\texisting.setY(y);\n \t\t}else {\n \t\t\tif (org.jfree.data.xy.XYSeries.this.autoSort) {\n-\t\t\t\torg.jfree.data.xy.XYSeries.this.data.add(((-index) - 1), new org.jfree.data.xy.XYDataItem(x, y));\n+\t\t\t\tadd(x, y, true);\n \t\t\t}else {\n \t\t\t\torg.jfree.data.xy.XYSeries.this.data.add(new org.jfree.data.xy.XYDataItem(x, y));\n \t\t\t}",
+    "generation": 4,
+    "ingredients": null,
+    "patch": "if (x == null) {\n\tthrow new java.lang.IllegalArgumentException(\"Null 'x' argument.\");\n}\ngeneration= 4\ningredientScope= LOCAL\noperation: ReplaceOp\nlocation= org.jfree.data.xy.XYSeries\nline= 564\nlineSuspiciousness= 0.707\noriginal statement= org.jfree.data.xy.XYSeries.this.data.add(((-index) - 1), new org.jfree.data.xy.XYDataItem(x, y))\nfixed statement= add(x, y, true)",
+    "patchLocation": {
+        "className": "org.jfree.data.xy.XYSeries",
+        "line": 547,
+        "lineSuspiciousness": 0.5
+    },
+    "scope": "LOCAL",
+    "time": "37",
+    "type": "InsertBeforeOp",
+    "variant": 154
+}

@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "for (int index = start; index <= end; index++) {\n\torg.jfree.data.time.TimeSeriesDataItem item = ((org.jfree.data.time.TimeSeriesDataItem) (org.jfree.data.time.TimeSeries.this.data.get(index)));\n\torg.jfree.data.time.TimeSeriesDataItem clone = ((org.jfree.data.time.TimeSeriesDataItem) (item.clone()));\n\ttry {\n\t\tcopy.add(clone);\n\t} catch (org.jfree.data.general.SeriesException e) {\n\t\te.printStackTrace();\n\t}\n}\nfixed statement= if (end < start) {\n\tthrow new java.lang.IllegalArgumentException(\"Requires start <= end.\");\n}\ngeneration= 2\ningredientScope= LOCAL\noperation: InsertBeforeOp\nlocation= org.jfree.data.time.TimeSeries\nline= 596\nlineSuspiciousness= 0.151\noriginal statement= boolean added = false",
+    "diffpatch": "--- /local/scr/mtufano/Chart/3/b/random-local-default/1/AstorMain-b/src/default/org/jfree/data/time/TimeSeries.java\t\n+++ /local/scr/mtufano/Chart/3/b/random-local-default/1/AstorMain-b/src/variant-254/org/jfree/data/time/TimeSeries.java\t\n@@ -210,6 +210,7 @@\n \t\t\t\tthrow new org.jfree.data.general.SeriesException(b.toString());\n \t\t\t}\n \t\t\n+\t\tfindBoundsByIteration();\n \t\tboolean added = false;\n \t\tint count = getItemCount();\n \t\tif (count == 0) {\n@@ -481,6 +482,9 @@\n \t\t\t\t\te.printStackTrace();\n \t\t\t\t}\n \t\t\t}\n+\t\t\tif (end < start) {\n+\t\t\t\tthrow new java.lang.IllegalArgumentException(\"Requires start <= end.\");\n+\t\t\t}\n \t\t}\n \t\treturn copy;\n \t}\n\n--- /local/scr/mtufano/Chart/3/b/random-local-default/1/AstorMain-b/src/default/org/jfree/data/time/TimeSeries.java\t\n+++ /local/scr/mtufano/Chart/3/b/random-local-default/1/AstorMain-b/src/variant-254/org/jfree/data/time/TimeSeries.java\t\n@@ -210,6 +210,7 @@\n \t\t\t\tthrow new org.jfree.data.general.SeriesException(b.toString());\n \t\t\t}\n \t\t\n+\t\tfindBoundsByIteration();\n \t\tboolean added = false;\n \t\tint count = getItemCount();\n \t\tif (count == 0) {\n@@ -481,6 +482,9 @@\n \t\t\t\t\te.printStackTrace();\n \t\t\t\t}\n \t\t\t}\n+\t\t\tif (end < start) {\n+\t\t\t\tthrow new java.lang.IllegalArgumentException(\"Requires start <= end.\");\n+\t\t\t}\n \t\t}\n \t\treturn copy;\n \t}",
+    "generation": 2,
+    "ingredients": null,
+    "patch": "if (end < start) {\n\tthrow new java.lang.IllegalArgumentException(\"Requires start <= end.\");\n}\ngeneration= 2\ningredientScope= LOCAL\noperation: InsertBeforeOp\nlocation= org.jfree.data.time.TimeSeries\nline= 596\nlineSuspiciousness= 0.151\noriginal statement= boolean added = false\nfixed statement= findBoundsByIteration()",
+    "patchLocation": {
+        "className": "org.jfree.data.time.TimeSeries",
+        "line": 1059,
+        "lineSuspiciousness": 0.577
+    },
+    "scope": "LOCAL",
+    "time": "71",
+    "type": "InsertAfterOp",
+    "variant": 254
+}

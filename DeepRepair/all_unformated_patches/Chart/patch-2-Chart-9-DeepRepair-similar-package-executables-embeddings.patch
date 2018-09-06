@@ -1,0 +1,43 @@
+--- /local/scr/mtufano/Chart/9/b/similar-package-executables-embeddings/3/AstorMain-b/src/default/org/jfree/data/time/TimeSeries.java	
++++ /local/scr/mtufano/Chart/9/b/similar-package-executables-embeddings/3/AstorMain-b/src/variant-15293/org/jfree/data/time/TimeSeries.java	
+@@ -367,7 +367,7 @@
+ 			throw new java.lang.IllegalArgumentException("Requires start >= 0.");
+ 		}
+ 		if (end < start) {
+-			throw new java.lang.IllegalArgumentException("Requires start <= end.");
++			throw new java.lang.IllegalArgumentException("Requires start >= 0.");
+ 		}
+ 		org.jfree.data.time.TimeSeries copy = ((org.jfree.data.time.TimeSeries) (super.clone()));
+ 		copy.data = new java.util.ArrayList();
+@@ -407,6 +407,9 @@
+ 		if (endIndex < 0) {
+ 			endIndex = -(endIndex + 1);
+ 			endIndex = endIndex - 1;
++			if ((endIndex < 1) || (endIndex > (org.jfree.data.time.Week.LAST_WEEK_IN_YEAR))) {
++				endIndex = -1;
++			}
+ 		}
+ 		if (endIndex < 0) {
+ 			emptyRange = true;
+
+--- /local/scr/mtufano/Chart/9/b/similar-package-executables-embeddings/3/AstorMain-b/src/default/org/jfree/data/time/TimeSeries.java	
++++ /local/scr/mtufano/Chart/9/b/similar-package-executables-embeddings/3/AstorMain-b/src/variant-15293/org/jfree/data/time/TimeSeries.java	
+@@ -367,7 +367,7 @@
+ 			throw new java.lang.IllegalArgumentException("Requires start >= 0.");
+ 		}
+ 		if (end < start) {
+-			throw new java.lang.IllegalArgumentException("Requires start <= end.");
++			throw new java.lang.IllegalArgumentException("Requires start >= 0.");
+ 		}
+ 		org.jfree.data.time.TimeSeries copy = ((org.jfree.data.time.TimeSeries) (super.clone()));
+ 		copy.data = new java.util.ArrayList();
+@@ -407,6 +407,9 @@
+ 		if (endIndex < 0) {
+ 			endIndex = -(endIndex + 1);
+ 			endIndex = endIndex - 1;
++			if ((endIndex < 1) || (endIndex > (org.jfree.data.time.Week.LAST_WEEK_IN_YEAR))) {
++				endIndex = -1;
++			}
+ 		}
+ 		if (endIndex < 0) {
+ 			emptyRange = true;

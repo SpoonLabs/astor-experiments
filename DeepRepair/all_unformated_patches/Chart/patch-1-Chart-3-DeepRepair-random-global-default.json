@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "removeAgedItems(false)\nfixed statement= findBoundsByIteration()\ngeneration= 2\ningredientScope= LOCAL\noperation: InsertBeforeOp\nlocation= org.jfree.data.time.TimeSeries\nline= 626\nlineSuspiciousness= 0.151\noriginal statement= if (added) {\n\tupdateBoundsForAddedItem(item);\n\tif ((getItemCount()) > (org.jfree.data.time.TimeSeries.this.maximumItemCount)) {\n\t\torg.jfree.data.time.TimeSeriesDataItem d = ((org.jfree.data.time.TimeSeriesDataItem) (org.jfree.data.time.TimeSeries.this.data.remove(0)));\n\t\tupdateBoundsForRemovedItem(d);\n\t}\n\tremoveAgedItems(false);\n\tif (notify) {\n\t\tfireSeriesChanged();\n\t}\n}",
+    "diffpatch": "--- /local/scr/mtufano/Chart/3/b/random-global-default/1/AstorMain-b/src/default/org/jfree/data/time/TimeSeries.java\t\n+++ /local/scr/mtufano/Chart/3/b/random-global-default/1/AstorMain-b/src/variant-334/org/jfree/data/time/TimeSeries.java\t\n@@ -237,13 +237,14 @@\n \t\t\t\t}\n \t\t\t}\n \t\t}\n+\t\tremoveAgedItems(false);\n \t\tif (added) {\n \t\t\tupdateBoundsForAddedItem(item);\n \t\t\tif ((getItemCount()) > (org.jfree.data.time.TimeSeries.this.maximumItemCount)) {\n \t\t\t\torg.jfree.data.time.TimeSeriesDataItem d = ((org.jfree.data.time.TimeSeriesDataItem) (org.jfree.data.time.TimeSeries.this.data.remove(0)));\n \t\t\t\tupdateBoundsForRemovedItem(d);\n \t\t\t}\n-\t\t\tremoveAgedItems(false);\n+\t\t\tfindBoundsByIteration();\n \t\t\tif (notify) {\n \t\t\t\tfireSeriesChanged();\n \t\t\t}\n\n--- /local/scr/mtufano/Chart/3/b/random-global-default/1/AstorMain-b/src/default/org/jfree/data/time/TimeSeries.java\t\n+++ /local/scr/mtufano/Chart/3/b/random-global-default/1/AstorMain-b/src/variant-334/org/jfree/data/time/TimeSeries.java\t\n@@ -237,13 +237,14 @@\n \t\t\t\t}\n \t\t\t}\n \t\t}\n+\t\tremoveAgedItems(false);\n \t\tif (added) {\n \t\t\tupdateBoundsForAddedItem(item);\n \t\t\tif ((getItemCount()) > (org.jfree.data.time.TimeSeries.this.maximumItemCount)) {\n \t\t\t\torg.jfree.data.time.TimeSeriesDataItem d = ((org.jfree.data.time.TimeSeriesDataItem) (org.jfree.data.time.TimeSeries.this.data.remove(0)));\n \t\t\t\tupdateBoundsForRemovedItem(d);\n \t\t\t}\n-\t\t\tremoveAgedItems(false);\n+\t\t\tfindBoundsByIteration();\n \t\t\tif (notify) {\n \t\t\t\tfireSeriesChanged();\n \t\t\t}",
+    "generation": 2,
+    "ingredients": null,
+    "patch": "findBoundsByIteration()\ngeneration= 2\ningredientScope= LOCAL\noperation: InsertBeforeOp\nlocation= org.jfree.data.time.TimeSeries\nline= 626\nlineSuspiciousness= 0.151\noriginal statement= if (added) {\n\tupdateBoundsForAddedItem(item);\n\tif ((getItemCount()) > (org.jfree.data.time.TimeSeries.this.maximumItemCount)) {\n\t\torg.jfree.data.time.TimeSeriesDataItem d = ((org.jfree.data.time.TimeSeriesDataItem) (org.jfree.data.time.TimeSeries.this.data.remove(0)));\n\t\tupdateBoundsForRemovedItem(d);\n\t}\n\tremoveAgedItems(false);\n\tif (notify) {\n\t\tfireSeriesChanged();\n\t}\n}\nfixed statement= removeAgedItems(false)",
+    "patchLocation": {
+        "className": "org.jfree.data.time.TimeSeries",
+        "line": 634,
+        "lineSuspiciousness": 0.151
+    },
+    "scope": "LOCAL",
+    "time": "82",
+    "type": "ReplaceOp",
+    "variant": 334
+}

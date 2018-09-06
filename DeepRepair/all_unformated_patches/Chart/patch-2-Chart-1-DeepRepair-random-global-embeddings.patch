@@ -1,0 +1,24 @@
+--- /local/scr/mtufano/Chart/1/b/random-global-embeddings/2/AstorMain-b/src/default/org/jfree/chart/plot/CategoryPlot.java	
++++ /local/scr/mtufano/Chart/1/b/random-global-embeddings/2/AstorMain-b/src/variant-138/org/jfree/chart/plot/CategoryPlot.java	
+@@ -369,6 +369,7 @@
+ 			result = ((org.jfree.chart.axis.ValueAxis) (org.jfree.chart.plot.CategoryPlot.this.rangeAxes.get(index)));
+ 		}
+ 		if (result == null) {
++			org.jfree.chart.util.RectangleInsets insets = getInsets();
+ 			org.jfree.chart.plot.Plot parent = getParent();
+ 			if (parent instanceof org.jfree.chart.plot.CategoryPlot) {
+ 				org.jfree.chart.plot.CategoryPlot cp = ((org.jfree.chart.plot.CategoryPlot) (parent));
+
+--- /local/scr/mtufano/Chart/1/b/random-global-embeddings/2/AstorMain-b/src/default/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java	
++++ /local/scr/mtufano/Chart/1/b/random-global-embeddings/2/AstorMain-b/src/variant-138/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java	
+@@ -766,8 +766,8 @@
+ 		}
+ 		int index = org.jfree.chart.renderer.category.AbstractCategoryItemRenderer.this.plot.getIndexOf(org.jfree.chart.renderer.category.AbstractCategoryItemRenderer.this);
+ 		org.jfree.data.category.CategoryDataset dataset = org.jfree.chart.renderer.category.AbstractCategoryItemRenderer.this.plot.getDataset(index);
+-		if (dataset != null) {
+-			return result;
++		if (index < 0) {
++			throw new java.lang.IllegalArgumentException("Negative 'index'.");
+ 		}
+ 		int seriesCount = dataset.getRowCount();
+ 		if (plot.getRowRenderingOrder().equals(org.jfree.chart.util.SortOrder.ASCENDING)) {

@@ -1,0 +1,22 @@
+--- /local/scr/mtufano/Chart/15/b/similar-global-types-embeddings/1/AstorMain-b/src/default/org/jfree/chart/text/TextLine.java	
++++ /local/scr/mtufano/Chart/15/b/similar-global-types-embeddings/1/AstorMain-b/src/variant-59/org/jfree/chart/text/TextLine.java	
+@@ -53,6 +53,7 @@
+ 			org.jfree.chart.text.TextFragment fragment = ((org.jfree.chart.text.TextFragment) (iterator.next()));
+ 			org.jfree.chart.util.Size2D d = fragment.calculateDimensions(g2);
+ 			fragment.draw(g2, x, (anchorY + yOffset), org.jfree.chart.text.TextAnchor.BASELINE_LEFT, rotateX, rotateY, angle);
++			org.jfree.chart.text.TextLine.this.fragments = new java.util.ArrayList();
+ 			x = x + ((float) (d.getWidth()));
+ 		} 
+ 	}
+
+--- /local/scr/mtufano/Chart/15/b/similar-global-types-embeddings/1/AstorMain-b/src/default/org/jfree/chart/ChartFactory.java	
++++ /local/scr/mtufano/Chart/15/b/similar-global-types-embeddings/1/AstorMain-b/src/variant-59/org/jfree/chart/ChartFactory.java	
+@@ -187,7 +187,7 @@
+ 	}
+ 
+ 	public static org.jfree.chart.JFreeChart createPieChart3D(java.lang.String title, org.jfree.data.general.PieDataset dataset, boolean legend, boolean tooltips, boolean urls) {
+-		org.jfree.chart.plot.PiePlot3D plot = new org.jfree.chart.plot.PiePlot3D(dataset);
++		org.jfree.chart.plot.PiePlot plot = new org.jfree.chart.plot.PiePlot(dataset);
+ 		plot.setInsets(new org.jfree.chart.util.RectangleInsets(0.0, 5.0, 5.0, 5.0));
+ 		if (tooltips) {
+ 			plot.setToolTipGenerator(new org.jfree.chart.labels.StandardPieToolTipGenerator());

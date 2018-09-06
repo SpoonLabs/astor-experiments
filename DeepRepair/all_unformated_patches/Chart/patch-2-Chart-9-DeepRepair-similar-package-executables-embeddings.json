@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "throw new java.lang.IllegalArgumentException(\"Requires start <= end.\")\nfixed statement= throw new java.lang.IllegalArgumentException(\"Requires start >= 0.\")\ngeneration= 5\ningredientScope= LOCAL\noperation: InsertAfterOp\nlocation= org.jfree.data.time.TimeSeries\nline= 942\nlineSuspiciousness= 0.707\noriginal statement= endIndex = endIndex - 1",
+    "diffpatch": "--- /local/scr/mtufano/Chart/9/b/similar-package-executables-embeddings/3/AstorMain-b/src/default/org/jfree/data/time/TimeSeries.java\t\n+++ /local/scr/mtufano/Chart/9/b/similar-package-executables-embeddings/3/AstorMain-b/src/variant-15293/org/jfree/data/time/TimeSeries.java\t\n@@ -367,7 +367,7 @@\n \t\t\tthrow new java.lang.IllegalArgumentException(\"Requires start >= 0.\");\n \t\t}\n \t\tif (end < start) {\n-\t\t\tthrow new java.lang.IllegalArgumentException(\"Requires start <= end.\");\n+\t\t\tthrow new java.lang.IllegalArgumentException(\"Requires start >= 0.\");\n \t\t}\n \t\torg.jfree.data.time.TimeSeries copy = ((org.jfree.data.time.TimeSeries) (super.clone()));\n \t\tcopy.data = new java.util.ArrayList();\n@@ -407,6 +407,9 @@\n \t\tif (endIndex < 0) {\n \t\t\tendIndex = -(endIndex + 1);\n \t\t\tendIndex = endIndex - 1;\n+\t\t\tif ((endIndex < 1) || (endIndex > (org.jfree.data.time.Week.LAST_WEEK_IN_YEAR))) {\n+\t\t\t\tendIndex = -1;\n+\t\t\t}\n \t\t}\n \t\tif (endIndex < 0) {\n \t\t\temptyRange = true;\n\n--- /local/scr/mtufano/Chart/9/b/similar-package-executables-embeddings/3/AstorMain-b/src/default/org/jfree/data/time/TimeSeries.java\t\n+++ /local/scr/mtufano/Chart/9/b/similar-package-executables-embeddings/3/AstorMain-b/src/variant-15293/org/jfree/data/time/TimeSeries.java\t\n@@ -367,7 +367,7 @@\n \t\t\tthrow new java.lang.IllegalArgumentException(\"Requires start >= 0.\");\n \t\t}\n \t\tif (end < start) {\n-\t\t\tthrow new java.lang.IllegalArgumentException(\"Requires start <= end.\");\n+\t\t\tthrow new java.lang.IllegalArgumentException(\"Requires start >= 0.\");\n \t\t}\n \t\torg.jfree.data.time.TimeSeries copy = ((org.jfree.data.time.TimeSeries) (super.clone()));\n \t\tcopy.data = new java.util.ArrayList();\n@@ -407,6 +407,9 @@\n \t\tif (endIndex < 0) {\n \t\t\tendIndex = -(endIndex + 1);\n \t\t\tendIndex = endIndex - 1;\n+\t\t\tif ((endIndex < 1) || (endIndex > (org.jfree.data.time.Week.LAST_WEEK_IN_YEAR))) {\n+\t\t\t\tendIndex = -1;\n+\t\t\t}\n \t\t}\n \t\tif (endIndex < 0) {\n \t\t\temptyRange = true;",
+    "generation": 5,
+    "ingredients": null,
+    "patch": "throw new java.lang.IllegalArgumentException(\"Requires start >= 0.\")\ngeneration= 5\ningredientScope= LOCAL\noperation: InsertAfterOp\nlocation= org.jfree.data.time.TimeSeries\nline= 942\nlineSuspiciousness= 0.707\noriginal statement= endIndex = endIndex - 1\nfixed statement= if ((endIndex < 1) || (endIndex > (org.jfree.data.time.Week.LAST_WEEK_IN_YEAR))) {\n\tendIndex = -1;\n}",
+    "patchLocation": {
+        "className": "org.jfree.data.time.TimeSeries",
+        "line": 883,
+        "lineSuspiciousness": 0.707
+    },
+    "scope": "LOCAL",
+    "time": "6725",
+    "type": "ReplaceOp",
+    "variant": 15293
+}

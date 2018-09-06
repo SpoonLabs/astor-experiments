@@ -1,0 +1,10 @@
+--- /local/scr/mtufano/Math/73/b/similar-global-executables-default/1/AstorMain-b/src/default/org/apache/commons/math/analysis/solvers/BrentSolver.java	
++++ /local/scr/mtufano/Math/73/b/similar-global-executables-default/1/AstorMain-b/src/variant-886/org/apache/commons/math/analysis/solvers/BrentSolver.java	
+@@ -35,6 +35,7 @@
+ 			setResult(initial, 0);
+ 			return result;
+ 		}
++		verifyBracketing(min, max, f);
+ 		double yMin = f.value(min);
+ 		if ((java.lang.Math.abs(yMin)) <= (functionValueAccuracy)) {
+ 			setResult(yMin, 0);

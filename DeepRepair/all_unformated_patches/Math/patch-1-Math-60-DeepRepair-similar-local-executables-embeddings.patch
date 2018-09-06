@@ -1,0 +1,11 @@
+--- /local/scr/mtufano/Math/60/b/similar-local-executables-embeddings/1/AstorMain-b/src/default/org/apache/commons/math/util/ContinuedFraction.java	
++++ /local/scr/mtufano/Math/60/b/similar-local-executables-embeddings/1/AstorMain-b/src/variant-187/org/apache/commons/math/util/ContinuedFraction.java	
+@@ -73,7 +73,7 @@
+ 			}
+ 			double r = p2 / q2;
+ 			if (java.lang.Double.isNaN(r)) {
+-				throw new org.apache.commons.math.ConvergenceException(org.apache.commons.math.exception.util.LocalizedFormats.CONTINUED_FRACTION_NAN_DIVERGENCE, x);
++				throw new org.apache.commons.math.MaxIterationsExceededException(maxIterations);
+ 			}
+ 			relativeError = org.apache.commons.math.util.FastMath.abs(((r / c) - 1.0));
+ 			c = p2 / q2;

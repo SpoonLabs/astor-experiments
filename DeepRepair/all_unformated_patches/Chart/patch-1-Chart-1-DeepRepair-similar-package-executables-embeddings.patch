@@ -1,0 +1,11 @@
+--- /local/scr/mtufano/Chart/1/b/similar-package-executables-embeddings/1/AstorMain-b/src/default/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java	
++++ /local/scr/mtufano/Chart/1/b/similar-package-executables-embeddings/1/AstorMain-b/src/variant-3/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java	
+@@ -766,7 +766,7 @@
+ 		}
+ 		int index = org.jfree.chart.renderer.category.AbstractCategoryItemRenderer.this.plot.getIndexOf(org.jfree.chart.renderer.category.AbstractCategoryItemRenderer.this);
+ 		org.jfree.data.category.CategoryDataset dataset = org.jfree.chart.renderer.category.AbstractCategoryItemRenderer.this.plot.getDataset(index);
+-		if (dataset != null) {
++		if ((org.jfree.chart.renderer.category.AbstractCategoryItemRenderer.this.plot) == null) {
+ 			return result;
+ 		}
+ 		int seriesCount = dataset.getRowCount();

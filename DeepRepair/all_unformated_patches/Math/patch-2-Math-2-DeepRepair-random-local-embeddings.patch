@@ -1,0 +1,11 @@
+--- /local/scr/mtufano/Math/2/b/random-local-embeddings/3/AstorMain-b/src/default/org/apache/commons/math3/distribution/AbstractIntegerDistribution.java	
++++ /local/scr/mtufano/Math/2/b/random-local-embeddings/3/AstorMain-b/src/variant-87/org/apache/commons/math3/distribution/AbstractIntegerDistribution.java	
+@@ -58,7 +58,7 @@
+ 			k = 1.0 / k;
+ 			tmp = mu + (k * sigma);
+ 			if (tmp < upper) {
+-				upper = ((int) (java.lang.Math.ceil(tmp))) - 1;
++				tmp = mu + (k * sigma);
+ 			}
+ 		}
+ 		return solveInverseCumulativeProbability(p, lower, upper);

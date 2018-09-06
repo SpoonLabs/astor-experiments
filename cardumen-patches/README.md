@@ -4,7 +4,7 @@
 
 Explanation about  the folders:
 
-1. `unformatted-patches` contains all the Cardumen patches. Due to a bug in our tool, the diffs have a wrong line number, which correspond to the line number of the files *after* removing the comments and JavaDoc. 
+1. `unformatted-patches` contains all the Cardumen patches. Due to a bug in our tool, the diffs have  wrong line numbers, which correspond to the line number of the files *after* removing the comments and JavaDoc. 
 
 2. `patches` folder contains a subset of patches with the correct line numbers.
 

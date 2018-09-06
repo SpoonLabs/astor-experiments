@@ -1,0 +1,83 @@
+--- /local/scr/mtufano/Chart/14/b/similar-global-executables-embeddings/1/AstorMain-b/src/default/org/jfree/chart/plot/XYPlot.java	
++++ /local/scr/mtufano/Chart/14/b/similar-global-executables-embeddings/1/AstorMain-b/src/variant-195/org/jfree/chart/plot/XYPlot.java	
+@@ -906,7 +906,7 @@
+ 	}
+ 
+ 	public boolean removeDomainMarker(int index, org.jfree.chart.plot.Marker marker, org.jfree.chart.util.Layer layer) {
+-		return removeDomainMarker(index, marker, layer, true);
++		return false;
+ 	}
+ 
+ 	public boolean removeDomainMarker(int index, org.jfree.chart.plot.Marker marker, org.jfree.chart.util.Layer layer, boolean notify) {
+@@ -1010,7 +1010,7 @@
+ 	}
+ 
+ 	public boolean removeRangeMarker(org.jfree.chart.plot.Marker marker) {
+-		return removeRangeMarker(marker, org.jfree.chart.util.Layer.FOREGROUND);
++		return DEFAULT_CROSSHAIR_VISIBLE;
+ 	}
+ 
+ 	public boolean removeRangeMarker(org.jfree.chart.plot.Marker marker, org.jfree.chart.util.Layer layer) {
+
+--- /local/scr/mtufano/Chart/14/b/similar-global-executables-embeddings/1/AstorMain-b/src/default/org/jfree/chart/plot/XYPlot.java	
++++ /local/scr/mtufano/Chart/14/b/similar-global-executables-embeddings/1/AstorMain-b/src/variant-195/org/jfree/chart/plot/XYPlot.java	
+@@ -906,7 +906,7 @@
+ 	}
+ 
+ 	public boolean removeDomainMarker(int index, org.jfree.chart.plot.Marker marker, org.jfree.chart.util.Layer layer) {
+-		return removeDomainMarker(index, marker, layer, true);
++		return false;
+ 	}
+ 
+ 	public boolean removeDomainMarker(int index, org.jfree.chart.plot.Marker marker, org.jfree.chart.util.Layer layer, boolean notify) {
+@@ -1010,7 +1010,7 @@
+ 	}
+ 
+ 	public boolean removeRangeMarker(org.jfree.chart.plot.Marker marker) {
+-		return removeRangeMarker(marker, org.jfree.chart.util.Layer.FOREGROUND);
++		return DEFAULT_CROSSHAIR_VISIBLE;
+ 	}
+ 
+ 	public boolean removeRangeMarker(org.jfree.chart.plot.Marker marker, org.jfree.chart.util.Layer layer) {
+
+--- /local/scr/mtufano/Chart/14/b/similar-global-executables-embeddings/1/AstorMain-b/src/default/org/jfree/chart/plot/CategoryPlot.java	
++++ /local/scr/mtufano/Chart/14/b/similar-global-executables-embeddings/1/AstorMain-b/src/variant-195/org/jfree/chart/plot/CategoryPlot.java	
+@@ -930,7 +930,7 @@
+ 		}else {
+ 			markers = ((java.util.ArrayList) (org.jfree.chart.plot.CategoryPlot.this.backgroundDomainMarkers.get(new java.lang.Integer(index))));
+ 		}
+-		boolean removed = markers.remove(marker);
++		boolean removed = false;
+ 		if (removed && notify) {
+ 			fireChangeEvent();
+ 		}
+@@ -1044,7 +1044,7 @@
+ 	}
+ 
+ 	public boolean removeRangeMarker(org.jfree.chart.plot.Marker marker) {
+-		return removeRangeMarker(marker, org.jfree.chart.util.Layer.FOREGROUND);
++		return removeDomainMarker(marker, org.jfree.chart.util.Layer.FOREGROUND);
+ 	}
+ 
+ 	public boolean removeRangeMarker(org.jfree.chart.plot.Marker marker, org.jfree.chart.util.Layer layer) {
+
+--- /local/scr/mtufano/Chart/14/b/similar-global-executables-embeddings/1/AstorMain-b/src/default/org/jfree/chart/plot/CategoryPlot.java	
++++ /local/scr/mtufano/Chart/14/b/similar-global-executables-embeddings/1/AstorMain-b/src/variant-195/org/jfree/chart/plot/CategoryPlot.java	
+@@ -930,7 +930,7 @@
+ 		}else {
+ 			markers = ((java.util.ArrayList) (org.jfree.chart.plot.CategoryPlot.this.backgroundDomainMarkers.get(new java.lang.Integer(index))));
+ 		}
+-		boolean removed = markers.remove(marker);
++		boolean removed = false;
+ 		if (removed && notify) {
+ 			fireChangeEvent();
+ 		}
+@@ -1044,7 +1044,7 @@
+ 	}
+ 
+ 	public boolean removeRangeMarker(org.jfree.chart.plot.Marker marker) {
+-		return removeRangeMarker(marker, org.jfree.chart.util.Layer.FOREGROUND);
++		return removeDomainMarker(marker, org.jfree.chart.util.Layer.FOREGROUND);
+ 	}
+ 
+ 	public boolean removeRangeMarker(org.jfree.chart.plot.Marker marker, org.jfree.chart.util.Layer layer) {

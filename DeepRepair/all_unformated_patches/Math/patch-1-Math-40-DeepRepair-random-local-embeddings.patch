@@ -1,0 +1,10 @@
+--- /local/scr/mtufano/Math/40/b/random-local-embeddings/1/AstorMain-b/src/default/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	
++++ /local/scr/mtufano/Math/40/b/random-local-embeddings/1/AstorMain-b/src/variant-4/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	
+@@ -141,6 +141,7 @@
+ 				start = signChangeIndex - 1;
+ 				end = signChangeIndex;
+ 			}
++			signChangeIndex = 2;
+ 			final double nextY = computeObjectiveValue(nextX);
+ 			if (org.apache.commons.math.util.Precision.equals(nextY, 0.0, 1)) {
+ 				return nextX;

@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "minIndex = i",
+    "diffpatch": "--- /local/scr/mtufano/Math/28/b/random-local-embeddings/2/AstorMain-b/src/default/org/apache/commons/math3/optimization/linear/SimplexSolver.java\t\n+++ /local/scr/mtufano/Math/28/b/random-local-embeddings/2/AstorMain-b/src/variant-177/org/apache/commons/math3/optimization/linear/SimplexSolver.java\t\n@@ -74,7 +74,7 @@\n \t\t\t\t\tfor (; (i < ((tableau.getWidth()) - 1)) && (minRow != row); i++) {\n \t\t\t\t\t\tif (row == (tableau.getBasicRow(i))) {\n \t\t\t\t\t\t\tif (i < minIndex) {\n-\t\t\t\t\t\t\t\tminIndex = i;\n+\t\t\t\t\t\t\t\tminRow = i;\n \t\t\t\t\t\t\t\tminRow = row;\n \t\t\t\t\t\t\t}\n \t\t\t\t\t\t}",
+    "generation": 176,
+    "ingredients": null,
+    "patch": "minRow = i",
+    "patchLocation": {
+        "className": "org.apache.commons.math3.optimization.linear.SimplexSolver",
+        "line": 145,
+        "lineSuspiciousness": 0.5
+    },
+    "scope": "LOCAL",
+    "time": "698",
+    "type": "ReplaceOp",
+    "variant": 177
+}

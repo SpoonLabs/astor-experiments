@@ -1,0 +1,10 @@
+--- /local/scr/mtufano/Math/40/b/similar-global-executables-embeddings/1/AstorMain-b/src/default/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	
++++ /local/scr/mtufano/Math/40/b/similar-global-executables-embeddings/1/AstorMain-b/src/variant-742/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java	
+@@ -131,6 +131,7 @@
+ 					if ((signChangeIndex - start) >= (end - signChangeIndex)) {
+ 						++start;
+ 					}else {
++						x[1] = getStartValue();
+ 						--end;
+ 					}
+ 					nextX = java.lang.Double.NaN;

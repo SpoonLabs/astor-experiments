@@ -1,0 +1,11 @@
+--- /local/scr/mtufano/Lang/27/b/similar-package-executables-embeddings/1/AstorMain-b/src/default/org/apache/commons/lang3/math/NumberUtils.java	
++++ /local/scr/mtufano/Lang/27/b/similar-package-executables-embeddings/1/AstorMain-b/src/variant-2650/org/apache/commons/lang3/math/NumberUtils.java	
+@@ -165,7 +165,7 @@
+ 			mant = str.substring(0, decPos);
+ 		}else {
+ 			if (expPos > (-1)) {
+-				mant = str.substring(0, expPos);
++				mant = str;
+ 			}else {
+ 				mant = str;
+ 			}

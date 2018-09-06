@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "f0 = computeObjectiveValue(x0)",
+    "diffpatch": "--- /local/scr/mtufano/Math/50/b/similar-local-types-embeddings/2/AstorMain-b/src/default/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java\t\n+++ /local/scr/mtufano/Math/50/b/similar-local-types-embeddings/2/AstorMain-b/src/variant-3190/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java\t\n@@ -79,7 +79,7 @@\n \t\t\t\t\tcase REGULA_FALSI :\n \t\t\t\t\t\tif (x == x1) {\n \t\t\t\t\t\t\tx0 = 0.5 * ((x0 + x1) - (org.apache.commons.math.util.FastMath.max((rtol * (org.apache.commons.math.util.FastMath.abs(x1))), atol)));\n-\t\t\t\t\t\t\tf0 = computeObjectiveValue(x0);\n+\t\t\t\t\t\t\tf0 = f1;\n \t\t\t\t\t\t}\n \t\t\t\t\t\tbreak;\n \t\t\t\t\tdefault :",
+    "generation": 3189,
+    "ingredients": null,
+    "patch": "f0 = f1",
+    "patchLocation": {
+        "className": "org.apache.commons.math.analysis.solvers.BaseSecantSolver",
+        "line": 189,
+        "lineSuspiciousness": 1.0
+    },
+    "scope": "LOCAL",
+    "time": "2257",
+    "type": "ReplaceOp",
+    "variant": 3190
+}

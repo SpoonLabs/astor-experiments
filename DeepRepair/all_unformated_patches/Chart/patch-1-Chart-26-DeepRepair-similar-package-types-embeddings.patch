@@ -1,0 +1,49 @@
+--- /local/scr/mtufano/Chart/26/b/similar-package-types-embeddings/1/AstorMain-b/src/default/org/jfree/chart/block/AbstractBlock.java	
++++ /local/scr/mtufano/Chart/26/b/similar-package-types-embeddings/1/AstorMain-b/src/variant-2325/org/jfree/chart/block/AbstractBlock.java	
+@@ -127,7 +127,7 @@
+ 		double result = org.jfree.chart.block.AbstractBlock.this.margin.trimWidth(fixedWidth);
+ 		result = org.jfree.chart.block.AbstractBlock.this.frame.getInsets().trimWidth(result);
+ 		result = org.jfree.chart.block.AbstractBlock.this.padding.trimWidth(result);
+-		return java.lang.Math.max(result, 0.0);
++		return org.jfree.chart.block.AbstractBlock.this.width;
+ 	}
+ 
+ 	protected double trimToContentHeight(double fixedHeight) {
+
+--- /local/scr/mtufano/Chart/26/b/similar-package-types-embeddings/1/AstorMain-b/src/default/org/jfree/chart/axis/AxisCollection.java	
++++ /local/scr/mtufano/Chart/26/b/similar-package-types-embeddings/1/AstorMain-b/src/variant-2325/org/jfree/chart/axis/AxisCollection.java	
+@@ -42,21 +42,9 @@
+ 		if (edge == null) {
+ 			throw new java.lang.IllegalArgumentException("Null 'edge' argument.");
+ 		}
+-		if (edge == (org.jfree.chart.util.RectangleEdge.TOP)) {
+-			org.jfree.chart.axis.AxisCollection.this.axesAtTop.add(axis);
+-		}else
+-			if (edge == (org.jfree.chart.util.RectangleEdge.BOTTOM)) {
+-				org.jfree.chart.axis.AxisCollection.this.axesAtBottom.add(axis);
+-			}else
+-				if (edge == (org.jfree.chart.util.RectangleEdge.LEFT)) {
+-					org.jfree.chart.axis.AxisCollection.this.axesAtLeft.add(axis);
+-				}else
+-					if (edge == (org.jfree.chart.util.RectangleEdge.RIGHT)) {
+-						org.jfree.chart.axis.AxisCollection.this.axesAtRight.add(axis);
++		if (axis == null) {
++			throw new java.lang.IllegalArgumentException("Null 'axis' argument.");
+ 					}
+-				
+-			
+-		
+ 	}
+ }
+ 
+
+--- /local/scr/mtufano/Chart/26/b/similar-package-types-embeddings/1/AstorMain-b/src/default/org/jfree/chart/text/TextUtilities.java	
++++ /local/scr/mtufano/Chart/26/b/similar-package-types-embeddings/1/AstorMain-b/src/variant-2325/org/jfree/chart/text/TextUtilities.java	
+@@ -297,6 +297,7 @@
+ 		java.awt.geom.Rectangle2D bounds = org.jfree.chart.text.TextUtilities.getTextBounds(text, g2, fm);
+ 		float ascent = metrics.getAscent();
+ 		float halfAscent = ascent / 2.0F;
++		boolean isJava14 = org.jfree.chart.util.ObjectUtilities.isJDK14();
+ 		float descent = metrics.getDescent();
+ 		float leading = metrics.getLeading();
+ 		float xAdj = 0.0F;

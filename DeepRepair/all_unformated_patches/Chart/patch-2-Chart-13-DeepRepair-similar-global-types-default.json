@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "lowerBound = trimToContentWidth(r.getLowerBound())\nfixed statement= org.jfree.chart.block.AbstractBlock.this.id = null\ngeneration= 1\ningredientScope= LOCAL\noperation: ReplaceOp\nlocation= org.jfree.chart.block.BorderArrangement\nline= 323\nlineSuspiciousness= 1\noriginal statement= return arrange(container, g2, new org.jfree.chart.block.RectangleConstraint(width, height))",
+    "diffpatch": "--- /local/scr/mtufano/Chart/13/b/similar-global-types-default/3/AstorMain-b/src/default/org/jfree/chart/block/AbstractBlock.java\t\n+++ /local/scr/mtufano/Chart/13/b/similar-global-types-default/3/AstorMain-b/src/variant-90/org/jfree/chart/block/AbstractBlock.java\t\n@@ -162,7 +162,7 @@\n \t\tdouble lowerBound = 0.0;\n \t\tdouble upperBound = java.lang.Double.POSITIVE_INFINITY;\n \t\tif ((r.getLowerBound()) > 0.0) {\n-\t\t\tlowerBound = trimToContentWidth(r.getLowerBound());\n+\t\t\torg.jfree.chart.block.AbstractBlock.this.id = null;\n \t\t}\n \t\tif ((r.getUpperBound()) < (java.lang.Double.POSITIVE_INFINITY)) {\n \t\t\tupperBound = trimToContentWidth(r.getUpperBound());\n\n--- /local/scr/mtufano/Chart/13/b/similar-global-types-default/3/AstorMain-b/src/default/org/jfree/chart/block/BorderArrangement.java\t\n+++ /local/scr/mtufano/Chart/13/b/similar-global-types-default/3/AstorMain-b/src/variant-90/org/jfree/chart/block/BorderArrangement.java\t\n@@ -189,7 +189,7 @@\n \t\t\th[4] = size.height;\n \t\t}\n \t\tdouble height = ((h[0]) + (h[1])) + (java.lang.Math.max(h[2], java.lang.Math.max(h[3], h[4])));\n-\t\treturn arrange(container, g2, new org.jfree.chart.block.RectangleConstraint(width, height));\n+\t\treturn new org.jfree.chart.util.Size2D(width, height);\n \t}\n \n \tprotected org.jfree.chart.util.Size2D arrangeRR(org.jfree.chart.block.BlockContainer container, org.jfree.data.Range widthRange, org.jfree.data.Range heightRange, java.awt.Graphics2D g2) {",
+    "generation": 1,
+    "ingredients": null,
+    "patch": "org.jfree.chart.block.AbstractBlock.this.id = null\ngeneration= 1\ningredientScope= LOCAL\noperation: ReplaceOp\nlocation= org.jfree.chart.block.BorderArrangement\nline= 323\nlineSuspiciousness= 1\noriginal statement= return arrange(container, g2, new org.jfree.chart.block.RectangleConstraint(width, height))\nfixed statement= return new org.jfree.chart.util.Size2D(width, height)",
+    "patchLocation": {
+        "className": "org.jfree.chart.block.AbstractBlock",
+        "line": 443,
+        "lineSuspiciousness": 1.0
+    },
+    "scope": "LOCAL",
+    "time": "185",
+    "type": "ReplaceOp",
+    "variant": 90
+}

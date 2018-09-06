@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "if ((yInitial * yMin) < 0) {\n\treturn solve(f, min, yMin, initial, yInitial, min, yMin);\n}",
+    "diffpatch": "--- /local/scr/mtufano/Math/73/b/similar-global-executables-embeddings/3/AstorMain-b/src/default/org/apache/commons/math/analysis/solvers/BrentSolver.java\t\n+++ /local/scr/mtufano/Math/73/b/similar-global-executables-embeddings/3/AstorMain-b/src/variant-1196/org/apache/commons/math/analysis/solvers/BrentSolver.java\t\n@@ -40,6 +40,7 @@\n \t\t\tsetResult(yMin, 0);\n \t\t\treturn result;\n \t\t}\n+\t\tverifyBracketing(min, max, f);\n \t\tif ((yInitial * yMin) < 0) {\n \t\t\treturn solve(f, min, yMin, initial, yInitial, min, yMin);\n \t\t}",
+    "generation": 1195,
+    "ingredients": null,
+    "patch": "verifyBracketing(min, max, f)",
+    "patchLocation": {
+        "className": "org.apache.commons.math.analysis.solvers.BrentSolver",
+        "line": 120,
+        "lineSuspiciousness": 0.707
+    },
+    "scope": "PACKAGE",
+    "time": "1864",
+    "type": "InsertBeforeOp",
+    "variant": 1196
+}

@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "return solve(f, min, yMin, max, yMax, initial, yInitial)",
+    "diffpatch": "--- /local/scr/mtufano/Math/73/b/similar-global-executables-embeddings/1/AstorMain-b/src/default/org/apache/commons/math/analysis/solvers/BrentSolver.java\t\n+++ /local/scr/mtufano/Math/73/b/similar-global-executables-embeddings/1/AstorMain-b/src/variant-1254/org/apache/commons/math/analysis/solvers/BrentSolver.java\t\n@@ -51,6 +51,7 @@\n \t\tif ((yInitial * yMax) < 0) {\n \t\t\treturn solve(f, initial, yInitial, max, yMax, initial, yInitial);\n \t\t}\n+\t\tverifyBracketing(min, max, f);\n \t\treturn solve(f, min, yMin, max, yMax, initial, yInitial);\n \t}",
+    "generation": 1253,
+    "ingredients": null,
+    "patch": "verifyBracketing(min, max, f)",
+    "patchLocation": {
+        "className": "org.apache.commons.math.analysis.solvers.BrentSolver",
+        "line": 138,
+        "lineSuspiciousness": 1.0
+    },
+    "scope": "PACKAGE",
+    "time": "1942",
+    "type": "InsertBeforeOp",
+    "variant": 1254
+}

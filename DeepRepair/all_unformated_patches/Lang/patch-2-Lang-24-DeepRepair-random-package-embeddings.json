@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "if ((!allowSigns) && (((((chars[i]) == 'd') || ((chars[i]) == 'D')) || ((chars[i]) == 'f')) || ((chars[i]) == 'F'))) {\n\treturn foundDigit;\n}",
+    "diffpatch": "--- /local/scr/mtufano/Lang/24/b/random-package-embeddings/2/AstorMain-b/src/default/org/apache/commons/lang3/math/NumberUtils.java\t\n+++ /local/scr/mtufano/Lang/24/b/random-package-embeddings/2/AstorMain-b/src/variant-1087/org/apache/commons/lang3/math/NumberUtils.java\t\n@@ -714,6 +714,9 @@\n \t\t\tif ((!allowSigns) && (((((chars[i]) == 'd') || ((chars[i]) == 'D')) || ((chars[i]) == 'f')) || ((chars[i]) == 'F'))) {\n \t\t\t\treturn foundDigit;\n \t\t\t}\n+\t\t\tif (hasDecPoint || hasExp) {\n+\t\t\t\treturn false;\n+\t\t\t}\n \t\t\tif (((chars[i]) == 'l') || ((chars[i]) == 'L')) {\n \t\t\t\treturn foundDigit && (!hasExp);\n \t\t\t}",
+    "generation": 1086,
+    "ingredients": null,
+    "patch": "if (hasDecPoint || hasExp) {\n\treturn false;\n}",
+    "patchLocation": {
+        "className": "org.apache.commons.lang3.math.NumberUtils",
+        "line": 1403,
+        "lineSuspiciousness": 1.0
+    },
+    "scope": "LOCAL",
+    "time": "195",
+    "type": "InsertAfterOp",
+    "variant": 1087
+}

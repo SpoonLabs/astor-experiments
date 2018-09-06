@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "if ((work[(np - 4)]) > (work[(np - 2)])) {\n\treturn ;\n}\nfixed statement= eMin = work[(((4 * start) + (pingPong)) + 4)]\ngeneration= 2\ningredientScope= LOCAL\noperation: InsertBeforeOp\nlocation= org.apache.commons.math.linear.EigenDecompositionImpl\nline= 1163\nlineSuspiciousness= 0.243\noriginal statement= lower = java.lang.Math.min(lower, work[((lowerStart + index) + i)])",
+    "diffpatch": "--- /local/scr/mtufano/Math/80/b/random-local-embeddings/2/AstorMain-b/src/default/org/apache/commons/math/linear/EigenDecompositionImpl.java\t\n+++ /local/scr/mtufano/Math/80/b/random-local-embeddings/2/AstorMain-b/src/variant-424/org/apache/commons/math/linear/EigenDecompositionImpl.java\t\n@@ -694,6 +694,7 @@\n \t\tdouble lower = java.lang.Double.POSITIVE_INFINITY;\n \t\tdouble upper = java.lang.Double.NEGATIVE_INFINITY;\n \t\tfor (int i = 0; i < n; ++i) {\n+\t\t\tpingPong = n / 4;\n \t\t\tlower = java.lang.Math.min(lower, work[((lowerStart + index) + i)]);\n \t\t\tupper = java.lang.Math.max(upper, work[((upperStart + index) + i)]);\n \t\t}\n@@ -948,6 +949,7 @@\n \t\t\t\t\t\t\tif ((work[(np - 4)]) > (work[(np - 2)])) {\n \t\t\t\t\t\t\t\treturn ;\n \t\t\t\t\t\t\t}\n+\t\t\t\t\t\t\teMin = work[(((4 * start) + (pingPong)) + 4)];\n \t\t\t\t\t\t\ta2 = (work[(np - 4)]) / (work[(np - 2)]);\n \t\t\t\t\t\t\tif ((work[(nn - 9)]) > (work[(nn - 11)])) {\n \t\t\t\t\t\t\t\treturn ;\n\n--- /local/scr/mtufano/Math/80/b/random-local-embeddings/2/AstorMain-b/src/default/org/apache/commons/math/linear/EigenDecompositionImpl.java\t\n+++ /local/scr/mtufano/Math/80/b/random-local-embeddings/2/AstorMain-b/src/variant-424/org/apache/commons/math/linear/EigenDecompositionImpl.java\t\n@@ -694,6 +694,7 @@\n \t\tdouble lower = java.lang.Double.POSITIVE_INFINITY;\n \t\tdouble upper = java.lang.Double.NEGATIVE_INFINITY;\n \t\tfor (int i = 0; i < n; ++i) {\n+\t\t\tpingPong = n / 4;\n \t\t\tlower = java.lang.Math.min(lower, work[((lowerStart + index) + i)]);\n \t\t\tupper = java.lang.Math.max(upper, work[((upperStart + index) + i)]);\n \t\t}\n@@ -948,6 +949,7 @@\n \t\t\t\t\t\t\tif ((work[(np - 4)]) > (work[(np - 2)])) {\n \t\t\t\t\t\t\t\treturn ;\n \t\t\t\t\t\t\t}\n+\t\t\t\t\t\t\teMin = work[(((4 * start) + (pingPong)) + 4)];\n \t\t\t\t\t\t\ta2 = (work[(np - 4)]) / (work[(np - 2)]);\n \t\t\t\t\t\t\tif ((work[(nn - 9)]) > (work[(nn - 11)])) {\n \t\t\t\t\t\t\t\treturn ;",
+    "generation": 2,
+    "ingredients": null,
+    "patch": "eMin = work[(((4 * start) + (pingPong)) + 4)]\ngeneration= 2\ningredientScope= LOCAL\noperation: InsertBeforeOp\nlocation= org.apache.commons.math.linear.EigenDecompositionImpl\nline= 1163\nlineSuspiciousness= 0.243\noriginal statement= lower = java.lang.Math.min(lower, work[((lowerStart + index) + i)])\nfixed statement= pingPong = n / 4",
+    "patchLocation": {
+        "className": "org.apache.commons.math.linear.EigenDecompositionImpl",
+        "line": 1491,
+        "lineSuspiciousness": 0.333
+    },
+    "scope": "LOCAL",
+    "time": "1359",
+    "type": "InsertAfterOp",
+    "variant": 424
+}

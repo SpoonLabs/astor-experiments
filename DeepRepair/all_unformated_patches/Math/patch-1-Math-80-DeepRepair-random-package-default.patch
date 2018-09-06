@@ -1,0 +1,24 @@
+--- /local/scr/mtufano/Math/80/b/random-package-default/1/AstorMain-b/src/default/org/apache/commons/math/linear/EigenDecompositionImpl.java	
++++ /local/scr/mtufano/Math/80/b/random-package-default/1/AstorMain-b/src/variant-74/org/apache/commons/math/linear/EigenDecompositionImpl.java	
+@@ -673,17 +673,10 @@
+ 	}
+ 
+ 	private boolean flipIfWarranted(final int n, final int step) {
+-		if ((1.5 * (work[pingPong])) < (work[((4 * (n - 1)) + (pingPong))])) {
+-			int j = (4 * n) - 1;
+-			for (int i = 0; i < j; i += 4) {
+-				for (int k = 0; k < 4; k += step) {
+-					final double tmp = work[(i + k)];
+-					work[(i + k)] = work[(j - k)];
+-					work[(j - k)] = tmp;
+-				}
+-				j -= 4;
+-			}
+-			return true;
++		if ((tType) == (-18)) {
++			g = 0.25 * 0.333;
++		}else {
++			g = 0.25;
+ 		}
+ 		return false;
+ 	}

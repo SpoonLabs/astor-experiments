@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "oldDelta = delta",
+    "diffpatch": "--- /local/scr/mtufano/Math/78/b/random-global-embeddings/2/AstorMain-b/src/default/org/apache/commons/math/analysis/solvers/BrentSolver.java\t\n+++ /local/scr/mtufano/Math/78/b/random-global-embeddings/2/AstorMain-b/src/variant-270/org/apache/commons/math/analysis/solvers/BrentSolver.java\t\n@@ -132,6 +132,7 @@\n \t\t\t\tif (((2.0 * p) >= (((1.5 * dx) * p1) - (java.lang.Math.abs((tolerance * p1))))) || (p >= (java.lang.Math.abs(((0.5 * oldDelta) * p1))))) {\n \t\t\t\t\tdelta = 0.5 * dx;\n \t\t\t\t\toldDelta = delta;\n+\t\t\t\t\tabsoluteAccuracy = defaultAbsoluteAccuracy;\n \t\t\t\t}else {\n \t\t\t\t\toldDelta = delta;\n \t\t\t\t\tdelta = p / p1;",
+    "generation": 269,
+    "ingredients": null,
+    "patch": "absoluteAccuracy = defaultAbsoluteAccuracy",
+    "patchLocation": {
+        "className": "org.apache.commons.math.analysis.solvers.BrentSolver",
+        "line": 283,
+        "lineSuspiciousness": 1.0
+    },
+    "scope": "GLOBAL",
+    "time": "162",
+    "type": "InsertAfterOp",
+    "variant": 270
+}

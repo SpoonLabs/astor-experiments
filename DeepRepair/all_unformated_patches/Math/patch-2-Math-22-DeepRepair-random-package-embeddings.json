@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "return false\nfixed statement= return true\ngeneration= 410\ningredientScope= LOCAL\noperation: ReplaceOp\nlocation= org.apache.commons.math3.distribution.FDistribution\nline= 258\nlineSuspiciousness= 0.267\noriginal statement= return 0",
+    "diffpatch": "--- /local/scr/mtufano/Math/22/b/random-package-embeddings/2/AstorMain-b/src/default/org/apache/commons/math3/distribution/FDistribution.java\t\n+++ /local/scr/mtufano/Math/22/b/random-package-embeddings/2/AstorMain-b/src/variant-462/org/apache/commons/math3/distribution/FDistribution.java\t\n@@ -101,7 +101,7 @@\n \t}\n \n \tpublic double getSupportLowerBound() {\n-\t\treturn 0;\n+\t\treturn ((org.apache.commons.math3.distribution.AbstractRealDistribution.SOLVER_DEFAULT_ABSOLUTE_ACCURACY) * (org.apache.commons.math3.distribution.AbstractRealDistribution.SOLVER_DEFAULT_ABSOLUTE_ACCURACY)) / 12;\n \t}\n \n \tpublic double getSupportUpperBound() {\n\n--- /local/scr/mtufano/Math/22/b/random-package-embeddings/2/AstorMain-b/src/default/org/apache/commons/math3/distribution/UniformRealDistribution.java\t\n+++ /local/scr/mtufano/Math/22/b/random-package-embeddings/2/AstorMain-b/src/variant-462/org/apache/commons/math3/distribution/UniformRealDistribution.java\t\n@@ -80,7 +80,7 @@\n \t}\n \n \tpublic boolean isSupportUpperBoundInclusive() {\n-\t\treturn false;\n+\t\treturn true;\n \t}\n \n \tpublic boolean isSupportConnected() {",
+    "generation": 410,
+    "ingredients": null,
+    "patch": "return true\ngeneration= 410\ningredientScope= LOCAL\noperation: ReplaceOp\nlocation= org.apache.commons.math3.distribution.FDistribution\nline= 258\nlineSuspiciousness= 0.267\noriginal statement= return 0\nfixed statement= return ((org.apache.commons.math3.distribution.AbstractRealDistribution.SOLVER_DEFAULT_ABSOLUTE_ACCURACY) * (org.apache.commons.math3.distribution.AbstractRealDistribution.SOLVER_DEFAULT_ABSOLUTE_ACCURACY)) / 12",
+    "patchLocation": {
+        "className": "org.apache.commons.math3.distribution.UniformRealDistribution",
+        "line": 184,
+        "lineSuspiciousness": 0.707
+    },
+    "scope": "LOCAL",
+    "time": "1423",
+    "type": "ReplaceOp",
+    "variant": 462
+}

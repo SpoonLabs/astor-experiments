@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "if (org.jfree.data.xy.XYSeries.this.autoSort) {\n\torg.jfree.data.xy.XYSeries.this.data.add(((-index) - 1), new org.jfree.data.xy.XYDataItem(x, y));\n}else {\n\torg.jfree.data.xy.XYSeries.this.data.add(new org.jfree.data.xy.XYDataItem(x, y));\n}\nfixed statement= org.jfree.data.xy.XYSeries.this.autoSort = autoSort\ngeneration= 26\ningredientScope= LOCAL\noperation: ReplaceOp\nlocation= org.jfree.data.xy.XYSeries\nline= 564\nlineSuspiciousness= 0.707\noriginal statement= org.jfree.data.xy.XYSeries.this.data.add(((-index) - 1), new org.jfree.data.xy.XYDataItem(x, y))",
+    "diffpatch": "--- /local/scr/mtufano/Chart/5/b/similar-global-types-embeddings/2/AstorMain-b/src/default/org/jfree/data/xy/XYSeries.java\t\n+++ /local/scr/mtufano/Chart/5/b/similar-global-types-embeddings/2/AstorMain-b/src/variant-77/org/jfree/data/xy/XYSeries.java\t\n@@ -202,8 +202,9 @@\n \t\t\t}\n \t\t\texisting.setY(y);\n \t\t}else {\n+\t\t\torg.jfree.data.xy.XYSeries.this.autoSort = autoSort;\n \t\t\tif (org.jfree.data.xy.XYSeries.this.autoSort) {\n-\t\t\t\torg.jfree.data.xy.XYSeries.this.data.add(((-index) - 1), new org.jfree.data.xy.XYDataItem(x, y));\n+\t\t\t\tadd(x, y, true);\n \t\t\t}else {\n \t\t\t\torg.jfree.data.xy.XYSeries.this.data.add(new org.jfree.data.xy.XYDataItem(x, y));\n \t\t\t}\n\n--- /local/scr/mtufano/Chart/5/b/similar-global-types-embeddings/2/AstorMain-b/src/default/org/jfree/data/xy/XYSeries.java\t\n+++ /local/scr/mtufano/Chart/5/b/similar-global-types-embeddings/2/AstorMain-b/src/variant-77/org/jfree/data/xy/XYSeries.java\t\n@@ -202,8 +202,9 @@\n \t\t\t}\n \t\t\texisting.setY(y);\n \t\t}else {\n+\t\t\torg.jfree.data.xy.XYSeries.this.autoSort = autoSort;\n \t\t\tif (org.jfree.data.xy.XYSeries.this.autoSort) {\n-\t\t\t\torg.jfree.data.xy.XYSeries.this.data.add(((-index) - 1), new org.jfree.data.xy.XYDataItem(x, y));\n+\t\t\t\tadd(x, y, true);\n \t\t\t}else {\n \t\t\t\torg.jfree.data.xy.XYSeries.this.data.add(new org.jfree.data.xy.XYDataItem(x, y));\n \t\t\t}",
+    "generation": 26,
+    "ingredients": null,
+    "patch": "org.jfree.data.xy.XYSeries.this.autoSort = autoSort\ngeneration= 26\ningredientScope= LOCAL\noperation: ReplaceOp\nlocation= org.jfree.data.xy.XYSeries\nline= 564\nlineSuspiciousness= 0.707\noriginal statement= org.jfree.data.xy.XYSeries.this.data.add(((-index) - 1), new org.jfree.data.xy.XYDataItem(x, y))\nfixed statement= add(x, y, true)",
+    "patchLocation": {
+        "className": "org.jfree.data.xy.XYSeries",
+        "line": 563,
+        "lineSuspiciousness": 0.577
+    },
+    "scope": "LOCAL",
+    "time": "154",
+    "type": "InsertBeforeOp",
+    "variant": 77
+}

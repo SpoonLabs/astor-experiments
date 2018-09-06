@@ -1,0 +1,36 @@
+--- /local/scr/mtufano/Chart/3/b/random-global-default/2/AstorMain-b/src/default/org/jfree/data/time/TimeSeries.java	
++++ /local/scr/mtufano/Chart/3/b/random-global-default/2/AstorMain-b/src/variant-120/org/jfree/data/time/TimeSeries.java	
+@@ -188,6 +188,7 @@
+ 
+ 	public void add(org.jfree.data.time.TimeSeriesDataItem item) {
+ 		add(item, true);
++		org.jfree.data.time.TimeSeriesDataItem oldItem = addOrUpdate(item.getPeriod(), item.getValue());
+ 	}
+ 
+ 	public void add(org.jfree.data.time.TimeSeriesDataItem item, boolean notify) {
+@@ -256,6 +257,7 @@
+ 
+ 	public void add(org.jfree.data.time.RegularTimePeriod period, double value, boolean notify) {
+ 		org.jfree.data.time.TimeSeriesDataItem item = new org.jfree.data.time.TimeSeriesDataItem(period, value);
++		java.lang.StringBuffer b = new java.lang.StringBuffer();
+ 		add(item, notify);
+ 	}
+ 
+
+--- /local/scr/mtufano/Chart/3/b/random-global-default/2/AstorMain-b/src/default/org/jfree/data/time/TimeSeries.java	
++++ /local/scr/mtufano/Chart/3/b/random-global-default/2/AstorMain-b/src/variant-120/org/jfree/data/time/TimeSeries.java	
+@@ -188,6 +188,7 @@
+ 
+ 	public void add(org.jfree.data.time.TimeSeriesDataItem item) {
+ 		add(item, true);
++		org.jfree.data.time.TimeSeriesDataItem oldItem = addOrUpdate(item.getPeriod(), item.getValue());
+ 	}
+ 
+ 	public void add(org.jfree.data.time.TimeSeriesDataItem item, boolean notify) {
+@@ -256,6 +257,7 @@
+ 
+ 	public void add(org.jfree.data.time.RegularTimePeriod period, double value, boolean notify) {
+ 		org.jfree.data.time.TimeSeriesDataItem item = new org.jfree.data.time.TimeSeriesDataItem(period, value);
++		java.lang.StringBuffer b = new java.lang.StringBuffer();
+ 		add(item, notify);
+ 	}

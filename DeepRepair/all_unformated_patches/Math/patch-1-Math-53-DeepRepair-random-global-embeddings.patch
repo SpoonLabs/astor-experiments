@@ -1,0 +1,27 @@
+--- /local/scr/mtufano/Math/53/b/random-global-embeddings/1/AstorMain-b/src/default/org/apache/commons/math/complex/Complex.java	
++++ /local/scr/mtufano/Math/53/b/random-global-embeddings/1/AstorMain-b/src/variant-475/org/apache/commons/math/complex/Complex.java	
+@@ -55,6 +55,10 @@
+ 	}
+ 
+ 	public org.apache.commons.math.complex.Complex add(org.apache.commons.math.complex.Complex rhs) throws org.apache.commons.math.exception.NullArgumentException {
++		double x1max = 0;
++		if ((isNaN) || (rhs.isNaN)) {
++			return org.apache.commons.math.complex.Complex.NaN;
++		}
+ 		org.apache.commons.math.util.MathUtils.checkNotNull(rhs);
+ 		return createComplex(((real) + (rhs.getReal())), ((imaginary) + (rhs.getImaginary())));
+ 	}
+
+--- /local/scr/mtufano/Math/53/b/random-global-embeddings/1/AstorMain-b/src/default/org/apache/commons/math/complex/Complex.java	
++++ /local/scr/mtufano/Math/53/b/random-global-embeddings/1/AstorMain-b/src/variant-475/org/apache/commons/math/complex/Complex.java	
+@@ -55,6 +55,10 @@
+ 	}
+ 
+ 	public org.apache.commons.math.complex.Complex add(org.apache.commons.math.complex.Complex rhs) throws org.apache.commons.math.exception.NullArgumentException {
++		double x1max = 0;
++		if ((isNaN) || (rhs.isNaN)) {
++			return org.apache.commons.math.complex.Complex.NaN;
++		}
+ 		org.apache.commons.math.util.MathUtils.checkNotNull(rhs);
+ 		return createComplex(((real) + (rhs.getReal())), ((imaginary) + (rhs.getImaginary())));
+ 	}

@@ -1,0 +1,56 @@
+--- /local/scr/mtufano/Chart/25/b/random-package-embeddings/2/AstorMain-b/src/default/org/jfree/chart/axis/CategoryAxis.java	
++++ /local/scr/mtufano/Chart/25/b/random-package-embeddings/2/AstorMain-b/src/variant-40/org/jfree/chart/axis/CategoryAxis.java	
+@@ -442,6 +442,7 @@
+ 					}
+ 				
+ 				org.jfree.chart.axis.Tick tick = new org.jfree.chart.axis.CategoryTick(category, label, position.getLabelAnchor(), position.getRotationAnchor(), position.getAngle());
++				float labely = ((float) ((dataArea.getY()) + ((dataArea.getHeight()) / 2.0)));
+ 				ticks.add(tick);
+ 				categoryIndex = categoryIndex + 1;
+ 			} 
+
+--- /local/scr/mtufano/Chart/25/b/random-package-embeddings/2/AstorMain-b/src/default/org/jfree/chart/plot/CategoryPlot.java	
++++ /local/scr/mtufano/Chart/25/b/random-package-embeddings/2/AstorMain-b/src/variant-40/org/jfree/chart/plot/CategoryPlot.java	
+@@ -1330,39 +1330,9 @@
+ 		org.jfree.chart.axis.CategoryAxis domainAxis = getDomainAxisForDataset(index);
+ 		org.jfree.chart.axis.ValueAxis rangeAxis = getRangeAxisForDataset(index);
+ 		boolean hasData = !(org.jfree.data.general.DatasetUtilities.isEmptyOrNull(currentDataset));
+-		if (hasData && (renderer != null)) {
+-			foundData = true;
+-			org.jfree.chart.renderer.category.CategoryItemRendererState state = renderer.initialise(g2, dataArea, org.jfree.chart.plot.CategoryPlot.this, index, info);
+-			int columnCount = currentDataset.getColumnCount();
+-			int rowCount = currentDataset.getRowCount();
+-			int passCount = renderer.getPassCount();
+-			for (int pass = 0; pass < passCount; pass++) {
+-				if ((org.jfree.chart.plot.CategoryPlot.this.columnRenderingOrder) == (org.jfree.chart.util.SortOrder.ASCENDING)) {
+-					for (int column = 0; column < columnCount; column++) {
+-						if ((org.jfree.chart.plot.CategoryPlot.this.rowRenderingOrder) == (org.jfree.chart.util.SortOrder.ASCENDING)) {
+-							for (int row = 0; row < rowCount; row++) {
+-								renderer.drawItem(g2, state, dataArea, org.jfree.chart.plot.CategoryPlot.this, domainAxis, rangeAxis, currentDataset, row, column, pass);
+-							}
+-						}else {
+-							for (int row = rowCount - 1; row >= 0; row--) {
+-								renderer.drawItem(g2, state, dataArea, org.jfree.chart.plot.CategoryPlot.this, domainAxis, rangeAxis, currentDataset, row, column, pass);
+-							}
+-						}
+-					}
+-				}else {
+-					for (int column = columnCount - 1; column >= 0; column--) {
+-						if ((org.jfree.chart.plot.CategoryPlot.this.rowRenderingOrder) == (org.jfree.chart.util.SortOrder.ASCENDING)) {
+-							for (int row = 0; row < rowCount; row++) {
+-								renderer.drawItem(g2, state, dataArea, org.jfree.chart.plot.CategoryPlot.this, domainAxis, rangeAxis, currentDataset, row, column, pass);
+-							}
+-						}else {
+-							for (int row = rowCount - 1; row >= 0; row--) {
+-								renderer.drawItem(g2, state, dataArea, org.jfree.chart.plot.CategoryPlot.this, domainAxis, rangeAxis, currentDataset, row, column, pass);
+-							}
+-						}
+-					}
+-				}
+-			}
++		if (renderer != null) {
++			renderer.setPlot(org.jfree.chart.plot.CategoryPlot.this);
++			renderer.addChangeListener(org.jfree.chart.plot.CategoryPlot.this);
+ 		}
+ 		return foundData;
+ 	}

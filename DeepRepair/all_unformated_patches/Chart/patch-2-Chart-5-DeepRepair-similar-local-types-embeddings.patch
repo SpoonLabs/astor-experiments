@@ -1,0 +1,45 @@
+--- /local/scr/mtufano/Chart/5/b/similar-local-types-embeddings/3/AstorMain-b/src/default/org/jfree/data/xy/XYSeries.java	
++++ /local/scr/mtufano/Chart/5/b/similar-local-types-embeddings/3/AstorMain-b/src/variant-126/org/jfree/data/xy/XYSeries.java	
+@@ -188,8 +188,8 @@
+ 	}
+ 
+ 	public org.jfree.data.xy.XYDataItem addOrUpdate(java.lang.Number x, java.lang.Number y) {
+-		if (x == null) {
+-			throw new java.lang.IllegalArgumentException("Null 'x' argument.");
++		if ((getItemCount()) > (org.jfree.data.xy.XYSeries.this.maximumItemCount)) {
++			org.jfree.data.xy.XYSeries.this.data.remove(0);
+ 		}
+ 		org.jfree.data.xy.XYDataItem overwritten = null;
+ 		int index = indexOf(x);
+@@ -203,7 +203,7 @@
+ 			existing.setY(y);
+ 		}else {
+ 			if (org.jfree.data.xy.XYSeries.this.autoSort) {
+-				org.jfree.data.xy.XYSeries.this.data.add(((-index) - 1), new org.jfree.data.xy.XYDataItem(x, y));
++				add(x, y, true);
+ 			}else {
+ 				org.jfree.data.xy.XYSeries.this.data.add(new org.jfree.data.xy.XYDataItem(x, y));
+ 			}
+
+--- /local/scr/mtufano/Chart/5/b/similar-local-types-embeddings/3/AstorMain-b/src/default/org/jfree/data/xy/XYSeries.java	
++++ /local/scr/mtufano/Chart/5/b/similar-local-types-embeddings/3/AstorMain-b/src/variant-126/org/jfree/data/xy/XYSeries.java	
+@@ -188,8 +188,8 @@
+ 	}
+ 
+ 	public org.jfree.data.xy.XYDataItem addOrUpdate(java.lang.Number x, java.lang.Number y) {
+-		if (x == null) {
+-			throw new java.lang.IllegalArgumentException("Null 'x' argument.");
++		if ((getItemCount()) > (org.jfree.data.xy.XYSeries.this.maximumItemCount)) {
++			org.jfree.data.xy.XYSeries.this.data.remove(0);
+ 		}
+ 		org.jfree.data.xy.XYDataItem overwritten = null;
+ 		int index = indexOf(x);
+@@ -203,7 +203,7 @@
+ 			existing.setY(y);
+ 		}else {
+ 			if (org.jfree.data.xy.XYSeries.this.autoSort) {
+-				org.jfree.data.xy.XYSeries.this.data.add(((-index) - 1), new org.jfree.data.xy.XYDataItem(x, y));
++				add(x, y, true);
+ 			}else {
+ 				org.jfree.data.xy.XYSeries.this.data.add(new org.jfree.data.xy.XYDataItem(x, y));
+ 			}

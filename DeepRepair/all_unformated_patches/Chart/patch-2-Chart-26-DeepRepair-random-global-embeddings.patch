@@ -1,0 +1,36 @@
+--- /local/scr/mtufano/Chart/26/b/random-global-embeddings/3/AstorMain-b/src/default/org/jfree/chart/axis/Axis.java	
++++ /local/scr/mtufano/Chart/26/b/random-global-embeddings/3/AstorMain-b/src/variant-218/org/jfree/chart/axis/Axis.java	
+@@ -138,6 +138,7 @@
+ 	}
+ 
+ 	public java.awt.Font getLabelFont() {
++		java.awt.geom.Line2D line = null;
+ 		return org.jfree.chart.axis.Axis.this.labelFont;
+ 	}
+ 
+
+--- /local/scr/mtufano/Chart/26/b/random-global-embeddings/3/AstorMain-b/src/default/org/jfree/chart/axis/AxisCollection.java	
++++ /local/scr/mtufano/Chart/26/b/random-global-embeddings/3/AstorMain-b/src/variant-218/org/jfree/chart/axis/AxisCollection.java	
+@@ -42,21 +42,9 @@
+ 		if (edge == null) {
+ 			throw new java.lang.IllegalArgumentException("Null 'edge' argument.");
+ 		}
+-		if (edge == (org.jfree.chart.util.RectangleEdge.TOP)) {
+-			org.jfree.chart.axis.AxisCollection.this.axesAtTop.add(axis);
+-		}else
+-			if (edge == (org.jfree.chart.util.RectangleEdge.BOTTOM)) {
+-				org.jfree.chart.axis.AxisCollection.this.axesAtBottom.add(axis);
+-			}else
+-				if (edge == (org.jfree.chart.util.RectangleEdge.LEFT)) {
+-					org.jfree.chart.axis.AxisCollection.this.axesAtLeft.add(axis);
+-				}else
+-					if (edge == (org.jfree.chart.util.RectangleEdge.RIGHT)) {
+-						org.jfree.chart.axis.AxisCollection.this.axesAtRight.add(axis);
++		if (edge == null) {
++			throw new java.lang.IllegalArgumentException("Null 'edge' argument.");
+ 					}
+-				
+-			
+-		
+ 	}
+ }

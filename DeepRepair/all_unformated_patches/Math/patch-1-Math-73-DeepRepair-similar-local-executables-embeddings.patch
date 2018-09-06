@@ -1,0 +1,11 @@
+--- /local/scr/mtufano/Math/73/b/similar-local-executables-embeddings/1/AstorMain-b/src/default/org/apache/commons/math/analysis/solvers/BrentSolver.java	
++++ /local/scr/mtufano/Math/73/b/similar-local-executables-embeddings/1/AstorMain-b/src/variant-415/org/apache/commons/math/analysis/solvers/BrentSolver.java	
+@@ -51,7 +51,7 @@
+ 		if ((yInitial * yMax) < 0) {
+ 			return solve(f, initial, yInitial, max, yMax, initial, yInitial);
+ 		}
+-		return solve(f, min, yMin, max, yMax, initial, yInitial);
++		return solve(f, min, max);
+ 	}
+ 
+ 	public double solve(final org.apache.commons.math.analysis.UnivariateRealFunction f, final double min, final double max) throws org.apache.commons.math.FunctionEvaluationException, org.apache.commons.math.MaxIterationsExceededException {

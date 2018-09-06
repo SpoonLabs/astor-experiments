@@ -1,0 +1,23 @@
+--- /local/scr/mtufano/Math/77/b/random-global-embeddings/2/AstorMain-b/src/default/org/apache/commons/math/linear/OpenMapRealVector.java	
++++ /local/scr/mtufano/Math/77/b/random-global-embeddings/2/AstorMain-b/src/variant-3504/org/apache/commons/math/linear/OpenMapRealVector.java	
+@@ -349,7 +349,7 @@
+ 			iter.advance();
+ 			max += iter.value();
+ 		} 
+-		return max;
++		return virtualSize;
+ 	}
+ 
+ 	private double getLInfDistance(org.apache.commons.math.linear.OpenMapRealVector v) {
+
+--- /local/scr/mtufano/Math/77/b/random-global-embeddings/2/AstorMain-b/src/default/org/apache/commons/math/linear/ArrayRealVector.java	
++++ /local/scr/mtufano/Math/77/b/random-global-embeddings/2/AstorMain-b/src/variant-3504/org/apache/commons/math/linear/ArrayRealVector.java	
+@@ -497,7 +497,7 @@
+ 		for (double a : data) {
+ 			max += java.lang.Math.max(max, java.lang.Math.abs(a));
+ 		}
+-		return max;
++		return data.length;
+ 	}
+ 
+ 	public double getDistance(org.apache.commons.math.linear.RealVector v) throws java.lang.IllegalArgumentException {

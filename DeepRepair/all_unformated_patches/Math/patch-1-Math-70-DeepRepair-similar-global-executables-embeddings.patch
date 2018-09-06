@@ -1,0 +1,11 @@
+--- /local/scr/mtufano/Math/70/b/similar-global-executables-embeddings/1/AstorMain-b/src/default/org/apache/commons/math/analysis/solvers/BisectionSolver.java	
++++ /local/scr/mtufano/Math/70/b/similar-global-executables-embeddings/1/AstorMain-b/src/variant-13/org/apache/commons/math/analysis/solvers/BisectionSolver.java	
+@@ -24,7 +24,7 @@
+ 	}
+ 
+ 	public double solve(final org.apache.commons.math.analysis.UnivariateRealFunction f, double min, double max, double initial) throws org.apache.commons.math.FunctionEvaluationException, org.apache.commons.math.MaxIterationsExceededException {
+-		return solve(min, max);
++		return solve(f, min, max);
+ 	}
+ 
+ 	public double solve(final org.apache.commons.math.analysis.UnivariateRealFunction f, double min, double max) throws org.apache.commons.math.FunctionEvaluationException, org.apache.commons.math.MaxIterationsExceededException {

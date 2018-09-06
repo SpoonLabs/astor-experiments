@@ -1,0 +1,22 @@
+--- /local/scr/mtufano/Math/77/b/random-local-embeddings/3/AstorMain-b/src/default/org/apache/commons/math/linear/OpenMapRealVector.java	
++++ /local/scr/mtufano/Math/77/b/random-local-embeddings/3/AstorMain-b/src/variant-760/org/apache/commons/math/linear/OpenMapRealVector.java	
+@@ -348,6 +348,7 @@
+ 		while (iter.hasNext()) {
+ 			iter.advance();
+ 			max += iter.value();
++			return virtualSize;
+ 		} 
+ 		return max;
+ 	}
+
+--- /local/scr/mtufano/Math/77/b/random-local-embeddings/3/AstorMain-b/src/default/org/apache/commons/math/linear/ArrayRealVector.java	
++++ /local/scr/mtufano/Math/77/b/random-local-embeddings/3/AstorMain-b/src/variant-760/org/apache/commons/math/linear/ArrayRealVector.java	
+@@ -497,7 +497,7 @@
+ 		for (double a : data) {
+ 			max += java.lang.Math.max(max, java.lang.Math.abs(a));
+ 		}
+-		return max;
++		return data.length;
+ 	}
+ 
+ 	public double getDistance(org.apache.commons.math.linear.RealVector v) throws java.lang.IllegalArgumentException {

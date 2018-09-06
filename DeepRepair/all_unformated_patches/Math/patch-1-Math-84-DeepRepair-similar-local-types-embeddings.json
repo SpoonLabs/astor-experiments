@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "if ((comparator.compare(contracted, best)) < 0) {\n\treturn ;\n}",
+    "diffpatch": "--- /local/scr/mtufano/Math/84/b/similar-local-types-embeddings/1/AstorMain-b/src/default/org/apache/commons/math/optimization/direct/MultiDirectional.java\t\n+++ /local/scr/mtufano/Math/84/b/similar-local-types-embeddings/1/AstorMain-b/src/variant-2341/org/apache/commons/math/optimization/direct/MultiDirectional.java\t\n@@ -37,6 +37,7 @@\n \t\t\tif ((comparator.compare(contracted, best)) < 0) {\n \t\t\t\treturn ;\n \t\t\t}\n+\t\t\treturn ;\n \t\t} \n \t}",
+    "generation": 2340,
+    "ingredients": null,
+    "patch": "return ",
+    "patchLocation": {
+        "className": "org.apache.commons.math.optimization.direct.MultiDirectional",
+        "line": 90,
+        "lineSuspiciousness": 0.707
+    },
+    "scope": "LOCAL",
+    "time": "6353",
+    "type": "InsertAfterOp",
+    "variant": 2341
+}

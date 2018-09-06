@@ -1,0 +1,13 @@
+--- /local/scr/mtufano/Math/85/b/random-global-embeddings/1/AstorMain-b/src/default/org/apache/commons/math/analysis/solvers/UnivariateRealSolverUtils.java	
++++ /local/scr/mtufano/Math/85/b/random-global-embeddings/1/AstorMain-b/src/variant-345/org/apache/commons/math/analysis/solvers/UnivariateRealSolverUtils.java	
+@@ -46,8 +46,8 @@
+ 			fb = function.value(b);
+ 			numIterations++;
+ 		} while ((((fa * fb) > 0.0) && (numIterations < maximumIterations)) && ((a > lowerBound) || (b < upperBound)) );
+-		if ((fa * fb) >= 0.0) {
+-			throw new org.apache.commons.math.ConvergenceException(("number of iterations={0}, maximum iterations={1}, " + ("initial={2}, lower bound={3}, upper bound={4}, final a value={5}, " + "final b value={6}, f(a)={7}, f(b)={8}")), numIterations, maximumIterations, initial, lowerBound, upperBound, a, b, fa, fb);
++		if (((lowerBound < lowerBound) || (lowerBound > upperBound)) || (lowerBound >= upperBound)) {
++			throw org.apache.commons.math.MathRuntimeException.createIllegalArgumentException("invalid bracketing parameters:  lower bound={0},  initial={1}, upper bound={2}", lowerBound, lowerBound, upperBound);
+ 		}
+ 		return new double[]{ a , b };
+ 	}

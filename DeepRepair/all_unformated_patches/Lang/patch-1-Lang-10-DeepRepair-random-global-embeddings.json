@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "regex.append(\"\\\\s*+\")",
+    "diffpatch": "--- /local/scr/mtufano/Lang/10/b/random-global-embeddings/2/AstorMain-b/src/default/org/apache/commons/lang3/time/FastDateParser.java\t\n+++ /local/scr/mtufano/Lang/10/b/random-global-embeddings/2/AstorMain-b/src/variant-377/org/apache/commons/lang3/time/FastDateParser.java\t\n@@ -157,7 +157,7 @@\n \t\t\tif (java.lang.Character.isWhitespace(c)) {\n \t\t\t\tif (!wasWhite) {\n \t\t\t\t\twasWhite = true;\n-\t\t\t\t\tregex.append(\"\\\\s*+\");\n+\t\t\t\t\tregex.append(c);\n \t\t\t\t}\n \t\t\t\tcontinue;\n \t\t\t}",
+    "generation": 376,
+    "ingredients": null,
+    "patch": "regex.append(c)",
+    "patchLocation": {
+        "className": "org.apache.commons.lang3.time.FastDateParser",
+        "line": 310,
+        "lineSuspiciousness": 0.442
+    },
+    "scope": "LOCAL",
+    "time": "1806",
+    "type": "ReplaceOp",
+    "variant": 377
+}

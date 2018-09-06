@@ -1,0 +1,24 @@
+--- /local/scr/mtufano/Chart/13/b/random-global-embeddings/1/AstorMain-b/src/default/org/jfree/chart/block/AbstractBlock.java	
++++ /local/scr/mtufano/Chart/13/b/random-global-embeddings/1/AstorMain-b/src/variant-4/org/jfree/chart/block/AbstractBlock.java	
+@@ -163,6 +163,7 @@
+ 		double upperBound = java.lang.Double.POSITIVE_INFINITY;
+ 		if ((r.getLowerBound()) > 0.0) {
+ 			lowerBound = trimToContentWidth(r.getLowerBound());
++			org.jfree.chart.entity.StandardEntityCollection sec = null;
+ 		}
+ 		if ((r.getUpperBound()) < (java.lang.Double.POSITIVE_INFINITY)) {
+ 			upperBound = trimToContentWidth(r.getUpperBound());
+
+--- /local/scr/mtufano/Chart/13/b/random-global-embeddings/1/AstorMain-b/src/default/org/jfree/chart/block/BorderArrangement.java	
++++ /local/scr/mtufano/Chart/13/b/random-global-embeddings/1/AstorMain-b/src/variant-4/org/jfree/chart/block/BorderArrangement.java	
+@@ -274,9 +274,7 @@
+ 		}
+ 		h[3] = h[2];
+ 		if ((org.jfree.chart.block.BorderArrangement.this.rightBlock) != null) {
+-			org.jfree.chart.block.RectangleConstraint c4 = new org.jfree.chart.block.RectangleConstraint(0.0, new org.jfree.data.Range(0.0, ((constraint.getWidth()) - (w[2]))), org.jfree.chart.block.LengthConstraintType.RANGE, h[2], null, org.jfree.chart.block.LengthConstraintType.FIXED);
+-			org.jfree.chart.util.Size2D size = org.jfree.chart.block.BorderArrangement.this.rightBlock.arrange(g2, c4);
+-			w[3] = size.width;
++			org.jfree.chart.block.BorderArrangement.this.rightBlock.setBounds(new java.awt.geom.Rectangle2D.Double(((w[2]) + (w[4])), h[0], w[3], h[3]));
+ 		}
+ 		h[4] = h[2];
+ 		w[4] = ((constraint.getWidth()) - (w[3])) - (w[2]);

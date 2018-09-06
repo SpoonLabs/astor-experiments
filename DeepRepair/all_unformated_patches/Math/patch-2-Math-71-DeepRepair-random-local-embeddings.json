@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "double tb = (t0) + (interpolator.isForward() ? convergence : -(convergence))",
+    "diffpatch": "--- /local/scr/mtufano/Math/71/b/random-local-embeddings/2/AstorMain-b/src/default/org/apache/commons/math/ode/events/EventState.java\t\n+++ /local/scr/mtufano/Math/71/b/random-local-embeddings/2/AstorMain-b/src/variant-20/org/apache/commons/math/ode/events/EventState.java\t\n@@ -75,6 +75,7 @@\n \t\t\tfinal double h = (t1 - (t0)) / n;\n \t\t\tdouble ta = t0;\n \t\t\tdouble ga = g0;\n+\t\t\tpendingEvent = true;\n \t\t\tdouble tb = (t0) + (interpolator.isForward() ? convergence : -(convergence));\n \t\t\tfor (int i = 0; i < n; ++i) {\n \t\t\t\ttb += h;",
+    "generation": 19,
+    "ingredients": null,
+    "patch": "pendingEvent = true",
+    "patchLocation": {
+        "className": "org.apache.commons.math.ode.events.EventState",
+        "line": 179,
+        "lineSuspiciousness": 0.147
+    },
+    "scope": "LOCAL",
+    "time": "291",
+    "type": "InsertBeforeOp",
+    "variant": 20
+}

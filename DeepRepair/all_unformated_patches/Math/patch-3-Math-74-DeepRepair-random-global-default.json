@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "interpolatorTmp.shift()",
+    "diffpatch": "--- /local/scr/mtufano/Math/74/b/random-global-default/2/AstorMain-b/src/default/org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator.java\t\n+++ /local/scr/mtufano/Math/74/b/random-global-default/2/AstorMain-b/src/variant-79/org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator.java\t\n@@ -63,7 +63,7 @@\n \t\t\t\t\tupdateHighOrderDerivativesPhase2(predictedScaled, correctedScaled, nordsieckTmp);\n \t\t\t\t\tinterpolatorTmp.reinitialize(stepEnd, stepSize, correctedScaled, nordsieckTmp);\n \t\t\t\t\tinterpolatorTmp.storeTime(stepStart);\n-\t\t\t\t\tinterpolatorTmp.shift();\n+\t\t\t\t\tsetMaxGrowth(10.0);\n \t\t\t\t\tinterpolatorTmp.storeTime(stepEnd);\n \t\t\t\t\tif (manager.evaluateStep(interpolatorTmp)) {\n \t\t\t\t\t\tfinal double dt = (manager.getEventTime()) - (stepStart);",
+    "generation": 78,
+    "ingredients": null,
+    "patch": "setMaxGrowth(10.0)",
+    "patchLocation": {
+        "className": "org.apache.commons.math.ode.nonstiff.AdamsMoultonIntegrator",
+        "line": 287,
+        "lineSuspiciousness": 0.5
+    },
+    "scope": "PACKAGE",
+    "time": "549",
+    "type": "ReplaceOp",
+    "variant": 79
+}

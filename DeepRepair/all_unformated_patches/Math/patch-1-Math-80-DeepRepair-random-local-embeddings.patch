@@ -1,0 +1,11 @@
+--- /local/scr/mtufano/Math/80/b/random-local-embeddings/1/AstorMain-b/src/default/org/apache/commons/math/linear/EigenDecompositionImpl.java	
++++ /local/scr/mtufano/Math/80/b/random-local-embeddings/1/AstorMain-b/src/variant-63/org/apache/commons/math/linear/EigenDecompositionImpl.java	
+@@ -479,7 +479,7 @@
+ 		if (sumOffDiag == 0) {
+ 			return ;
+ 		}
+-		flipIfWarranted(n, 2);
++		updateSigma(tau);
+ 		initialSplits(n);
+ 		tType = 0;
+ 		dMin1 = 0;

@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "for (int i = 0; i < (searchList.length); i++) {\n\tint greater = (replacementList[i].length()) - (searchList[i].length());\n\tif (greater > 0) {\n\t\tincrease += 3 * greater;\n\t}\n}",
+    "diffpatch": "--- /local/scr/mtufano/Lang/39/b/similar-package-executables-default/1/AstorMain-b/src/default/org/apache/commons/lang3/StringUtils.java\t\n+++ /local/scr/mtufano/Lang/39/b/similar-package-executables-default/1/AstorMain-b/src/variant-63/org/apache/commons/lang3/StringUtils.java\t\n@@ -1162,10 +1162,18 @@\n \t\t}\n \t\tint start = 0;\n \t\tint increase = 0;\n-\t\tfor (int i = 0; i < (searchList.length); i++) {\n-\t\t\tint greater = (replacementList[i].length()) - (searchList[i].length());\n-\t\t\tif (greater > 0) {\n-\t\t\t\tincrease += 3 * greater;\n+\t\tfor (int i = 0; i < searchLength; i++) {\n+\t\t\tif ((((noMoreMatchesForReplIndex[i]) || ((searchList[i]) == null)) || ((searchList[i].length()) == 0)) || ((replacementList[i]) == null)) {\n+\t\t\t\tcontinue;\n+\t\t\t}\n+\t\t\ttempIndex = text.indexOf(searchList[i]);\n+\t\t\tif (tempIndex == (-1)) {\n+\t\t\t\tnoMoreMatchesForReplIndex[i] = true;\n+\t\t\t}else {\n+\t\t\t\tif ((textIndex == (-1)) || (tempIndex < textIndex)) {\n+\t\t\t\t\ttextIndex = tempIndex;\n+\t\t\t\t\treplaceIndex = i;\n+\t\t\t\t}\n \t\t\t}\n \t\t}\n \t\tincrease = java.lang.Math.min(increase, ((text.length()) / 5));",
+    "generation": 62,
+    "ingredients": null,
+    "patch": "for (int i = 0; i < searchLength; i++) {\n\tif ((((noMoreMatchesForReplIndex[i]) || ((searchList[i]) == null)) || ((searchList[i].length()) == 0)) || ((replacementList[i]) == null)) {\n\t\tcontinue;\n\t}\n\ttempIndex = text.indexOf(searchList[i]);\n\tif (tempIndex == (-1)) {\n\t\tnoMoreMatchesForReplIndex[i] = true;\n\t}else {\n\t\tif ((textIndex == (-1)) || (tempIndex < textIndex)) {\n\t\t\ttextIndex = tempIndex;\n\t\t\treplaceIndex = i;\n\t\t}\n\t}\n}",
+    "patchLocation": {
+        "className": "org.apache.commons.lang3.StringUtils",
+        "line": 3675,
+        "lineSuspiciousness": 0.707
+    },
+    "scope": "LOCAL",
+    "time": "356",
+    "type": "ReplaceOp",
+    "variant": 63
+}

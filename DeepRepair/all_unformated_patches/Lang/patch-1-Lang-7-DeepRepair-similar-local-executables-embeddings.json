@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "if (str.startsWith(\"--\")) {\n\treturn null;\n}",
+    "diffpatch": "--- /local/scr/mtufano/Lang/7/b/similar-local-executables-embeddings/1/AstorMain-b/src/default/org/apache/commons/lang3/math/NumberUtils.java\t\n+++ /local/scr/mtufano/Lang/7/b/similar-local-executables-embeddings/1/AstorMain-b/src/variant-220/org/apache/commons/lang3/math/NumberUtils.java\t\n@@ -141,7 +141,7 @@\n \t\tif (org.apache.commons.lang3.StringUtils.isBlank(str)) {\n \t\t\tthrow new java.lang.NumberFormatException(\"A blank string is not a valid number\");\n \t\t}\n-\t\tif (str.startsWith(\"--\")) {\n+\t\tif (str == null) {\n \t\t\treturn null;\n \t\t}\n \t\tif ((((str.startsWith(\"0x\")) || (str.startsWith(\"-0x\"))) || (str.startsWith(\"0X\"))) || (str.startsWith(\"-0X\"))) {",
+    "generation": 219,
+    "ingredients": null,
+    "patch": "if (str == null) {\n\treturn null;\n}",
+    "patchLocation": {
+        "className": "org.apache.commons.lang3.math.NumberUtils",
+        "line": 452,
+        "lineSuspiciousness": 0.577
+    },
+    "scope": "LOCAL",
+    "time": "96",
+    "type": "ReplaceOp",
+    "variant": 220
+}

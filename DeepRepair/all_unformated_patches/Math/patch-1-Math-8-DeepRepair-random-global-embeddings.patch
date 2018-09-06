@@ -1,0 +1,11 @@
+--- /local/scr/mtufano/Math/8/b/random-global-embeddings/1/AstorMain-b/src/default/org/apache/commons/math3/distribution/DiscreteDistribution.java	
++++ /local/scr/mtufano/Math/8/b/random-global-embeddings/1/AstorMain-b/src/variant-180/org/apache/commons/math3/distribution/DiscreteDistribution.java	
+@@ -69,7 +69,7 @@
+ 		}
+ 		final T[] out = ((T[]) (java.lang.reflect.Array.newInstance(singletons.get(0).getClass(), sampleSize)));
+ 		for (int i = 0; i < sampleSize; i++) {
+-			out[i] = sample();
++			sampleSize = sampleSize >> 8;
+ 		}
+ 		return out;
+ 	}

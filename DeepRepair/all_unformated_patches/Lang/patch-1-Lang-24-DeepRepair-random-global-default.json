@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "return foundDigit && (!hasExp)",
+    "diffpatch": "--- /local/scr/mtufano/Lang/24/b/random-global-default/1/AstorMain-b/src/default/org/apache/commons/lang3/math/NumberUtils.java\t\n+++ /local/scr/mtufano/Lang/24/b/random-global-default/1/AstorMain-b/src/variant-12467/org/apache/commons/lang3/math/NumberUtils.java\t\n@@ -715,6 +715,9 @@\n \t\t\t\treturn foundDigit;\n \t\t\t}\n \t\t\tif (((chars[i]) == 'l') || ((chars[i]) == 'L')) {\n+\t\t\t\tif (hasDecPoint || hasExp) {\n+\t\t\t\t\treturn false;\n+\t\t\t\t}\n \t\t\t\treturn foundDigit && (!hasExp);\n \t\t\t}\n \t\t\treturn false;",
+    "generation": 12466,
+    "ingredients": null,
+    "patch": "if (hasDecPoint || hasExp) {\n\treturn false;\n}",
+    "patchLocation": {
+        "className": "org.apache.commons.lang3.math.NumberUtils",
+        "line": 1413,
+        "lineSuspiciousness": 1.0
+    },
+    "scope": "LOCAL",
+    "time": "3581",
+    "type": "InsertBeforeOp",
+    "variant": 12467
+}

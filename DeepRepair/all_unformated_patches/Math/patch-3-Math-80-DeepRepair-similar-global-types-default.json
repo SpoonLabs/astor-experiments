@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "for (int i = 0; i < j; i += 4) {\n\tfor (int k = 0; k < 4; k += step) {\n\t\tfinal double tmp = work[(i + k)];\n\t\twork[(i + k)] = work[(j - k)];\n\t\twork[(j - k)] = tmp;\n\t}\n\tj -= 4;\n}",
+    "diffpatch": "--- /local/scr/mtufano/Math/80/b/similar-global-types-default/2/AstorMain-b/src/default/org/apache/commons/math/linear/EigenDecompositionImpl.java\t\n+++ /local/scr/mtufano/Math/80/b/similar-global-types-default/2/AstorMain-b/src/variant-447/org/apache/commons/math/linear/EigenDecompositionImpl.java\t\n@@ -675,13 +675,9 @@\n \tprivate boolean flipIfWarranted(final int n, final int step) {\n \t\tif ((1.5 * (work[pingPong])) < (work[((4 * (n - 1)) + (pingPong))])) {\n \t\t\tint j = (4 * n) - 1;\n-\t\t\tfor (int i = 0; i < j; i += 4) {\n-\t\t\t\tfor (int k = 0; k < 4; k += step) {\n-\t\t\t\t\tfinal double tmp = work[(i + k)];\n-\t\t\t\t\twork[(i + k)] = work[(j - k)];\n-\t\t\t\t\twork[(j - k)] = tmp;\n-\t\t\t\t}\n-\t\t\t\tj -= 4;\n+\t\t\tfor (int i = 0; i < (squaredSecondary.length); ++i) {\n+\t\t\t\tfinal double s = secondary[i];\n+\t\t\t\tsquaredSecondary[i] = s * s;\n \t\t\t}\n \t\t\treturn true;\n \t\t}",
+    "generation": 446,
+    "ingredients": null,
+    "patch": "for (int i = 0; i < (squaredSecondary.length); ++i) {\n\tfinal double s = secondary[i];\n\tsquaredSecondary[i] = s * s;\n}",
+    "patchLocation": {
+        "className": "org.apache.commons.math.linear.EigenDecompositionImpl",
+        "line": 1136,
+        "lineSuspiciousness": 1.0
+    },
+    "scope": "LOCAL",
+    "time": "4681",
+    "type": "ReplaceOp",
+    "variant": 447
+}

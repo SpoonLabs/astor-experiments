@@ -1,0 +1,11 @@
+--- /local/scr/mtufano/Math/80/b/similar-package-executables-default/3/AstorMain-b/src/default/org/apache/commons/math/linear/EigenDecompositionImpl.java	
++++ /local/scr/mtufano/Math/80/b/similar-package-executables-default/3/AstorMain-b/src/variant-530/org/apache/commons/math/linear/EigenDecompositionImpl.java	
+@@ -678,7 +678,7 @@
+ 			for (int i = 0; i < j; i += 4) {
+ 				for (int k = 0; k < 4; k += step) {
+ 					final double tmp = work[(i + k)];
+-					work[(i + k)] = work[(j - k)];
++					cachedV = org.apache.commons.math.linear.MatrixUtils.createRealMatrix(n, n);
+ 					work[(j - k)] = tmp;
+ 				}
+ 				j -= 4;

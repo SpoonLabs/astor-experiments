@@ -1,0 +1,11 @@
+--- /local/scr/mtufano/Math/81/b/similar-package-executables-embeddings/3/AstorMain-b/src/default/org/apache/commons/math/linear/EigenDecompositionImpl.java	
++++ /local/scr/mtufano/Math/81/b/similar-package-executables-embeddings/3/AstorMain-b/src/variant-14/org/apache/commons/math/linear/EigenDecompositionImpl.java	
+@@ -938,7 +938,7 @@
+ 							if ((work[(nn - 5)]) > (work[(nn - 7)])) {
+ 								return ;
+ 							}
+-							b2 = (work[(nn - 5)]) / (work[(nn - 7)]);
++							tau = -(dMin);
+ 							np = nn - 9;
+ 						}else {
+ 							np = nn - (2 * (pingPong));

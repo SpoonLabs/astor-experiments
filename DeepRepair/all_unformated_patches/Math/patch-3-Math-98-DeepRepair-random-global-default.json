@@ -1,0 +1,16 @@
+{
+    "buggyStatement": "final double[] out = new double[v.length]\nfixed statement= final double[] out = new double[nRows]\ngeneration= 410\ningredientScope= LOCAL\noperation: ReplaceOp\nlocation= org.apache.commons.math.linear.BigMatrixImpl\nline= 991\nlineSuspiciousness= 0.408\noriginal statement= final java.math.BigDecimal[] out = new java.math.BigDecimal[v.length]",
+    "diffpatch": "--- /local/scr/mtufano/Math/98/b/random-global-default/2/AstorMain-b/src/default/org/apache/commons/math/linear/RealMatrixImpl.java\t\n+++ /local/scr/mtufano/Math/98/b/random-global-default/2/AstorMain-b/src/variant-599/org/apache/commons/math/linear/RealMatrixImpl.java\t\n@@ -436,7 +436,7 @@\n \t\tif ((v.length) != nCols) {\n \t\t\tthrow new java.lang.IllegalArgumentException(\"vector has wrong length\");\n \t\t}\n-\t\tfinal double[] out = new double[v.length];\n+\t\tfinal double[] out = new double[nRows];\n \t\tfor (int row = 0; row < nRows; row++) {\n \t\t\tfinal double[] dataRow = data[row];\n \t\t\tdouble sum = 0;\n\n--- /local/scr/mtufano/Math/98/b/random-global-default/2/AstorMain-b/src/default/org/apache/commons/math/linear/BigMatrixImpl.java\t\n+++ /local/scr/mtufano/Math/98/b/random-global-default/2/AstorMain-b/src/variant-599/org/apache/commons/math/linear/BigMatrixImpl.java\t\n@@ -536,7 +536,7 @@\n \t\t}\n \t\tfinal int nRows = org.apache.commons.math.linear.BigMatrixImpl.this.getRowDimension();\n \t\tfinal int nCols = org.apache.commons.math.linear.BigMatrixImpl.this.getColumnDimension();\n-\t\tfinal java.math.BigDecimal[] out = new java.math.BigDecimal[v.length];\n+\t\tfinal java.math.BigDecimal[] out = new java.math.BigDecimal[nRows];\n \t\tfor (int row = 0; row < nRows; row++) {\n \t\t\tjava.math.BigDecimal sum = org.apache.commons.math.linear.BigMatrixImpl.ZERO;\n \t\t\tfor (int i = 0; i < nCols; i++) {",
+    "generation": 410,
+    "ingredients": null,
+    "patch": "final double[] out = new double[nRows]\ngeneration= 410\ningredientScope= LOCAL\noperation: ReplaceOp\nlocation= org.apache.commons.math.linear.BigMatrixImpl\nline= 991\nlineSuspiciousness= 0.408\noriginal statement= final java.math.BigDecimal[] out = new java.math.BigDecimal[v.length]\nfixed statement= final java.math.BigDecimal[] out = new java.math.BigDecimal[nRows]",
+    "patchLocation": {
+        "className": "org.apache.commons.math.linear.RealMatrixImpl",
+        "line": 779,
+        "lineSuspiciousness": 0.408
+    },
+    "scope": "LOCAL",
+    "time": "115",
+    "type": "ReplaceOp",
+    "variant": 599
+}
